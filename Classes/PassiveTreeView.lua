@@ -67,14 +67,14 @@ function PassiveTreeViewClass:Draw(build, viewPort, inputEvents)
 	for id, event in ipairs(inputEvents) do
 		if event.type == "KeyDown" then
 			if event.key == "LEFTBUTTON" then
-				if IsKeyDown("SHIFT") then
+				if IsKeyDown("CTRL") then
 					self:Zoom(2, viewPort)
 				elseif mOver then
 					-- Record starting coords of mouse drag
 					-- Dragging won't actually commence unless the cursor moves far enough
 					self.dragX, self.dragY = cursorX, cursorY
 				end
-			elseif event.key == "RIGHTBUTTON" and IsKeyDown("SHIFT") then
+			elseif event.key == "RIGHTBUTTON" and IsKeyDown("CTRL") then
 				self:Zoom(-2, viewPort)
 			elseif event.key == "p" then
 				self.showHeatMap = not self.showHeatMap
