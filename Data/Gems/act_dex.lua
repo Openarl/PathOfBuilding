@@ -1865,7 +1865,7 @@ gems["Frost Blades"] = {
 	baseMods = {
 		skill("castTime", 1), 
 		skill("manaCost", 6), 
-		mod("PhysicalDamageConvertToCold", "BASE", 40, 0, 0, nil), --"base_physical_damage_%_to_convert_to_cold" = 40
+		mod("PhysicalDamageConvertToCold", "BASE", 60, 0, 0, nil), --"base_physical_damage_%_to_convert_to_cold" = 40
 		--"total_projectile_spread_angle_override" = 110
 		--"show_number_of_projectiles" = ?
 	},
