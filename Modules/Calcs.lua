@@ -3313,6 +3313,8 @@ local function performCalcs(env)
 	if skillFlags.decay then
 		output.CombinedDPS = output.CombinedDPS + output.DecayDPS
 	end
+    
+    output.RFSelfDamage = (output.Life * 0.9 + output.EnergyShield * 0.7) * (1 - output.FireResist / 100)
 end
 
 -- Print various tables to the console
