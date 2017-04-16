@@ -140,9 +140,6 @@ local varList = {
 		modList:NewMod("Misc", "LIST", { type = "Condition", var = "BlockedHitFromUniqueEnemyRecently" }, "Config", { type = "Condition", var = "Combat" })
 	end },
 	{ section = "For Effective DPS" },
-	{ var = "critChanceLucky", type = "check", label = "Is your Crit Chance Lucky?", apply = function(val, modList, enemyModList)
-		modList:NewMod("CritChanceLucky", "FLAG", true, "Config", { type = "Condition", var = "Effective" })
-	end },
 	{ var = "projectileDistance", type = "number", label = "Projectile travel distance:", ifFlag = "projectile" },
 	{ var = "conditionEnemyMoving", type = "check", label = "Is the enemy Moving?", ifFlag = "bleed", apply = function(val, modList, enemyModList)
 		modList:NewMod("Damage", "MORE", 500, "Movement", 0, KeywordFlag.Bleed)
@@ -176,7 +173,7 @@ local varList = {
 	end },
 	{ var = "conditionEnemyTaunted", type = "check", label = "Is the enemy Taunted?", ifEnemyCond = "Taunted", apply = function(val, modList, enemyModList)
 		modList:NewMod("Misc", "LIST", { type = "EnemyCondition", var = "Taunted" }, "Config", { type = "Condition", var = "Effective" })
-	end }, 
+	end },
 	{ var = "conditionEnemyBurning", type = "check", label = "Is the enemy Burning?", ifEnemyCond = "Burning", apply = function(val, modList, enemyModList)
 		modList:NewMod("Misc", "LIST", { type = "EnemyCondition", var = "Burning" }, "Config", { type = "Condition", var = "Effective" })
 	end },
@@ -294,14 +291,14 @@ local ConfigTabClass = common.NewClass("ConfigTab", "UndoHandler", "ControlHost"
 					self:AddUndoState()
 					self:BuildModList()
 					self.build.buildFlag = true
-				end) 
+				end)
 			elseif varData.type == "number" then
 				control = common.New("EditControl", {"TOPLEFT",lastSection,"TOPLEFT"}, 234, 0, 70, 18, "", nil, "^%-%d", 4, function(buf)
 					self.input[varData.var] = tonumber(buf)
 					self:AddUndoState()
 					self:BuildModList()
 					self.build.buildFlag = true
-				end) 
+				end)
 			elseif varData.type == "list" then
 				control = common.New("DropDownControl", {"TOPLEFT",lastSection,"TOPLEFT"}, 234, 0, 118, 16, varData.list, function(sel, selVal)
 					self.input[varData.var] = selVal.val
@@ -309,7 +306,7 @@ local ConfigTabClass = common.NewClass("ConfigTab", "UndoHandler", "ControlHost"
 					self:BuildModList()
 					self.build.buildFlag = true
 				end)
-			else 
+			else
 				control = common.New("Control", {"TOPLEFT",lastSection,"TOPLEFT"}, 234, 0, 16, 16)
 			end
 			if varData.ifNode then
@@ -425,7 +422,7 @@ function ConfigTabClass:Draw(viewPort, inputEvents)
 	self.height = viewPort.height
 
 	for id, event in ipairs(inputEvents) do
-		if event.type == "KeyDown" then	
+		if event.type == "KeyDown" then
 			if event.key == "z" and IsKeyDown("CTRL") then
 				self:Undo()
 				self.build.buildFlag = true
