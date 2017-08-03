@@ -36,7 +36,7 @@ end
 local PassiveTreeClass = common.NewClass("PassiveTree", function(self, targetVersion)
 	self.targetVersion = targetVersion
 
-	MakeDir("TreeData")
+	MakeDir("TreeData/"..targetVersion)
 
 	ConPrintf("Loading passive tree data...")
 	local treeText
