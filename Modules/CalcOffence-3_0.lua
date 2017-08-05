@@ -1595,7 +1595,7 @@ function calcs.offence(env, actor)
 					end
 				end
 				local effectMod = calcLib.mod(modDB, dotCfg, "AilmentEffect")
-				local burnRateMod = 1 / calcLib.mod(modDB, cfg, "IgniteBurnRate")
+				local burnRateMod = 2 - calcLib.mod(modDB, cfg, "IgniteBurnRate")
 				output.IgniteDPS = baseVal * effectMod * burnRateMod * effMult
 				local incDur = modDB:Sum("INC", dotCfg, "EnemyIgniteDuration", "SkillAndDamagingAilmentDuration") + enemyDB:Sum("INC", nil, "SelfIgniteDuration")
 				local moreDur = enemyDB:Sum("MORE", nil, "SelfIgniteDuration")
