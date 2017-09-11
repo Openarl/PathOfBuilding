@@ -348,6 +348,12 @@ function GemSelectClass:Draw(viewPort)
 						self.tooltip:AddLine(16, colorCodes.GEM..line)
 					end
 				end
+
+				self.tooltip:AddSeparator(10)
+				self.tooltip:AddLine(16, "^x7F7F7F".."With 20% Quality:")
+				for _, effectDescription in pairs(gem.grantedEffect.effectsQuality) do
+					self.tooltip:AddLine(16, colorCodes.MAGIC..effectDescription)
+				end
 				
 				self.tooltip:AddSeparator(10)
 				for _, effectDescription in pairs(gem.grantedEffect.effects) do
