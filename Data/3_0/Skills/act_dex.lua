@@ -30,6 +30,9 @@ skills["AnimateWeapon"] = {
 		[4] = "Can summon up to 50 Animated Weapons at a time",
 		[5] = "Can use Items requiring up to level (9-100)",
 	},
+	effectsQuality = {
+		[1] = "40% increased Movement Speed",
+	},
 	minionHasItemSet = true,
 	minionUses = {
 		["Weapon 1"] = true,
@@ -115,6 +118,9 @@ skills["NewArcticArmour"] = {
 		[3] = "(8-15)% less Fire Damage taken when Hit",
 		[4] = "Chill Enemy for 0.5 seconds when Hit",
 	},
+	effectsQuality = {
+		[1] = "20% increased Skill Effect Duration",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -189,6 +195,9 @@ skills["Barrage"] = {
 	},
 	effects = {
 		[1] = "3 additional Projectiles",
+	},
+	effectsQuality = {
+		[1] = "10% increased Projectile Damage",
 	},
 	parts = {
 		{
@@ -276,6 +285,9 @@ skills["BearTrap"] = {
 		[2] = "Trap lasts 16 seconds",
 		[3] = "Locks enemy in place",
 	},
+	effectsQuality = {
+		[1] = "20% increased Physical Damage",
+	},
 	baseFlags = {
 		cast = true,
 		trap = true,
@@ -362,6 +374,9 @@ skills["ChargedAttack"] = {
 	effects = {
 		[1] = "60% more Attack Speed",
 		[2] = "20% more Damage with Hits and Ailments for each stage",
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
 	},
 	parts = {
 		{
@@ -456,6 +471,9 @@ skills["BladeVortex"] = {
 		[5] = "30% more Damage with Hits for each blade",
 		[6] = "20% more Damage with Ailments for each blade",
 		[7] = "Can have up to 20 active spinning blades",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	parts = {
 		{
@@ -560,6 +578,9 @@ skills["Bladefall"] = {
 		[1] = "Deals (44-933) to (65-1399) Physical Damage",
 		[2] = "6% less Damage per Volley",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -637,6 +658,9 @@ skills["BlastRain"] = {
 	effects = {
 		[1] = "50% of Physical Damage Converted to Fire Damage",
 		[2] = "Causes 4 Explosions",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	parts = {
 		{
@@ -731,6 +755,9 @@ skills["BlinkArrow"] = {
 		[1] = "Minions deal 175% of Damage",
 		[2] = "Base duration is 3 seconds",
 	},
+	effectsQuality = {
+		[1] = "30% increased Arrow Speed",
+	},
 	minionList = {
 		"Clone",
 	},
@@ -817,6 +844,9 @@ skills["BloodRage"] = {
 		[5] = "You take 4% of your Maximum Energy Shield per second as Physical Damage",
 		[6] = "25% chance to gain a Frenzy Charge on Kill",
 	},
+	effectsQuality = {
+		[1] = "5% increased Attack Speed",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -896,6 +926,9 @@ skills["BurningArrow"] = {
 		[1] = "50% of Physical Damage Converted to Fire Damage",
 		[2] = "20% chance to Ignite enemies",
 		[3] = "(10-39)% increased Burning Damage",
+	},
+	effectsQuality = {
+		[1] = "60% increased Ignite Duration on enemies",
 	},
 	baseFlags = {
 		attack = true,
@@ -977,6 +1010,9 @@ skills["VaalBurningArrow"] = {
 		[2] = "20% chance to Ignite enemies",
 		[3] = "(10-39)% increased Burning Damage",
 		[4] = "Can't be Evaded",
+	},
+	effectsQuality = {
+		[1] = "60% increased Ignite Duration on enemies",
 	},
 	baseFlags = {
 		attack = true,
@@ -1062,6 +1098,9 @@ skills["PoisonArrow"] = {
 		[3] = "Base duration is (2.8-5.9) seconds",
 		[4] = "Modifiers to Projectile Damage apply to this Skill's Damage Over Time effect",
 		[5] = "Gain (30-59)% of your Physical Damage as Extra Chaos Damage",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	baseFlags = {
 		attack = true,
@@ -1156,6 +1195,9 @@ skills["Cyclone"] = {
 		[2] = "50% more Attack Speed",
 		[3] = "+(0-5) to Melee range",
 		[4] = "First Hit deals 50% less Damage",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	baseFlags = {
 		attack = true,
@@ -1255,6 +1297,9 @@ skills["VaalCyclone"] = {
 		[4] = "Can't be Evaded",
 		[5] = "+(0-5) to Melee range",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1336,6 +1381,9 @@ skills["Desecrate"] = {
 		[3] = "Creates 3 Corpses",
 		[4] = "Creates Corpses up to Level (20-100)",
 	},
+	effectsQuality = {
+		[1] = "20% increased Cast Speed",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -1412,6 +1460,9 @@ skills["DetonateDead"] = {
 		[1] = "Deals (4-713) to (5-1070) Fire Damage",
 		[2] = "Explosion deals base Fire Damage equal to 6% of the corpse's maximum Life",
 		[3] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
+		[1] = "20% increased Cast Speed",
 	},
 	setupFunc = function(actor, output)
 		local skillData = actor.mainSkill.skillData
@@ -1497,6 +1548,9 @@ skills["VaalDetonateDead"] = {
 		[1] = "Deals (3-649) to (5-973) Fire Damage",
 		[2] = "Explosion deals base Fire Damage equal to 8% of the corpse's maximum Life",
 		[3] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
+		[1] = "20% increased Cast Speed",
 	},
 	setupFunc = function(actor, output)
 		local skillData = actor.mainSkill.skillData
@@ -1590,6 +1644,9 @@ skills["DoubleStrike"] = {
 	},
 	effects = {
 	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1674,6 +1731,9 @@ skills["VaalDoubleStrike"] = {
 	effects = {
 		[1] = "Base duration is (3.6-6.5) seconds",
 	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1754,6 +1814,9 @@ skills["DualStrike"] = {
 	},
 	effects = {
 	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1828,6 +1891,9 @@ skills["ElementalHit"] = {
 		[2] = "Can deal (3-283) to (6-526) base Cold Damage",
 		[3] = "Can deal (1-56) to (13-1057) base Lightning Damage",
 		[4] = "10% chance to Freeze, Shock and Ignite",
+	},
+	effectsQuality = {
+		[1] = "20% increased Elemental Damage",
 	},
 	parts = {
 		{
@@ -1919,6 +1985,9 @@ skills["EtherealKnives"] = {
 		[1] = "Deals (4-1251) to (6-1876) Physical Damage",
 		[2] = "9 additional Projectiles",
 	},
+	effectsQuality = {
+		[1] = "20% increased Projectile Speed",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -1997,6 +2066,9 @@ skills["ExplosiveArrow"] = {
 		[1] = "Base duration is 1 seconds",
 		[2] = "Explosion deals (44-1767) to (66-2651) Base Fire Damage per Fuse Charge",
 		[3] = "+2 to Explosion Radius per Fuse Charge",
+	},
+	effectsQuality = {
+		[1] = "20% chance to Ignite enemies",
 	},
 	parts = {
 		{
@@ -2106,6 +2178,9 @@ skills["FireTrap"] = {
 		[4] = "Deals (3.6-2232.1) Base Fire Damage per second",
 		[5] = "Base duration is 8 seconds",
 	},
+	effectsQuality = {
+		[1] = "30% increased Burning Damage",
+	},
 	baseFlags = {
 		spell = true,
 		trap = true,
@@ -2203,6 +2278,9 @@ skills["FlickerStrike"] = {
 		[1] = "20% more Attack Speed",
 		[2] = "10% increased Attack Speed per Frenzy Charge",
 	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -2283,6 +2361,9 @@ skills["FreezeMine"] = {
 		[4] = "Freezes enemies as though dealing (200-490)% more Damage",
 		[5] = "Enemies lose 15% Cold Resistance while Frozen",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		mine = true,
@@ -2362,6 +2443,9 @@ skills["Frenzy"] = {
 	effects = {
 		[1] = "5% increased Physical Damage per Frenzy Charge",
 		[2] = "5% increased Attack Speed per Frenzy Charge",
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
 	},
 	baseFlags = {
 		attack = true,
@@ -2452,6 +2536,9 @@ skills["FrostBlades"] = {
 		[2] = "(4-9) additional Projectiles",
 		[3] = "+(18-23) to Melee Weapon Range",
 	},
+	effectsQuality = {
+		[1] = "20% increased Projectile Damage",
+	},
 	parts = {
 		{
 			name = "Melee hit",
@@ -2541,6 +2628,9 @@ skills["Grace"] = {
 		[1] = "+(227-4179) to Evasion Rating",
 		[2] = "+(0-29) to radius",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2618,6 +2708,9 @@ skills["VaalGrace"] = {
 		[3] = "+(0-29) to radius",
 		[4] = "Base duration is 6 seconds",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2693,6 +2786,9 @@ skills["Haste"] = {
 		[1] = "+(0-29) to radius",
 		[2] = "(9-20)% increased Attack Speed",
 		[3] = "(4-12)% increased Movement Speed",
+	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -2773,6 +2869,9 @@ skills["VaalHaste"] = {
 		[3] = "(25-34)% increased Attack Speed",
 		[4] = "(10-15)% increased Movement Speed",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2850,6 +2949,9 @@ skills["Hatred"] = {
 		[1] = "Gain (26-41)% of Physical Damage as Extra Cold Damage",
 		[2] = "+(0-29) to radius",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2926,6 +3028,9 @@ skills["HeraldOfIce"] = {
 		[2] = "Damage cannot be Reflected",
 		[3] = "Adds (4-74) to (5-111) Cold Damage to Spells",
 		[4] = "Adds (4-74) to (5-111) Cold Damage to Attacks",
+	},
+	effectsQuality = {
+		[1] = "15% increased Cold Damage",
 	},
 	baseFlags = {
 		cast = true,
@@ -3012,6 +3117,9 @@ skills["IceShot"] = {
 	effects = {
 		[1] = "60% of Physical Damage Converted to Cold Damage",
 		[2] = "Base duration is 1.5 seconds",
+	},
+	effectsQuality = {
+		[1] = "20% increased Cold Damage",
 	},
 	parts = {
 		{
@@ -3102,6 +3210,9 @@ skills["IceTrap"] = {
 		[1] = "Deals (60-1266) to (90-1899) Cold Damage",
 		[2] = "Trap lasts 16 seconds",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		trap = true,
@@ -3187,6 +3298,9 @@ skills["DoubleSlash"] = {
 	effects = {
 		[1] = "+(0-7) to radius",
 		[2] = "25% less Attack Speed",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	parts = {
 		{
@@ -3274,6 +3388,9 @@ skills["LightningArrow"] = {
 	effects = {
 		[1] = "50% of Physical Damage Converted to Lightning Damage",
 		[2] = "Hits up to 3 additional enemies near the target",
+	},
+	effectsQuality = {
+		[1] = "10% chance to Shock enemies",
 	},
 	baseFlags = {
 		attack = true,
@@ -3363,6 +3480,9 @@ skills["LightningStrike"] = {
 		[2] = "50% of Physical Damage Converted to Lightning Damage",
 		[3] = "Projectiles deal 25% less Damage",
 		[4] = "Damage over time caused by Projectiles deals 25% less Damage",
+	},
+	effectsQuality = {
+		[1] = "20% increased Lightning Damage",
 	},
 	parts = {
 		{
@@ -3470,6 +3590,9 @@ skills["VaalLightningStrike"] = {
 		[3] = "Beams deal 50% less Damage",
 		[4] = "Can't be Evaded",
 	},
+	effectsQuality = {
+		[1] = "20% increased Skill Effect Duration",
+	},
 	parts = {
 		{
 			name = "Strike",
@@ -3557,6 +3680,9 @@ skills["MirrorArrow"] = {
 	effects = {
 		[1] = "Minions deal 175% of Damage",
 		[2] = "Base duration is 3 seconds",
+	},
+	effectsQuality = {
+		[1] = "30% increased Arrow Speed",
 	},
 	minionList = {
 		"Clone",
@@ -3646,6 +3772,9 @@ skills["NewPhaseRun"] = {
 		[6] = "Phasing",
 		[7] = "80% reduced Visibility to Enemies",
 	},
+	effectsQuality = {
+		[1] = "10% increased Movement Speed",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -3722,6 +3851,8 @@ skills["PoachersMark"] = {
 	effects = {
 		[1] = "+(0-15) to radius",
 		[2] = "Base duration is (6-11.8) seconds",
+	},
+	effectsQuality = {
 	},
 	baseFlags = {
 		spell = true,
@@ -3803,6 +3934,9 @@ skills["ProjectileWeakness"] = {
 		[1] = "(25-54)% increased Damage taken from Projectiles",
 		[2] = "+(0-15) to radius",
 		[3] = "Base duration is (9-11.9) seconds",
+	},
+	effectsQuality = {
+		[1] = "10% increased Damage taken from Projectiles",
 	},
 	baseFlags = {
 		spell = true,
@@ -3890,6 +4024,9 @@ skills["Puncture"] = {
 		[1] = "Base duration is 8 seconds",
 		[2] = "Causes Bleeding",
 	},
+	effectsQuality = {
+		[1] = "20% increased Skill Effect Duration",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -3968,6 +4105,9 @@ skills["ColdResistAura"] = {
 		[2] = "+(0-29) to radius",
 		[3] = "+(22-51)% to Cold Resistance",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -4044,6 +4184,9 @@ skills["RainOfArrows"] = {
 	},
 	effects = {
 		[1] = "+(0-6) to radius",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	baseFlags = {
 		attack = true,
@@ -4124,6 +4267,9 @@ skills["VaalRainOfArrows"] = {
 		[1] = "+(0-6) to radius",
 		[2] = "Base duration is (3.4-4.85) seconds",
 		[3] = "Can't be Evaded",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	baseFlags = {
 		attack = true,
@@ -4207,6 +4353,9 @@ skills["Reave"] = {
 	effects = {
 		[1] = "+(0-6) to radius",
 		[2] = "50% more Area of Effect for each stage",
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
 	},
 	parts = {
 		{
@@ -4303,6 +4452,9 @@ skills["VaalReave"] = {
 		[2] = "50% more Area of Effect for each stage",
 		[3] = "150% more Attack Speed",
 		[4] = "Can't be Evaded",
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
 	},
 	parts = {
 		{
@@ -4411,6 +4563,9 @@ skills["Riposte"] = {
 		[1] = "Trigger this Skill when you Block",
 		[2] = "You cannot use this Attack directly",
 	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -4487,6 +4642,9 @@ skills["ShrapnelShot"] = {
 	effects = {
 		[1] = "+(0-7) to radius",
 		[2] = "40% of Physical Damage Converted to Lightning Damage",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	parts = {
 		{
@@ -4580,6 +4738,9 @@ skills["SiegeBallista"] = {
 		[2] = "Summons a Totem which uses this Skill",
 		[3] = "50% less Attack Speed",
 	},
+	effectsQuality = {
+		[1] = "20% increased Totem Placement speed",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -4662,6 +4823,9 @@ skills["SmokeMine"] = {
 		[1] = "Mine lasts 16 seconds",
 		[2] = "Base duration is (4-6.9) seconds",
 		[3] = "30% increased Movement Speed",
+	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -4750,6 +4914,9 @@ skills["ThrownWeapon"] = {
 	},
 	effects = {
 	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -4833,6 +5000,9 @@ skills["VaalThrownWeapon"] = {
 	effects = {
 		[1] = "Can't be Evaded",
 	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -4905,6 +5075,9 @@ skills["SplitArrow"] = {
 	},
 	effects = {
 		[1] = "(4-8) additional Arrows",
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
 	},
 	baseFlags = {
 		attack = true,
@@ -4980,6 +5153,10 @@ skills["SummonIceGolem"] = {
 		[2] = "(30-88)% increased Minion Maximum Life",
 		[3] = "Golems Grant (20-35)% increased Critical Strike Chance",
 		[4] = "Golems Grant (20-35)% increased Accuracy",
+	},
+	effectsQuality = {
+		[1] = "20% increased Minion Damage",
+		[2] = "20% increased Minion Maximum Life",
 	},
 	minionList = {
 		"SummonedIceGolem",
@@ -5065,6 +5242,8 @@ skills["TemporalChains"] = {
 		[2] = "Base duration is (5-6.45) seconds",
 		[3] = "40% reduced Effect of Curse against Players",
 	},
+	effectsQuality = {
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -5141,6 +5320,9 @@ skills["TornadoShot"] = {
 	},
 	effects = {
 		[1] = "3 secondary Tornado Shot Projectiles",
+	},
+	effectsQuality = {
+		[1] = "20% increased Projectile Damage",
 	},
 	baseFlags = {
 		attack = true,
@@ -5223,6 +5405,9 @@ skills["ViperStrike"] = {
 		[2] = "Base duration is 4 seconds",
 		[3] = "60% chance to Poison on Hit",
 	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -5302,6 +5487,9 @@ skills["WhirlingBlades"] = {
 		["Dagger"] = true,
 	},
 	effects = {
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
 	},
 	baseFlags = {
 		attack = true,
@@ -5394,6 +5582,9 @@ skills["WildStrike"] = {
 		[1] = "2 additional Projectiles",
 		[2] = "Chains +(4-8) Times",
 		[3] = "100% of Physical Damage Converted to Fire, Cold or Lightning Damage",
+	},
+	effectsQuality = {
+		[1] = "20% increased Elemental Damage",
 	},
 	parts = {
 		{

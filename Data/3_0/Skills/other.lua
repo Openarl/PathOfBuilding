@@ -14,6 +14,8 @@ skills["Melee"] = {
 	skillTypes = { [1] = true, [48] = true, [6] = true, [3] = true, [25] = true, [28] = true, [24] = true, },
 	effects = {
 	},
+	effectsQuality = {
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -48,6 +50,9 @@ skills["GemDetonateMines"] = {
 	description = "Detonates all the Remote Mines you have placed.",
 	skillTypes = { [2] = true, [17] = true, [18] = true, [36] = true, },
 	effects = {
+	},
+	effectsQuality = {
+		[1] = "100% increased Cast Speed",
 	},
 	baseFlags = {
 		spell = true,
@@ -91,6 +96,9 @@ skills["Portal"] = {
 	skillTypes = { [2] = true, [17] = true, [18] = true, [19] = true, [36] = true, [27] = true, },
 	effects = {
 	},
+	effectsQuality = {
+		[1] = "60% increased Cast Speed",
+	},
 	baseFlags = {
 		spell = true,
 	},
@@ -128,6 +136,8 @@ skills["SupportUniqueMjolnerLightningSpellsCastOnHit"] = {
 	effects = {
 		[1] = "Supported Spells deal 100% increased Spell Damage",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseMods = {
 		skill("cooldown", 0.25), 
@@ -152,6 +162,8 @@ skills["SupportUniqueCosprisMaliceColdSpellsCastOnMeleeCriticalStrike"] = {
 	addSkillTypes = { },
 	excludeSkillTypes = { 37, 41, 30, 44, 61, },
 	effects = {
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseMods = {
@@ -179,6 +191,8 @@ skills["RepeatingShockwave"] = {
 		[3] = "You cannot Cast this Spell directly",
 		[4] = "This Skill cannot Knock Enemies Back",
 		[5] = "This Spell is Triggered when Equipped",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -218,6 +232,8 @@ skills["TriggeredBoneNova"] = {
 		[3] = "Trigger this Skill when you kill a Bleeding Enemy",
 		[4] = "Cannot cause Bleeding",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -255,6 +271,8 @@ skills["TriggeredConsecrate"] = {
 		[3] = "You cannot Cast this Spell directly",
 		[4] = "Trigger this Spell when you Crit an Enemy",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -288,6 +306,8 @@ skills["TriggeredSummonLesserShrine"] = {
 		[1] = "Base duration is 10 seconds",
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "Trigger this Spell on Kill",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -323,6 +343,9 @@ skills["TouchOfGod"] = {
 		[1] = "50% of Physical Damage Converted to Lightning Damage",
 		[2] = "20% chance to Shock enemies",
 		[3] = "30% less Attack Speed",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area Damage",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -388,6 +411,8 @@ skills["Envy"] = {
 		[1] = "Adds 58 to 81 Chaos Damage to Attacks",
 		[2] = "Adds 52 to 69 Chaos Damage to Spells",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -426,6 +451,8 @@ skills["FireBurstOnHit"] = {
 		[1] = "Deals (7-1855) to (11-2782) Fire Damage",
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "10% chance to Trigger this Spell when you Hit",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -492,6 +519,8 @@ skills["VaalAuraElementalDamageHealing"] = {
 		[1] = "Taking Elemental Damage instead heals you",
 		[2] = "Base duration is 6 seconds",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -526,6 +555,8 @@ skills["IcestormUniqueStaff12"] = {
 		[2] = "Base duration is 1.5 seconds",
 		[3] = "Deals 1 to 3 base Cold Damage per 10 Intelligence",
 		[4] = "One impact every 0.1 seconds",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -571,6 +602,8 @@ skills["MerveilWarp"] = {
 	effects = {
 		[1] = "Base duration is 1.5 seconds",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -604,6 +637,8 @@ skills["LightningSpell"] = {
 		[1] = "Deals (10-1248) to (29-3743) Lightning Damage",
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "Trigger this Spell when you Crit an Enemy",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -672,6 +707,8 @@ skills["UniqueAnimateWeapon"] = {
 		[3] = "30% increased Minion Movement Speed",
 		[4] = "100% chance to Trigger this Spell when you Rampage",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	minionList = {
 		"UniqueAnimatedWeapon",
@@ -714,6 +751,8 @@ skills["TriggeredMoltenStrike"] = {
 		[1] = "2 additional Projectiles",
 		[2] = "20% chance to Trigger this Skill on Melee Hit",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -752,6 +791,8 @@ skills["TriggeredSummonSpider"] = {
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "20% chance to Trigger this Spell on Kill",
 		[4] = "Minions have the same Level as the Corpse",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	minionList = {
@@ -793,6 +834,8 @@ skills["TriggeredShockedGround"] = {
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "Trigger this Spell when you're Hit",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -827,6 +870,8 @@ skills["SummonEssenceSpirits"] = {
 	effects = {
 		[1] = "You cannot Cast this Spell directly",
 		[2] = "This Spell is Triggered when Equipped",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	minionList = {
@@ -894,6 +939,8 @@ skills["SummonRigwaldsPack"] = {
 		[1] = "Base duration is 30 seconds",
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "10% chance to Trigger this Spell on Kill",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	minionList = {

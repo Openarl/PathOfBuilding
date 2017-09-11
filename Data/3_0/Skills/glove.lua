@@ -20,6 +20,8 @@ skills["EnchantmentOfBladesOnHit"] = {
 		[5] = "Trigger this Spell when you Hit",
 		[6] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -61,6 +63,8 @@ skills["EnchantmentOfBladesOnHit2"] = {
 		[4] = "You cannot Cast this Spell directly",
 		[5] = "Trigger this Spell when you Hit",
 		[6] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -104,6 +108,8 @@ skills["EnchantmentOfBladesOnHit3"] = {
 		[5] = "Trigger this Spell when you Hit",
 		[6] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -146,6 +152,8 @@ skills["EnchantmentOfBladesOnHit4"] = {
 		[5] = "Trigger this Spell when you Hit",
 		[6] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -186,6 +194,8 @@ skills["EnchantmentOfFlamesOnHit"] = {
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -222,6 +232,8 @@ skills["EnchantmentOfFlamesOnHit2"] = {
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -260,6 +272,8 @@ skills["EnchantmentOfFlamesOnHit3"] = {
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -297,6 +311,8 @@ skills["EnchantmentOfFlamesOnHit4"] = {
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -332,6 +348,8 @@ skills["EnchantmentOfForceOnHit"] = {
 		[1] = "Trigger this Skill when you Hit",
 		[2] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -364,6 +382,8 @@ skills["EnchantmentOfForceOnHit2"] = {
 	effects = {
 		[1] = "Trigger this Skill when you Hit",
 		[2] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -398,6 +418,8 @@ skills["EnchantmentOfForceOnHit3"] = {
 		[1] = "Trigger this Skill when you Hit",
 		[2] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -430,6 +452,8 @@ skills["EnchantmentOfForceOnHit4"] = {
 	effects = {
 		[1] = "Trigger this Skill when you Hit",
 		[2] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -466,6 +490,8 @@ skills["EnchantmentOfFrostOnKill"] = {
 		[3] = "You cannot Cast this Spell directly",
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -508,6 +534,8 @@ skills["EnchantmentOfFrostOnKill2"] = {
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -549,6 +577,8 @@ skills["EnchantmentOfFrostOnKill3"] = {
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -589,6 +619,8 @@ skills["EnchantmentOfFrostOnKill4"] = {
 		[3] = "You cannot Cast this Spell directly",
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -645,6 +677,8 @@ skills["EnchantmentOfFuryOnHit"] = {
 		[3] = "Fires Projectiles at all nearby Enemies",
 		[4] = "Trigger this Skill when you Hit",
 		[5] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -706,6 +740,8 @@ skills["EnchantmentOfFuryOnHit2"] = {
 		[4] = "Trigger this Skill when you Hit",
 		[5] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -765,6 +801,8 @@ skills["EnchantmentOfFuryOnHit3"] = {
 		[3] = "Fires Projectiles at all nearby Enemies",
 		[4] = "Trigger this Skill when you Hit",
 		[5] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -826,6 +864,8 @@ skills["EnchantmentOfFuryOnHit4"] = {
 		[4] = "Trigger this Skill when you Hit",
 		[5] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -871,6 +911,8 @@ skills["EnchantmentOfInfernoOnKill"] = {
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -912,6 +954,8 @@ skills["EnchantmentOfInfernoOnKill2"] = {
 		[3] = "One impact every 0.1 seconds",
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -955,6 +999,8 @@ skills["EnchantmentOfInfernoOnKill3"] = {
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -996,6 +1042,8 @@ skills["EnchantmentOfInfernoOnKill4"] = {
 		[3] = "One impact every 0.1 seconds",
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -1054,6 +1102,8 @@ skills["EnchantmentOfIreWhenHit"] = {
 		[4] = "You cannot use this Attack directly",
 		[5] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1110,6 +1160,8 @@ skills["EnchantmentOfIreWhenHit2"] = {
 		[3] = "Trigger this Skill when Hit",
 		[4] = "You cannot use this Attack directly",
 		[5] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -1168,6 +1220,8 @@ skills["EnchantmentOfIreWhenHit3"] = {
 		[4] = "You cannot use this Attack directly",
 		[5] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1225,6 +1279,8 @@ skills["EnchantmentOfIreWhenHit4"] = {
 		[4] = "You cannot use this Attack directly",
 		[5] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1266,6 +1322,8 @@ skills["EnchantmentOfLightWhenCrit"] = {
 		[3] = "Trigger this Skill when Critically Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1303,6 +1361,8 @@ skills["EnchantmentOfLightWhenCrit2"] = {
 		[2] = "6% of maximum Life regenerated per second",
 		[3] = "Trigger this Skill when Critically Hit",
 		[4] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -1342,6 +1402,8 @@ skills["EnchantmentOfLightWhenCrit3"] = {
 		[3] = "Trigger this Skill when Critically Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1379,6 +1441,8 @@ skills["EnchantmentOfLightWhenCrit4"] = {
 		[2] = "6% of maximum Life regenerated per second",
 		[3] = "Trigger this Skill when Critically Hit",
 		[4] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -1419,6 +1483,8 @@ skills["EnchantmentOfReflectionWhenHit"] = {
 		[3] = "80% increased Minion Damage",
 		[4] = "150% increased Minion Maximum Life",
 		[5] = "Trigger this Spell when you're Hit",
+	},
+	effectsQuality = {
 	},
 	minionList = {
 		"Clone",
@@ -1467,6 +1533,8 @@ skills["EnchantmentOfReflectionWhenHit2"] = {
 		[4] = "150% increased Minion Maximum Life",
 		[5] = "Trigger this Spell when you're Hit",
 	},
+	effectsQuality = {
+	},
 	minionList = {
 		"Clone",
 	},
@@ -1514,6 +1582,8 @@ skills["EnchantmentOfReflectionWhenHit3"] = {
 		[4] = "150% increased Minion Maximum Life",
 		[5] = "Trigger this Spell when you're Hit",
 	},
+	effectsQuality = {
+	},
 	minionList = {
 		"Clone",
 	},
@@ -1560,6 +1630,8 @@ skills["EnchantmentOfReflectionWhenHit4"] = {
 		[3] = "140% increased Minion Damage",
 		[4] = "150% increased Minion Maximum Life",
 		[5] = "Trigger this Spell when you're Hit",
+	},
+	effectsQuality = {
 	},
 	minionList = {
 		"Clone",
@@ -1621,6 +1693,8 @@ skills["EnchantmentOfSpiteWhenHit"] = {
 		[3] = "Trigger this Skill when Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1679,6 +1753,8 @@ skills["EnchantmentOfSpiteWhenHit2"] = {
 		[2] = "9 additional Projectiles",
 		[3] = "Trigger this Skill when Hit",
 		[4] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -1739,6 +1815,8 @@ skills["EnchantmentOfSpiteWhenHit3"] = {
 		[3] = "Trigger this Skill when Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1798,6 +1876,8 @@ skills["EnchantmentOfSpiteWhenHit4"] = {
 		[3] = "Trigger this Skill when Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1842,6 +1922,8 @@ skills["EnchantmentOfTempestOnHit"] = {
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1881,6 +1963,8 @@ skills["EnchantmentOfTempestOnHit2"] = {
 		[2] = "Base duration is 2 seconds",
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -1922,6 +2006,8 @@ skills["EnchantmentOfTempestOnHit3"] = {
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1962,6 +2048,8 @@ skills["EnchantmentOfTempestOnHit4"] = {
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1999,6 +2087,8 @@ skills["EnchantmentOfTheGraveOnKill"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
 	effects = {
 		[1] = "Base duration is 5 seconds",
+	},
+	effectsQuality = {
 	},
 	minionList = {
 		"IcyRagingSpirit",
@@ -2038,6 +2128,8 @@ skills["EnchantmentOfTheGraveOnKill2"] = {
 	effects = {
 		[1] = "Base duration is 5 seconds",
 	},
+	effectsQuality = {
+	},
 	minionList = {
 		"IcyRagingSpirit",
 	},
@@ -2076,6 +2168,8 @@ skills["EnchantmentOfTheGraveOnKill3"] = {
 	effects = {
 		[1] = "Base duration is 5 seconds",
 	},
+	effectsQuality = {
+	},
 	minionList = {
 		"IcyRagingSpirit",
 	},
@@ -2113,6 +2207,8 @@ skills["EnchantmentOfTheGraveOnKill4"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
 	effects = {
 		[1] = "Base duration is 5 seconds",
+	},
+	effectsQuality = {
 	},
 	minionList = {
 		"IcyRagingSpirit",
@@ -2153,6 +2249,8 @@ skills["EnchantmentOfThunderOnKill"] = {
 		[2] = "Trigger this Spell on Kill",
 		[3] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -2188,6 +2286,8 @@ skills["EnchantmentOfThunderOnKill2"] = {
 		[1] = "Deals 330 to 506 Lightning Damage",
 		[2] = "Trigger this Spell on Kill",
 		[3] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -2225,6 +2325,8 @@ skills["EnchantmentOfThunderOnKill3"] = {
 		[2] = "Trigger this Spell on Kill",
 		[3] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -2260,6 +2362,8 @@ skills["EnchantmentOfThunderOnKill4"] = {
 		[1] = "Deals 1519 to 2405 Lightning Damage",
 		[2] = "Trigger this Spell on Kill",
 		[3] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -2311,6 +2415,8 @@ skills["EnchantmentOfWarOnKill"] = {
 		[1] = "Minions deal 150% of Damage",
 		[2] = "Base duration is 10 seconds",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -2357,6 +2463,8 @@ skills["EnchantmentOfWarOnKill2"] = {
 	effects = {
 		[1] = "Minions deal 200% of Damage",
 		[2] = "Base duration is 10 seconds",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -2405,6 +2513,8 @@ skills["EnchantmentOfWarOnKill3"] = {
 		[1] = "Minions deal 250% of Damage",
 		[2] = "Base duration is 10 seconds",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -2452,6 +2562,8 @@ skills["EnchantmentOfWarOnKill4"] = {
 		[1] = "Minions deal 300% of Damage",
 		[2] = "Base duration is 10 seconds",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -2484,6 +2596,8 @@ skills["EnchantmentOfWinterWhenHit"] = {
 		[1] = "Deals 48 to 76 Cold Damage",
 		[2] = "Trigger this Spell when you're Hit",
 		[3] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {
@@ -2523,6 +2637,8 @@ skills["EnchantmentOfWinterWhenHit2"] = {
 		[2] = "Trigger this Spell when you're Hit",
 		[3] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -2561,6 +2677,8 @@ skills["EnchantmentOfWinterWhenHit3"] = {
 		[2] = "Trigger this Spell when you're Hit",
 		[3] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -2598,6 +2716,8 @@ skills["EnchantmentOfWinterWhenHit4"] = {
 		[1] = "Deals 1020 to 1615 Cold Damage",
 		[2] = "Trigger this Spell when you're Hit",
 		[3] = "Damage cannot be Reflected",
+	},
+	effectsQuality = {
 	},
 	fromItem = true,
 	baseFlags = {

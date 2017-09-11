@@ -25,6 +25,9 @@ skills["SupportAddedColdDamage"] = {
 	effects = {
 		[1] = "Adds (4-444) to (6-666) Cold Damage",
 	},
+	effectsQuality = {
+		[1] = "10% increased Cold Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 	},
@@ -88,6 +91,9 @@ skills["SupportAdditionalAccuracy"] = {
 	effects = {
 		[1] = "(74-1594) additional Accuracy Rating",
 	},
+	effectsQuality = {
+		[1] = "20% increased Accuracy Rating",
+	},
 	baseMods = {
 	},
 	qualityMods = {
@@ -147,6 +153,9 @@ skills["SupportBlind"] = {
 	excludeSkillTypes = { },
 	effects = {
 		[1] = "10% chance to Blind enemies on hit",
+	},
+	effectsQuality = {
+		[1] = "20% increased Blinding duration",
 	},
 	baseMods = {
 		--"global_chance_to_blind_on_hit_%" = 10
@@ -209,6 +218,9 @@ skills["SupportBlockReduction"] = {
 	effects = {
 		[1] = "Enemy Block Chance reduced by (20-35)% against this Skill",
 		[2] = "Enemy Dodge Chance reduced by (20-34)% against this Skill",
+	},
+	effectsQuality = {
+		[1] = "Enemy Block Chance reduced by 5% against this Skill",
 	},
 	baseMods = {
 	},
@@ -274,6 +286,9 @@ skills["SupportCastOnCrit"] = {
 		[1] = "Supported Skills deal (20-49)% more Spell Damage",
 		[2] = "Trigger a linked Spell when you Crit an Enemy",
 		[3] = "You cannot Cast this Spell directly",
+	},
+	effectsQuality = {
+		[1] = "20% increased Critical Strike Chance",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
@@ -343,6 +358,9 @@ skills["SupportCastOnDeath"] = {
 		[1] = "You cannot Cast this Spell directly",
 		[2] = "100% chance to Trigger this Spell on Death",
 	},
+	effectsQuality = {
+		[1] = "60% increased Area of Effect while Dead",
+	},
 	baseMods = {
 		--"cast_on_death_%" = 100
 		skill("triggered", true, { type = "SkillType", skillType = SkillType.TriggerableSpell }), --"spell_uncastable_if_triggerable" = ?
@@ -410,6 +428,9 @@ skills["SupportChain"] = {
 		[1] = "Supported Skills deal (21-50)% less Damage with Hits",
 		[2] = "Chains +2 Times",
 	},
+	effectsQuality = {
+		[1] = "20% increased Projectile Speed",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 50), 
 		mod("ChainCount", "BASE", 2), --"number_of_additional_projectiles_in_chain" = 2
@@ -471,6 +492,9 @@ skills["SupportChanceToFlee"] = {
 	excludeSkillTypes = { },
 	effects = {
 		[1] = "(25-54)% chance to cause Monsters to Flee when Hit",
+	},
+	effectsQuality = {
+		[1] = "20% chance to cause Monsters to Flee when Hit",
 	},
 	baseMods = {
 	},
@@ -535,6 +559,9 @@ skills["SupportClusterTrap"] = {
 		[2] = "Can have up to 5 additional Traps placed at a time",
 		[3] = "Throw 3 additional Traps",
 		[4] = "Traps are thrown randomly around you",
+	},
+	effectsQuality = {
+		[1] = "10% increased Trap Damage",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 50), 
@@ -601,6 +628,9 @@ skills["SupportColdPenetration"] = {
 	effects = {
 		[1] = "Penetrates (18-47)% Cold Resistance",
 	},
+	effectsQuality = {
+		[1] = "10% increased Cold Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -661,6 +691,10 @@ skills["SupportCullingStrike"] = {
 	excludeSkillTypes = { },
 	effects = {
 		[1] = "Culling Strike",
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+		[2] = "10% increased Cast Speed",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
@@ -728,6 +762,9 @@ skills["SupportDeadlyAilments"] = {
 		[1] = "Supported Skills deal 20% less Damage with Hits",
 		[2] = "(40-69)% more Damage with Ailments",
 	},
+	effectsQuality = {
+		[1] = "10% increased Damage over Time",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 		mod("Damage", "MORE", -20, ModFlag.Hit), --"support_better_ailments_hit_damage_+%_final" = -20
@@ -791,6 +828,9 @@ skills["SupportAdditionalQuality"] = {
 	effects = {
 		[1] = "+(0-72)% to Quality of Supported Active Skill Gems",
 	},
+	effectsQuality = {
+		[1] = "This Gem gains 100% increased Experience",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 15), 
 	},
@@ -832,6 +872,9 @@ skills["SupportFasterAttack"] = {
 	excludeSkillTypes = { },
 	effects = {
 		[1] = "(25-54)% increased Attack Speed",
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 15), 
@@ -895,6 +938,10 @@ skills["SupportFasterProjectiles"] = {
 	effects = {
 		[1] = "(20-34)% increased Projectile Damage",
 		[2] = "(50-79)% increased Projectile Speed",
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+		[2] = "10% increased Cast Speed",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
@@ -961,6 +1008,9 @@ skills["SupportFork"] = {
 		[1] = "Supported Skills deal (1-30)% less Projectile Damage",
 		[2] = "Projectiles Fork",
 	},
+	effectsQuality = {
+		[1] = "10% increased Projectile Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 		--"projectiles_fork" = ?
@@ -1024,6 +1074,10 @@ skills["SupportGreaterMultipleProjectiles"] = {
 	effects = {
 		[1] = "Supported Skills deal (21-35)% less Projectile Damage",
 		[2] = "4 additional Projectiles",
+	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+		[2] = "10% increased Cast Speed",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 65), 
@@ -1092,6 +1146,9 @@ skills["SupportDamageAgainstChilled"] = {
 		[2] = "10% chance to Freeze Enemies which are Chilled",
 		[3] = "(20-49)% more Damage with Hits and Ailments against Chilled Enemies",
 	},
+	effectsQuality = {
+		[1] = "30% increased Chill Duration on enemies",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
 		mod("EnemyFreezeChance", "BASE", 10, ModFlag.Hit, 0, { type = "EnemyCondition", var = "Chilled" }), --"additional_chance_to_freeze_chilled_enemies_%" = 10
@@ -1158,6 +1215,9 @@ skills["SupportFrenzyChargeOnSlayingFrozenEnemy"] = {
 		[2] = "Adds (8-181) to (12-271) Cold Damage",
 		[3] = "15% chance to Freeze enemies",
 		[4] = "(2-40) to (3-60) Cold Damage per Frenzy Charge",
+	},
+	effectsQuality = {
+		[1] = "20% increased Damage with Hits against Frozen Enemies",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
@@ -1227,6 +1287,10 @@ skills["SupportLesserMultipleProjectiles"] = {
 		[1] = "Supported Skills deal (11-25)% less Projectile Damage",
 		[2] = "2 additional Projectiles",
 	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+		[2] = "10% increased Cast Speed",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 		mod("ProjectileCount", "BASE", 2), --"number_of_additional_projectiles" = 2
@@ -1293,6 +1357,9 @@ skills["SupportLesserPoison"] = {
 		[1] = "Adds (1-96) to (2-144) Chaos Damage",
 		[2] = "40% chance to Poison on Hit",
 	},
+	effectsQuality = {
+		[1] = "10% increased Damage with Poison",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		mod("PoisonChance", "BASE", 40), --"base_chance_to_poison_on_hit_%" = 40
@@ -1355,6 +1422,9 @@ skills["SupportManaLeech"] = {
 	excludeSkillTypes = { },
 	effects = {
 		[1] = "2% of Damage Leeched as Mana",
+	},
+	effectsQuality = {
+		[1] = "10% increased Mana Leech rate",
 	},
 	baseMods = {
 		mod("DamageManaLeech", "BASE", 2), --"mana_leech_from_any_damage_permyriad" = 200
@@ -1420,6 +1490,9 @@ skills["SupportMultiTrap"] = {
 		[2] = "Can have up to 3 additional Traps placed at a time",
 		[3] = "Throw 2 additional Traps",
 	},
+	effectsQuality = {
+		[1] = "20% increased Trap Trigger Area of Effect",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 60), 
 		--"number_of_additional_traps_to_throw" = 2
@@ -1483,6 +1556,9 @@ skills["SupportOnslaught"] = {
 	effects = {
 		[1] = "(25-54)% chance to grant Onslaught for 8 seconds on",
 		[2] = "dealing a Killing Blow",
+	},
+	effectsQuality = {
+		[1] = "5% increased Attack and Cast Speed",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
@@ -1550,6 +1626,9 @@ skills["SupportPhysicalProjectileAttackDamage"] = {
 		[2] = "Supported Skills deal (30-59)% more Physical Projectile Attack Damage",
 		[3] = "10% less Projectile Attack Speed",
 	},
+	effectsQuality = {
+		[1] = "10% increased Physical Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
 		mod("Speed", "MORE", -10, bit.bor(ModFlag.Attack, ModFlag.Projectile)), --"support_projectile_attack_speed_+%_final" = -10
@@ -1613,6 +1692,9 @@ skills["SupportPierce"] = {
 	excludeSkillTypes = { },
 	effects = {
 		[1] = "Projectiles from Supported Skills Pierce (2-5) additional Targets",
+	},
+	effectsQuality = {
+		[1] = "10% increased Projectile Damage",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
@@ -1678,6 +1760,9 @@ skills["SupportPointBlank"] = {
 	effects = {
 		[1] = "Point Blank",
 	},
+	effectsQuality = {
+		[1] = "10% increased Projectile Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
 		flag("PointBlank"), --"keystone_point_blank" = 1
@@ -1740,6 +1825,9 @@ skills["SupportPoison"] = {
 	excludeSkillTypes = { },
 	effects = {
 		[1] = "60% chance to Poison on Hit",
+	},
+	effectsQuality = {
+		[1] = "10% increased Damage with Poison",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 35), 
@@ -1805,6 +1893,9 @@ skills["SupportRapidDecay"] = {
 		[1] = "Supported Skills deal (25-54)% more Damage over Time",
 		[2] = "15% reduced Duration of Damaging Ailments",
 	},
+	effectsQuality = {
+		[1] = "10% increased Damage over Time",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 25), 
 		mod("SkillAndDamagingAilmentDuration", "INC", -15), --"skill_effect_and_damaging_ailment_duration_+%" = -15
@@ -1868,6 +1959,9 @@ skills["SupportSlowerProjectiles"] = {
 	effects = {
 		[1] = "Supported Skills have (30-59)% less Projectile Speed",
 		[2] = "Supported Skills deal (20-34)% more Projectile Damage",
+	},
+	effectsQuality = {
+		[1] = "10% increased Projectile Damage",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
@@ -1934,6 +2028,9 @@ skills["SupportTrap"] = {
 		[1] = "Supported Attack Skills cannot be used with Melee Weapons",
 		[2] = "Trap lasts 16 seconds",
 		[3] = "(20-49)% more Trap Damage",
+	},
+	effectsQuality = {
+		[1] = "10% increased Trap Throwing Speed",
 	},
 	addFlags = {
 		trap = true,
@@ -2009,6 +2106,9 @@ skills["SupportTrapCooldown"] = {
 	effects = {
 		[1] = "(30-59)% increased Cooldown Recovery Speed for throwing Traps",
 	},
+	effectsQuality = {
+		[1] = "10% increased Trap Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 	},
@@ -2074,6 +2174,9 @@ skills["SupportTrapAndMineDamage"] = {
 		[2] = "10% reduced Trap Throwing Speed",
 		[3] = "10% reduced Mine Laying Speed",
 	},
+	effectsQuality = {
+		[1] = "10% increased Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 		mod("TrapThrowingSpeed", "INC", -10), --"trap_throwing_speed_+%" = -10
@@ -2137,6 +2240,9 @@ skills["SupportDebilitate"] = {
 	effects = {
 		[1] = "Supported Skills deal (30-59)% more Damage with Poison",
 		[2] = "5% more Damage with Hits for each Poison on the Enemy, up to (6-11)",
+	},
+	effectsQuality = {
+		[1] = "20% increased Damage with Poison",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
@@ -2202,6 +2308,9 @@ skills["SupportVoidManipulation"] = {
 	effects = {
 		[1] = "Supported Skills deal (20-49)% more Chaos Damage",
 		[2] = "25% reduced Elemental Damage",
+	},
+	effectsQuality = {
+		[1] = "10% increased Chaos Damage",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 

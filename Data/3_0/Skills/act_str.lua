@@ -30,6 +30,9 @@ skills["AbyssalCry"] = {
 		[4] = "(0.6-1)% reduced Movement Speed per Nearby Enemy",
 		[5] = "Explosion deals Chaos Damage equal to 8% of the Monster's maximum Life",
 	},
+	effectsQuality = {
+		[1] = "20% increased Skill Effect Duration",
+	},
 	baseFlags = {
 		warcry = true,
 		area = true,
@@ -126,6 +129,9 @@ skills["TotemMelee"] = {
 		[3] = "(10-25)% more Attack Speed while Totem is Active",
 		[4] = "50% increased Totem Placement speed",
 		[5] = "+16 to Melee range",
+	},
+	effectsQuality = {
+		[1] = "20% increased Totem Damage",
 	},
 	baseFlags = {
 		attack = true,
@@ -231,6 +237,9 @@ skills["AncestorTotemSlam"] = {
 		[5] = "50% increased Totem Placement speed",
 		[6] = "+10 to Melee range",
 	},
+	effectsQuality = {
+		[1] = "20% increased Totem Damage",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -319,6 +328,9 @@ skills["Anger"] = {
 		[2] = "Adds (10-136) to (16-218) Fire Damage to Spells",
 		[3] = "+(0-29) to radius",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -395,6 +407,9 @@ skills["AnimateArmour"] = {
 	effects = {
 		[1] = "Adds (22-72) to (34-108) Physical Damage to Attacks",
 		[2] = "Can use Items requiring up to level (33-100)",
+	},
+	effectsQuality = {
+		[1] = "40% increased Movement Speed",
 	},
 	minionHasItemSet = true,
 	minionUses = {
@@ -490,6 +505,9 @@ skills["Cleave"] = {
 		[1] = "+(0-10) to radius",
 		[2] = "When Dual Wielding, Deals 60% Damage from each Weapon combined",
 	},
+	effectsQuality = {
+		[1] = "10% increased Attack Speed",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -567,6 +585,9 @@ skills["DecoyTotem"] = {
 		[1] = "Totem lasts 8 seconds",
 		[2] = "Summons a Totem which uses this Skill",
 		[3] = "Totems Summoned by this Skill cannot Evade",
+	},
+	effectsQuality = {
+		[1] = "20% increased totem life",
 	},
 	baseFlags = {
 		spell = true,
@@ -647,6 +668,9 @@ skills["Determination"] = {
 	effects = {
 		[1] = "+(0-29) to radius",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -722,6 +746,9 @@ skills["DevouringTotem"] = {
 		[2] = "Summons a Totem which uses this Skill",
 		[3] = "Leeches (30-652) Life to you for each corpse consumed",
 		[4] = "Leeches (9-96) Mana to you for each corpse consumed",
+	},
+	effectsQuality = {
+		[1] = "20% increased totem life",
 	},
 	baseFlags = {
 		spell = true,
@@ -815,6 +842,9 @@ skills["DominatingBlow"] = {
 		[1] = "Minions deal 65% of Damage",
 		[2] = "Base duration is 20 seconds",
 	},
+	effectsQuality = {
+		[1] = "10% increased Damage",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -896,6 +926,9 @@ skills["Earthquake"] = {
 	effects = {
 		[1] = "Base duration is 1.5 seconds",
 		[2] = "Aftershock deals 50% more Damage",
+	},
+	effectsQuality = {
+		[1] = "20% increased Physical Damage",
 	},
 	parts = {
 		{
@@ -983,6 +1016,9 @@ skills["EnduringCry"] = {
 		[2] = "(8-46) Endurance Charges granted per one hundred nearby enemies",
 		[3] = "(48-614) Life regenerated per second",
 	},
+	effectsQuality = {
+		[1] = "60% increased Area of Effect",
+	},
 	baseFlags = {
 		warcry = true,
 		area = true,
@@ -1061,6 +1097,9 @@ skills["FlameTotem"] = {
 		[1] = "Deals (1-335) to (2-502) Fire Damage",
 		[2] = "Totem lasts 8 seconds",
 		[3] = "Summons a Totem which uses this Skill",
+	},
+	effectsQuality = {
+		[1] = "20% increased totem life",
 	},
 	baseFlags = {
 		spell = true,
@@ -1152,6 +1191,10 @@ skills["GlacialHammer"] = {
 		[3] = "35% increased Chill Duration on enemies",
 		[4] = "(10-39)% increased Effect of Chill",
 	},
+	effectsQuality = {
+		[1] = "20% increased Freeze Duration on enemies",
+		[2] = "40% increased Chill Duration on enemies",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1238,6 +1281,10 @@ skills["VaalGlacialHammer"] = {
 		[3] = "25% chance to Freeze enemies",
 		[4] = "35% increased Chill Duration on enemies",
 	},
+	effectsQuality = {
+		[1] = "20% increased Freeze Duration on enemies",
+		[2] = "40% increased Chill Duration on enemies",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1320,6 +1367,9 @@ skills["GroundSlam"] = {
 	effects = {
 		[1] = "+(0-10) to radius",
 		[2] = "25% reduced Enemy Stun Threshold",
+	},
+	effectsQuality = {
+		[1] = "30% increased Stun Duration on enemies",
 	},
 	baseFlags = {
 		attack = true,
@@ -1404,6 +1454,9 @@ skills["VaalGroundSlam"] = {
 		[3] = "100% increased Knockback Distance",
 		[4] = "Stuns Enemies",
 		[5] = "Can't be Evaded",
+	},
+	effectsQuality = {
+		[1] = "30% increased Stun Duration on enemies",
 	},
 	baseFlags = {
 		attack = true,
@@ -1492,6 +1545,9 @@ skills["HeavyStrike"] = {
 		[1] = "Knocks Enemies Back on Hit",
 		[2] = "25% reduced Enemy Stun Threshold",
 	},
+	effectsQuality = {
+		[1] = "20% increased Stun Duration on enemies",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1564,6 +1620,9 @@ skills["HeraldOfAsh"] = {
 	effects = {
 		[1] = "Base duration is 4 seconds",
 		[2] = "Gain 15% of your Physical Damage as Extra Fire Damage",
+	},
+	effectsQuality = {
+		[1] = "15% increased Fire Damage",
 	},
 	baseFlags = {
 		spell = true,
@@ -1654,6 +1713,9 @@ skills["IceCrash"] = {
 		[3] = "Second Stage deals 10% less Damage",
 		[4] = "Third Stage deals 20% less Damage",
 	},
+	effectsQuality = {
+		[1] = "20% increased Cold Damage",
+	},
 	parts = {
 		{
 			name = "First Hit",
@@ -1741,6 +1803,9 @@ skills["ImmortalCall"] = {
 		[1] = "Base duration is 0.4 seconds",
 		[2] = "(100-187)% increased Buff Duration per Endurance Charge",
 	},
+	effectsQuality = {
+		[1] = "40% increased Cast Speed",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -1811,6 +1876,9 @@ skills["VaalImmortalCall"] = {
 	effects = {
 		[1] = "Base duration is 0.4 seconds",
 		[2] = "(100-187)% increased Buff Duration per Endurance Charge",
+	},
+	effectsQuality = {
+		[1] = "40% increased Cast Speed",
 	},
 	baseFlags = {
 		spell = true,
@@ -1898,6 +1966,9 @@ skills["InfernalBlow"] = {
 		[2] = "Base duration is 0.5 seconds",
 		[3] = "Explosion deals base Fire Damage equal to 10% of the corpse's maximum Life",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1984,6 +2055,9 @@ skills["LeapSlam"] = {
 	effects = {
 		[1] = "20% chance to Knock Enemies Back on hit",
 	},
+	effectsQuality = {
+		[1] = "10% chance to Knock Enemies Back on hit",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -2061,6 +2135,9 @@ skills["MoltenShell"] = {
 		[2] = "Base duration is 10 seconds",
 		[3] = "Shields break after (26-3958) total Damage is prevented",
 		[4] = "(17-2474) additional Armour",
+	},
+	effectsQuality = {
+		[1] = "20% chance to Ignite enemies",
 	},
 	baseFlags = {
 		spell = true,
@@ -2145,6 +2222,9 @@ skills["VaalMoltenShell"] = {
 		[1] = "Deals (9-1895) to (14-2843) Fire Damage",
 		[2] = "Base duration is 5 seconds",
 		[3] = "(17-2474) additional Armour",
+	},
+	effectsQuality = {
+		[1] = "20% chance to Ignite enemies",
 	},
 	baseFlags = {
 		spell = true,
@@ -2243,6 +2323,9 @@ skills["MoltenStrike"] = {
 		[3] = "Projectiles deal 40% less Damage",
 		[4] = "Damage over time caused by Projectiles deals 40% less Damage",
 	},
+	effectsQuality = {
+		[1] = "20% increased Fire Damage",
+	},
 	parts = {
 		{
 			name = "Melee Hit",
@@ -2338,6 +2421,9 @@ skills["Punishment"] = {
 		[4] = "Cursed enemies grant (10-24)% increased Attack Speed on Melee hit",
 		[5] = "Buff is applied for a Base Duration of 4 seconds",
 	},
+	effectsQuality = {
+		[1] = "Cursed enemies grant 5% increased Attack Speed on Melee hit",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -2416,6 +2502,9 @@ skills["FireResistAura"] = {
 		[2] = "+(22-51)% to Fire Resistance",
 		[3] = "+(0-29) to radius",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2492,6 +2581,9 @@ skills["RallyingCry"] = {
 		[2] = "(140-198)% increased Damage per one hundred nearby Enemies",
 		[3] = "(1.8-22) Mana Regenerated per second",
 		[4] = "(10-20)% increased Damage",
+	},
+	effectsQuality = {
+		[1] = "30% increased Skill Effect Duration",
 	},
 	baseFlags = {
 		warcry = true,
@@ -2580,6 +2672,9 @@ skills["Reckoning"] = {
 		[1] = "Trigger this Skill when you Block",
 		[2] = "You cannot use this Attack directly",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		attack = true,
 		area = true,
@@ -2658,6 +2753,9 @@ skills["RejuvenationTotem"] = {
 		[1] = "Totem lasts 8 seconds",
 		[2] = "Summons a Totem which uses this Skill",
 		[3] = "(6.4-243.7) Life regenerated per second",
+	},
+	effectsQuality = {
+		[1] = "60% increased Aura Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -2740,6 +2838,9 @@ skills["SearingBond"] = {
 		[2] = "Totem lasts 8 seconds",
 		[3] = "Deals (23.6-6203.2) Base Fire Damage per second",
 		[4] = "Summons a Totem which uses this Skill",
+	},
+	effectsQuality = {
+		[1] = "20% increased totem life",
 	},
 	baseFlags = {
 		spell = true,
@@ -2829,6 +2930,9 @@ skills["NewShieldCharge"] = {
 		[2] = "200% more Damage with Hits at Maximum Charge Distance",
 		[3] = "75% increased Movement Speed",
 	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -2909,6 +3013,9 @@ skills["ShockwaveTotem"] = {
 		[2] = "Totem lasts 8 seconds",
 		[3] = "25% chance to Knock Enemies Back on hit",
 		[4] = "Summons a Totem which uses this Skill",
+	},
+	effectsQuality = {
+		[1] = "20% increased totem life",
 	},
 	baseFlags = {
 		spell = true,
@@ -3009,6 +3116,9 @@ skills["StaticStrike"] = {
 		[4] = "10% chance to Shock enemies",
 		[5] = "Explosion deals 40% less Damage",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	parts = {
 		{
 			name = "Melee hit",
@@ -3101,6 +3211,10 @@ skills["SummonFireGolem"] = {
 		[2] = "(30-88)% increased Minion Maximum Life",
 		[3] = "Golems Grant (15-22)% increased Damage",
 	},
+	effectsQuality = {
+		[1] = "20% increased Minion Damage",
+		[2] = "20% increased Minion Maximum Life",
+	},
 	minionList = {
 		"SummonedFlameGolem",
 	},
@@ -3183,6 +3297,10 @@ skills["SummonRockGolem"] = {
 		[1] = "Can Summon up to 1 Golem at a time",
 		[2] = "(30-88)% increased Minion Maximum Life",
 		[3] = "Golems grant (33-164) Life Regenerated per second",
+	},
+	effectsQuality = {
+		[1] = "20% increased Minion Damage",
+		[2] = "20% increased Minion Maximum Life",
 	},
 	minionList = {
 		"SummonedStoneGolem",
@@ -3273,6 +3391,9 @@ skills["Sunder"] = {
 		[2] = "15% less Attack Speed",
 		[3] = "Shockwaves deal 60% less Damage",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	parts = {
 		{
 			name = "Primary wave",
@@ -3361,6 +3482,9 @@ skills["Sweep"] = {
 		[1] = "+(0-6) to radius",
 		[2] = "(30-44)% chance to Knock Enemies Back on hit",
 		[3] = "10% less Attack Speed",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	baseFlags = {
 		attack = true,
@@ -3451,6 +3575,9 @@ skills["Vengeance"] = {
 		[1] = "30% chance to Trigger this Skill when Hit",
 		[2] = "You cannot use this Attack directly",
 	},
+	effectsQuality = {
+		[1] = "10% chance to Trigger this Skill when Hit",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -3538,6 +3665,9 @@ skills["VigilantStrike"] = {
 		[2] = "Grants Fortify on Melee Hit",
 		[3] = "(75-220)% increased Fortify duration",
 	},
+	effectsQuality = {
+		[1] = "20% increased Fortify duration",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -3610,6 +3740,9 @@ skills["Vitality"] = {
 	effects = {
 		[1] = "+(0-29) to radius",
 		[2] = "(0.7-2.2)% of maximum Life regenerated per second",
+	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -3685,6 +3818,8 @@ skills["WarlordsMark"] = {
 		[1] = "+(0-15) to radius",
 		[2] = "Base duration is (6-11.8) seconds",
 		[3] = "(21-35)% increased Stun and Block Recovery",
+	},
+	effectsQuality = {
 	},
 	baseFlags = {
 		spell = true,

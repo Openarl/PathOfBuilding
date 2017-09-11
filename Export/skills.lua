@@ -171,6 +171,34 @@ local function buildStatsPerLevel(grantedKey)
 	return levelsStats
 end
 
+-- computes an input to #describeStats 
+-- we assume that quality bonus doesn't change with levels although
+-- the bonus is per level
+local function buildQualityStats(grantedKey)
+	local stats = {}
+
+	local levels = GrantedEffectsPerLevel.GrantedEffectsKey(grantedKey)
+	local effect = GrantedEffectsPerLevel[levels[1]]
+
+	for statNum, statKey in pairs(effect.Quality_StatsKeys) do
+		local stat = Stats[statKey]
+			-- stat value per 1000 quality to per 1 quality
+		local value = effect.Quality_Values[statNum] / 1000
+
+		stats[stat.Id] = {
+			-- assume max quality for now to get the correct translation
+			-- correct behavior would be to assume 1 quality
+			-- and count up until we get a description
+			-- e.g. barrage q gives .5% inc proj damage per quality
+			-- but it actually only considers 1% inc proj damage per 2 q
+			min = value * 20,
+			max = value * 20
+		}
+	end
+
+	return stats
+end
+
 -- computes an input to #describeStats from #buildStatsPerLevel
 -- basically aggregates over levels and finds for each stat the min and max value
 local function aggregateStats(levelsStats)
@@ -385,6 +413,20 @@ directiveTable.skill = function(state, args, out)
 		out:write('\t\t[' .. i .. '] = "' .. effectDescription .. '",\n')
 	end
 	out:write('\t},\n')
+
+	local qualityStats = buildQualityStats(grantedKey)
+	local qualityEffectsDescription = describeStats(qualityStats)
+	out:write('\teffectsQuality = {\n')
+	for i, effectDescription in pairs(qualityEffectsDescription) do 
+		out:write('\t\t[' .. i .. '] = "' .. effectDescription .. '",\n')
+	end
+	out:write('\t},\n')
+
+	if grantedId == 'Barrage' then
+		for stat, range in pairs(qualityStats) do
+			print(stat, range.min, range.max)
+		end
+	end
 end
 
 -- #global <Buff|Aura|Debuff|Curse>

@@ -28,6 +28,9 @@ skills["Arc"] = {
 		[3] = "10% chance to Shock enemies",
 		[4] = "(10-39)% increased Effect of Shock",
 	},
+	effectsQuality = {
+		[1] = "10% chance to Shock enemies",
+	},
 	baseFlags = {
 		spell = true,
 		chaining = true,
@@ -105,6 +108,9 @@ skills["VaalArcChain"] = {
 		[2] = "Chains +40 Times",
 		[3] = "100% chance to Shock enemies",
 	},
+	effectsQuality = {
+		[1] = "30% increased Shock Duration on enemies",
+	},
 	baseFlags = {
 		spell = true,
 		lightning = true,
@@ -179,6 +185,9 @@ skills["ArcticBreath"] = {
 	effects = {
 		[1] = "Deals (52-1716) to (78-2574) Cold Damage",
 		[2] = "Base duration is (0.88-2.2) seconds",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -259,6 +268,8 @@ skills["AssassinsMark"] = {
 		[3] = "+(0-15) to radius",
 		[4] = "Base duration is (6-11.8) seconds",
 	},
+	effectsQuality = {
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -337,6 +348,9 @@ skills["BallLightning"] = {
 	skillTypes = { [2] = true, [10] = true, [3] = true, [11] = true, [18] = true, [17] = true, [19] = true, [26] = true, [36] = true, [45] = true, [35] = true, },
 	effects = {
 		[1] = "Deals (2-33) to (32-620) Lightning Damage",
+	},
+	effectsQuality = {
+		[1] = "20% increased Lightning Damage",
 	},
 	baseFlags = {
 		spell = true,
@@ -420,6 +434,9 @@ skills["Blight"] = {
 		[6] = "80% reduced Movement Speed",
 		[7] = "Debuff can have up to 20 layers of Damage",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -501,6 +518,9 @@ skills["BoneOffering"] = {
 		[4] = "Base duration is 3 seconds",
 		[5] = "Additional 0.5 seconds Base Duration per extra Corpse consumed",
 	},
+	effectsQuality = {
+		[1] = "10% increased Skill Effect Duration",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -576,6 +596,9 @@ skills["Clarity"] = {
 		[1] = "+(0-29) to radius",
 		[2] = "(2.9-23.2) Mana Regenerated per second",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -650,6 +673,9 @@ skills["VaalClarity"] = {
 	effects = {
 		[1] = "+(0-29) to radius",
 		[2] = "Base duration is (8-10.9) seconds",
+	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -728,6 +754,9 @@ skills["ColdSnap"] = {
 		[4] = "30% increased Freeze Duration on enemies",
 		[5] = "110% increased Chill Duration on enemies",
 		[6] = "(20-49)% increased Effect of Chill",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -813,6 +842,9 @@ skills["VaalColdSnap"] = {
 		[2] = "+(0-7) to radius",
 		[3] = "Base duration is 10 seconds",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -894,6 +926,9 @@ skills["Conductivity"] = {
 		[3] = "+(0-15) to radius",
 		[4] = "Base duration is (9-11.9) seconds",
 	},
+	effectsQuality = {
+		[1] = "20% increased Shock Duration on You",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -974,6 +1009,9 @@ skills["Contagion"] = {
 		[3] = "Base duration is 5 seconds",
 		[4] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -1050,6 +1088,9 @@ skills["ConversionTrap"] = {
 		[1] = "Trap lasts 16 seconds",
 		[2] = "Base duration is (5.3-12.5) seconds",
 	},
+	effectsQuality = {
+		[1] = "20% increased Skill Effect Duration",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -1123,6 +1164,10 @@ skills["Convocation"] = {
 	effects = {
 		[1] = "Base duration is 2 seconds",
 		[2] = "(19.3-321) Life regenerated per second",
+	},
+	effectsQuality = {
+		[1] = "20% increased Skill Effect Duration",
+		[2] = "10% increased Cast Speed",
 	},
 	baseFlags = {
 		spell = true,
@@ -1200,6 +1245,9 @@ skills["Discharge"] = {
 		[1] = "Deals (4-71) to (77-1357) base Lightning Damage per Power Charge",
 		[2] = "Deals (29-508) to (43-762) base Fire Damage per Endurance Charge",
 		[3] = "Deals (24-416) to (36-623) base Cold Damage per Frenzy Charge",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -1285,6 +1333,9 @@ skills["Discipline"] = {
 		[2] = "+(0-29) to radius",
 		[3] = "30% increased Energy Shield Recharge rate",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -1362,6 +1413,9 @@ skills["VaalDiscipline"] = {
 		[2] = "+(0-29) to radius",
 		[3] = "Base duration is 3 seconds",
 	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -1438,6 +1492,9 @@ skills["ElementalWeakness"] = {
 		[1] = "+(0-15) to radius",
 		[2] = "Base duration is (9-11.9) seconds",
 		[3] = "-(49-20)% to all Elemental Resistances",
+	},
+	effectsQuality = {
+		[1] = "-5% to all Elemental Resistances",
 	},
 	baseFlags = {
 		spell = true,
@@ -1517,6 +1574,10 @@ skills["Enfeeble"] = {
 		[3] = "(18-47)% reduced Accuracy Rating",
 		[4] = "25% reduced Critical Strike Chance",
 		[5] = "-(35-21)% to Critical Strike Multiplier",
+	},
+	effectsQuality = {
+		[1] = "10% reduced Accuracy Rating",
+		[2] = "10% reduced Critical Strike Chance",
 	},
 	baseFlags = {
 		spell = true,
@@ -1600,6 +1661,9 @@ skills["EssenceDrain"] = {
 		[3] = "Base duration is 3.8 seconds",
 		[4] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
 		[5] = "Regenerate 0.5% of Debuff Damage as Life",
+	},
+	effectsQuality = {
+		[1] = "20% increased Chaos Damage",
 	},
 	baseFlags = {
 		spell = true,
@@ -1685,6 +1749,9 @@ skills["FireNovaMine"] = {
 		[3] = "Spell Repeats 3 times",
 		[4] = "(20-34)% more Damage with Hits and Ailments per Repeat",
 	},
+	effectsQuality = {
+		[1] = "20% increased Fire Damage",
+	},
 	baseFlags = {
 		spell = true,
 		mine = true,
@@ -1768,6 +1835,9 @@ skills["Fireball"] = {
 		[1] = "Deals (7-2025) to (10-3038) Fire Damage",
 		[2] = "+(0-5) to radius",
 		[3] = "(20-49)% chance to Ignite enemies",
+	},
+	effectsQuality = {
+		[1] = "10% chance to Ignite enemies",
 	},
 	parts = {
 		{
@@ -1856,6 +1926,9 @@ skills["VaalFireballSpiralNova"] = {
 		[1] = "Deals (8-1368) to (11-2052) Fire Damage",
 		[2] = "Fires Projectiles at all nearby Enemies",
 		[3] = "50% increased Area of Effect",
+	},
+	effectsQuality = {
+		[1] = "30% chance to Ignite enemies",
 	},
 	parts = {
 		{
@@ -1946,6 +2019,9 @@ skills["Firestorm"] = {
 		[2] = "Base duration is 2 seconds",
 		[3] = "One impact every 0.1 seconds",
 	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2028,6 +2104,9 @@ skills["FlameDash"] = {
 		[2] = "Deals (10.9-1789.6) Base Fire Damage per second",
 		[3] = "Base duration is 4 seconds",
 	},
+	effectsQuality = {
+		[1] = "10% increased Cast Speed",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2108,6 +2187,9 @@ skills["FlameWhip"] = {
 		[2] = "50% more Damage with Hits against Burning enemies",
 		[3] = "Cannot Ignite",
 	},
+	effectsQuality = {
+		[1] = "10% increased Cast Speed",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2184,6 +2266,9 @@ skills["Flameblast"] = {
 		[1] = "Deals (32-551) to (48-827) Fire Damage",
 		[2] = "110% more Spell Damage for each stage",
 		[3] = "55% more Damage with Ailments for each stage",
+	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
 	},
 	parts = {
 		{
@@ -2273,6 +2358,9 @@ skills["VaalFlameblast"] = {
 		[2] = "110% more Spell Damage for each stage",
 		[3] = "55% more Damage with Ailments for each stage",
 	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2354,6 +2442,9 @@ skills["Flammability"] = {
 		[3] = "+(0-15) to radius",
 		[4] = "Base duration is (9-11.9) seconds",
 	},
+	effectsQuality = {
+		[1] = "10% increased Ignite Duration on You",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -2433,6 +2524,9 @@ skills["FleshOffering"] = {
 		[3] = "(20-35)% increased Attack Speed",
 		[4] = "(20-34)% increased Movement Speed",
 	},
+	effectsQuality = {
+		[1] = "10% increased Skill Effect Duration",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -2506,6 +2600,9 @@ skills["FreezingPulse"] = {
 	skillTypes = { [2] = true, [3] = true, [10] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
 	effects = {
 		[1] = "Deals (7-1759) to (11-2638) Cold Damage",
+	},
+	effectsQuality = {
+		[1] = "40% increased Projectile Speed",
 	},
 	setupFunc = function(env, output)
 		env.modDB:NewMod("Damage", "MORE", -100, "Skill:FreezingPulse", { type = "DistanceRamp", ramp = {{0,0},{60*output.ProjectileSpeedMod,1}} })
@@ -2590,6 +2687,9 @@ skills["FrostBomb"] = {
 		[4] = "75% reduced Life Regeneration rate",
 		[5] = "-20% to Cold Resistance",
 	},
+	effectsQuality = {
+		[1] = "20% increased Cold Damage",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2672,6 +2772,9 @@ skills["FrostWall"] = {
 		[3] = "0.15 seconds between appearance of Wall sections",
 		[4] = "Wall will be (28-77) units long",
 	},
+	effectsQuality = {
+		[1] = "20% increased Skill Effect Duration",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -2750,6 +2853,9 @@ skills["Frostbite"] = {
 		[2] = "Base duration is (9-11.9) seconds",
 		[3] = "-(54-25)% to Cold Resistance",
 	},
+	effectsQuality = {
+		[1] = "20% increased Freeze Duration on You",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -2826,6 +2932,9 @@ skills["FrostBolt"] = {
 	effects = {
 		[1] = "Deals (6-2102) to (10-3153) Cold Damage",
 	},
+	effectsQuality = {
+		[1] = "20% increased Cold Damage",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -2899,6 +3008,9 @@ skills["GlacialCascade"] = {
 		[1] = "Deals (48-1042) to (72-1563) Physical Damage",
 		[2] = "60% of Physical Damage Converted to Cold Damage",
 		[3] = "+(0-3) to radius",
+	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
 	},
 	baseFlags = {
 		spell = true,
@@ -2982,6 +3094,9 @@ skills["HeraldOfThunder"] = {
 		[4] = "Adds (2-37) to (7-150) Lightning Damage to Spells",
 		[5] = "Adds (2-37) to (7-150) Lightning Damage to Attacks",
 	},
+	effectsQuality = {
+		[1] = "15% increased Lightning Damage",
+	},
 	baseFlags = {
 		cast = true,
 		duration = true,
@@ -3064,6 +3179,9 @@ skills["IceNova"] = {
 		[1] = "Deals (15-1303) to (21-1917) Cold Damage",
 		[2] = "40% more Damage when Cast on Frostbolt",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -3141,6 +3259,9 @@ skills["VaalIceNova"] = {
 		[2] = "Causes smaller novas up to 5 times on enemies hit",
 		[3] = "20% reduced Area of Effect each repeat",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -3217,6 +3338,9 @@ skills["IceSpear"] = {
 		[2] = "(40-98)% increased Chill Duration on enemies",
 		[3] = "(10-39)% increased Effect of Chill",
 		[4] = "Second form has 600% increased Critical Strike Chance",
+	},
+	effectsQuality = {
+		[1] = "40% increased Projectile Speed",
 	},
 	parts = {
 		{
@@ -3303,6 +3427,9 @@ skills["Incinerate"] = {
 	effects = {
 		[1] = "Deals (6-320) to (9-480) Fire Damage",
 		[2] = "50% more Damage with Hits and Ailments for each stage",
+	},
+	effectsQuality = {
+		[1] = "40% increased Projectile Speed",
 	},
 	parts = {
 		{
@@ -3391,6 +3518,9 @@ skills["ClusterBurst"] = {
 		[1] = "Creates 4 explosions",
 		[2] = "25% less Area Damage",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	parts = {
 		{
 			name = "Projectile",
@@ -3477,6 +3607,9 @@ skills["LightningTendrils"] = {
 		[1] = "Deals (1-70) to (3-1334) Lightning Damage",
 		[2] = "+(0-10) to radius",
 	},
+	effectsQuality = {
+		[1] = "20% increased Lightning Damage",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -3557,6 +3690,9 @@ skills["LightningTrap"] = {
 		[2] = "Trap lasts 16 seconds",
 		[3] = "8 additional Projectiles",
 		[4] = "20% chance to Shock enemies",
+	},
+	effectsQuality = {
+		[1] = "10% increased Trap Throwing Speed",
 	},
 	baseFlags = {
 		spell = true,
@@ -3648,6 +3784,9 @@ skills["VaalLightningTrap"] = {
 		[5] = "Projectiles leave Shocking Ground",
 		[6] = "Shocked Ground causes 15% increased Damage taken",
 	},
+	effectsQuality = {
+		[1] = "10% increased Trap Throwing Speed",
+	},
 	baseFlags = {
 		spell = true,
 		trap = true,
@@ -3735,6 +3874,9 @@ skills["LightningWarp"] = {
 		[1] = "Deals (1-98) to (19-1856) Lightning Damage",
 		[2] = "(0-58)% reduced Skill Effect Duration",
 	},
+	effectsQuality = {
+		[1] = "20% increased Cast Speed",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -3816,6 +3958,9 @@ skills["VaalLightningWarpInstant"] = {
 		[1] = "Deals (1-77) to (18-1459) Lightning Damage",
 		[2] = "(0-58)% reduced Skill Effect Duration",
 	},
+	effectsQuality = {
+		[1] = "20% increased Cast Speed",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -3894,6 +4039,9 @@ skills["MagmaOrb"] = {
 	effects = {
 		[1] = "Deals (6-1752) to (9-2628) Fire Damage",
 		[2] = "Chains +(1-3) Times",
+	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
 	},
 	baseFlags = {
 		spell = true,
@@ -3975,6 +4123,9 @@ skills["OrbOfStorms"] = {
 		[2] = "Base duration is 6 seconds",
 		[3] = "Projectiles Split into (2-5) on hit",
 	},
+	effectsQuality = {
+		[1] = "20% increased Lightning Damage",
+	},
 	baseFlags = {
 		spell = true,
 		chaining = true,
@@ -4055,6 +4206,9 @@ skills["PowerSiphon"] = {
 	effects = {
 		[1] = "Culling Strike",
 	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -4130,6 +4284,9 @@ skills["VaalPowerSiphon"] = {
 		[2] = "Culling Strike",
 		[3] = "Can't be Evaded",
 	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -4203,6 +4360,9 @@ skills["Purity"] = {
 	effects = {
 		[1] = "+(0-29) to radius",
 		[2] = "+(12-34)% to all Elemental Resistances",
+	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -4281,6 +4441,9 @@ skills["LightningResistAura"] = {
 		[1] = "+(0-5)% to maximum Lightning Resistance",
 		[2] = "+(22-51)% to Lightning Resistance",
 		[3] = "+(0-29) to radius",
+	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -4361,6 +4524,9 @@ skills["RaiseSpectre"] = {
 		[6] = "Minions have (-20-20)% less Energy Shield",
 		[7] = "Minions have +30% to all Elemental Resistances",
 	},
+	effectsQuality = {
+		[1] = "20% increased Minion Movement Speed",
+	},
 	minionList = {
 	},
 	baseFlags = {
@@ -4437,6 +4603,10 @@ skills["RaiseZombie"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, [11] = true, },
 	effects = {
 		[1] = "Can raise up to 3 Zombies at a time",
+	},
+	effectsQuality = {
+		[1] = "20% increased Minion Movement Speed",
+		[2] = "20% increased Minion Maximum Life",
 	},
 	minionList = {
 		"RaisedZombie",
@@ -4516,6 +4686,9 @@ skills["RighteousFire"] = {
 		[4] = "You Burn for 90% of your maximum Life per second as Fire Damage",
 		[5] = "You Burn for 70% of your maximum Energy Shield per second as Fire Damage",
 		[6] = "(20-49)% more Spell Damage",
+	},
+	effectsQuality = {
+		[1] = "20% increased Spell Damage",
 	},
 	setupFunc = function(actor, output)
 		if actor.mainSkill.skillFlags.totem then
@@ -4600,6 +4773,9 @@ skills["VaalRighteousFire"] = {
 		[1] = "Deals (120-149)% of Damage",
 		[2] = "Damage cannot be Reflected",
 	},
+	effectsQuality = {
+		[1] = "20% increased Spell Damage",
+	},
 	setupFunc = function(actor, output)
 		actor.mainSkill.skillData.FireMin = output.EnergyShield + output.Life - 1
 		actor.mainSkill.skillData.FireMax = output.EnergyShield + output.Life - 1
@@ -4681,6 +4857,9 @@ skills["FireBeam"] = {
 		[5] = "Additional Debuff stages add 60% of Damage",
 		[6] = "Total Fire Resistance penalty from all Beams cannot exceed -24%",
 		[7] = "Debuff applies -3% Fire Resistance per stage",
+	},
+	effectsQuality = {
+		[1] = "10% increased beam length",
 	},
 	parts = {
 		{
@@ -4774,6 +4953,9 @@ skills["ShockNova"] = {
 		[3] = "Ring deals 80% less Damage",
 		[4] = "(20-49)% increased Effect of Shock",
 	},
+	effectsQuality = {
+		[1] = "40% increased Shock Duration on enemies",
+	},
 	parts = {
 		{
 			name = "Ring",
@@ -4861,6 +5043,9 @@ skills["Spark"] = {
 		[2] = "Base duration is 1.5 seconds",
 		[3] = "(4-7) additional Projectiles",
 	},
+	effectsQuality = {
+		[1] = "20% increased Projectile Speed",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -4939,6 +5124,9 @@ skills["VaalSparkSpiralNova"] = {
 		[1] = "Deals (1-50) to (11-941) Lightning Damage",
 		[2] = "Base duration is 2 seconds",
 		[3] = "Fires Projectiles at all nearby Enemies",
+	},
+	effectsQuality = {
+		[1] = "20% increased Projectile Speed",
 	},
 	baseFlags = {
 		spell = true,
@@ -5020,6 +5208,9 @@ skills["SpiritOffering"] = {
 		[3] = "+(20-35)% to all Elemental Resistances",
 		[4] = "Gain (20-34)% of your Physical Damage as Extra Chaos Damage",
 	},
+	effectsQuality = {
+		[1] = "10% increased Skill Effect Duration",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -5097,6 +5288,9 @@ skills["StormCall"] = {
 		[2] = "+(0-10) to radius",
 		[3] = "Base duration is 1.5 seconds",
 		[4] = "(10-39)% increased Effect of Shock",
+	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
@@ -5179,6 +5373,9 @@ skills["VaalStormCall"] = {
 		[1] = "Deals (13-704) to (25-1307) Lightning Damage",
 		[2] = "Base duration is 3 seconds",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -5257,6 +5454,10 @@ skills["SummonChaosGolem"] = {
 		[1] = "Can Summon up to 1 Golem at a time",
 		[2] = "(30-88)% increased Minion Maximum Life",
 		[3] = "Golems grant (3-5)% additional Physical Damage Reduction",
+	},
+	effectsQuality = {
+		[1] = "20% increased Minion Damage",
+		[2] = "20% increased Minion Maximum Life",
 	},
 	minionList = {
 		"SummonedChaosGolem",
@@ -5342,6 +5543,10 @@ skills["SummonLightningGolem"] = {
 		[2] = "(30-88)% increased Minion Maximum Life",
 		[3] = "Golems grant (6-11)% increased Attack and Cast Speed",
 	},
+	effectsQuality = {
+		[1] = "20% increased Minion Damage",
+		[2] = "20% increased Minion Maximum Life",
+	},
 	minionList = {
 		"SummonedLightningGolem",
 	},
@@ -5425,6 +5630,9 @@ skills["SummonRagingSpirit"] = {
 		[1] = "Can summon up to 20 Raging Spirits at a time",
 		[2] = "Base duration is 5 seconds",
 	},
+	effectsQuality = {
+		[1] = "20% increased Minion Movement Speed",
+	},
 	minionList = {
 		"SummonedRagingSpirit",
 	},
@@ -5500,6 +5708,9 @@ skills["SummonSkeletons"] = {
 	effects = {
 		[1] = "Can summon up to 5 Skeletons at a time",
 		[2] = "Base duration is 20 seconds",
+	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
 	},
 	minionList = {
 		"RaisedSkeleton",
@@ -5580,6 +5791,9 @@ skills["VaalSummonSkeletons"] = {
 	effects = {
 		[1] = "Can summon up to (17-46) Skeletons at a time",
 		[2] = "Base duration is 20 seconds",
+	},
+	effectsQuality = {
+		[1] = "20% increased Damage",
 	},
 	minionList = {
 		"RaisedSkeleton",
@@ -5664,6 +5878,9 @@ skills["TempestShield"] = {
 		[3] = "Chains +1 Times",
 		[4] = "Additional 3% Shield Block Chance",
 	},
+	effectsQuality = {
+		[1] = "20% increased Lightning Damage",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -5747,6 +5964,9 @@ skills["FrostBoltNova"] = {
 		[4] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
 		[5] = "40% more Damage when Cast on Frostbolt",
 	},
+	effectsQuality = {
+		[1] = "10% increased Area of Effect",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -5828,6 +6048,9 @@ skills["Vulnerability"] = {
 		[3] = "(20-34)% more Physical Damage taken",
 		[4] = "33% increased Damage from Damage Over Time effects",
 	},
+	effectsQuality = {
+		[1] = "10% more Physical Damage taken",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -5907,6 +6130,9 @@ skills["Wither"] = {
 		[2] = "Base secondary duration is 2 seconds",
 		[3] = "(30-39)% reduced Movement Speed",
 		[4] = "7% increased Chaos Damage taken",
+	},
+	effectsQuality = {
+		[1] = "20% increased Skill Effect Duration",
 	},
 	parts = {
 		{
@@ -5999,6 +6225,9 @@ skills["Wrath"] = {
 	effects = {
 		[1] = "+(0-29) to radius",
 		[2] = "Adds (2-31) to (37-490) Lightning Damage to Attacks",
+	},
+	effectsQuality = {
+		[1] = "20% increased Area of Effect",
 	},
 	baseFlags = {
 		spell = true,
