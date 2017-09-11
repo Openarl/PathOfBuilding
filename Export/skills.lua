@@ -1,3 +1,5 @@
+loadStatFile("skill_stat_descriptions.txt")
+
 local statMap = { }
 do
 	local lastStat
@@ -132,6 +134,71 @@ local directiveTable = { }
 -- Disables the gem component of the next skill
 directiveTable.noGem = function(state, args, out)
 	state.noGem = true
+end
+
+local function buildStatsPerLevel(grantedKey)
+	local levelsStats = {}
+
+	local levels = GrantedEffectsPerLevel.GrantedEffectsKey(grantedKey)
+
+	for level, levelKey in ipairs(levels) do
+		local effect = GrantedEffectsPerLevel[levelKey]
+		local levelStats = {}
+
+		for statNum, statKey in pairs(effect.StatsKeys) do
+			local stat = Stats[statKey]
+			
+			table.insert(levelStats, {
+				stat = stat,
+				value = effect["Stat" .. statNum .. "Value"],
+				float = effect["Stat" .. statNum .. "Float"]
+			})
+		end
+
+		for _, statKey in pairs(effect.StatsKeys2) do
+			local stat = Stats[statKey]
+			
+			table.insert(levelStats,  {
+				stat = stat,
+				value = 1,
+				float = 1.0
+			})
+		end
+
+		levelsStats[level] = levelStats
+	end
+
+	return levelsStats
+end
+
+-- computes an input to #describeStats from #buildStatsPerLevel
+-- basically aggregates over levels and finds for each stat the min and max value
+local function aggregateStats(levelsStats)
+	local stats = {}
+
+	for level, levelStats in ipairs(levelsStats) do
+		for _, levelStat in ipairs(levelStats) do
+			local statId = levelStat.stat.Id
+
+			if not stats[statId] then
+				stats[statId] = {
+					min = math.huge,
+					max = -math.huge
+				}
+			end
+
+			stats[statId] = {
+				min = math.min(stats[statId].min, levelStat.value),
+				max = math.max(stats[statId].max, levelStat.value)
+			}
+
+			if levelStat.value == nil then
+				print('nil!')
+			end
+		end
+	end
+
+	return stats
 end
 
 -- #skill <GrantedEffectId> [<Display name>]
@@ -308,6 +375,16 @@ directiveTable.skill = function(state, args, out)
 			end
 		end
 	end
+
+	local levelsStats = buildStatsPerLevel(grantedKey)
+	local levelStatsAggregated = aggregateStats(levelsStats)
+	local effectsDescription = describeStats(levelStatsAggregated)
+	
+	out:write('\teffects = {\n')
+	for i, effectDescription in pairs(effectsDescription) do 
+		out:write('\t\t[' .. i .. '] = "' .. effectDescription .. '",\n')
+	end
+	out:write('\t},\n')
 end
 
 -- #global <Buff|Aura|Debuff|Curse>

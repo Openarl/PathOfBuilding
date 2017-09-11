@@ -22,6 +22,9 @@ skills["SupportAddedChaosDamage"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Adds (18-485) to (26-728) Chaos Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 	},
@@ -82,6 +85,9 @@ skills["SupportAddedLightningDamage"] = {
 	requireSkillTypes = { 1, 10, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Adds (1-57) to (8-1080) Lightning Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 	},
@@ -143,6 +149,13 @@ skills["SupportArcaneSurge"] = {
 	requireSkillTypes = { 2, 39, },
 	addSkillTypes = { 12, },
 	excludeSkillTypes = { 37, 41, 30, },
+	effects = {
+		[1] = "Arcane Surge lasts 4 seconds",
+		[2] = "Gain Arcane Surge when you spend (15-1312) Mana with this Spell",
+		[3] = "Arcane Surge grants (10-25)% more Spell Damage",
+		[4] = "Arcane Surge grants (10-24)% increased Cast Speed",
+		[5] = "Arcane Surge grants (0.5-1.3)% of maximum Mana Regenerated per second",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		--"support_arcane_surge_base_duration_ms" = 4000
@@ -207,6 +220,9 @@ skills["SupportBlasphemy"] = {
 	requireSkillTypes = { 32, },
 	addSkillTypes = { 15, 16, 31, 44, 64, },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Curse Spells are Cast as Auras",
+	},
 	baseMods = {
 		skill("manaCostOverride", 35), 
 		skill("cooldown", 0.5), 
@@ -269,6 +285,11 @@ skills["SupportCastOnStunned"] = {
 	requireSkillTypes = { 36, },
 	addSkillTypes = { 42, },
 	excludeSkillTypes = { 37, 41, 30, 44, 61, },
+	effects = {
+		[1] = "You cannot Cast this Spell directly",
+		[2] = "(50-79)% chance to Trigger this Spell when you are Stunned, or",
+		[3] = "Block a Stunning Hit",
+	},
 	baseMods = {
 		skill("cooldown", 0.25), 
 		skill("triggered", true, { type = "SkillType", skillType = SkillType.TriggerableSpell }), --"spell_uncastable_if_triggerable" = ?
@@ -331,6 +352,10 @@ skills["SupportCastWhileChannelling"] = {
 	requireSkillTypes = { 58, 36, },
 	addSkillTypes = { },
 	excludeSkillTypes = { 30, 61, },
+	effects = {
+		[1] = "You cannot Cast this Spell directly",
+		[2] = "Trigger a linked Spell every (300-450) seconds while Channelling",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 		skill("triggered", true, { type = "SkillType", skillType = SkillType.TriggerableSpell }), --"spell_uncastable_if_triggerable" = ?
@@ -392,6 +417,10 @@ skills["SupportChanceToIgnite"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (10-39)% more Fire Damage",
+		[2] = "(30-59)% chance to Ignite enemies",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
 	},
@@ -452,6 +481,10 @@ skills["SupportConcentratedEffect"] = {
 	requireSkillTypes = { 11, 21, 53, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (35-64)% more Area Damage",
+		[2] = "30% less Area of Effect",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 		mod("AreaOfEffect", "MORE", -30), --"support_concentrated_effect_skill_area_of_effect_+%_final" = -30
@@ -512,6 +545,10 @@ skills["SupportControlledDestruction"] = {
 	requireSkillTypes = { 10, 1, 59, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (25-54)% more Spell Damage",
+		[2] = "100% reduced Critical Strike Chance",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 		mod("CritChance", "INC", -100, 0, 0, nil), --"critical_strike_chance_+%" = -100
@@ -573,6 +610,11 @@ skills["SupportCurseOnHit"] = {
 	requireSkillTypes = { 1, 10, 32, },
 	addSkillTypes = { },
 	excludeSkillTypes = { 37, 41, 44, },
+	effects = {
+		[1] = "You cannot Cast Supported Curses",
+		[2] = "(-8-50)% reduced Curse Duration",
+		[3] = "Applies linked Curses on Hit",
+	},
 	baseMods = {
 		--"apply_linked_curses_on_hit_%" = 100
 		--"cannot_cast_curses" = ?
@@ -633,6 +675,9 @@ skills["SupportDecay"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills inflict Decay on Hit, dealing (96-2066) Chaos Damage per second for 8 seconds",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 	},
@@ -692,6 +737,11 @@ skills["SupportEfficacy"] = {
 	requireSkillTypes = { 10, 1, 59, 12, 55, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (10-30)% more Spell Damage",
+		[2] = "Supported Skills deal (15-29)% more Damage over Time",
+		[3] = "(10-19)% increased Skill Effect Duration",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 	},
@@ -752,6 +802,10 @@ skills["SupportElementalFocus"] = {
 	requireSkillTypes = { 10, 1, 29, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (30-59)% more Elemental Damage",
+		[2] = "Cannot inflict Elemental Ailments",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 		{ flag("CannotShock"), flag("CannotChill"), flag("CannotFreeze"), flag("CannotIgnite") }, --"cannot_inflict_status_ailments" = ?
@@ -815,6 +869,10 @@ skills["SupportElementalProliferation"] = {
 	requireSkillTypes = { 10, 1, 20, },
 	addSkillTypes = { 11, },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Elemental Ailments caused by this skill spread to other nearby enemies",
+		[2] = "20% chance to Freeze, Shock and Ignite",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		--"elemental_status_effect_aura_radius" = 10
@@ -877,6 +935,8 @@ skills["SupportAdditionalXP"] = {
 	requireSkillTypes = { },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+	},
 	baseMods = {
 	},
 	qualityMods = {
@@ -915,6 +975,9 @@ skills["SupportFasterCast"] = {
 	requireSkillTypes = { 2, 39, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(20-49)% increased Cast Speed",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
 	},
@@ -975,6 +1038,9 @@ skills["SupportIgniteProliferation"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { 11, },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Ignites caused by this Skill spread to other nearby Enemies",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 	},
@@ -1035,6 +1101,9 @@ skills["SupportImmolation"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (42-501) to (63-752) added Fire Damage against Burning Enemies",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
 	},
@@ -1095,6 +1164,9 @@ skills["SupportIncreasedAreaOfEffect"] = {
 	requireSkillTypes = { 11, 21, 53, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(30-59)% increased Area of Effect",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -1153,6 +1225,9 @@ skills["SupportIncreasedCriticalDamage"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "+(75-118)% to Critical Strike Multiplier",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 	},
@@ -1211,6 +1286,10 @@ skills["SupportIncreasedCriticalStrikes"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(50-108)% increased Critical Strike Chance",
+		[2] = "+(1-2)% to Critical Strike Chance",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 15), 
 	},
@@ -1272,6 +1351,13 @@ skills["SupportOnslaughtOnSlayingShockedEnemy"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { 12, },
 	excludeSkillTypes = { 37, 41, 30, },
+	effects = {
+		[1] = "Innervation lasts 4 seconds",
+		[2] = "Adds (1-31) to (25-586) Lightning Damage",
+		[3] = "20% chance to Shock enemies",
+		[4] = "Gain Innervation on Killing a Shocked Enemy with this Spell",
+		[5] = "Innervation grants (1-21) to (17-391) Lightning Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 		mod("EnemyShockChance", "BASE", 20), --"base_chance_to_shock_%" = 20
@@ -1336,6 +1422,9 @@ skills["SupportItemRarity"] = {
 	requireSkillTypes = { 10, 1, 40, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(40-69)% increased Rarity of Items Dropped by Slain Enemies",
+	},
 	baseMods = {
 	},
 	qualityMods = {
@@ -1394,6 +1483,9 @@ skills["SupportLightningPenetration"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Penetrates (18-47)% Lightning Resistance",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -1453,6 +1545,11 @@ skills["SupportMinefield"] = {
 	requireSkillTypes = { 41, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills place 2 additional Mines",
+		[2] = "Supported Skills deal (11-40)% less Mine Damage",
+		[3] = "Can have up to 2 additional Remote Mines placed at a time",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 60), 
 		--"number_of_additional_mines_to_place" = 2
@@ -1514,6 +1611,9 @@ skills["SupportMinionDamage"] = {
 	requireSkillTypes = { 9, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (30-59)% more Minion Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 	},
@@ -1573,6 +1673,9 @@ skills["SupportMinionLife"] = {
 	requireSkillTypes = { 9, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(30-59)% increased Minion Maximum Life",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -1633,6 +1736,11 @@ skills["SupportMinionSpeed"] = {
 	requireSkillTypes = { 9, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills have (10-24)% increased Minion Attack Speed",
+		[2] = "Supported Skills have (10-24)% increased Minion Cast Speed",
+		[3] = "(25-54)% increased Minion Movement Speed",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -1694,6 +1802,12 @@ skills["SupportSummonElementalResistances"] = {
 	requireSkillTypes = { 9, 30, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Totems and Minions summoned by this Skill have +(25-54)% Fire Resistance",
+		[2] = "Totems and Minions summoned by this Skill have +(25-54)% Cold Resistance",
+		[3] = "Totems and Minions summoned by this Skill have +(25-54)% Lightning Resistance",
+		[4] = "Minions and Skills used by Totems deal (10-24)% more Elemental Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -1758,6 +1872,10 @@ skills["SupportPhysicalToLightning"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Gain (10-39)% of Physical Damage as Extra Lightning Damage",
+		[2] = "50% of Physical Damage Converted to Lightning Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		mod("SkillPhysicalDamageConvertToLightning", "BASE", 50), --"skill_physical_damage_%_to_convert_to_lightning" = 50
@@ -1818,6 +1936,9 @@ skills["SupportPowerChargeOnCrit"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(35-64)% chance to gain a Power Charge on Critical Strike",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 	},
@@ -1878,6 +1999,11 @@ skills["SupportRemoteMine"] = {
 	requireSkillTypes = { 19, },
 	addSkillTypes = { 12, 41, },
 	excludeSkillTypes = { 61, },
+	effects = {
+		[1] = "Supported Attack Skills cannot be used with Melee Weapons",
+		[2] = "Supported Skills deal (30-59)% more Mine Damage",
+		[3] = "Mine lasts 16 seconds",
+	},
 	addFlags = {
 		mine = true,
 		duration = true,
@@ -1947,6 +2073,11 @@ skills["SupportMulticast"] = {
 	requireSkillTypes = { 26, },
 	addSkillTypes = { },
 	excludeSkillTypes = { 30, 37, 41, 42, 15, 43, },
+	effects = {
+		[1] = "Supported Skills deal 10% less Damage",
+		[2] = "Spell Repeats once",
+		[3] = "(51-80)% more Cast Speed",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 		skill("repeatCount", 1), --"base_spell_repeat_count" = 1
@@ -2007,6 +2138,11 @@ skills["SupportAilments"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills have (25-54)% increased Duration of Ailments on Enemies",
+		[2] = "(20-35)% increased Effect of non-Damaging Ailments on Enemies",
+		[3] = "(20-35)% more Damage with Ailments",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 	},

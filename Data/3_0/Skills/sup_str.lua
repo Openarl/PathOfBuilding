@@ -22,6 +22,9 @@ skills["SupportAddedFireDamage"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Gain (25-54)% of your Physical Damage as Extra Fire Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
 	},
@@ -80,6 +83,9 @@ skills["SupportBloodMagic"] = {
 	requireSkillTypes = { },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Spend Life instead of Mana for this skill",
+	},
 	baseMods = {
 		flag("SkillBloodMagic"), --"base_use_life_in_place_of_mana" = ?
 	},
@@ -140,6 +146,10 @@ skills["SupportBloodlust"] = {
 	requireSkillTypes = { 24, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(40-69)% more Melee Physical Damage against Bleeding Enemies",
+		[2] = "Cannot cause Bleeding",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 25), 
 		flag("CannotBleed"), --"cannot_cause_bleeding" = ?
@@ -199,6 +209,11 @@ skills["SupportBrutality"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (40-69)% more Physical Damage",
+		[2] = "Deals no Chaos Damage",
+		[3] = "Deals no Elemental Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 		{ flag("DealNoFire"), flag("DealNoCold"), flag("DealNoLightning") }, --"deal_no_elemental_damage" = ?
@@ -260,6 +275,9 @@ skills["SupportIncreasedBurningDamage"] = {
 	requireSkillTypes = { 10, 1, 29, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (35-64)% more Burning Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
 	},
@@ -322,6 +340,11 @@ skills["SupportCastOnMeleeKill"] = {
 	requireSkillTypes = { 24, 36, },
 	addSkillTypes = { 42, },
 	excludeSkillTypes = { 37, 41, 30, 44, 61, },
+	effects = {
+		[1] = "Supported Spells have (20-49)% more Spell Damage",
+		[2] = "Cast a linked Spell on Melee Kill",
+		[3] = "You cannot Cast this Spell directly",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 		skill("cooldown", 0.25), 
@@ -385,6 +408,12 @@ skills["SupportCastOnDamageTaken"] = {
 	requireSkillTypes = { 36, },
 	addSkillTypes = { 42, },
 	excludeSkillTypes = { 37, 41, 30, 44, 61, },
+	effects = {
+		[1] = "This Gem can only Support Skill Gems requiring Level (38-90) or lower",
+		[2] = "Supported Skills deal (-46-70)% less Damage",
+		[3] = "You cannot Cast this Spell directly",
+		[4] = "100% chance to Trigger this Spell when you take a total of (528-7990) Damage",
+	},
 	baseMods = {
 		skill("cooldown", 0.25), 
 		--"cast_on_damage_taken_%" = 100
@@ -449,6 +478,11 @@ skills["SupportChanceToBleed"] = {
 	requireSkillTypes = { 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { 9, },
+	effects = {
+		[1] = "Supported Attacks deal (1-96) to (2-145) added Physical Damage with Weapons",
+		[2] = "25% chance to cause Bleeding",
+		[3] = "Supported Attacks deal (10-39)% more Damage with Bleeding",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		mod("BleedChance", "BASE", 25, ModFlag.Attack), --"bleed_on_hit_with_attacks_%" = 25
@@ -512,6 +546,10 @@ skills["SupportColdToFire"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Gain (10-39)% of Cold Damage as Extra Fire Damage",
+		[2] = "50% of Cold Damage Converted to Fire Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		mod("SkillColdDamageConvertToFire", "BASE", 50), --"skill_cold_damage_%_to_convert_to_fire" = 50
@@ -573,6 +611,9 @@ skills["SupportWeaponElementalDamage"] = {
 	requireSkillTypes = { 1, 56, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Attack Skills deal (35-64)% more Elemental Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -632,6 +673,9 @@ skills["SupportAdditionalLevel"] = {
 	requireSkillTypes = { },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "+(0-9) to Level of Supported Active Skill Gems",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 25), 
 	},
@@ -672,6 +716,9 @@ skills["EnduranceChargeOnMeleeStun"] = {
 	requireSkillTypes = { 24, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Gain an Endurance Charge if this Skill Stuns an Enemy with Melee Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		--"gain_endurance_charge_on_melee_stun" = ?
@@ -732,6 +779,9 @@ skills["SupportFirePenetration"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Penetrates (18-47)% Fire Resistance",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -792,6 +842,11 @@ skills["SupportFortify"] = {
 	requireSkillTypes = { 24, },
 	addSkillTypes = { },
 	excludeSkillTypes = { 47, },
+	effects = {
+		[1] = "(25-54)% increased Melee Physical Damage",
+		[2] = "Grants Fortify on Melee Hit",
+		[3] = "25% increased Fortify duration",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		flag("Condition:Fortify", { type = "Condition", var = "Combat" }), --"chance_to_fortify_on_melee_hit_+%" = 100
@@ -853,6 +908,10 @@ skills["SupportGenerosity"] = {
 	requireSkillTypes = { 44, },
 	addSkillTypes = { },
 	excludeSkillTypes = { 30, 32, 64, },
+	effects = {
+		[1] = "Supported Auras do not affect You",
+		[2] = "(20-49)% increased Aura effect",
+	},
 	baseMods = {
 		skill("auraCannotAffectSelf", true), --"aura_cannot_affect_self" = ?
 	},
@@ -912,6 +971,9 @@ skills["SupportIncreasedDuration"] = {
 	requireSkillTypes = { 12, 55, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(45-74)% increased Skill Effect Duration",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -971,6 +1033,9 @@ skills["SupportIronGrip"] = {
 	requireSkillTypes = { 48, 56, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Strength's damage bonus applies to Projectile Attacks made with Supported Skills",
+	},
 	baseMods = {
 		flag("IronGrip"), --"keystone_strong_bowman" = ?
 	},
@@ -1030,6 +1095,9 @@ skills["SupportIronWill"] = {
 	requireSkillTypes = { 10, 52, 59, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Strength's damage bonus applies to Spell Damage as well for Supported Skills",
+	},
 	baseMods = {
 		flag("IronWill"), --"strong_casting" = ?
 	},
@@ -1088,6 +1156,9 @@ skills["SupportItemQuantity"] = {
 	requireSkillTypes = { 10, 1, 40, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(17-46)% increased Quantity of Items Dropped by Enemies Slain from Supported Skills",
+	},
 	baseMods = {
 	},
 	qualityMods = {
@@ -1145,6 +1216,10 @@ skills["SupportKnockback"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(25-54)% chance to Knock Enemies Back on hit",
+		[2] = "50% increased Knockback Distance",
+	},
 	baseMods = {
 		mod("EnemyKnockbackDistance", "INC", 50), --"knockback_distance_+%" = 50
 	},
@@ -1204,6 +1279,10 @@ skills["SupportReducedDuration"] = {
 	requireSkillTypes = { 12, 55, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (10-24)% more Damage",
+		[2] = "Supported Skills have (40-54)% less Skill Effect Duration",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 20), 
 	},
@@ -1264,6 +1343,9 @@ skills["SupportLifeGainOnHit"] = {
 	requireSkillTypes = { 1, 56, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "+(6-64) Life gained for each Enemy hit by your Attacks",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 50), 
 	},
@@ -1322,6 +1404,9 @@ skills["SupportLifeLeech"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "2% of Damage Leeched as Life",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 		mod("DamageLifeLeech", "BASE", 2), --"life_leech_from_any_damage_permyriad" = 200
@@ -1382,6 +1467,11 @@ skills["SupportMaim"] = {
 	requireSkillTypes = { 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "30% chance to Maim on Hit",
+		[2] = "(15-37)% more Physical Damage",
+		[3] = "Enemies Maimed by this Skill take (10-17)% increased Physical Damage",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 15), 
 		--"maim_on_hit_%" = 30
@@ -1443,6 +1533,9 @@ skills["SupportMeleeDamageOnFullLife"] = {
 	requireSkillTypes = { 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Attack Skills deal (30-59)% more Damage while on Full Life",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 30), 
 	},
@@ -1503,6 +1596,10 @@ skills["SupportMeleePhysicalDamage"] = {
 	requireSkillTypes = { 24, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (30-59)% more Melee Physical Damage",
+		[2] = "Supported Skills deal (30-59)% more Damage with Bleeding and Poison caused by Melee Hits",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 
 	},
@@ -1565,6 +1662,10 @@ skills["SupportMeleeSplash"] = {
 	requireSkillTypes = { 25, },
 	addSkillTypes = { 11, },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Skills deal (21-35)% less Damage to surrounding targets",
+		[2] = "Single-target Melee attacks deal Splash Damage to surrounding targets",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 60), 
 		--"support_melee_splash_damage_+%_final" = 0
@@ -1628,6 +1729,11 @@ skills["SupportMultistrike"] = {
 	requireSkillTypes = { 28, },
 	addSkillTypes = { },
 	excludeSkillTypes = { 43, },
+	effects = {
+		[1] = "Supported Skills Repeat 2 additional times",
+		[2] = "Supported Skills deal 30% less Attack Damage",
+		[3] = "(75-104)% more Melee Attack Speed",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 80), 
 		--"base_melee_attack_repeat_count" = 2
@@ -1693,6 +1799,13 @@ skills["SupportRangedAttackTotem"] = {
 	requireSkillTypes = { 22, },
 	addSkillTypes = { 12, 17, 19, 30, },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Supported Attack Skills cannot be used with Melee Weapons",
+		[2] = "Supported Skills deal (21-35)% less Damage",
+		[3] = "Totem lasts 8 seconds",
+		[4] = "Summons a Totem which uses this Skill",
+		[5] = "30% less Attack Speed",
+	},
 	addFlags = {
 		totem = true,
 	},
@@ -1761,6 +1874,9 @@ skills["SupportReducedMana"] = {
 	requireSkillTypes = { },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(25-39)% reduced Mana Cost",
+	},
 	baseMods = {
 	},
 	qualityMods = {
@@ -1820,6 +1936,12 @@ skills["SupportRuthless"] = {
 	requireSkillTypes = { 24, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "Every third Attack deals a Ruthless Blow with Melee Hits",
+		[2] = "Ruthless Blows deal (75-133)% more Melee Damage",
+		[3] = "Ruthless Blows deal (75-133)% more Damage with Bleeding caused by Melee Hits",
+		[4] = "Ruthless Blows have a base Stun Duration of 0.8 seconds",
+	},
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		--"support_ruthless_big_hit_max_count" = 3
@@ -1883,6 +2005,12 @@ skills["SupportSpellTotem"] = {
 	requireSkillTypes = { 18, },
 	addSkillTypes = { 12, 17, 19, 30, },
 	excludeSkillTypes = { 61, },
+	effects = {
+		[1] = "Supported Skills deal (21-35)% less Damage",
+		[2] = "Totem lasts 8 seconds",
+		[3] = "Summons a Totem which uses this Skill",
+		[4] = "Spell has 30% less Cast Speed",
+	},
 	addFlags = {
 		totem = true,
 	},
@@ -1950,6 +2078,9 @@ skills["SupportStun"] = {
 	requireSkillTypes = { 10, 1, },
 	addSkillTypes = { },
 	excludeSkillTypes = { },
+	effects = {
+		[1] = "(30-59)% reduced Enemy Stun Threshold",
+	},
 	baseMods = {
 	},
 	qualityMods = {

@@ -12,6 +12,14 @@ skills["EnchantmentOfBladesOnHit"] = {
 	color = 4,
 	description = "Fires a chaining burst of ethereal blades.",
 	skillTypes = { [2] = true, [3] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 79 to 126 Physical Damage",
+		[2] = "2 additional Projectiles",
+		[3] = "Chains +3 Times",
+		[4] = "You cannot Cast this Spell directly",
+		[5] = "Trigger this Spell when you Hit",
+		[6] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -46,6 +54,14 @@ skills["EnchantmentOfBladesOnHit2"] = {
 	color = 4,
 	description = "Fires a chaining burst of ethereal blades.",
 	skillTypes = { [2] = true, [3] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 381 to 585 Physical Damage",
+		[2] = "2 additional Projectiles",
+		[3] = "Chains +3 Times",
+		[4] = "You cannot Cast this Spell directly",
+		[5] = "Trigger this Spell when you Hit",
+		[6] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -80,6 +96,14 @@ skills["EnchantmentOfBladesOnHit3"] = {
 	color = 4,
 	description = "Fires a chaining burst of ethereal blades.",
 	skillTypes = { [2] = true, [3] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 985 to 1477 Physical Damage",
+		[2] = "2 additional Projectiles",
+		[3] = "Chains +3 Times",
+		[4] = "You cannot Cast this Spell directly",
+		[5] = "Trigger this Spell when you Hit",
+		[6] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -114,6 +138,14 @@ skills["EnchantmentOfBladesOnHit4"] = {
 	color = 4,
 	description = "Fires a chaining burst of ethereal blades.",
 	skillTypes = { [2] = true, [3] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 1833 to 2903 Physical Damage",
+		[2] = "2 additional Projectiles",
+		[3] = "Chains +4 Times",
+		[4] = "You cannot Cast this Spell directly",
+		[5] = "Trigger this Spell when you Hit",
+		[6] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -148,6 +180,12 @@ skills["EnchantmentOfFlamesOnHit"] = {
 	color = 4,
 	description = "Releases a nova of fire around you, damaging nearby enemies.",
 	skillTypes = { [2] = true, [11] = true, [10] = true, [33] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 93 to 140 Fire Damage",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "Trigger this Spell when you Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -179,6 +217,12 @@ skills["EnchantmentOfFlamesOnHit2"] = {
 	color = 4,
 	description = "Releases a nova of fire around you, damaging nearby enemies.",
 	skillTypes = { [2] = true, [11] = true, [10] = true, [33] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 409 to 601 Fire Damage",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "Trigger this Spell when you Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -210,6 +254,12 @@ skills["EnchantmentOfFlamesOnHit3"] = {
 	color = 4,
 	description = "Releases a nova of fire around you, damaging nearby enemies.",
 	skillTypes = { [2] = true, [11] = true, [10] = true, [33] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 999 to 1453 Fire Damage",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "Trigger this Spell when you Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -241,6 +291,12 @@ skills["EnchantmentOfFlamesOnHit4"] = {
 	color = 4,
 	description = "Releases a nova of fire around you, damaging nearby enemies.",
 	skillTypes = { [2] = true, [11] = true, [10] = true, [33] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 1800 to 2770 Fire Damage",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "Trigger this Spell when you Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -272,6 +328,10 @@ skills["EnchantmentOfForceOnHit"] = {
 	color = 4,
 	description = "Release an arc of force from your weapon or fists, damaging enemies in front of you.",
 	skillTypes = { [1] = true, [11] = true, [10] = true, [6] = true, [47] = true, [57] = true, },
+	effects = {
+		[1] = "Trigger this Skill when you Hit",
+		[2] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -301,6 +361,10 @@ skills["EnchantmentOfForceOnHit2"] = {
 	color = 4,
 	description = "Release an arc of force from your weapon or fists, damaging enemies in front of you.",
 	skillTypes = { [1] = true, [11] = true, [10] = true, [6] = true, [47] = true, [57] = true, },
+	effects = {
+		[1] = "Trigger this Skill when you Hit",
+		[2] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -330,6 +394,10 @@ skills["EnchantmentOfForceOnHit3"] = {
 	color = 4,
 	description = "Release an arc of force from your weapon or fists, damaging enemies in front of you.",
 	skillTypes = { [1] = true, [11] = true, [10] = true, [6] = true, [47] = true, [57] = true, },
+	effects = {
+		[1] = "Trigger this Skill when you Hit",
+		[2] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -359,6 +427,10 @@ skills["EnchantmentOfForceOnHit4"] = {
 	color = 4,
 	description = "Release an arc of force from your weapon or fists, damaging enemies in front of you.",
 	skillTypes = { [1] = true, [11] = true, [10] = true, [6] = true, [47] = true, [57] = true, },
+	effects = {
+		[1] = "Trigger this Skill when you Hit",
+		[2] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -388,6 +460,13 @@ skills["EnchantmentOfFrostOnKill"] = {
 	color = 4,
 	description = "Fire a nova of icy projectiles.",
 	skillTypes = { [2] = true, [3] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 72 to 114 Cold Damage",
+		[2] = "8 additional Projectiles",
+		[3] = "You cannot Cast this Spell directly",
+		[4] = "Trigger this Spell on Kill",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -422,6 +501,13 @@ skills["EnchantmentOfFrostOnKill2"] = {
 	color = 4,
 	description = "Fire a nova of icy projectiles.",
 	skillTypes = { [2] = true, [3] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 332 to 509 Cold Damage",
+		[2] = "8 additional Projectiles",
+		[3] = "You cannot Cast this Spell directly",
+		[4] = "Trigger this Spell on Kill",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -456,6 +542,13 @@ skills["EnchantmentOfFrostOnKill3"] = {
 	color = 4,
 	description = "Fire a nova of icy projectiles.",
 	skillTypes = { [2] = true, [3] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 836 to 1254 Cold Damage",
+		[2] = "8 additional Projectiles",
+		[3] = "You cannot Cast this Spell directly",
+		[4] = "Trigger this Spell on Kill",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -490,6 +583,13 @@ skills["EnchantmentOfFrostOnKill4"] = {
 	color = 4,
 	description = "Fire a nova of icy projectiles.",
 	skillTypes = { [2] = true, [3] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 1530 to 2422 Cold Damage",
+		[2] = "8 additional Projectiles",
+		[3] = "You cannot Cast this Spell directly",
+		[4] = "Trigger this Spell on Kill",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -538,6 +638,13 @@ skills["EnchantmentOfFuryOnHit"] = {
 		["Claw"] = true,
 		["Bow"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Fire Damage",
+		[2] = "Projectiles from Supported Skills Pierce 2 additional Targets",
+		[3] = "Fires Projectiles at all nearby Enemies",
+		[4] = "Trigger this Skill when you Hit",
+		[5] = "Damage cannot be Reflected",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -592,6 +699,13 @@ skills["EnchantmentOfFuryOnHit2"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Fire Damage",
+		[2] = "Projectiles from Supported Skills Pierce 3 additional Targets",
+		[3] = "Fires Projectiles at all nearby Enemies",
+		[4] = "Trigger this Skill when you Hit",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -644,6 +758,13 @@ skills["EnchantmentOfFuryOnHit3"] = {
 		["Claw"] = true,
 		["Bow"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Fire Damage",
+		[2] = "Projectiles from Supported Skills Pierce 4 additional Targets",
+		[3] = "Fires Projectiles at all nearby Enemies",
+		[4] = "Trigger this Skill when you Hit",
+		[5] = "Damage cannot be Reflected",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -698,6 +819,13 @@ skills["EnchantmentOfFuryOnHit4"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Fire Damage",
+		[2] = "Projectiles from Supported Skills Pierce 5 additional Targets",
+		[3] = "Fires Projectiles at all nearby Enemies",
+		[4] = "Trigger this Skill when you Hit",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -736,6 +864,13 @@ skills["EnchantmentOfInfernoOnKill"] = {
 	color = 4,
 	description = "Drops a meteor from above on a nearby foe, dealing fire damage in an area around them.",
 	skillTypes = { [2] = true, [11] = true, [33] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 155 to 249 Fire Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "One impact every 100 seconds",
+		[4] = "Trigger this Spell on Kill",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -771,6 +906,13 @@ skills["EnchantmentOfInfernoOnKill2"] = {
 	color = 4,
 	description = "Drops a meteor from above on a nearby foe, dealing fire damage in an area around them.",
 	skillTypes = { [2] = true, [11] = true, [33] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 722 to 1107 Fire Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "One impact every 100 seconds",
+		[4] = "Trigger this Spell on Kill",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -806,6 +948,13 @@ skills["EnchantmentOfInfernoOnKill3"] = {
 	color = 4,
 	description = "Drops a meteor from above on a nearby foe, dealing fire damage in an area around them.",
 	skillTypes = { [2] = true, [11] = true, [33] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 1817 to 2725 Fire Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "One impact every 100 seconds",
+		[4] = "Trigger this Spell on Kill",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -841,6 +990,13 @@ skills["EnchantmentOfInfernoOnKill4"] = {
 	color = 4,
 	description = "Drops a meteor from above on a nearby foe, dealing fire damage in an area around them.",
 	skillTypes = { [2] = true, [11] = true, [33] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 3324 to 5263 Fire Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "One impact every 100 seconds",
+		[4] = "Trigger this Spell on Kill",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -890,6 +1046,13 @@ skills["EnchantmentOfIreWhenHit"] = {
 		["Claw"] = true,
 		["Bow"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "50% of Physical Damage Converted to Lightning Damage",
+		[3] = "Trigger this Skill when Hit",
+		[4] = "You cannot use this Attack directly",
+		[5] = "Damage cannot be Reflected",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -941,6 +1104,13 @@ skills["EnchantmentOfIreWhenHit2"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "50% of Physical Damage Converted to Lightning Damage",
+		[3] = "Trigger this Skill when Hit",
+		[4] = "You cannot use this Attack directly",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -990,6 +1160,13 @@ skills["EnchantmentOfIreWhenHit3"] = {
 		["Claw"] = true,
 		["Bow"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "50% of Physical Damage Converted to Lightning Damage",
+		[3] = "Trigger this Skill when Hit",
+		[4] = "You cannot use this Attack directly",
+		[5] = "Damage cannot be Reflected",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -1041,6 +1218,13 @@ skills["EnchantmentOfIreWhenHit4"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "50% of Physical Damage Converted to Lightning Damage",
+		[3] = "Trigger this Skill when Hit",
+		[4] = "You cannot use this Attack directly",
+		[5] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1076,6 +1260,12 @@ skills["EnchantmentOfLightWhenCrit"] = {
 	color = 4,
 	description = "Deals a portion of your main hand damage in an area around you and creates Consecrated Ground, causing you and your allies to regenerate life.",
 	skillTypes = { [1] = true, [11] = true, [12] = true, [6] = true, [7] = true, [47] = true, [57] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "6% of maximum Life regenerated per second",
+		[3] = "Trigger this Skill when Critically Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1108,6 +1298,12 @@ skills["EnchantmentOfLightWhenCrit2"] = {
 	color = 4,
 	description = "Deals a portion of your main hand damage in an area around you and creates Consecrated Ground, causing you and your allies to regenerate life.",
 	skillTypes = { [1] = true, [11] = true, [12] = true, [6] = true, [7] = true, [47] = true, [57] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "6% of maximum Life regenerated per second",
+		[3] = "Trigger this Skill when Critically Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1140,6 +1336,12 @@ skills["EnchantmentOfLightWhenCrit3"] = {
 	color = 4,
 	description = "Deals a portion of your main hand damage in an area around you and creates Consecrated Ground, causing you and your allies to regenerate life.",
 	skillTypes = { [1] = true, [11] = true, [12] = true, [6] = true, [7] = true, [47] = true, [57] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "6% of maximum Life regenerated per second",
+		[3] = "Trigger this Skill when Critically Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1172,6 +1374,12 @@ skills["EnchantmentOfLightWhenCrit4"] = {
 	color = 4,
 	description = "Deals a portion of your main hand damage in an area around you and creates Consecrated Ground, causing you and your allies to regenerate life.",
 	skillTypes = { [1] = true, [11] = true, [12] = true, [6] = true, [7] = true, [47] = true, [57] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "6% of maximum Life regenerated per second",
+		[3] = "Trigger this Skill when Critically Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1205,6 +1413,13 @@ skills["EnchantmentOfReflectionWhenHit"] = {
 	description = "Creates a clone of you that attacks with your weapon.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [42] = true, [12] = true, [36] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [28] = true, },
+	effects = {
+		[1] = "Minions deal 200% of Damage",
+		[2] = "Base duration is 5000 seconds",
+		[3] = "80% increased Minion Damage",
+		[4] = "150% increased Minion Maximum Life",
+		[5] = "Trigger this Spell when you're Hit",
+	},
 	minionList = {
 		"Clone",
 	},
@@ -1245,6 +1460,13 @@ skills["EnchantmentOfReflectionWhenHit2"] = {
 	description = "Creates a clone of you that attacks with your weapon.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [42] = true, [12] = true, [36] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [28] = true, },
+	effects = {
+		[1] = "Minions deal 300% of Damage",
+		[2] = "Base duration is 5000 seconds",
+		[3] = "100% increased Minion Damage",
+		[4] = "150% increased Minion Maximum Life",
+		[5] = "Trigger this Spell when you're Hit",
+	},
 	minionList = {
 		"Clone",
 	},
@@ -1285,6 +1507,13 @@ skills["EnchantmentOfReflectionWhenHit3"] = {
 	description = "Creates a clone of you that attacks with your weapon.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [42] = true, [12] = true, [36] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [28] = true, },
+	effects = {
+		[1] = "Minions deal 400% of Damage",
+		[2] = "Base duration is 5000 seconds",
+		[3] = "120% increased Minion Damage",
+		[4] = "150% increased Minion Maximum Life",
+		[5] = "Trigger this Spell when you're Hit",
+	},
 	minionList = {
 		"Clone",
 	},
@@ -1325,6 +1554,13 @@ skills["EnchantmentOfReflectionWhenHit4"] = {
 	description = "Creates a clone of you that attacks with your weapon.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [42] = true, [12] = true, [36] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [28] = true, },
+	effects = {
+		[1] = "Minions deal 500% of Damage",
+		[2] = "Base duration is 5000 seconds",
+		[3] = "140% increased Minion Damage",
+		[4] = "150% increased Minion Maximum Life",
+		[5] = "Trigger this Spell when you're Hit",
+	},
 	minionList = {
 		"Clone",
 	},
@@ -1379,6 +1615,12 @@ skills["EnchantmentOfSpiteWhenHit"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Cold Damage",
+		[2] = "9 additional Projectiles",
+		[3] = "Trigger this Skill when Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1431,6 +1673,12 @@ skills["EnchantmentOfSpiteWhenHit2"] = {
 		["Claw"] = true,
 		["Bow"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Cold Damage",
+		[2] = "9 additional Projectiles",
+		[3] = "Trigger this Skill when Hit",
+		[4] = "Damage cannot be Reflected",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -1485,6 +1733,12 @@ skills["EnchantmentOfSpiteWhenHit3"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Cold Damage",
+		[2] = "9 additional Projectiles",
+		[3] = "Trigger this Skill when Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1538,6 +1792,12 @@ skills["EnchantmentOfSpiteWhenHit4"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Cold Damage",
+		[2] = "9 additional Projectiles",
+		[3] = "Trigger this Skill when Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -1576,6 +1836,12 @@ skills["EnchantmentOfTempestOnHit"] = {
 	color = 4,
 	description = "Charges you with lightning which lasts a duration before unleashing, damaging surrounding enemies.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 175 to 280 Lightning Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "Trigger this Spell when you Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1610,6 +1876,12 @@ skills["EnchantmentOfTempestOnHit2"] = {
 	color = 4,
 	description = "Charges you with lightning which lasts a duration before unleashing, damaging surrounding enemies.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 812 to 1245 Lightning Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "Trigger this Spell when you Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1644,6 +1916,12 @@ skills["EnchantmentOfTempestOnHit3"] = {
 	color = 4,
 	description = "Charges you with lightning which lasts a duration before unleashing, damaging surrounding enemies.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 2044 to 3065 Lightning Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "Trigger this Spell when you Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1678,6 +1956,12 @@ skills["EnchantmentOfTempestOnHit4"] = {
 	color = 4,
 	description = "Charges you with lightning which lasts a duration before unleashing, damaging surrounding enemies.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 3739 to 5920 Lightning Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "Trigger this Spell when you Hit",
+		[4] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1713,6 +1997,9 @@ skills["EnchantmentOfTheGraveOnKill"] = {
 	description = "Summons three icy skull minions that explode at the end of their duration.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [34] = true, [36] = true, [42] = true, [12] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+	},
 	minionList = {
 		"IcyRagingSpirit",
 	},
@@ -1748,6 +2035,9 @@ skills["EnchantmentOfTheGraveOnKill2"] = {
 	description = "Summons three icy skull minions that explode at the end of their duration.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [34] = true, [36] = true, [42] = true, [12] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+	},
 	minionList = {
 		"IcyRagingSpirit",
 	},
@@ -1783,6 +2073,9 @@ skills["EnchantmentOfTheGraveOnKill3"] = {
 	description = "Summons three icy skull minions that explode at the end of their duration.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [34] = true, [36] = true, [42] = true, [12] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+	},
 	minionList = {
 		"IcyRagingSpirit",
 	},
@@ -1818,6 +2111,9 @@ skills["EnchantmentOfTheGraveOnKill4"] = {
 	description = "Summons three icy skull minions that explode at the end of their duration.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [34] = true, [36] = true, [42] = true, [12] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+	},
 	minionList = {
 		"IcyRagingSpirit",
 	},
@@ -1852,6 +2148,11 @@ skills["EnchantmentOfThunderOnKill"] = {
 	color = 4,
 	description = "Damaging cones of lightning surround you.",
 	skillTypes = { [2] = true, [11] = true, [31] = true, [35] = true, [42] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 71 to 114 Lightning Damage",
+		[2] = "Trigger this Spell on Kill",
+		[3] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1883,6 +2184,11 @@ skills["EnchantmentOfThunderOnKill2"] = {
 	color = 4,
 	description = "Damaging cones of lightning surround you.",
 	skillTypes = { [2] = true, [11] = true, [31] = true, [35] = true, [42] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 330 to 506 Lightning Damage",
+		[2] = "Trigger this Spell on Kill",
+		[3] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1914,6 +2220,11 @@ skills["EnchantmentOfThunderOnKill3"] = {
 	color = 4,
 	description = "Damaging cones of lightning surround you.",
 	skillTypes = { [2] = true, [11] = true, [31] = true, [35] = true, [42] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 830 to 1245 Lightning Damage",
+		[2] = "Trigger this Spell on Kill",
+		[3] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1945,6 +2256,11 @@ skills["EnchantmentOfThunderOnKill4"] = {
 	color = 4,
 	description = "Damaging cones of lightning surround you.",
 	skillTypes = { [2] = true, [11] = true, [31] = true, [35] = true, [42] = true, [36] = true, },
+	effects = {
+		[1] = "Deals 1519 to 2405 Lightning Damage",
+		[2] = "Trigger this Spell on Kill",
+		[3] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -1991,6 +2307,10 @@ skills["EnchantmentOfWarOnKill"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Minions deal 150% of Damage",
+		[2] = "Base duration is 10000 seconds",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -2033,6 +2353,10 @@ skills["EnchantmentOfWarOnKill2"] = {
 		["Claw"] = true,
 		["Bow"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "Minions deal 200% of Damage",
+		[2] = "Base duration is 10000 seconds",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -2077,6 +2401,10 @@ skills["EnchantmentOfWarOnKill3"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Minions deal 250% of Damage",
+		[2] = "Base duration is 10000 seconds",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -2120,6 +2448,10 @@ skills["EnchantmentOfWarOnKill4"] = {
 		["Bow"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Minions deal 300% of Damage",
+		[2] = "Base duration is 10000 seconds",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -2148,6 +2480,11 @@ skills["EnchantmentOfWinterWhenHit"] = {
 	color = 4,
 	description = "Unleashes an icy projectile that pulses with cold as it travels.",
 	skillTypes = { [3] = true, [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 48 to 76 Cold Damage",
+		[2] = "Trigger this Spell when you're Hit",
+		[3] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -2181,6 +2518,11 @@ skills["EnchantmentOfWinterWhenHit2"] = {
 	color = 4,
 	description = "Unleashes an icy projectile that pulses with cold as it travels.",
 	skillTypes = { [3] = true, [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 221 to 340 Cold Damage",
+		[2] = "Trigger this Spell when you're Hit",
+		[3] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -2214,6 +2556,11 @@ skills["EnchantmentOfWinterWhenHit3"] = {
 	color = 4,
 	description = "Unleashes an icy projectile that pulses with cold as it travels.",
 	skillTypes = { [3] = true, [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 557 to 836 Cold Damage",
+		[2] = "Trigger this Spell when you're Hit",
+		[3] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -2247,6 +2594,11 @@ skills["EnchantmentOfWinterWhenHit4"] = {
 	color = 4,
 	description = "Unleashes an icy projectile that pulses with cold as it travels.",
 	skillTypes = { [3] = true, [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [42] = true, },
+	effects = {
+		[1] = "Deals 1020 to 1615 Cold Damage",
+		[2] = "Trigger this Spell when you're Hit",
+		[3] = "Damage cannot be Reflected",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,

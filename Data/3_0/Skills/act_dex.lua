@@ -23,6 +23,13 @@ skills["AnimateWeapon"] = {
 	description = "Animates a melee weapon to fight by your side. You cannot animate unidentified weapons.",
 	skillTypes = { [36] = true, [12] = true, [9] = true, [21] = true, [2] = true, [18] = true, [49] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, [54] = true, [56] = true, },
+	effects = {
+		[1] = "Adds (4-48) to (6-72) Physical Damage to Attacks",
+		[2] = "Deals (100-332)% of Damage",
+		[3] = "Base duration is 37500 seconds",
+		[4] = "Can summon up to 50 Animated Weapons at a time",
+		[5] = "Can use Items requiring up to level (9-100)",
+	},
 	minionHasItemSet = true,
 	minionUses = {
 		["Weapon 1"] = true,
@@ -102,6 +109,12 @@ skills["NewArcticArmour"] = {
 	color = 2,
 	description = "Summons an icy barrier that chills enemies when they hit you. You drop chilled ground while moving, and take less Fire and Physical damage while stationary.",
 	skillTypes = { [2] = true, [5] = true, [18] = true, [12] = true, [15] = true, [27] = true, [34] = true, [16] = true, },
+	effects = {
+		[1] = "Base duration is (2500-5400) seconds",
+		[2] = "(8-15)% less Physical Damage taken when Hit",
+		[3] = "(8-15)% less Fire Damage taken when Hit",
+		[4] = "Chill Enemy for 0.5 seconds when Hit",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -173,6 +186,9 @@ skills["Barrage"] = {
 	weaponTypes = {
 		["Bow"] = true,
 		["Wand"] = true,
+	},
+	effects = {
+		[1] = "3 additional Projectiles",
 	},
 	parts = {
 		{
@@ -255,6 +271,11 @@ skills["BearTrap"] = {
 	color = 2,
 	description = "Throws a trap that damages and immobilises a single enemy.",
 	skillTypes = { [12] = true, [19] = true, [37] = true, [39] = true, [10] = true, },
+	effects = {
+		[1] = "Deals (16-4162) to (22-5826) Physical Damage",
+		[2] = "Trap lasts 16 seconds",
+		[3] = "Locks enemy in place",
+	},
 	baseFlags = {
 		cast = true,
 		trap = true,
@@ -337,6 +358,10 @@ skills["ChargedAttack"] = {
 		["Claw"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["Dagger"] = true,
+	},
+	effects = {
+		[1] = "60% more Attack Speed",
+		[2] = "20% more Damage with Hits and Ailments for each stage",
 	},
 	parts = {
 		{
@@ -423,6 +448,15 @@ skills["BladeVortex"] = {
 	color = 2,
 	description = "This spell creates ethereal blades which orbit in an area around you, dealing damage every 0.6 seconds to all enemies in their radius. As more blades are added, the damage becomes greater and more frequent.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [18] = true, [26] = true, [36] = true, [27] = true, },
+	effects = {
+		[1] = "Deals (7-270) to (10-405) Physical Damage",
+		[2] = "+(0-6) to radius",
+		[3] = "Base duration is 5000 seconds",
+		[4] = "10% increased Hit Rate for each blade",
+		[5] = "30% more Damage with Hits for each blade",
+		[6] = "20% more Damage with Ailments for each blade",
+		[7] = "Can have up to 20 active spinning blades",
+	},
 	parts = {
 		{
 			name = "0 Blades",
@@ -522,6 +556,10 @@ skills["Bladefall"] = {
 	color = 2,
 	description = "Ethereal weapons rain from the sky, dealing damage to enemies in a sequence of five volleys, each wider but less damaging than the last. Enemies can be hit multiple times where these overlap.",
 	skillTypes = { [2] = true, [11] = true, [17] = true, [19] = true, [18] = true, [10] = true, [36] = true, [26] = true, },
+	effects = {
+		[1] = "Deals (44-933) to (65-1399) Physical Damage",
+		[2] = "6% less Damage per Volley",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -595,6 +633,10 @@ skills["BlastRain"] = {
 	skillTypes = { [1] = true, [11] = true, [14] = true, [22] = true, [17] = true, [19] = true, [33] = true, [48] = true, [57] = true, },
 	weaponTypes = {
 		["Bow"] = true,
+	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Fire Damage",
+		[2] = "Causes 4 Explosions",
 	},
 	parts = {
 		{
@@ -685,6 +727,10 @@ skills["BlinkArrow"] = {
 	weaponTypes = {
 		["Bow"] = true,
 	},
+	effects = {
+		[1] = "Minions deal 175% of Damage",
+		[2] = "Base duration is 3000 seconds",
+	},
 	minionList = {
 		"Clone",
 	},
@@ -763,6 +809,14 @@ skills["BloodRage"] = {
 	color = 2,
 	description = "Adds a buff that deals Physical Damage over time, while increasing Attack Speed and Life Leech. Killing an enemy while this buff is active refreshes the buff duration, and can grant a Frenzy Charge.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [18] = true, [36] = true, },
+	effects = {
+		[1] = "Base duration is (7000-12800) seconds",
+		[2] = "(5-20)% increased Attack Speed",
+		[3] = "1.2% of Attack Physical Damage Leeched as Life",
+		[4] = "You take 4% of your Maximum Life per second as Physical Damage",
+		[5] = "You take 4% of your Maximum Energy Shield per second as Physical Damage",
+		[6] = "25% chance to gain a Frenzy Charge on Kill",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -838,6 +892,11 @@ skills["BurningArrow"] = {
 	weaponTypes = {
 		["Bow"] = true,
 	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Fire Damage",
+		[2] = "20% chance to Ignite enemies",
+		[3] = "(10-39)% increased Burning Damage",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -912,6 +971,12 @@ skills["VaalBurningArrow"] = {
 	skillTypes = { [1] = true, [48] = true, [3] = true, [22] = true, [17] = true, [19] = true, [11] = true, [43] = true, [33] = true, [55] = true, },
 	weaponTypes = {
 		["Bow"] = true,
+	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Fire Damage",
+		[2] = "20% chance to Ignite enemies",
+		[3] = "(10-39)% increased Burning Damage",
+		[4] = "Can't be Evaded",
 	},
 	baseFlags = {
 		attack = true,
@@ -990,6 +1055,13 @@ skills["PoisonArrow"] = {
 	skillTypes = { [1] = true, [48] = true, [3] = true, [11] = true, [12] = true, [17] = true, [19] = true, [22] = true, [40] = true, [50] = true, },
 	weaponTypes = {
 		["Bow"] = true,
+	},
+	effects = {
+		[1] = "+(0-6) to radius",
+		[2] = "Deals (5.3-2030.9) Base Chaos Damage per second",
+		[3] = "Base duration is (2800-5900) seconds",
+		[4] = "Modifiers to Projectile Damage apply to this Skill's Damage Over Time effect",
+		[5] = "Gain (30-59)% of your Physical Damage as Extra Chaos Damage",
 	},
 	baseFlags = {
 		attack = true,
@@ -1078,6 +1150,12 @@ skills["Cyclone"] = {
 		["Claw"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "30% less Movement Speed",
+		[2] = "50% more Attack Speed",
+		[3] = "+(0-5) to Melee range",
+		[4] = "First Hit deals 50% less Damage",
 	},
 	baseFlags = {
 		attack = true,
@@ -1170,6 +1248,13 @@ skills["VaalCyclone"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "50% increased Area of Effect",
+		[3] = "100% more Attack Speed",
+		[4] = "Can't be Evaded",
+		[5] = "+(0-5) to Melee range",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1245,6 +1330,12 @@ skills["Desecrate"] = {
 	color = 2,
 	description = "Desecrates the ground, summoning corpses and dealing chaos damage to all enemies in the area.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [36] = true, [40] = true, [26] = true, [50] = true, },
+	effects = {
+		[1] = "Deals (8.2-912.6) Base Chaos Damage per second",
+		[2] = "Base duration is 5000 seconds",
+		[3] = "Creates 3 Corpses",
+		[4] = "Creates Corpses up to Level (20-100)",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -1317,6 +1408,11 @@ skills["DetonateDead"] = {
 	color = 2,
 	description = "Explodes an unused corpse, dealing fire damage to nearby enemies.",
 	skillTypes = { [39] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (4-713) to (5-1070) Fire Damage",
+		[2] = "Explosion deals base Fire Damage equal to 6% of the corpse's maximum Life",
+		[3] = "Damage cannot be Reflected",
+	},
 	setupFunc = function(actor, output)
 		local skillData = actor.mainSkill.skillData
 		if skillData.corpseLife then
@@ -1397,6 +1493,11 @@ skills["VaalDetonateDead"] = {
 	color = 2,
 	description = "Explodes an unused corpse, dealing fire damage to nearby enemies. Nearby corpses will also explode in a chain reaction.",
 	skillTypes = { [39] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [43] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (3-649) to (5-973) Fire Damage",
+		[2] = "Explosion deals base Fire Damage equal to 8% of the corpse's maximum Life",
+		[3] = "Damage cannot be Reflected",
+	},
 	setupFunc = function(actor, output)
 		local skillData = actor.mainSkill.skillData
 		if skillData.corpseLife then
@@ -1487,6 +1588,8 @@ skills["DoubleStrike"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1568,6 +1671,9 @@ skills["VaalDoubleStrike"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Base duration is (3600-6500) seconds",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1646,6 +1752,8 @@ skills["DualStrike"] = {
 		["One Handed Axe"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1715,6 +1823,12 @@ skills["ElementalHit"] = {
 	color = 2,
 	description = "A standard attack (with any weapon) that adds damage of a random element.",
 	skillTypes = { [1] = true, [6] = true, [3] = true, [22] = true, [17] = true, [19] = true, [25] = true, [28] = true, [24] = true, [33] = true, [34] = true, [35] = true, [48] = true, },
+	effects = {
+		[1] = "Can deal (4-346) to (8-643) base Fire Damage",
+		[2] = "Can deal (3-283) to (6-526) base Cold Damage",
+		[3] = "Can deal (1-56) to (13-1057) base Lightning Damage",
+		[4] = "10% chance to Freeze, Shock and Ignite",
+	},
 	parts = {
 		{
 			name = "Added fire",
@@ -1801,6 +1915,10 @@ skills["EtherealKnives"] = {
 	color = 2,
 	description = "Fires an arc of knives in front of the caster which deals physical damage.",
 	skillTypes = { [2] = true, [10] = true, [3] = true, [18] = true, [17] = true, [19] = true, [26] = true, [36] = true, },
+	effects = {
+		[1] = "Deals (4-1251) to (6-1876) Physical Damage",
+		[2] = "9 additional Projectiles",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -1874,6 +1992,11 @@ skills["ExplosiveArrow"] = {
 	skillTypes = { [1] = true, [48] = true, [3] = true, [10] = true, [11] = true, [12] = true, [22] = true, [17] = true, [19] = true, [33] = true, },
 	weaponTypes = {
 		["Bow"] = true,
+	},
+	effects = {
+		[1] = "Base duration is 1000 seconds",
+		[2] = "Explosion deals (44-1767) to (66-2651) Base Fire Damage per Fuse Charge",
+		[3] = "+2 to Explosion Radius per Fuse Charge",
 	},
 	parts = {
 		{
@@ -1976,6 +2099,13 @@ skills["FireTrap"] = {
 	color = 2,
 	description = "Throws a trap that explodes when triggered, dealing fire damage to surrounding enemies and leaving an area of burning ground that damages enemies who walk through it.",
 	skillTypes = { [2] = true, [12] = true, [10] = true, [19] = true, [11] = true, [29] = true, [37] = true, [40] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (2-1648) to (4-2472) Fire Damage",
+		[2] = "+(0-10) to radius",
+		[3] = "Trap lasts 16 seconds",
+		[4] = "Deals (3.6-2232.1) Base Fire Damage per second",
+		[5] = "Base duration is 8000 seconds",
+	},
 	baseFlags = {
 		spell = true,
 		trap = true,
@@ -2069,6 +2199,10 @@ skills["FlickerStrike"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "20% more Attack Speed",
+		[2] = "10% increased Attack Speed per Frenzy Charge",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -2142,6 +2276,13 @@ skills["FreezeMine"] = {
 	color = 2,
 	description = "Lays a remote mine that you can detonate to freeze all enemies in the area.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [41] = true, [34] = true, },
+	effects = {
+		[1] = "Deals (7-422) to (10-633) Cold Damage",
+		[2] = "Mine lasts 16 seconds",
+		[3] = "Always Freezes enemies",
+		[4] = "Freezes enemies as though dealing (200-490)% more Damage",
+		[5] = "Enemies lose 15% Cold Resistance while Frozen",
+	},
 	baseFlags = {
 		spell = true,
 		mine = true,
@@ -2218,6 +2359,10 @@ skills["Frenzy"] = {
 	color = 2,
 	description = "Performs an attack that gives the character a frenzy charge if it hits. Frenzy charges increase your attack speed.",
 	skillTypes = { [1] = true, [48] = true, [3] = true, [6] = true, [22] = true, [17] = true, [19] = true, [25] = true, [28] = true, [24] = true, },
+	effects = {
+		[1] = "5% increased Physical Damage per Frenzy Charge",
+		[2] = "5% increased Attack Speed per Frenzy Charge",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -2301,6 +2446,11 @@ skills["FrostBlades"] = {
 		["Claw"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "60% of Physical Damage Converted to Cold Damage",
+		[2] = "(4-9) additional Projectiles",
+		[3] = "+(18-23) to Melee Weapon Range",
 	},
 	parts = {
 		{
@@ -2387,6 +2537,10 @@ skills["Grace"] = {
 	color = 2,
 	description = "Casts an aura that grants evasion to you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, },
+	effects = {
+		[1] = "+(227-4179) to Evasion Rating",
+		[2] = "+(0-29) to radius",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2458,6 +2612,12 @@ skills["VaalGrace"] = {
 	color = 2,
 	description = "Casts a temporary aura that grants you and your allies the ability to dodge attacks and spells.",
 	skillTypes = { [2] = true, [5] = true, [11] = true, [18] = true, [27] = true, [12] = true, [43] = true, [44] = true, },
+	effects = {
+		[1] = "(24-39)% chance to Dodge Attacks",
+		[2] = "(24-39)% chance to Dodge Spell Damage",
+		[3] = "+(0-29) to radius",
+		[4] = "Base duration is 6000 seconds",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2529,6 +2689,11 @@ skills["Haste"] = {
 	color = 2,
 	description = "Casts an aura that increases the movement speed, attack speed and cast speed of you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, },
+	effects = {
+		[1] = "+(0-29) to radius",
+		[2] = "(9-20)% increased Attack Speed",
+		[3] = "(4-12)% increased Movement Speed",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2602,6 +2767,12 @@ skills["VaalHaste"] = {
 	color = 2,
 	description = "Casts a temporary aura that increases the movement speed, attack speed and cast speed of you and your allies.",
 	skillTypes = { [2] = true, [5] = true, [11] = true, [18] = true, [27] = true, [12] = true, [43] = true, [44] = true, },
+	effects = {
+		[1] = "+(0-29) to radius",
+		[2] = "Base duration is 4000 seconds",
+		[3] = "(25-34)% increased Attack Speed",
+		[4] = "(10-15)% increased Movement Speed",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2675,6 +2846,10 @@ skills["Hatred"] = {
 	color = 2,
 	description = "Casts an aura that increases the cold damage of you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, [34] = true, },
+	effects = {
+		[1] = "Gain (26-41)% of Physical Damage as Extra Cold Damage",
+		[2] = "+(0-29) to radius",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2746,6 +2921,12 @@ skills["HeraldOfIce"] = {
 	color = 2,
 	description = "Channel ice through your hands, adding cold damage to spells and attacks. If you shatter an enemy, they explode and deal AoE cold damage to enemies near them.",
 	skillTypes = { [39] = true, [5] = true, [15] = true, [16] = true, [10] = true, [11] = true, [34] = true, [27] = true, [63] = true, },
+	effects = {
+		[1] = "Deals (18-733) to (26-1100) Cold Damage",
+		[2] = "Damage cannot be Reflected",
+		[3] = "Adds (4-74) to (5-111) Cold Damage to Spells",
+		[4] = "Adds (4-74) to (5-111) Cold Damage to Attacks",
+	},
 	baseFlags = {
 		cast = true,
 		area = true,
@@ -2827,6 +3008,10 @@ skills["IceShot"] = {
 	skillTypes = { [1] = true, [48] = true, [3] = true, [11] = true, [12] = true, [22] = true, [17] = true, [19] = true, [34] = true, },
 	weaponTypes = {
 		["Bow"] = true,
+	},
+	effects = {
+		[1] = "60% of Physical Damage Converted to Cold Damage",
+		[2] = "Base duration is 1500 seconds",
 	},
 	parts = {
 		{
@@ -2913,6 +3098,10 @@ skills["IceTrap"] = {
 	color = 2,
 	description = "Throws a trap that creates a series of icy runic explosions when triggered, dealing cold damage to all enemies caught in the blasts.",
 	skillTypes = { [2] = true, [10] = true, [19] = true, [11] = true, [37] = true, [34] = true, [12] = true, },
+	effects = {
+		[1] = "Deals (60-1266) to (90-1899) Cold Damage",
+		[2] = "Trap lasts 16 seconds",
+	},
 	baseFlags = {
 		spell = true,
 		trap = true,
@@ -2994,6 +3183,10 @@ skills["DoubleSlash"] = {
 		["One Handed Axe"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Sword"] = true,
+	},
+	effects = {
+		[1] = "+(0-7) to radius",
+		[2] = "25% less Attack Speed",
 	},
 	parts = {
 		{
@@ -3078,6 +3271,10 @@ skills["LightningArrow"] = {
 	weaponTypes = {
 		["Bow"] = true,
 	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Lightning Damage",
+		[2] = "Hits up to 3 additional enemies near the target",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -3160,6 +3357,12 @@ skills["LightningStrike"] = {
 		["Claw"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "(4-9) additional Projectiles",
+		[2] = "50% of Physical Damage Converted to Lightning Damage",
+		[3] = "Projectiles deal 25% less Damage",
+		[4] = "Damage over time caused by Projectiles deals 25% less Damage",
 	},
 	parts = {
 		{
@@ -3261,6 +3464,12 @@ skills["VaalLightningStrike"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Base duration is (5000-10800) seconds",
+		[2] = "50% of Physical Damage Converted to Lightning Damage",
+		[3] = "Beams deal 50% less Damage",
+		[4] = "Can't be Evaded",
+	},
 	parts = {
 		{
 			name = "Strike",
@@ -3345,6 +3554,10 @@ skills["MirrorArrow"] = {
 	weaponTypes = {
 		["Bow"] = true,
 	},
+	effects = {
+		[1] = "Minions deal 175% of Damage",
+		[2] = "Base duration is 3000 seconds",
+	},
 	minionList = {
 		"Clone",
 	},
@@ -3424,6 +3637,15 @@ skills["NewPhaseRun"] = {
 	color = 2,
 	description = "Gain a buff that makes you faster, harder to detect, and grants Phasing, letting you pass through enemies. Performing any skill replaces this buff with one that boosts melee damage of skills you use yourself (it will not apply to your melee skills used by totems). Consumes Frenzy Charges to increase duration.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [36] = true, [38] = true, },
+	effects = {
+		[1] = "Base duration is 1800 seconds",
+		[2] = "Base secondary duration is 200 seconds",
+		[3] = "(30-44)% increased Movement Speed",
+		[4] = "(20-35)% more Melee Physical Damage",
+		[5] = "100% increased Skill Duration per Frenzy Charge",
+		[6] = "Phasing",
+		[7] = "80% reduced Visibility to Enemies",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -3497,6 +3719,10 @@ skills["PoachersMark"] = {
 	color = 2,
 	description = "Curses all targets in an area, making them less evasive. Hitting the cursed targets will grant life and mana, and killing them will result in more flask charges and a chance to gain a frenzy charge.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
+	effects = {
+		[1] = "+(0-15) to radius",
+		[2] = "Base duration is (6000-11800) seconds",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -3573,6 +3799,11 @@ skills["ProjectileWeakness"] = {
 	color = 2,
 	description = "Curses all targets in an area, making them easier to pierce and to knock back, and increasing the damage they take from projectiles.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
+	effects = {
+		[1] = "(25-54)% increased Damage taken from Projectiles",
+		[2] = "+(0-15) to radius",
+		[3] = "Base duration is (9000-11900) seconds",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -3655,6 +3886,10 @@ skills["Puncture"] = {
 		["Bow"] = true,
 		["Thrusting One Handed Sword"] = true,
 	},
+	effects = {
+		[1] = "Base duration is 8000 seconds",
+		[2] = "Causes Bleeding",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -3728,6 +3963,11 @@ skills["ColdResistAura"] = {
 	color = 2,
 	description = "Casts an aura that grants cold resistance to you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, [34] = true, },
+	effects = {
+		[1] = "+(0-5)% to maximum Cold Resistance",
+		[2] = "+(0-29) to radius",
+		[3] = "+(22-51)% to Cold Resistance",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -3801,6 +4041,9 @@ skills["RainOfArrows"] = {
 	skillTypes = { [1] = true, [48] = true, [11] = true, [14] = true, [22] = true, [17] = true, [19] = true, },
 	weaponTypes = {
 		["Bow"] = true,
+	},
+	effects = {
+		[1] = "+(0-6) to radius",
 	},
 	baseFlags = {
 		attack = true,
@@ -3876,6 +4119,11 @@ skills["VaalRainOfArrows"] = {
 	skillTypes = { [1] = true, [48] = true, [11] = true, [14] = true, [22] = true, [17] = true, [19] = true, [12] = true, [43] = true, },
 	weaponTypes = {
 		["Bow"] = true,
+	},
+	effects = {
+		[1] = "+(0-6) to radius",
+		[2] = "Base duration is (3400-4850) seconds",
+		[3] = "Can't be Evaded",
 	},
 	baseFlags = {
 		attack = true,
@@ -3955,6 +4203,10 @@ skills["Reave"] = {
 		["Claw"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["Dagger"] = true,
+	},
+	effects = {
+		[1] = "+(0-6) to radius",
+		[2] = "50% more Area of Effect for each stage",
 	},
 	parts = {
 		{
@@ -4045,6 +4297,12 @@ skills["VaalReave"] = {
 		["Claw"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["Dagger"] = true,
+	},
+	effects = {
+		[1] = "+(0-6) to radius",
+		[2] = "50% more Area of Effect for each stage",
+		[3] = "150% more Attack Speed",
+		[4] = "Can't be Evaded",
 	},
 	parts = {
 		{
@@ -4149,6 +4407,10 @@ skills["Riposte"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Trigger this Skill when you Block",
+		[2] = "You cannot use this Attack directly",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -4221,6 +4483,10 @@ skills["ShrapnelShot"] = {
 	skillTypes = { [1] = true, [3] = true, [11] = true, [22] = true, [17] = true, [19] = true, [35] = true, [48] = true, },
 	weaponTypes = {
 		["Bow"] = true,
+	},
+	effects = {
+		[1] = "+(0-7) to radius",
+		[2] = "40% of Physical Damage Converted to Lightning Damage",
 	},
 	parts = {
 		{
@@ -4309,6 +4575,11 @@ skills["SiegeBallista"] = {
 		["Bow"] = true,
 	},
 	skillTotemId = 12,
+	effects = {
+		[1] = "Totem lasts 8 seconds",
+		[2] = "Summons a Totem which uses this Skill",
+		[3] = "50% less Attack Speed",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -4387,6 +4658,11 @@ skills["SmokeMine"] = {
 	color = 2,
 	description = "Places a mine that will teleport you to it when detonated. It covers both your escape and arrival with a cloud of smoke that blinds enemies, and gives you a temporary buff to movement speed.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [38] = true, [41] = true, },
+	effects = {
+		[1] = "Mine lasts 16 seconds",
+		[2] = "Base duration is (4000-6900) seconds",
+		[3] = "30% increased Movement Speed",
+	},
 	baseFlags = {
 		spell = true,
 		mine = true,
@@ -4472,6 +4748,8 @@ skills["ThrownWeapon"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -4552,6 +4830,9 @@ skills["VaalThrownWeapon"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Can't be Evaded",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -4622,6 +4903,9 @@ skills["SplitArrow"] = {
 	weaponTypes = {
 		["Bow"] = true,
 	},
+	effects = {
+		[1] = "(4-8) additional Arrows",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -4691,6 +4975,12 @@ skills["SummonIceGolem"] = {
 	description = "Summons an Ice Golem that grants you increased Critical Strike Chance and Accuracy. The Ice Golem can use an icy barrage spell and a chilling spinning dash in addition to its melee attack.",
 	skillTypes = { [36] = true, [34] = true, [19] = true, [9] = true, [21] = true, [26] = true, [2] = true, [18] = true, [17] = true, [49] = true, [60] = true, [62] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [2] = true, [10] = true, [38] = true, [28] = true, },
+	effects = {
+		[1] = "Can Summon up to 1 Golem at a time",
+		[2] = "(30-88)% increased Minion Maximum Life",
+		[3] = "Golems Grant (20-35)% increased Critical Strike Chance",
+		[4] = "Golems Grant (20-35)% increased Accuracy",
+	},
 	minionList = {
 		"SummonedIceGolem",
 	},
@@ -4770,6 +5060,11 @@ skills["TemporalChains"] = {
 	color = 2,
 	description = "Curses all targets in an area, Slowing them, and making effects on them expire more slowly.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
+	effects = {
+		[1] = "+(0-10) to radius",
+		[2] = "Base duration is (5000-6450) seconds",
+		[3] = "40% reduced Effect of Curse against Players",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -4843,6 +5138,9 @@ skills["TornadoShot"] = {
 	skillTypes = { [1] = true, [3] = true, [17] = true, [19] = true, [22] = true, [48] = true, },
 	weaponTypes = {
 		["Bow"] = true,
+	},
+	effects = {
+		[1] = "3 secondary Tornado Shot Projectiles",
 	},
 	baseFlags = {
 		attack = true,
@@ -4919,6 +5217,11 @@ skills["ViperStrike"] = {
 		["Dagger"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["Claw"] = true,
+	},
+	effects = {
+		[1] = "25% of Physical Damage Converted to Chaos Damage",
+		[2] = "Base duration is 4000 seconds",
+		[3] = "60% chance to Poison on Hit",
 	},
 	baseFlags = {
 		attack = true,
@@ -4997,6 +5300,8 @@ skills["WhirlingBlades"] = {
 		["Thrusting One Handed Sword"] = true,
 		["Claw"] = true,
 		["Dagger"] = true,
+	},
+	effects = {
 	},
 	baseFlags = {
 		attack = true,
@@ -5084,6 +5389,11 @@ skills["WildStrike"] = {
 		["Claw"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "2 additional Projectiles",
+		[2] = "Chains +(4-8) Times",
+		[3] = "100% of Physical Damage Converted to Fire, Cold or Lightning Damage",
 	},
 	parts = {
 		{

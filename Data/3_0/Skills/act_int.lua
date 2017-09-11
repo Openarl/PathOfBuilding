@@ -22,6 +22,12 @@ skills["Arc"] = {
 	color = 3,
 	description = "An arc of lightning stretches from the caster to a targeted nearby enemy and chains on to additional targets.",
 	skillTypes = { [2] = true, [10] = true, [17] = true, [18] = true, [19] = true, [23] = true, [26] = true, [36] = true, [45] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (2-114) to (35-2163) Lightning Damage",
+		[2] = "Chains +(2-9) Times",
+		[3] = "10% chance to Shock enemies",
+		[4] = "(10-39)% increased Effect of Shock",
+	},
 	baseFlags = {
 		spell = true,
 		chaining = true,
@@ -94,6 +100,11 @@ skills["VaalArcChain"] = {
 	color = 3,
 	description = "An arc of lightning stretches from the caster to a targeted nearby enemy and chains on to many additional targets.",
 	skillTypes = { [2] = true, [10] = true, [17] = true, [18] = true, [19] = true, [23] = true, [43] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (2-123) to (35-2335) Lightning Damage",
+		[2] = "Chains +40 Times",
+		[3] = "100% chance to Shock enemies",
+	},
 	baseFlags = {
 		spell = true,
 		lightning = true,
@@ -165,6 +176,10 @@ skills["ArcticBreath"] = {
 	color = 3,
 	description = "Fires a frozen skull projectile that leaves a trail of ground ice behind it. It explodes on impact, creating more ground ice and damaging targets within an area.",
 	skillTypes = { [2] = true, [3] = true, [10] = true, [17] = true, [18] = true, [19] = true, [12] = true, [11] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (52-1716) to (78-2574) Cold Damage",
+		[2] = "Base duration is (880-2200) seconds",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -238,6 +253,12 @@ skills["AssassinsMark"] = {
 	color = 3,
 	description = "Curses all targets in an area, making them more vulnerable to Critical Strikes. Killing the cursed targets will grant life and mana, and a chance to gain a power charge.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
+	effects = {
+		[1] = "You take 20% increased Extra Damage from Critical Strikes",
+		[2] = "(5-11)% additional Chance to receive a Critical Strike",
+		[3] = "+(0-15) to radius",
+		[4] = "Base duration is (6000-11800) seconds",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -314,6 +335,9 @@ skills["BallLightning"] = {
 	color = 3,
 	description = "Fires a slow-moving projectile that periodically damages enemies in an area around it with bolts of lightning.",
 	skillTypes = { [2] = true, [10] = true, [3] = true, [11] = true, [18] = true, [17] = true, [19] = true, [26] = true, [36] = true, [45] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (2-33) to (32-620) Lightning Damage",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -387,6 +411,15 @@ skills["Blight"] = {
 	color = 3,
 	description = "Apply a debuff to enemies in front of you which deals chaos damage over time. Enemies who aren't already debuffed by Blight are also hindered for a shorter secondary duration, slowing their movement. Continued channelling adds layers of damage to the debuff, each with their own duration.",
 	skillTypes = { [2] = true, [50] = true, [11] = true, [18] = true, [58] = true, [12] = true, [40] = true, [59] = true, [52] = true, },
+	effects = {
+		[1] = "+(0-6) to radius",
+		[2] = "Deals (1.7-590.8) Base Chaos Damage per second",
+		[3] = "Base duration is 2500 seconds",
+		[4] = "Base secondary duration is 800 seconds",
+		[5] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
+		[6] = "80% reduced Movement Speed",
+		[7] = "Debuff can have up to 20 layers of Damage",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -461,6 +494,13 @@ skills["BoneOffering"] = {
 	color = 3,
 	description = "Consumes a corpse, granting all of your minions the power to block both attacks and spells. The skill consumes other nearby corpses, increasing the duration for each corpse consumed.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [36] = true, [9] = true, [49] = true, [17] = true, [19] = true, [18] = true, },
+	effects = {
+		[1] = "Minions recover (11-1089) Life when they Block",
+		[2] = "(25-40)% Chance to Block",
+		[3] = "(25-39)% Chance to Block Spells",
+		[4] = "Base duration is 3000 seconds",
+		[5] = "Additional 500 seconds Base Duration per extra Corpse consumed",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -532,6 +572,10 @@ skills["Clarity"] = {
 	color = 3,
 	description = "Casts an aura that grants mana regeneration to you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [18] = true, [44] = true, },
+	effects = {
+		[1] = "+(0-29) to radius",
+		[2] = "(2.9-23.2) Mana Regenerated per second",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -603,6 +647,10 @@ skills["VaalClarity"] = {
 	color = 3,
 	description = "Casts a temporary aura that lets you and your allies cast skills without paying their mana costs.",
 	skillTypes = { [2] = true, [5] = true, [11] = true, [18] = true, [27] = true, [12] = true, [43] = true, [44] = true, },
+	effects = {
+		[1] = "+(0-29) to radius",
+		[2] = "Base duration is (8000-10900) seconds",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -673,6 +721,14 @@ skills["ColdSnap"] = {
 	color = 3,
 	description = "Ice crystals protrude from the ground at target location. Monsters in this area take damage and become frozen. The cooldown can be bypassed by expending a Power Charge.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (9-1127) to (13-1691) Cold Damage",
+		[2] = "+(0-7) to radius",
+		[3] = "30% chance to Freeze enemies",
+		[4] = "30% increased Freeze Duration on enemies",
+		[5] = "110% increased Chill Duration on enemies",
+		[6] = "(20-49)% increased Effect of Chill",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -752,6 +808,11 @@ skills["VaalColdSnap"] = {
 	color = 3,
 	description = "A sequence of ice crystals erupts from the ground around the caster, damaging enemies and leaving the ground chilled.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [12] = true, [43] = true, [34] = true, },
+	effects = {
+		[1] = "Deals (11-1466) to (17-2199) Cold Damage",
+		[2] = "+(0-7) to radius",
+		[3] = "Base duration is 10000 seconds",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -827,6 +888,12 @@ skills["Conductivity"] = {
 	color = 3,
 	description = "Curses all targets in an area, making them less resistant to lightning damage and giving them a chance to be shocked by lightning damage.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, [45] = true, [35] = true, },
+	effects = {
+		[1] = "-(54-25)% to Lightning Resistance",
+		[2] = "+(10-17)% chance to be Shocked",
+		[3] = "+(0-15) to radius",
+		[4] = "Base duration is (9000-11900) seconds",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -901,6 +968,12 @@ skills["Contagion"] = {
 	color = 3,
 	description = "Unleashes a vile contagion on enemies, dealing chaos damage over time. If an enemy dies while affected by Contagion, it spreads to other enemies.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [40] = true, [50] = true, [26] = true, [36] = true, [19] = true, [52] = true, [59] = true, },
+	effects = {
+		[1] = "+(0-6) to radius",
+		[2] = "Deals (3.5-622) Base Chaos Damage per second",
+		[3] = "Base duration is 5000 seconds",
+		[4] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -973,6 +1046,10 @@ skills["ConversionTrap"] = {
 	color = 3,
 	description = "Throws a trap that, when triggered by an enemy, converts that enemy to your side for a short duration. Does not affect unique monsters or players.",
 	skillTypes = { [2] = true, [12] = true, [19] = true, [37] = true, },
+	effects = {
+		[1] = "Trap lasts 16 seconds",
+		[2] = "Base duration is (5300-12500) seconds",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -1043,6 +1120,10 @@ skills["Convocation"] = {
 	color = 3,
 	description = "Recalls all minions that are following you to your location, and grants them a temporary life regeneration effect.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [36] = true, [9] = true, [49] = true, },
+	effects = {
+		[1] = "Base duration is 2000 seconds",
+		[2] = "(19.3-321) Life regenerated per second",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -1115,6 +1196,11 @@ skills["Discharge"] = {
 	color = 3,
 	description = "Discharge all the character's charges to deal elemental damage to all nearby monsters.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [18] = true, [26] = true, [36] = true, [45] = true, [33] = true, [34] = true, [35] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (4-71) to (77-1357) base Lightning Damage per Power Charge",
+		[2] = "Deals (29-508) to (43-762) base Fire Damage per Endurance Charge",
+		[3] = "Deals (24-416) to (36-623) base Cold Damage per Frenzy Charge",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -1194,6 +1280,11 @@ skills["Discipline"] = {
 	color = 3,
 	description = "Casts an aura that grants energy shield to you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, },
+	effects = {
+		[1] = "+(60-319) to maximum Energy Shield",
+		[2] = "+(0-29) to radius",
+		[3] = "30% increased Energy Shield Recharge rate",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -1266,6 +1357,11 @@ skills["VaalDiscipline"] = {
 	color = 3,
 	description = "Casts a temporary aura that prevents energy shield recharge being delayed by damage taken for you and your allies.",
 	skillTypes = { [2] = true, [5] = true, [11] = true, [18] = true, [27] = true, [12] = true, [43] = true, [44] = true, },
+	effects = {
+		[1] = "Energy Shield Recharge not delayed by Damage",
+		[2] = "+(0-29) to radius",
+		[3] = "Base duration is 3000 seconds",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -1338,6 +1434,11 @@ skills["ElementalWeakness"] = {
 	color = 3,
 	description = "Curses all targets in an area, making them less resistant to elemental damage.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
+	effects = {
+		[1] = "+(0-15) to radius",
+		[2] = "Base duration is (9000-11900) seconds",
+		[3] = "-(49-20)% to all Elemental Resistances",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -1410,6 +1511,13 @@ skills["Enfeeble"] = {
 	color = 3,
 	description = "Curses all targets in an area, making their attacks and spells less effective.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
+	effects = {
+		[1] = "+(0-10) to radius",
+		[2] = "Base duration is (9000-11900) seconds",
+		[3] = "(18-47)% reduced Accuracy Rating",
+		[4] = "25% reduced Critical Strike Chance",
+		[5] = "-(35-21)% to Critical Strike Multiplier",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -1486,6 +1594,13 @@ skills["EssenceDrain"] = {
 	color = 3,
 	description = "Fires a projectile that applies a damage over time debuff when it hits. You are healed for a portion of the debuff damage. The debuff is spread by Contagion.",
 	skillTypes = { [2] = true, [3] = true, [12] = true, [18] = true, [26] = true, [40] = true, [50] = true, [10] = true, [36] = true, },
+	effects = {
+		[1] = "Deals (6-1058) to (9-1587) Chaos Damage",
+		[2] = "Deals (21.3-3674.1) Base Chaos Damage per second",
+		[3] = "Base duration is 3800 seconds",
+		[4] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
+		[5] = "Regenerate 0.5% of Debuff Damage as Life",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -1564,6 +1679,12 @@ skills["FireNovaMine"] = {
 	color = 3,
 	description = "Lay a remote mine that you can detonate to create a series of fire novas. Each sequential nova from the same mine will do higher damage than the previous.",
 	skillTypes = { [2] = true, [10] = true, [36] = true, [11] = true, [33] = true, [26] = true, [41] = true, [12] = true, },
+	effects = {
+		[1] = "Deals (6-298) to (9-447) Fire Damage",
+		[2] = "Mine lasts 16 seconds",
+		[3] = "Spell Repeats 3 times",
+		[4] = "(20-34)% more Damage with Hits and Ailments per Repeat",
+	},
 	baseFlags = {
 		spell = true,
 		mine = true,
@@ -1643,6 +1764,11 @@ skills["Fireball"] = {
 	color = 3,
 	description = "Unleashes a ball of fire towards a target which explodes, damaging nearby foes.",
 	skillTypes = { [3] = true, [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (7-2025) to (10-3038) Fire Damage",
+		[2] = "+(0-5) to radius",
+		[3] = "(20-49)% chance to Ignite enemies",
+	},
 	parts = {
 		{
 			name = "Projectile",
@@ -1726,6 +1852,11 @@ skills["VaalFireballSpiralNova"] = {
 	color = 3,
 	description = "Launches a series of fireballs in all directions around the caster.",
 	skillTypes = { [3] = true, [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [43] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (8-1368) to (11-2052) Fire Damage",
+		[2] = "Fires Projectiles at all nearby Enemies",
+		[3] = "50% increased Area of Effect",
+	},
 	parts = {
 		{
 			name = "Projectile",
@@ -1810,6 +1941,11 @@ skills["Firestorm"] = {
 	color = 3,
 	description = "Flaming bolts rain down over the targeted area. They explode when landing, dealing damage to nearby enemies.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (4-386) to (10-579) Fire Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "One impact every 100 seconds",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -1887,6 +2023,11 @@ skills["FlameDash"] = {
 	color = 3,
 	description = "Teleport to a location, damaging enemies and leaving a trail of burning ground in your wake.",
 	skillTypes = { [2] = true, [38] = true, [10] = true, [40] = true, [12] = true, [18] = true, [36] = true, [33] = true, [17] = true, [19] = true, },
+	effects = {
+		[1] = "Deals (6-954) to (9-1432) Fire Damage",
+		[2] = "Deals (10.9-1789.6) Base Fire Damage per second",
+		[3] = "Base duration is 4000 seconds",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -1962,6 +2103,11 @@ skills["FlameWhip"] = {
 	color = 3,
 	description = "Strikes enemies in front of you with a surge of flame. Burning enemies are dealt more damage.",
 	skillTypes = { [2] = true, [10] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [11] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (21-1242) to (31-1863) Fire Damage",
+		[2] = "50% more Damage with Hits against Burning enemies",
+		[3] = "Cannot Ignite",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2034,6 +2180,11 @@ skills["Flameblast"] = {
 	color = 3,
 	description = "Channels to build up a large explosion, which is released when you stop using the skill. The longer you channel, the larger the area of effect and damage of the explosion.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [18] = true, [33] = true, [58] = true, },
+	effects = {
+		[1] = "Deals (32-551) to (48-827) Fire Damage",
+		[2] = "110% more Spell Damage for each stage",
+		[3] = "55% more Damage with Ailments for each stage",
+	},
 	parts = {
 		{
 			name = "1 Stage",
@@ -2117,6 +2268,11 @@ skills["VaalFlameblast"] = {
 	color = 3,
 	description = "Targets an area and builds up a large explosion. The build-up speed is based on cast speed. The explosion occurs after it reaches 10 stacks.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [18] = true, [43] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (39-563) to (58-844) Fire Damage",
+		[2] = "110% more Spell Damage for each stage",
+		[3] = "55% more Damage with Ailments for each stage",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2192,6 +2348,12 @@ skills["Flammability"] = {
 	color = 3,
 	description = "Curses all targets in an area, making them less resistant to fire damage and giving them a chance to be ignited by fire damage.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, [33] = true, },
+	effects = {
+		[1] = "-(54-25)% to Fire Resistance",
+		[2] = "+(10-17)% chance to be Ignited",
+		[3] = "+(0-15) to radius",
+		[4] = "Base duration is (9000-11900) seconds",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -2265,6 +2427,12 @@ skills["FleshOffering"] = {
 	color = 3,
 	description = "Consumes a corpse, which temporarily empowers your minions with swiftness. The skill consumes other nearby corpses, increasing the duration for each corpse consumed.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [36] = true, [9] = true, [49] = true, [17] = true, [19] = true, [18] = true, },
+	effects = {
+		[1] = "Base duration is 3000 seconds",
+		[2] = "Additional 500 seconds Base Duration per extra Corpse consumed",
+		[3] = "(20-35)% increased Attack Speed",
+		[4] = "(20-34)% increased Movement Speed",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -2336,6 +2504,9 @@ skills["FreezingPulse"] = {
 	color = 3,
 	description = "An icy projectile which has a chance to freeze enemies it passes through. The projectile fades quickly, reducing damage and freezing chance until it runs out of time and dissipates completely.",
 	skillTypes = { [2] = true, [3] = true, [10] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (7-1759) to (11-2638) Cold Damage",
+	},
 	setupFunc = function(env, output)
 		env.modDB:NewMod("Damage", "MORE", -100, "Skill:FreezingPulse", { type = "DistanceRamp", ramp = {{0,0},{60*output.ProjectileSpeedMod,1}} })
 		env.modDB:NewMod("EnemyFreezeChance", "BASE", 25, "Skill:FreezingPulse", { type = "DistanceRamp", ramp = {{0,1},{15*output.ProjectileSpeedMod,0}} })
@@ -2412,6 +2583,13 @@ skills["FrostBomb"] = {
 	color = 3,
 	description = "Creates a crystal that pulses with cold for a duration. Each pulse applies a debuff to nearby enemies that reduces their cold resistance and life regeneration. When its duration ends, the crystal explodes, dealing heavy cold damage to enemies around it.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [34] = true, [10] = true, [26] = true, [18] = true, [17] = true, [19] = true, [36] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (10-1284) to (14-1926) Cold Damage",
+		[2] = "Base duration is 3500 seconds",
+		[3] = "Base secondary duration is 2000 seconds",
+		[4] = "75% reduced Life Regeneration rate",
+		[5] = "-20% to Cold Resistance",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2488,6 +2666,12 @@ skills["FrostWall"] = {
 	color = 3,
 	description = "Creates a wall of ice which holds back enemies. Targets under the wall are damaged and pushed back.",
 	skillTypes = { [2] = true, [10] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (8-1127) to (12-1691) Cold Damage",
+		[2] = "Base duration is (3000-5900) seconds",
+		[3] = "0.15 seconds between appearance of Wall sections",
+		[4] = "Wall will be (28-77) units long",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -2561,6 +2745,11 @@ skills["Frostbite"] = {
 	color = 3,
 	description = "Curses all targets in an area, making them less resistant to cold damage and giving them a chance to be frozen by cold damage.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, [34] = true, [60] = true, },
+	effects = {
+		[1] = "+(0-15) to radius",
+		[2] = "Base duration is (9000-11900) seconds",
+		[3] = "-(54-25)% to Cold Resistance",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -2634,6 +2823,9 @@ skills["FrostBolt"] = {
 	color = 3,
 	description = "Fires a slow-moving projectile that pierces through enemies, dealing cold damage.",
 	skillTypes = { [2] = true, [3] = true, [10] = true, [17] = true, [18] = true, [19] = true, [26] = true, [34] = true, [36] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (6-2102) to (10-3153) Cold Damage",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -2703,6 +2895,11 @@ skills["GlacialCascade"] = {
 	color = 3,
 	description = "Icicles emerge from the ground in a series of small bursts, each damaging enemies caught in the area.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (48-1042) to (72-1563) Physical Damage",
+		[2] = "60% of Physical Damage Converted to Cold Damage",
+		[3] = "+(0-3) to radius",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2778,6 +2975,13 @@ skills["HeraldOfThunder"] = {
 	color = 3,
 	description = "Channel lightning through your hands, adding lightning damage to spells and attacks. If you kill a shocked enemy, lightning bolts will strike enemies around you for a short duration.",
 	skillTypes = { [39] = true, [5] = true, [15] = true, [16] = true, [10] = true, [11] = true, [12] = true, [35] = true, [27] = true, [63] = true, },
+	effects = {
+		[1] = "Deals (1-83) to (34-3692) Lightning Damage",
+		[2] = "Cannot apply Shock",
+		[3] = "Base duration is 6000 seconds",
+		[4] = "Adds (2-37) to (7-150) Lightning Damage to Spells",
+		[5] = "Adds (2-37) to (7-150) Lightning Damage to Attacks",
+	},
 	baseFlags = {
 		cast = true,
 		duration = true,
@@ -2856,6 +3060,10 @@ skills["IceNova"] = {
 	color = 3,
 	description = "A chilling circle of ice expands from the caster. If the caster targets near one of their Frostbolt projectiles, it will expand from the projectile instead.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (15-1303) to (21-1917) Cold Damage",
+		[2] = "40% more Damage when Cast on Frostbolt",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2928,6 +3136,11 @@ skills["VaalIceNova"] = {
 	color = 3,
 	description = "A chilling circle of ice expands from the caster, repeating from every enemy it hits. If the caster targets near one of their Frostbolt projectiles, it will expand from the projectile instead.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [43] = true, [34] = true, },
+	effects = {
+		[1] = "Deals (11-663) to (17-1035) Cold Damage",
+		[2] = "Causes smaller novas up to 5 times on enemies hit",
+		[3] = "20% reduced Area of Effect each repeat",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2999,6 +3212,12 @@ skills["IceSpear"] = {
 	color = 3,
 	description = "Launches a shard of ice that pierces close enemies, before exploding on a distant enemy with a much higher critical strike chance.",
 	skillTypes = { [2] = true, [3] = true, [10] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (17-1501) to (26-2251) Cold Damage",
+		[2] = "(40-98)% increased Chill Duration on enemies",
+		[3] = "(10-39)% increased Effect of Chill",
+		[4] = "Second form has 600% increased Critical Strike Chance",
+	},
 	parts = {
 		{
 			name = "First Form",
@@ -3081,6 +3300,10 @@ skills["Incinerate"] = {
 	color = 3,
 	description = "Continuously launches a torrent of fire from your hand. The longer you channel this spell, the larger and more damaging the flames become.",
 	skillTypes = { [2] = true, [3] = true, [10] = true, [18] = true, [33] = true, [58] = true, },
+	effects = {
+		[1] = "Deals (6-320) to (9-480) Fire Damage",
+		[2] = "50% more Damage with Hits and Ailments for each stage",
+	},
 	parts = {
 		{
 			name = "Base damage",
@@ -3164,6 +3387,10 @@ skills["ClusterBurst"] = {
 	weaponTypes = {
 		["Wand"] = true,
 	},
+	effects = {
+		[1] = "Creates 4 explosions",
+		[2] = "25% less Area Damage",
+	},
 	parts = {
 		{
 			name = "Projectile",
@@ -3246,6 +3473,10 @@ skills["LightningTendrils"] = {
 	color = 3,
 	description = "Lightning is released from your hands four times in quick succession, damaging all enemies in an arc in front of you.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [18] = true, [26] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (1-70) to (3-1334) Lightning Damage",
+		[2] = "+(0-10) to radius",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -3321,6 +3552,12 @@ skills["LightningTrap"] = {
 	color = 3,
 	description = "Throws a trap that launches a ring of projectiles through the enemy that set it off, dealing lightning damage to them and subsequent targets.",
 	skillTypes = { [2] = true, [10] = true, [3] = true, [37] = true, [19] = true, [12] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (3-106) to (62-2021) Lightning Damage",
+		[2] = "Trap lasts 16 seconds",
+		[3] = "8 additional Projectiles",
+		[4] = "20% chance to Shock enemies",
+	},
 	baseFlags = {
 		spell = true,
 		trap = true,
@@ -3403,6 +3640,14 @@ skills["VaalLightningTrap"] = {
 	color = 3,
 	description = "Throws a trap that launches a ring of projectiles through the enemy that set it off, dealing lightning damage to them and subsequent targets and leaving a trail of shocking ground.",
 	skillTypes = { [2] = true, [10] = true, [3] = true, [37] = true, [19] = true, [12] = true, [43] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (3-106) to (62-2021) Lightning Damage",
+		[2] = "Trap lasts 16 seconds",
+		[3] = "Base duration is 4000 seconds",
+		[4] = "8 additional Projectiles",
+		[5] = "Projectiles leave Shocking Ground",
+		[6] = "Shocked Ground causes 15% increased Damage taken",
+	},
 	baseFlags = {
 		spell = true,
 		trap = true,
@@ -3486,6 +3731,10 @@ skills["LightningWarp"] = {
 	color = 3,
 	description = "Casts a delayed teleport to a target destination. When the teleport occurs, lightning damage is dealt to the area around both where the player was and where they teleported to.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [36] = true, [38] = true, [45] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (1-98) to (19-1856) Lightning Damage",
+		[2] = "(0-58)% reduced Skill Effect Duration",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -3563,6 +3812,10 @@ skills["VaalLightningWarpInstant"] = {
 	color = 3,
 	description = "Casts a delayed teleport for nearby enemies to a target destination. When the teleport occurs, lightning damage is dealt to the enemies both before and after they teleport.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [43] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (1-77) to (18-1459) Lightning Damage",
+		[2] = "(0-58)% reduced Skill Effect Duration",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -3638,6 +3891,10 @@ skills["MagmaOrb"] = {
 	color = 3,
 	description = "Lob a fiery orb that explodes as it strikes the ground. The skill chains, releasing another fiery orb that repeats this effect.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [19] = true, [18] = true, [36] = true, [33] = true, [3] = true, [26] = true, [23] = true, },
+	effects = {
+		[1] = "Deals (6-1752) to (9-2628) Fire Damage",
+		[2] = "Chains +(1-3) Times",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -3713,6 +3970,11 @@ skills["OrbOfStorms"] = {
 	color = 3,
 	description = "Creates a stationary electrical orb that frequently unleashes a splitting bolt of lightning at a nearby enemy. Using another lightning skill while inside the orb's cloud unleashes additional bolts. Casting this skill again will replace the previous orb. You can only cast this spell yourself, directly.",
 	skillTypes = { [2] = true, [10] = true, [35] = true, [12] = true, [11] = true, [23] = true, },
+	effects = {
+		[1] = "Deals (1-155) to (3-466) Lightning Damage",
+		[2] = "Base duration is 6000 seconds",
+		[3] = "Projectiles Split into (2-5) on hit",
+	},
 	baseFlags = {
 		spell = true,
 		chaining = true,
@@ -3790,6 +4052,9 @@ skills["PowerSiphon"] = {
 	weaponTypes = {
 		["Wand"] = true,
 	},
+	effects = {
+		[1] = "Culling Strike",
+	},
 	baseFlags = {
 		attack = true,
 		projectile = true,
@@ -3859,6 +4124,11 @@ skills["VaalPowerSiphon"] = {
 	skillTypes = { [1] = true, [48] = true, [6] = true, [3] = true, [22] = true, [17] = true, [19] = true, [43] = true, },
 	weaponTypes = {
 		["Wand"] = true,
+	},
+	effects = {
+		[1] = "Fires Projectiles at all nearby Enemies",
+		[2] = "Culling Strike",
+		[3] = "Can't be Evaded",
 	},
 	baseFlags = {
 		attack = true,
@@ -3930,6 +4200,10 @@ skills["Purity"] = {
 	color = 3,
 	description = "Casts an aura that grants elemental resistances to you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, },
+	effects = {
+		[1] = "+(0-29) to radius",
+		[2] = "+(12-34)% to all Elemental Resistances",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -4003,6 +4277,11 @@ skills["LightningResistAura"] = {
 	color = 3,
 	description = "Casts an aura that grants lightning resistance to you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, [35] = true, },
+	effects = {
+		[1] = "+(0-5)% to maximum Lightning Resistance",
+		[2] = "+(22-51)% to Lightning Resistance",
+		[3] = "+(0-29) to radius",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -4073,6 +4352,15 @@ skills["RaiseSpectre"] = {
 	description = "Raises a spectral version of a defeated foe as a minion to fight for you in battle.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [49] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, [2] = true, [10] = true, [11] = true, [3] = true, [23] = true, [12] = true, [30] = true, [37] = true, [41] = true, [40] = true, [58] = true, [32] = true, [48] = true, },
+	effects = {
+		[1] = "Minions deal (70-130)% of Damage",
+		[2] = "Can raise up to 1 Spectre at a time",
+		[3] = "55% more Minion Movement Speed",
+		[4] = "Minion Movement Speed is Capped",
+		[5] = "Minions have (-20-20)% less Life",
+		[6] = "Minions have (-20-20)% less Energy Shield",
+		[7] = "Minions have +30% to all Elemental Resistances",
+	},
 	minionList = {
 	},
 	baseFlags = {
@@ -4147,6 +4435,9 @@ skills["RaiseZombie"] = {
 	description = "Raises a zombie minion from a corpse, which will follow you and attack enemies with a melee attack and an area of effect slam.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [49] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, [11] = true, },
+	effects = {
+		[1] = "Can raise up to 3 Zombies at a time",
+	},
 	minionList = {
 		"RaisedZombie",
 	},
@@ -4218,6 +4509,14 @@ skills["RighteousFire"] = {
 	color = 3,
 	description = "Engulfs you in magical fire that rapidly burns you and nearby enemies. Your spell damage is substantially increased while under this effect. The effect ends when you have 1 life remaining.",
 	skillTypes = { [2] = true, [5] = true, [11] = true, [18] = true, [29] = true, [36] = true, [40] = true, [33] = true, },
+	effects = {
+		[1] = "+(0-7) to radius",
+		[2] = "Enemies Burn for 40% of your maximum Life per second as Fire Damage",
+		[3] = "Enemies Burn for 40% of your maximum Energy Shield per second as Fire Damage",
+		[4] = "You Burn for 90% of your maximum Life per second as Fire Damage",
+		[5] = "You Burn for 70% of your maximum Energy Shield per second as Fire Damage",
+		[6] = "(20-49)% more Spell Damage",
+	},
 	setupFunc = function(actor, output)
 		if actor.mainSkill.skillFlags.totem then
 			actor.mainSkill.skillData.FireDot = output.TotemLife * 0.4
@@ -4297,6 +4596,10 @@ skills["VaalRighteousFire"] = {
 	color = 3,
 	description = "A fiery blast removes your energy shield and all but 1 life, exploding outwards to deal fire damage to nearby enemies based on the life and energy shield lost.",
 	skillTypes = { [2] = true, [11] = true, [10] = true, [43] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (120-149)% of Damage",
+		[2] = "Damage cannot be Reflected",
+	},
 	setupFunc = function(actor, output)
 		actor.mainSkill.skillData.FireMin = output.EnergyShield + output.Life - 1
 		actor.mainSkill.skillData.FireMax = output.EnergyShield + output.Life - 1
@@ -4370,6 +4673,15 @@ skills["FireBeam"] = {
 	color = 3,
 	description = "Unleash a beam of fire that burns enemies it touches, and decreases their fire resistance. Remaining in the beam intensifies the burning, adding a portion of the beam's damage in stages. Enemies who leave the beam continue to burn for a duration. Increasing cast speed also increases the rate at which the beam can turn.",
 	skillTypes = { [2] = true, [18] = true, [40] = true, [33] = true, [29] = true, [12] = true, [58] = true, [59] = true, [52] = true, },
+	effects = {
+		[1] = "Deals (8.3-1171.4) Base Fire Damage per second",
+		[2] = "Base duration is 1500 seconds",
+		[3] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
+		[4] = "Burning Debuff can have a maximum of 8 stages",
+		[5] = "Additional Debuff stages add 60% of Damage",
+		[6] = "Total Fire Resistance penalty from all Beams cannot exceed -24%",
+		[7] = "Debuff applies -3% Fire Resistance per stage",
+	},
 	parts = {
 		{
 			name = "1 Stage",
@@ -4456,6 +4768,12 @@ skills["ShockNova"] = {
 	color = 3,
 	description = "Casts a ring of Lightning around you, followed by a larger Lightning nova. Each effect hits enemies caught in their area with Lightning Damage.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [45] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (26-738) to (79-2214) Lightning Damage",
+		[2] = "20% chance to Shock enemies",
+		[3] = "Ring deals 80% less Damage",
+		[4] = "(20-49)% increased Effect of Shock",
+	},
 	parts = {
 		{
 			name = "Ring",
@@ -4538,6 +4856,11 @@ skills["Spark"] = {
 	color = 3,
 	description = "Launches unpredictable sparks that move randomly until they hit an enemy or expire.",
 	skillTypes = { [2] = true, [3] = true, [10] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [45] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (1-91) to (20-1725) Lightning Damage",
+		[2] = "Base duration is 1500 seconds",
+		[3] = "(4-7) additional Projectiles",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -4612,6 +4935,11 @@ skills["VaalSparkSpiralNova"] = {
 	color = 3,
 	description = "Continuously launches unpredictable sparks in all directions that move randomly until they hit an enemy or expire.",
 	skillTypes = { [2] = true, [3] = true, [10] = true, [12] = true, [17] = true, [18] = true, [19] = true, [43] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (1-50) to (11-941) Lightning Damage",
+		[2] = "Base duration is 2000 seconds",
+		[3] = "Fires Projectiles at all nearby Enemies",
+	},
 	baseFlags = {
 		spell = true,
 		projectile = true,
@@ -4686,6 +5014,12 @@ skills["SpiritOffering"] = {
 	color = 3,
 	description = "Consumes a corpse, granting energy shield, extra chaos damage and elemental resistances to your minions. The new energy shield is recovered as it's granted. The skill consumes other nearby corpses, increasing the duration and amount of energy shield granted for each corpse consumed.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [36] = true, [9] = true, [49] = true, [17] = true, [19] = true, [18] = true, },
+	effects = {
+		[1] = "Base duration is 3000 seconds",
+		[2] = "Additional 500 seconds Base Duration per extra Corpse consumed",
+		[3] = "+(20-35)% to all Elemental Resistances",
+		[4] = "Gain (20-34)% of your Physical Damage as Extra Chaos Damage",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -4758,6 +5092,12 @@ skills["StormCall"] = {
 	color = 3,
 	description = "Sets a marker at a location. After a short duration, lightning strikes the marker, dealing damage around it. When this happens, it will also set off the lightning at any other markers you've cast.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [36] = true, [26] = true, [45] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (13-840) to (24-1560) Lightning Damage",
+		[2] = "+(0-10) to radius",
+		[3] = "Base duration is 1500 seconds",
+		[4] = "(10-39)% increased Effect of Shock",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -4835,6 +5175,10 @@ skills["VaalStormCall"] = {
 	color = 3,
 	description = "Sets a marker at a location. While the marker remains, lightning strikes random enemies near it, dealing damage to them. After a short duration, a large bolt of lightning strikes the marker, dealing damage around it. When this happens, it will also set off the lightning at any other markers from this skill.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [43] = true, [35] = true, },
+	effects = {
+		[1] = "Deals (13-704) to (25-1307) Lightning Damage",
+		[2] = "Base duration is 3000 seconds",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -4909,6 +5253,11 @@ skills["SummonChaosGolem"] = {
 	description = "Summons a Chaos Golem that grants you Physical Damage Reduction. The Chaos Golem can use a damage over time Chaos aura and a cascade of Chaos spikes in addition to its melee attack.",
 	skillTypes = { [36] = true, [50] = true, [19] = true, [9] = true, [21] = true, [26] = true, [2] = true, [18] = true, [17] = true, [49] = true, [62] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [12] = true, [2] = true, [10] = true, [11] = true, [28] = true, },
+	effects = {
+		[1] = "Can Summon up to 1 Golem at a time",
+		[2] = "(30-88)% increased Minion Maximum Life",
+		[3] = "Golems grant (3-5)% additional Physical Damage Reduction",
+	},
 	minionList = {
 		"SummonedChaosGolem",
 	},
@@ -4988,6 +5337,11 @@ skills["SummonLightningGolem"] = {
 	description = "Summons a Lightning Golem that grants you increased Attack and Cast speed. The Lightning Golem fires a projectile spell, creates orbs of Lightning that zap nearby enemies, and casts a temporary aura that grants added Lightning Damage to spells and attacks used by the Golem and its nearby allies.",
 	skillTypes = { [36] = true, [35] = true, [19] = true, [9] = true, [21] = true, [26] = true, [2] = true, [18] = true, [17] = true, [49] = true, [45] = true, [62] = true, },
 	minionSkillTypes = { [10] = true, [11] = true, [44] = true, [3] = true, [12] = true, [2] = true, [5] = true, },
+	effects = {
+		[1] = "Can Summon up to 1 Golem at a time",
+		[2] = "(30-88)% increased Minion Maximum Life",
+		[3] = "Golems grant (6-11)% increased Attack and Cast Speed",
+	},
 	minionList = {
 		"SummonedLightningGolem",
 	},
@@ -5067,6 +5421,10 @@ skills["SummonRagingSpirit"] = {
 	description = "Summons a short-lived flaming skull that rushes at nearby enemies and attacks them rapidly. Enemies will not directly engage these spirits, and can pass through them.",
 	skillTypes = { [2] = true, [9] = true, [12] = true, [21] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [49] = true, [33] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
+	effects = {
+		[1] = "Can summon up to 20 Raging Spirits at a time",
+		[2] = "Base duration is 5000 seconds",
+	},
 	minionList = {
 		"SummonedRagingSpirit",
 	},
@@ -5139,6 +5497,10 @@ skills["SummonSkeletons"] = {
 	description = "Summons a slow moving skeletal minion that dies after a duration. Does not require a corpse to be consumed.",
 	skillTypes = { [2] = true, [9] = true, [12] = true, [21] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [49] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [54] = true, [28] = true, },
+	effects = {
+		[1] = "Can summon up to 5 Skeletons at a time",
+		[2] = "Base duration is 20000 seconds",
+	},
 	minionList = {
 		"RaisedSkeleton",
 		"RaisedSkeletonCaster",
@@ -5215,6 +5577,10 @@ skills["VaalSummonSkeletons"] = {
 	description = "Summons an army of skeletal warriors, archers and mages, led by a powerful general.",
 	skillTypes = { [2] = true, [9] = true, [12] = true, [21] = true, [17] = true, [18] = true, [19] = true, [43] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [48] = true, [28] = true, [2] = true, [11] = true, },
+	effects = {
+		[1] = "Can summon up to (17-46) Skeletons at a time",
+		[2] = "Base duration is 20000 seconds",
+	},
 	minionList = {
 		"RaisedSkeleton",
 		"RaisedSkeletonCaster",
@@ -5292,6 +5658,12 @@ skills["TempestShield"] = {
 	color = 3,
 	description = "Enchants your shield with the power of storms, which lashes out to deal arcing lightning damage to attackers when you block them. Blocking refreshes the duration of Tempest Shield.",
 	skillTypes = { [2] = true, [10] = true, [13] = true, [27] = true, [35] = true, [23] = true, [45] = true, [36] = true, [12] = true, },
+	effects = {
+		[1] = "Deals (24-583) to (36-874) Lightning Damage",
+		[2] = "Base duration is 12000 seconds",
+		[3] = "Chains +1 Times",
+		[4] = "Additional 3% Shield Block Chance",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -5368,6 +5740,13 @@ skills["FrostBoltNova"] = {
 	color = 3,
 	description = "An icy blast explodes around the caster, dealing cold damage to enemies, and leaving behind a whirling vortex that continues to deal cold damage over time and chill enemies caught in it. If the caster targets near one of their Frostbolt projectiles, it will explode from the projectile instead, destroying it.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [26] = true, [34] = true, [36] = true, [12] = true, [60] = true, },
+	effects = {
+		[1] = "Deals (50-1154) to (75-1731) Cold Damage",
+		[2] = "Deals (41.6-2124) Base Cold Damage per second",
+		[3] = "Base duration is 3000 seconds",
+		[4] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
+		[5] = "40% more Damage when Cast on Frostbolt",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -5443,6 +5822,12 @@ skills["Vulnerability"] = {
 	color = 3,
 	description = "Curses all targets in an area, increasing the physical damage and damage over time they take.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
+	effects = {
+		[1] = "+(0-15) to radius",
+		[2] = "Base duration is (9000-11900) seconds",
+		[3] = "(20-34)% more Physical Damage taken",
+		[4] = "33% increased Damage from Damage Over Time effects",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -5517,6 +5902,12 @@ skills["Wither"] = {
 	color = 3,
 	description = "Casts a debilitating effect on enemies in an area, Hindering their movement and applying a stacking debuff that increases the Chaos Damage they take. This effect can stack up to 20 times.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [18] = true, [50] = true, [58] = true, },
+	effects = {
+		[1] = "Base duration is 500 seconds",
+		[2] = "Base secondary duration is 2000 seconds",
+		[3] = "(30-39)% reduced Movement Speed",
+		[4] = "7% increased Chaos Damage taken",
+	},
 	parts = {
 		{
 			name = "1 Stack",
@@ -5605,6 +5996,10 @@ skills["Wrath"] = {
 	color = 3,
 	description = "Casts an aura that adds lightning damage to the attacks of you and your allies, and makes your spells deal more lightning damage.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, [35] = true, },
+	effects = {
+		[1] = "+(0-29) to radius",
+		[2] = "Adds (2-31) to (37-490) Lightning Damage to Attacks",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,

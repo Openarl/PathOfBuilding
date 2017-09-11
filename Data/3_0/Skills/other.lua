@@ -12,6 +12,8 @@ skills["Melee"] = {
 	color = 4,
 	description = "Strike your foes down with a powerful blow.",
 	skillTypes = { [1] = true, [48] = true, [6] = true, [3] = true, [25] = true, [28] = true, [24] = true, },
+	effects = {
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -45,6 +47,8 @@ skills["GemDetonateMines"] = {
 	color = 4,
 	description = "Detonates all the Remote Mines you have placed.",
 	skillTypes = { [2] = true, [17] = true, [18] = true, [36] = true, },
+	effects = {
+	},
 	baseFlags = {
 		spell = true,
 	},
@@ -85,6 +89,8 @@ skills["Portal"] = {
 	color = 4,
 	description = "Creates a portal to the current area's town.",
 	skillTypes = { [2] = true, [17] = true, [18] = true, [19] = true, [36] = true, [27] = true, },
+	effects = {
+	},
 	baseFlags = {
 		spell = true,
 	},
@@ -119,6 +125,9 @@ skills["SupportUniqueMjolnerLightningSpellsCastOnHit"] = {
 	requireSkillTypes = { 45, },
 	addSkillTypes = { 42, },
 	excludeSkillTypes = { 37, 41, 30, 44, 61, },
+	effects = {
+		[1] = "Supported Spells deal 100% increased Spell Damage",
+	},
 	fromItem = true,
 	baseMods = {
 		skill("cooldown", 0.25), 
@@ -142,6 +151,8 @@ skills["SupportUniqueCosprisMaliceColdSpellsCastOnMeleeCriticalStrike"] = {
 	requireSkillTypes = { 60, },
 	addSkillTypes = { },
 	excludeSkillTypes = { 37, 41, 30, 44, 61, },
+	effects = {
+	},
 	fromItem = true,
 	baseMods = {
 		skill("cooldown", 0.25), 
@@ -162,6 +173,13 @@ skills["RepeatingShockwave"] = {
 	color = 4,
 	description = "While you run, this skill creates a small explosion with each step, dealing fire damage in an area around you.",
 	skillTypes = { [11] = true, [36] = true, [42] = true, [2] = true, [10] = true, [61] = true, [33] = true, },
+	effects = {
+		[1] = "Deals 50 to 75 Fire Damage",
+		[2] = "10% chance to Ignite enemies",
+		[3] = "You cannot Cast this Spell directly",
+		[4] = "This Skill cannot Knock Enemies Back",
+		[5] = "This Spell is Triggered when Equipped",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -194,6 +212,12 @@ skills["TriggeredBoneNova"] = {
 	color = 4,
 	description = "A spiral of bones erupts around you, dealing physical damage.",
 	skillTypes = { [1] = true, [48] = true, [3] = true, [10] = true, [57] = true, [47] = true, [61] = true, },
+	effects = {
+		[1] = "8 additional Projectiles",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "Trigger this Skill when you kill a Bleeding Enemy",
+		[4] = "Cannot cause Bleeding",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -225,6 +249,12 @@ skills["TriggeredConsecrate"] = {
 	color = 4,
 	description = "Creates an area of Consecrated Ground, providing life regeneration for you and allies who stand in it.",
 	skillTypes = { [2] = true, [12] = true, [36] = true, [11] = true, [42] = true, [61] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "6% of maximum Life regenerated per second",
+		[3] = "You cannot Cast this Spell directly",
+		[4] = "Trigger this Spell when you Crit an Enemy",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -254,6 +284,11 @@ skills["TriggeredSummonLesserShrine"] = {
 	color = 4,
 	description = "Creates a Lesser Shrine, which will grant a bonus when touched. The Lesser Shrine will disappear after a short duration, or when used. This skill starts on cooldown.",
 	skillTypes = { [2] = true, [36] = true, [42] = true, [61] = true, [12] = true, },
+	effects = {
+		[1] = "Base duration is 10000 seconds",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "Trigger this Spell on Kill",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -283,6 +318,11 @@ skills["TouchOfGod"] = {
 	skillTypes = { [1] = true, [11] = true, [35] = true, [24] = true, },
 	weaponTypes = {
 		["None"] = true,
+	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Lightning Damage",
+		[2] = "20% chance to Shock enemies",
+		[3] = "30% less Attack Speed",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -344,6 +384,10 @@ skills["Envy"] = {
 	color = 3,
 	description = "Casts an aura that adds chaos damage to the attacks and spells of you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, [50] = true, },
+	effects = {
+		[1] = "Adds 58 to 81 Chaos Damage to Attacks",
+		[2] = "Adds 52 to 69 Chaos Damage to Spells",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -378,6 +422,11 @@ skills["FireBurstOnHit"] = {
 	color = 4,
 	description = "A burst of flame errupts from the location of a hit, dealing fire damage.",
 	skillTypes = { [2] = true, [11] = true, [10] = true, [33] = true, [36] = true, [42] = true, [61] = true, },
+	effects = {
+		[1] = "Deals (7-1855) to (11-2782) Fire Damage",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "10% chance to Trigger this Spell when you Hit",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -439,6 +488,10 @@ skills["VaalAuraElementalDamageHealing"] = {
 	color = 4,
 	description = "Casts an aura that causes taking elemental damage to heal you and nearby allies instead.",
 	skillTypes = { [2] = true, [5] = true, [11] = true, [12] = true, [18] = true, [43] = true, [44] = true, },
+	effects = {
+		[1] = "Taking Elemental Damage instead heals you",
+		[2] = "Base duration is 6000 seconds",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -468,6 +521,12 @@ skills["IcestormUniqueStaff12"] = {
 	color = 3,
 	description = "Icy bolts rain down over the targeted area. They explode when landing, dealing damage to nearby enemies and chilling them, as well as causing patches of chilled ground. Skill damage is based on Intelligence.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
+	effects = {
+		[1] = "150 seconds additional Base Duration per 100 Intelligence",
+		[2] = "Base duration is 1500 seconds",
+		[3] = "Deals 1 to 3 base Cold Damage per 10 Intelligence",
+		[4] = "One impact every 100 seconds",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -509,6 +568,9 @@ skills["MerveilWarp"] = {
 	color = 4,
 	description = "Teleport to a target destination. Chilled ground is spread in an area around both where the caster was and where they teleported to.",
 	skillTypes = { [2] = true, [38] = true, [12] = true, [34] = true, [11] = true, },
+	effects = {
+		[1] = "Base duration is 1500 seconds",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -538,6 +600,11 @@ skills["LightningSpell"] = {
 	color = 3,
 	description = "A bolt of lightning strikes an area, dealing lightning damage.",
 	skillTypes = { [2] = true, [42] = true, [35] = true, [11] = true, [10] = true, [45] = true, [61] = true, },
+	effects = {
+		[1] = "Deals (10-1248) to (29-3743) Lightning Damage",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "Trigger this Spell when you Crit an Enemy",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -599,6 +666,12 @@ skills["UniqueAnimateWeapon"] = {
 	description = "Releases Dancing Dervish to fight by your side. While Dancing Dervish is manifested, you have Onslaught and cannot use Weapons.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [36] = true, [61] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [11] = true, [38] = true, [28] = true, },
+	effects = {
+		[1] = "110% increased Attack Damage",
+		[2] = "25% increased Attack Speed",
+		[3] = "30% increased Minion Movement Speed",
+		[4] = "100% chance to Trigger this Spell when you Rampage",
+	},
 	fromItem = true,
 	minionList = {
 		"UniqueAnimatedWeapon",
@@ -637,6 +710,10 @@ skills["TriggeredMoltenStrike"] = {
 	color = 1,
 	description = "Launch molten projectiles from the point of impact, causing AoE attack damage to enemies where they land.",
 	skillTypes = { [3] = true, [1] = true, [11] = true, [33] = true, [57] = true, [47] = true, [48] = true, },
+	effects = {
+		[1] = "2 additional Projectiles",
+		[2] = "20% chance to Trigger this Skill on Melee Hit",
+	},
 	fromItem = true,
 	baseFlags = {
 		attack = true,
@@ -670,6 +747,12 @@ skills["TriggeredSummonSpider"] = {
 	description = "Raise two spectral spiders from each nearby corpse that will leap towards and attack your enemies. Enemies will not engage the spiders directly.",
 	skillTypes = { [2] = true, [9] = true, [36] = true, [49] = true, [42] = true, [61] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
+	effects = {
+		[1] = "Base duration is 8000 seconds",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "20% chance to Trigger this Spell on Kill",
+		[4] = "Minions have the same Level as the Corpse",
+	},
 	fromItem = true,
 	minionList = {
 		"SpiderMinion",
@@ -705,6 +788,11 @@ skills["TriggeredShockedGround"] = {
 	color = 4,
 	description = "Creates a patch of Shocked Ground in a radius around you.",
 	skillTypes = { [2] = true, [11] = true, [36] = true, [12] = true, [42] = true, [45] = true, [61] = true, [35] = true, },
+	effects = {
+		[1] = "Base duration is 5000 seconds",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "Trigger this Spell when you're Hit",
+	},
 	fromItem = true,
 	baseFlags = {
 		spell = true,
@@ -736,6 +824,10 @@ skills["SummonEssenceSpirits"] = {
 	description = "Summons three invulnerable spectral skulls that rush at nearby enemies and attack them rapidly. Enemies will not engage these spirits, and can pass through them.",
 	skillTypes = { [2] = true, [9] = true, [36] = true, [49] = true, [42] = true, [61] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
+	effects = {
+		[1] = "You cannot Cast this Spell directly",
+		[2] = "This Spell is Triggered when Equipped",
+	},
 	fromItem = true,
 	minionList = {
 		"SummonedEssenceSpirit",
@@ -798,6 +890,11 @@ skills["SummonRigwaldsPack"] = {
 	description = "Summons a spectral wolf companion that attacks near by enemies and dies after a duration.",
 	skillTypes = { [2] = true, [9] = true, [12] = true, [21] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [49] = true, [42] = true, [61] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
+	effects = {
+		[1] = "Base duration is 30000 seconds",
+		[2] = "You cannot Cast this Spell directly",
+		[3] = "10% chance to Trigger this Spell on Kill",
+	},
 	fromItem = true,
 	minionList = {
 		"SummonedSpectralWolf",

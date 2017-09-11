@@ -23,6 +23,13 @@ skills["AbyssalCry"] = {
 	color = 1,
 	description = "Performs a warcry, Hindering nearby enemies and causing them to explode when killed. The hinder effect is increased by surrounding enemies. Taunts all nearby enemies to attack the user. Shares a cooldown with other Warcry skills.",
 	skillTypes = { [11] = true, [12] = true, [50] = true, [10] = true, },
+	effects = {
+		[1] = "Base duration is 6000 seconds",
+		[2] = "(20-30)% reduced Movement Speed",
+		[3] = "Damage cannot be Reflected",
+		[4] = "(-98--60)% reduced Movement Speed per Nearby Enemy",
+		[5] = "Explosion deals Chaos Damage equal to 8% of the Monster's maximum Life",
+	},
 	baseFlags = {
 		warcry = true,
 		area = true,
@@ -113,6 +120,13 @@ skills["TotemMelee"] = {
 		["One Handed Mace"] = true,
 	},
 	skillTotemId = 13,
+	effects = {
+		[1] = "Totem lasts 12 seconds",
+		[2] = "Summons a Totem which uses this Skill",
+		[3] = "(10-25)% more Attack Speed while Totem is Active",
+		[4] = "50% increased Totem Placement speed",
+		[5] = "+16 to Melee range",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -209,6 +223,14 @@ skills["AncestorTotemSlam"] = {
 		["One Handed Mace"] = true,
 	},
 	skillTotemId = 15,
+	effects = {
+		[1] = "Totem lasts 12 seconds",
+		[2] = "Summons a Totem which uses this Skill",
+		[3] = "(8-22)% more Melee Damage while Totem is Active",
+		[4] = "10% less Attack Speed",
+		[5] = "50% increased Totem Placement speed",
+		[6] = "+10 to Melee range",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -292,6 +314,11 @@ skills["Anger"] = {
 	color = 1,
 	description = "Casts an aura that adds fire damage to the attacks and spells of you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, [33] = true, },
+	effects = {
+		[1] = "Adds (12-163) to (21-272) Fire Damage to Attacks",
+		[2] = "Adds (10-136) to (16-218) Fire Damage to Spells",
+		[3] = "+(0-29) to radius",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -365,6 +392,10 @@ skills["AnimateArmour"] = {
 	description = "Animates a melee weapon or armour, attaching it to an invisible Guardian that fights by your side. Animating multiple items attaches them to the same Guardian. You cannot animate unidentified weapons.",
 	skillTypes = { [2] = true, [9] = true, [21] = true, [18] = true, [36] = true, [49] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
+	effects = {
+		[1] = "Adds (22-72) to (34-108) Physical Damage to Attacks",
+		[2] = "Can use Items requiring up to level (33-100)",
+	},
 	minionHasItemSet = true,
 	minionUses = {
 		["Weapon 1"] = true,
@@ -455,6 +486,10 @@ skills["Cleave"] = {
 		["Two Handed Axe"] = true,
 		["Thrusting One Handed Sword"] = true,
 	},
+	effects = {
+		[1] = "+(0-10) to radius",
+		[2] = "When Dual Wielding, Deals 60% Damage from each Weapon combined",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -528,6 +563,11 @@ skills["DecoyTotem"] = {
 	description = "Summons a totem that taunts nearby monsters to attack it.",
 	skillTypes = { [2] = true, [17] = true, [12] = true, [19] = true, [11] = true, [30] = true, [26] = true, },
 	skillTotemId = 6,
+	effects = {
+		[1] = "Totem lasts 8 seconds",
+		[2] = "Summons a Totem which uses this Skill",
+		[3] = "Totems Summoned by this Skill cannot Evade",
+	},
 	baseFlags = {
 		spell = true,
 		totem = true,
@@ -604,6 +644,9 @@ skills["Determination"] = {
 	color = 1,
 	description = "Casts an aura that grants armour to you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, },
+	effects = {
+		[1] = "+(0-29) to radius",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -674,6 +717,12 @@ skills["DevouringTotem"] = {
 	description = "Summons a totem that can consume nearby corpses. If you are hurt, it will destroy a corpse to leech life to you.",
 	skillTypes = { [2] = true, [17] = true, [12] = true, [19] = true, [30] = true, },
 	skillTotemId = 7,
+	effects = {
+		[1] = "Totem lasts 8 seconds",
+		[2] = "Summons a Totem which uses this Skill",
+		[3] = "Leeches (30-652) Life to you for each corpse consumed",
+		[4] = "Leeches (9-96) Mana to you for each corpse consumed",
+	},
 	baseFlags = {
 		spell = true,
 		totem = true,
@@ -762,6 +811,10 @@ skills["DominatingBlow"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Minions deal 65% of Damage",
+		[2] = "Base duration is 20000 seconds",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -839,6 +892,10 @@ skills["Earthquake"] = {
 		["One Handed Axe"] = true,
 		["Staff"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "Base duration is 1500 seconds",
+		[2] = "Aftershock deals 50% more Damage",
 	},
 	parts = {
 		{
@@ -921,6 +978,11 @@ skills["EnduringCry"] = {
 	color = 1,
 	description = "Performs a warcry, adding endurance charges proportional to the number of surrounding enemies and granting life regeneration to you for a short time if there are nearby enemies. Taunts all nearby enemies to attack the user. Shares a cooldown with other Warcry skills.",
 	skillTypes = { [5] = true, [11] = true, [12] = true, },
+	effects = {
+		[1] = "Base duration is 750 seconds",
+		[2] = "(8-46) Endurance Charges granted per one hundred nearby enemies",
+		[3] = "(48-614) Life regenerated per second",
+	},
 	baseFlags = {
 		warcry = true,
 		area = true,
@@ -995,6 +1057,11 @@ skills["FlameTotem"] = {
 	description = "Summons a totem that fires a stream of flame at nearby enemies.",
 	skillTypes = { [2] = true, [3] = true, [10] = true, [12] = true, [17] = true, [19] = true, [30] = true, [33] = true, },
 	skillTotemId = 8,
+	effects = {
+		[1] = "Deals (1-335) to (2-502) Fire Damage",
+		[2] = "Totem lasts 8 seconds",
+		[3] = "Summons a Totem which uses this Skill",
+	},
 	baseFlags = {
 		spell = true,
 		totem = true,
@@ -1079,6 +1146,12 @@ skills["GlacialHammer"] = {
 		["Two Handed Mace"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Cold Damage",
+		[2] = "25% chance to Freeze enemies",
+		[3] = "35% increased Chill Duration on enemies",
+		[4] = "(10-39)% increased Effect of Chill",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1159,6 +1232,12 @@ skills["VaalGlacialHammer"] = {
 		["Two Handed Mace"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Cold Damage",
+		[2] = "Base duration is (3400-4850) seconds",
+		[3] = "25% chance to Freeze enemies",
+		[4] = "35% increased Chill Duration on enemies",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1238,6 +1317,10 @@ skills["GroundSlam"] = {
 		["Staff"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "+(0-10) to radius",
+		[2] = "25% reduced Enemy Stun Threshold",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1314,6 +1397,13 @@ skills["VaalGroundSlam"] = {
 		["Sceptre"] = true,
 		["Staff"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "Knocks Enemies Back on Hit",
+		[2] = "+(0-10) to radius",
+		[3] = "100% increased Knockback Distance",
+		[4] = "Stuns Enemies",
+		[5] = "Can't be Evaded",
 	},
 	baseFlags = {
 		attack = true,
@@ -1398,6 +1488,10 @@ skills["HeavyStrike"] = {
 		["Sceptre"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Knocks Enemies Back on Hit",
+		[2] = "25% reduced Enemy Stun Threshold",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1467,6 +1561,10 @@ skills["HeraldOfAsh"] = {
 	color = 1,
 	description = "Grants a buff providing fire damage based on your physical damage. While you have this buff, if you kill an enemy with an attack, other enemies near them will be burned based on the overkill damage. The burn inflicted by this skill can only be affected by modifiers to damage over time (burning damage is damage over time).",
 	skillTypes = { [2] = true, [5] = true, [15] = true, [16] = true, [29] = true, [11] = true, [40] = true, [33] = true, [27] = true, [63] = true, [12] = true, },
+	effects = {
+		[1] = "Base duration is 4000 seconds",
+		[2] = "Gain 15% of your Physical Damage as Extra Fire Damage",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -1549,6 +1647,12 @@ skills["IceCrash"] = {
 		["Sceptre"] = true,
 		["One Handed Axe"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Cold Damage",
+		[2] = "20% less Attack Speed",
+		[3] = "Second Stage deals 10% less Damage",
+		[4] = "Third Stage deals 20% less Damage",
 	},
 	parts = {
 		{
@@ -1633,6 +1737,10 @@ skills["ImmortalCall"] = {
 	color = 1,
 	description = "Discharges Endurance Charges, making the character invulnerable to physical damage for a short time, proportional to how many endurance charges were expended.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [18] = true, [36] = true, },
+	effects = {
+		[1] = "Base duration is 400 seconds",
+		[2] = "(100-187)% increased Buff Duration per Endurance Charge",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -1700,6 +1808,10 @@ skills["VaalImmortalCall"] = {
 	color = 1,
 	description = "Discharges Endurance Charges, making the character unable to die for a short time, proportional to how many endurance charges were expended.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [18] = true, [43] = true, },
+	effects = {
+		[1] = "Base duration is 400 seconds",
+		[2] = "(100-187)% increased Buff Duration per Endurance Charge",
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -1780,6 +1892,11 @@ skills["InfernalBlow"] = {
 		["Two Handed Sword"] = true,
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
+	},
+	effects = {
+		[1] = "50% of Physical Damage Converted to Fire Damage",
+		[2] = "Base duration is 500 seconds",
+		[3] = "Explosion deals base Fire Damage equal to 10% of the corpse's maximum Life",
 	},
 	baseFlags = {
 		attack = true,
@@ -1864,6 +1981,9 @@ skills["LeapSlam"] = {
 		["One Handed Axe"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "20% chance to Knock Enemies Back on hit",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -1936,6 +2056,12 @@ skills["MoltenShell"] = {
 	color = 1,
 	description = "Summons fiery elemental shields providing additional armour for a short duration. If cumulative physical damage prevented by your blocking or armour reaches a threshold, the shields explode outwards, dealing fire damage to surrounding enemies.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [18] = true, [31] = true, [36] = true, [26] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (14-6510) to (20-9766) Fire Damage",
+		[2] = "Base duration is 10000 seconds",
+		[3] = "Shields break after (26-3958) total Damage is prevented",
+		[4] = "(17-2474) additional Armour",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2015,6 +2141,11 @@ skills["VaalMoltenShell"] = {
 	color = 1,
 	description = "Summons fiery elemental shields providing additional armour for a short duration. Whenever you prevent any amount of physical damage from a hit, the shields cause a burst of flame, dealing fire damage to surrounding enemies.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [18] = true, [31] = true, [43] = true, [33] = true, },
+	effects = {
+		[1] = "Deals (9-1895) to (14-2843) Fire Damage",
+		[2] = "Base duration is 5000 seconds",
+		[3] = "(17-2474) additional Armour",
+	},
 	baseFlags = {
 		spell = true,
 		area = true,
@@ -2106,6 +2237,12 @@ skills["MoltenStrike"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "60% of Physical Damage Converted to Fire Damage",
+		[2] = "2 additional Projectiles",
+		[3] = "Projectiles deal 40% less Damage",
+		[4] = "Damage over time caused by Projectiles deals 40% less Damage",
+	},
 	parts = {
 		{
 			name = "Melee Hit",
@@ -2194,6 +2331,13 @@ skills["Punishment"] = {
 	color = 1,
 	description = "Curses all targets in an area, causing them to grant a buff to anyone they hit with melee attacks. The buff grants more Melee Damage and increased Attack Speed.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
+	effects = {
+		[1] = "+(0-15) to radius",
+		[2] = "Base duration is (9000-11900) seconds",
+		[3] = "Cursed enemies grant (25-40)% more Physical Melee Damage on Melee hit",
+		[4] = "Cursed enemies grant (10-24)% increased Attack Speed on Melee hit",
+		[5] = "Buff is applied for a Base Duration of 4000 seconds",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
@@ -2267,6 +2411,11 @@ skills["FireResistAura"] = {
 	color = 1,
 	description = "Casts an aura that grants fire resistance to you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, [33] = true, },
+	effects = {
+		[1] = "+(0-5)% to maximum Fire Resistance",
+		[2] = "+(22-51)% to Fire Resistance",
+		[3] = "+(0-29) to radius",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2338,6 +2487,12 @@ skills["RallyingCry"] = {
 	color = 1,
 	description = "Performs a warcry, granting increased damage and mana regeneration to you and your allies if there are nearby enemies. The damage increase is scaled by surrounding enemies. Taunts all nearby enemies to attack the user. Shares a cooldown with other Warcry skills.",
 	skillTypes = { [5] = true, [11] = true, [12] = true, },
+	effects = {
+		[1] = "Base duration is 8000 seconds",
+		[2] = "(140-198)% increased Damage per one hundred nearby Enemies",
+		[3] = "(1.8-22) Mana Regenerated per second",
+		[4] = "(10-20)% increased Damage",
+	},
 	baseFlags = {
 		warcry = true,
 		area = true,
@@ -2421,6 +2576,10 @@ skills["Reckoning"] = {
 		["One Handed Axe"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Trigger this Skill when you Block",
+		[2] = "You cannot use this Attack directly",
+	},
 	baseFlags = {
 		attack = true,
 		area = true,
@@ -2495,6 +2654,11 @@ skills["RejuvenationTotem"] = {
 	description = "Summons a totem that has an aura which regenerates life for you and your nearby allies.",
 	skillTypes = { [2] = true, [5] = true, [11] = true, [12] = true, [15] = true, [27] = true, [17] = true, [19] = true, [30] = true, [44] = true, },
 	skillTotemId = 4,
+	effects = {
+		[1] = "Totem lasts 8 seconds",
+		[2] = "Summons a Totem which uses this Skill",
+		[3] = "(6.4-243.7) Life regenerated per second",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -2571,6 +2735,12 @@ skills["SearingBond"] = {
 	description = "Summons a totem that casts a beam of fire at you and each other totem you control, dealing burning damage to enemies caught in the beam. Enemies near either end of a beam also suffer burning damage.",
 	skillTypes = { [2] = true, [40] = true, [12] = true, [17] = true, [19] = true, [27] = true, [29] = true, [30] = true, [36] = true, [33] = true, },
 	skillTotemId = 9,
+	effects = {
+		[1] = "Can have up to 1 additional Totem summoned at a time",
+		[2] = "Totem lasts 8 seconds",
+		[3] = "Deals (23.6-6203.2) Base Fire Damage per second",
+		[4] = "Summons a Totem which uses this Skill",
+	},
 	baseFlags = {
 		spell = true,
 		totem = true,
@@ -2654,6 +2824,11 @@ skills["NewShieldCharge"] = {
 		["One Handed Axe"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "50% increased Stun Threshold reduction on enemies at Maximum charge distance",
+		[2] = "200% more Damage with Hits at Maximum Charge Distance",
+		[3] = "75% increased Movement Speed",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -2729,6 +2904,12 @@ skills["ShockwaveTotem"] = {
 	description = "Summons a totem that shakes the earth around it, knocking back and damaging nearby enemies",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [19] = true, [30] = true, [26] = true, },
 	skillTotemId = 5,
+	effects = {
+		[1] = "Deals (23-610) to (46-1132) Physical Damage",
+		[2] = "Totem lasts 8 seconds",
+		[3] = "25% chance to Knock Enemies Back on hit",
+		[4] = "Summons a Totem which uses this Skill",
+	},
 	baseFlags = {
 		spell = true,
 		totem = true,
@@ -2821,6 +3002,13 @@ skills["StaticStrike"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "+(0-6) to radius",
+		[2] = "Base duration is 750 seconds",
+		[3] = "60% of Physical Damage Converted to Lightning Damage",
+		[4] = "10% chance to Shock enemies",
+		[5] = "Explosion deals 40% less Damage",
+	},
 	parts = {
 		{
 			name = "Melee hit",
@@ -2908,6 +3096,11 @@ skills["SummonFireGolem"] = {
 	description = "Summons a Flame Golem that grants you increased Damage. The Flame Golem can use a fire spray, a wave of fire damage, and an explosive arcing projectile.",
 	skillTypes = { [36] = true, [33] = true, [19] = true, [9] = true, [21] = true, [26] = true, [2] = true, [18] = true, [17] = true, [49] = true, [62] = true, },
 	minionSkillTypes = { [10] = true, [11] = true, [3] = true, [2] = true, },
+	effects = {
+		[1] = "Can Summon up to 1 Golem at a time",
+		[2] = "(30-88)% increased Minion Maximum Life",
+		[3] = "Golems Grant (15-22)% increased Damage",
+	},
 	minionList = {
 		"SummonedFlameGolem",
 	},
@@ -2986,6 +3179,11 @@ skills["SummonRockGolem"] = {
 	description = "Summons a Stone Golem that grants you life regeneration. In addition to its melee attack, the Stone Golem uses a rolling charge and a powerful slam that can taunt enemies.",
 	skillTypes = { [36] = true, [19] = true, [9] = true, [21] = true, [26] = true, [2] = true, [18] = true, [17] = true, [49] = true, [62] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [38] = true, [11] = true, [28] = true, },
+	effects = {
+		[1] = "Can Summon up to 1 Golem at a time",
+		[2] = "(30-88)% increased Minion Maximum Life",
+		[3] = "Golems grant (33-164) Life Regenerated per second",
+	},
 	minionList = {
 		"SummonedStoneGolem",
 	},
@@ -3070,6 +3268,11 @@ skills["Sunder"] = {
 		["Staff"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "+(0-10) to radius",
+		[2] = "15% less Attack Speed",
+		[3] = "Shockwaves deal 60% less Damage",
+	},
 	parts = {
 		{
 			name = "Primary wave",
@@ -3153,6 +3356,11 @@ skills["Sweep"] = {
 		["Two Handed Mace"] = true,
 		["Two Handed Sword"] = true,
 		["Staff"] = true,
+	},
+	effects = {
+		[1] = "+(0-6) to radius",
+		[2] = "(30-44)% chance to Knock Enemies Back on hit",
+		[3] = "10% less Attack Speed",
 	},
 	baseFlags = {
 		attack = true,
@@ -3239,6 +3447,10 @@ skills["Vengeance"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "30% chance to Trigger this Skill when Hit",
+		[2] = "You cannot use this Attack directly",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -3321,6 +3533,11 @@ skills["VigilantStrike"] = {
 		["Thrusting One Handed Sword"] = true,
 		["One Handed Mace"] = true,
 	},
+	effects = {
+		[1] = "Can't be Evaded",
+		[2] = "Grants Fortify on Melee Hit",
+		[3] = "(75-220)% increased Fortify duration",
+	},
 	baseFlags = {
 		attack = true,
 		melee = true,
@@ -3390,6 +3607,10 @@ skills["Vitality"] = {
 	color = 1,
 	description = "Casts an aura that grants life regeneration to you and your allies.",
 	skillTypes = { [2] = true, [11] = true, [5] = true, [15] = true, [27] = true, [16] = true, [18] = true, [44] = true, },
+	effects = {
+		[1] = "+(0-29) to radius",
+		[2] = "(0.7-2.2)% of maximum Life regenerated per second",
+	},
 	baseFlags = {
 		spell = true,
 		aura = true,
@@ -3460,6 +3681,11 @@ skills["WarlordsMark"] = {
 	color = 1,
 	description = "Curses all targets in an area, making them more vulnerable to stuns. Hitting the cursed targets will leech life and mana, and killing them will result in a chance to gain an endurance charge.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
+	effects = {
+		[1] = "+(0-15) to radius",
+		[2] = "Base duration is (6000-11800) seconds",
+		[3] = "(21-35)% increased Stun and Block Recovery",
+	},
 	baseFlags = {
 		spell = true,
 		curse = true,
