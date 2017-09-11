@@ -354,7 +354,7 @@ skills["SupportCastWhileChannelling"] = {
 	excludeSkillTypes = { 30, 61, },
 	effects = {
 		[1] = "You cannot Cast this Spell directly",
-		[2] = "Trigger a linked Spell every (300-450) seconds while Channelling",
+		[2] = "Trigger a linked Spell every (0.3-0.45) seconds while Channelling",
 	},
 	baseMods = {
 		mod("ManaCost", "MORE", 40), 

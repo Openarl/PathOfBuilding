@@ -866,8 +866,8 @@ skills["EnchantmentOfInfernoOnKill"] = {
 	skillTypes = { [2] = true, [11] = true, [33] = true, [36] = true, [42] = true, },
 	effects = {
 		[1] = "Deals 155 to 249 Fire Damage",
-		[2] = "Base duration is 2000 seconds",
-		[3] = "One impact every 100 seconds",
+		[2] = "Base duration is 2 seconds",
+		[3] = "One impact every 0.1 seconds",
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
 	},
@@ -908,8 +908,8 @@ skills["EnchantmentOfInfernoOnKill2"] = {
 	skillTypes = { [2] = true, [11] = true, [33] = true, [36] = true, [42] = true, },
 	effects = {
 		[1] = "Deals 722 to 1107 Fire Damage",
-		[2] = "Base duration is 2000 seconds",
-		[3] = "One impact every 100 seconds",
+		[2] = "Base duration is 2 seconds",
+		[3] = "One impact every 0.1 seconds",
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
 	},
@@ -950,8 +950,8 @@ skills["EnchantmentOfInfernoOnKill3"] = {
 	skillTypes = { [2] = true, [11] = true, [33] = true, [36] = true, [42] = true, },
 	effects = {
 		[1] = "Deals 1817 to 2725 Fire Damage",
-		[2] = "Base duration is 2000 seconds",
-		[3] = "One impact every 100 seconds",
+		[2] = "Base duration is 2 seconds",
+		[3] = "One impact every 0.1 seconds",
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
 	},
@@ -992,8 +992,8 @@ skills["EnchantmentOfInfernoOnKill4"] = {
 	skillTypes = { [2] = true, [11] = true, [33] = true, [36] = true, [42] = true, },
 	effects = {
 		[1] = "Deals 3324 to 5263 Fire Damage",
-		[2] = "Base duration is 2000 seconds",
-		[3] = "One impact every 100 seconds",
+		[2] = "Base duration is 2 seconds",
+		[3] = "One impact every 0.1 seconds",
 		[4] = "Trigger this Spell on Kill",
 		[5] = "Damage cannot be Reflected",
 	},
@@ -1048,7 +1048,7 @@ skills["EnchantmentOfIreWhenHit"] = {
 		["One Handed Mace"] = true,
 	},
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "50% of Physical Damage Converted to Lightning Damage",
 		[3] = "Trigger this Skill when Hit",
 		[4] = "You cannot use this Attack directly",
@@ -1105,7 +1105,7 @@ skills["EnchantmentOfIreWhenHit2"] = {
 		["One Handed Mace"] = true,
 	},
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "50% of Physical Damage Converted to Lightning Damage",
 		[3] = "Trigger this Skill when Hit",
 		[4] = "You cannot use this Attack directly",
@@ -1162,7 +1162,7 @@ skills["EnchantmentOfIreWhenHit3"] = {
 		["One Handed Mace"] = true,
 	},
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "50% of Physical Damage Converted to Lightning Damage",
 		[3] = "Trigger this Skill when Hit",
 		[4] = "You cannot use this Attack directly",
@@ -1219,7 +1219,7 @@ skills["EnchantmentOfIreWhenHit4"] = {
 		["One Handed Mace"] = true,
 	},
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "50% of Physical Damage Converted to Lightning Damage",
 		[3] = "Trigger this Skill when Hit",
 		[4] = "You cannot use this Attack directly",
@@ -1261,7 +1261,7 @@ skills["EnchantmentOfLightWhenCrit"] = {
 	description = "Deals a portion of your main hand damage in an area around you and creates Consecrated Ground, causing you and your allies to regenerate life.",
 	skillTypes = { [1] = true, [11] = true, [12] = true, [6] = true, [7] = true, [47] = true, [57] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "6% of maximum Life regenerated per second",
 		[3] = "Trigger this Skill when Critically Hit",
 		[4] = "Damage cannot be Reflected",
@@ -1299,7 +1299,7 @@ skills["EnchantmentOfLightWhenCrit2"] = {
 	description = "Deals a portion of your main hand damage in an area around you and creates Consecrated Ground, causing you and your allies to regenerate life.",
 	skillTypes = { [1] = true, [11] = true, [12] = true, [6] = true, [7] = true, [47] = true, [57] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "6% of maximum Life regenerated per second",
 		[3] = "Trigger this Skill when Critically Hit",
 		[4] = "Damage cannot be Reflected",
@@ -1337,7 +1337,7 @@ skills["EnchantmentOfLightWhenCrit3"] = {
 	description = "Deals a portion of your main hand damage in an area around you and creates Consecrated Ground, causing you and your allies to regenerate life.",
 	skillTypes = { [1] = true, [11] = true, [12] = true, [6] = true, [7] = true, [47] = true, [57] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "6% of maximum Life regenerated per second",
 		[3] = "Trigger this Skill when Critically Hit",
 		[4] = "Damage cannot be Reflected",
@@ -1375,7 +1375,7 @@ skills["EnchantmentOfLightWhenCrit4"] = {
 	description = "Deals a portion of your main hand damage in an area around you and creates Consecrated Ground, causing you and your allies to regenerate life.",
 	skillTypes = { [1] = true, [11] = true, [12] = true, [6] = true, [7] = true, [47] = true, [57] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "6% of maximum Life regenerated per second",
 		[3] = "Trigger this Skill when Critically Hit",
 		[4] = "Damage cannot be Reflected",
@@ -1415,7 +1415,7 @@ skills["EnchantmentOfReflectionWhenHit"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [28] = true, },
 	effects = {
 		[1] = "Minions deal 200% of Damage",
-		[2] = "Base duration is 5000 seconds",
+		[2] = "Base duration is 5 seconds",
 		[3] = "80% increased Minion Damage",
 		[4] = "150% increased Minion Maximum Life",
 		[5] = "Trigger this Spell when you're Hit",
@@ -1462,7 +1462,7 @@ skills["EnchantmentOfReflectionWhenHit2"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [28] = true, },
 	effects = {
 		[1] = "Minions deal 300% of Damage",
-		[2] = "Base duration is 5000 seconds",
+		[2] = "Base duration is 5 seconds",
 		[3] = "100% increased Minion Damage",
 		[4] = "150% increased Minion Maximum Life",
 		[5] = "Trigger this Spell when you're Hit",
@@ -1509,7 +1509,7 @@ skills["EnchantmentOfReflectionWhenHit3"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [28] = true, },
 	effects = {
 		[1] = "Minions deal 400% of Damage",
-		[2] = "Base duration is 5000 seconds",
+		[2] = "Base duration is 5 seconds",
 		[3] = "120% increased Minion Damage",
 		[4] = "150% increased Minion Maximum Life",
 		[5] = "Trigger this Spell when you're Hit",
@@ -1556,7 +1556,7 @@ skills["EnchantmentOfReflectionWhenHit4"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [28] = true, },
 	effects = {
 		[1] = "Minions deal 500% of Damage",
-		[2] = "Base duration is 5000 seconds",
+		[2] = "Base duration is 5 seconds",
 		[3] = "140% increased Minion Damage",
 		[4] = "150% increased Minion Maximum Life",
 		[5] = "Trigger this Spell when you're Hit",
@@ -1838,7 +1838,7 @@ skills["EnchantmentOfTempestOnHit"] = {
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [36] = true, },
 	effects = {
 		[1] = "Deals 175 to 280 Lightning Damage",
-		[2] = "Base duration is 2000 seconds",
+		[2] = "Base duration is 2 seconds",
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
@@ -1878,7 +1878,7 @@ skills["EnchantmentOfTempestOnHit2"] = {
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [36] = true, },
 	effects = {
 		[1] = "Deals 812 to 1245 Lightning Damage",
-		[2] = "Base duration is 2000 seconds",
+		[2] = "Base duration is 2 seconds",
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
@@ -1918,7 +1918,7 @@ skills["EnchantmentOfTempestOnHit3"] = {
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [36] = true, },
 	effects = {
 		[1] = "Deals 2044 to 3065 Lightning Damage",
-		[2] = "Base duration is 2000 seconds",
+		[2] = "Base duration is 2 seconds",
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
@@ -1958,7 +1958,7 @@ skills["EnchantmentOfTempestOnHit4"] = {
 	skillTypes = { [2] = true, [10] = true, [11] = true, [17] = true, [18] = true, [19] = true, [36] = true, },
 	effects = {
 		[1] = "Deals 3739 to 5920 Lightning Damage",
-		[2] = "Base duration is 2000 seconds",
+		[2] = "Base duration is 2 seconds",
 		[3] = "Trigger this Spell when you Hit",
 		[4] = "Damage cannot be Reflected",
 	},
@@ -1998,7 +1998,7 @@ skills["EnchantmentOfTheGraveOnKill"] = {
 	skillTypes = { [2] = true, [9] = true, [21] = true, [34] = true, [36] = true, [42] = true, [12] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 	},
 	minionList = {
 		"IcyRagingSpirit",
@@ -2036,7 +2036,7 @@ skills["EnchantmentOfTheGraveOnKill2"] = {
 	skillTypes = { [2] = true, [9] = true, [21] = true, [34] = true, [36] = true, [42] = true, [12] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 	},
 	minionList = {
 		"IcyRagingSpirit",
@@ -2074,7 +2074,7 @@ skills["EnchantmentOfTheGraveOnKill3"] = {
 	skillTypes = { [2] = true, [9] = true, [21] = true, [34] = true, [36] = true, [42] = true, [12] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 	},
 	minionList = {
 		"IcyRagingSpirit",
@@ -2112,7 +2112,7 @@ skills["EnchantmentOfTheGraveOnKill4"] = {
 	skillTypes = { [2] = true, [9] = true, [21] = true, [34] = true, [36] = true, [42] = true, [12] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 	},
 	minionList = {
 		"IcyRagingSpirit",
@@ -2309,7 +2309,7 @@ skills["EnchantmentOfWarOnKill"] = {
 	},
 	effects = {
 		[1] = "Minions deal 150% of Damage",
-		[2] = "Base duration is 10000 seconds",
+		[2] = "Base duration is 10 seconds",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -2356,7 +2356,7 @@ skills["EnchantmentOfWarOnKill2"] = {
 	},
 	effects = {
 		[1] = "Minions deal 200% of Damage",
-		[2] = "Base duration is 10000 seconds",
+		[2] = "Base duration is 10 seconds",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -2403,7 +2403,7 @@ skills["EnchantmentOfWarOnKill3"] = {
 	},
 	effects = {
 		[1] = "Minions deal 250% of Damage",
-		[2] = "Base duration is 10000 seconds",
+		[2] = "Base duration is 10 seconds",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -2450,7 +2450,7 @@ skills["EnchantmentOfWarOnKill4"] = {
 	},
 	effects = {
 		[1] = "Minions deal 300% of Damage",
-		[2] = "Base duration is 10000 seconds",
+		[2] = "Base duration is 10 seconds",
 	},
 	fromItem = true,
 	baseFlags = {

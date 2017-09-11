@@ -24,10 +24,10 @@ skills["AbyssalCry"] = {
 	description = "Performs a warcry, Hindering nearby enemies and causing them to explode when killed. The hinder effect is increased by surrounding enemies. Taunts all nearby enemies to attack the user. Shares a cooldown with other Warcry skills.",
 	skillTypes = { [11] = true, [12] = true, [50] = true, [10] = true, },
 	effects = {
-		[1] = "Base duration is 6000 seconds",
+		[1] = "Base duration is 6 seconds",
 		[2] = "(20-30)% reduced Movement Speed",
 		[3] = "Damage cannot be Reflected",
-		[4] = "(-98--60)% reduced Movement Speed per Nearby Enemy",
+		[4] = "(0.6-1)% reduced Movement Speed per Nearby Enemy",
 		[5] = "Explosion deals Chaos Damage equal to 8% of the Monster's maximum Life",
 	},
 	baseFlags = {
@@ -813,7 +813,7 @@ skills["DominatingBlow"] = {
 	},
 	effects = {
 		[1] = "Minions deal 65% of Damage",
-		[2] = "Base duration is 20000 seconds",
+		[2] = "Base duration is 20 seconds",
 	},
 	baseFlags = {
 		attack = true,
@@ -894,7 +894,7 @@ skills["Earthquake"] = {
 		["One Handed Mace"] = true,
 	},
 	effects = {
-		[1] = "Base duration is 1500 seconds",
+		[1] = "Base duration is 1.5 seconds",
 		[2] = "Aftershock deals 50% more Damage",
 	},
 	parts = {
@@ -979,7 +979,7 @@ skills["EnduringCry"] = {
 	description = "Performs a warcry, adding endurance charges proportional to the number of surrounding enemies and granting life regeneration to you for a short time if there are nearby enemies. Taunts all nearby enemies to attack the user. Shares a cooldown with other Warcry skills.",
 	skillTypes = { [5] = true, [11] = true, [12] = true, },
 	effects = {
-		[1] = "Base duration is 750 seconds",
+		[1] = "Base duration is 0.75 seconds",
 		[2] = "(8-46) Endurance Charges granted per one hundred nearby enemies",
 		[3] = "(48-614) Life regenerated per second",
 	},
@@ -1234,7 +1234,7 @@ skills["VaalGlacialHammer"] = {
 	},
 	effects = {
 		[1] = "50% of Physical Damage Converted to Cold Damage",
-		[2] = "Base duration is (3400-4850) seconds",
+		[2] = "Base duration is (3.4-4.85) seconds",
 		[3] = "25% chance to Freeze enemies",
 		[4] = "35% increased Chill Duration on enemies",
 	},
@@ -1562,7 +1562,7 @@ skills["HeraldOfAsh"] = {
 	description = "Grants a buff providing fire damage based on your physical damage. While you have this buff, if you kill an enemy with an attack, other enemies near them will be burned based on the overkill damage. The burn inflicted by this skill can only be affected by modifiers to damage over time (burning damage is damage over time).",
 	skillTypes = { [2] = true, [5] = true, [15] = true, [16] = true, [29] = true, [11] = true, [40] = true, [33] = true, [27] = true, [63] = true, [12] = true, },
 	effects = {
-		[1] = "Base duration is 4000 seconds",
+		[1] = "Base duration is 4 seconds",
 		[2] = "Gain 15% of your Physical Damage as Extra Fire Damage",
 	},
 	baseFlags = {
@@ -1738,7 +1738,7 @@ skills["ImmortalCall"] = {
 	description = "Discharges Endurance Charges, making the character invulnerable to physical damage for a short time, proportional to how many endurance charges were expended.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [18] = true, [36] = true, },
 	effects = {
-		[1] = "Base duration is 400 seconds",
+		[1] = "Base duration is 0.4 seconds",
 		[2] = "(100-187)% increased Buff Duration per Endurance Charge",
 	},
 	baseFlags = {
@@ -1809,7 +1809,7 @@ skills["VaalImmortalCall"] = {
 	description = "Discharges Endurance Charges, making the character unable to die for a short time, proportional to how many endurance charges were expended.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [18] = true, [43] = true, },
 	effects = {
-		[1] = "Base duration is 400 seconds",
+		[1] = "Base duration is 0.4 seconds",
 		[2] = "(100-187)% increased Buff Duration per Endurance Charge",
 	},
 	baseFlags = {
@@ -1895,7 +1895,7 @@ skills["InfernalBlow"] = {
 	},
 	effects = {
 		[1] = "50% of Physical Damage Converted to Fire Damage",
-		[2] = "Base duration is 500 seconds",
+		[2] = "Base duration is 0.5 seconds",
 		[3] = "Explosion deals base Fire Damage equal to 10% of the corpse's maximum Life",
 	},
 	baseFlags = {
@@ -2058,7 +2058,7 @@ skills["MoltenShell"] = {
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [18] = true, [31] = true, [36] = true, [26] = true, [33] = true, },
 	effects = {
 		[1] = "Deals (14-6510) to (20-9766) Fire Damage",
-		[2] = "Base duration is 10000 seconds",
+		[2] = "Base duration is 10 seconds",
 		[3] = "Shields break after (26-3958) total Damage is prevented",
 		[4] = "(17-2474) additional Armour",
 	},
@@ -2143,7 +2143,7 @@ skills["VaalMoltenShell"] = {
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [18] = true, [31] = true, [43] = true, [33] = true, },
 	effects = {
 		[1] = "Deals (9-1895) to (14-2843) Fire Damage",
-		[2] = "Base duration is 5000 seconds",
+		[2] = "Base duration is 5 seconds",
 		[3] = "(17-2474) additional Armour",
 	},
 	baseFlags = {
@@ -2333,10 +2333,10 @@ skills["Punishment"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
 	effects = {
 		[1] = "+(0-15) to radius",
-		[2] = "Base duration is (9000-11900) seconds",
+		[2] = "Base duration is (9-11.9) seconds",
 		[3] = "Cursed enemies grant (25-40)% more Physical Melee Damage on Melee hit",
 		[4] = "Cursed enemies grant (10-24)% increased Attack Speed on Melee hit",
-		[5] = "Buff is applied for a Base Duration of 4000 seconds",
+		[5] = "Buff is applied for a Base Duration of 4 seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -2488,7 +2488,7 @@ skills["RallyingCry"] = {
 	description = "Performs a warcry, granting increased damage and mana regeneration to you and your allies if there are nearby enemies. The damage increase is scaled by surrounding enemies. Taunts all nearby enemies to attack the user. Shares a cooldown with other Warcry skills.",
 	skillTypes = { [5] = true, [11] = true, [12] = true, },
 	effects = {
-		[1] = "Base duration is 8000 seconds",
+		[1] = "Base duration is 8 seconds",
 		[2] = "(140-198)% increased Damage per one hundred nearby Enemies",
 		[3] = "(1.8-22) Mana Regenerated per second",
 		[4] = "(10-20)% increased Damage",
@@ -3004,7 +3004,7 @@ skills["StaticStrike"] = {
 	},
 	effects = {
 		[1] = "+(0-6) to radius",
-		[2] = "Base duration is 750 seconds",
+		[2] = "Base duration is 0.75 seconds",
 		[3] = "60% of Physical Damage Converted to Lightning Damage",
 		[4] = "10% chance to Shock enemies",
 		[5] = "Explosion deals 40% less Damage",
@@ -3683,7 +3683,7 @@ skills["WarlordsMark"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
 	effects = {
 		[1] = "+(0-15) to radius",
-		[2] = "Base duration is (6000-11800) seconds",
+		[2] = "Base duration is (6-11.8) seconds",
 		[3] = "(21-35)% increased Stun and Block Recovery",
 	},
 	baseFlags = {

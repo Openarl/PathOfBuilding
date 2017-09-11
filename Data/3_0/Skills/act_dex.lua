@@ -26,7 +26,7 @@ skills["AnimateWeapon"] = {
 	effects = {
 		[1] = "Adds (4-48) to (6-72) Physical Damage to Attacks",
 		[2] = "Deals (100-332)% of Damage",
-		[3] = "Base duration is 37500 seconds",
+		[3] = "Base duration is 37.5 seconds",
 		[4] = "Can summon up to 50 Animated Weapons at a time",
 		[5] = "Can use Items requiring up to level (9-100)",
 	},
@@ -110,7 +110,7 @@ skills["NewArcticArmour"] = {
 	description = "Summons an icy barrier that chills enemies when they hit you. You drop chilled ground while moving, and take less Fire and Physical damage while stationary.",
 	skillTypes = { [2] = true, [5] = true, [18] = true, [12] = true, [15] = true, [27] = true, [34] = true, [16] = true, },
 	effects = {
-		[1] = "Base duration is (2500-5400) seconds",
+		[1] = "Base duration is (2.5-5.4) seconds",
 		[2] = "(8-15)% less Physical Damage taken when Hit",
 		[3] = "(8-15)% less Fire Damage taken when Hit",
 		[4] = "Chill Enemy for 0.5 seconds when Hit",
@@ -451,7 +451,7 @@ skills["BladeVortex"] = {
 	effects = {
 		[1] = "Deals (7-270) to (10-405) Physical Damage",
 		[2] = "+(0-6) to radius",
-		[3] = "Base duration is 5000 seconds",
+		[3] = "Base duration is 5 seconds",
 		[4] = "10% increased Hit Rate for each blade",
 		[5] = "30% more Damage with Hits for each blade",
 		[6] = "20% more Damage with Ailments for each blade",
@@ -729,7 +729,7 @@ skills["BlinkArrow"] = {
 	},
 	effects = {
 		[1] = "Minions deal 175% of Damage",
-		[2] = "Base duration is 3000 seconds",
+		[2] = "Base duration is 3 seconds",
 	},
 	minionList = {
 		"Clone",
@@ -810,7 +810,7 @@ skills["BloodRage"] = {
 	description = "Adds a buff that deals Physical Damage over time, while increasing Attack Speed and Life Leech. Killing an enemy while this buff is active refreshes the buff duration, and can grant a Frenzy Charge.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [18] = true, [36] = true, },
 	effects = {
-		[1] = "Base duration is (7000-12800) seconds",
+		[1] = "Base duration is (7-12.8) seconds",
 		[2] = "(5-20)% increased Attack Speed",
 		[3] = "1.2% of Attack Physical Damage Leeched as Life",
 		[4] = "You take 4% of your Maximum Life per second as Physical Damage",
@@ -1059,7 +1059,7 @@ skills["PoisonArrow"] = {
 	effects = {
 		[1] = "+(0-6) to radius",
 		[2] = "Deals (5.3-2030.9) Base Chaos Damage per second",
-		[3] = "Base duration is (2800-5900) seconds",
+		[3] = "Base duration is (2.8-5.9) seconds",
 		[4] = "Modifiers to Projectile Damage apply to this Skill's Damage Over Time effect",
 		[5] = "Gain (30-59)% of your Physical Damage as Extra Chaos Damage",
 	},
@@ -1249,7 +1249,7 @@ skills["VaalCyclone"] = {
 		["One Handed Mace"] = true,
 	},
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "50% increased Area of Effect",
 		[3] = "100% more Attack Speed",
 		[4] = "Can't be Evaded",
@@ -1332,7 +1332,7 @@ skills["Desecrate"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [36] = true, [40] = true, [26] = true, [50] = true, },
 	effects = {
 		[1] = "Deals (8.2-912.6) Base Chaos Damage per second",
-		[2] = "Base duration is 5000 seconds",
+		[2] = "Base duration is 5 seconds",
 		[3] = "Creates 3 Corpses",
 		[4] = "Creates Corpses up to Level (20-100)",
 	},
@@ -1672,7 +1672,7 @@ skills["VaalDoubleStrike"] = {
 		["One Handed Mace"] = true,
 	},
 	effects = {
-		[1] = "Base duration is (3600-6500) seconds",
+		[1] = "Base duration is (3.6-6.5) seconds",
 	},
 	baseFlags = {
 		attack = true,
@@ -1994,7 +1994,7 @@ skills["ExplosiveArrow"] = {
 		["Bow"] = true,
 	},
 	effects = {
-		[1] = "Base duration is 1000 seconds",
+		[1] = "Base duration is 1 seconds",
 		[2] = "Explosion deals (44-1767) to (66-2651) Base Fire Damage per Fuse Charge",
 		[3] = "+2 to Explosion Radius per Fuse Charge",
 	},
@@ -2104,7 +2104,7 @@ skills["FireTrap"] = {
 		[2] = "+(0-10) to radius",
 		[3] = "Trap lasts 16 seconds",
 		[4] = "Deals (3.6-2232.1) Base Fire Damage per second",
-		[5] = "Base duration is 8000 seconds",
+		[5] = "Base duration is 8 seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -2616,7 +2616,7 @@ skills["VaalGrace"] = {
 		[1] = "(24-39)% chance to Dodge Attacks",
 		[2] = "(24-39)% chance to Dodge Spell Damage",
 		[3] = "+(0-29) to radius",
-		[4] = "Base duration is 6000 seconds",
+		[4] = "Base duration is 6 seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -2769,7 +2769,7 @@ skills["VaalHaste"] = {
 	skillTypes = { [2] = true, [5] = true, [11] = true, [18] = true, [27] = true, [12] = true, [43] = true, [44] = true, },
 	effects = {
 		[1] = "+(0-29) to radius",
-		[2] = "Base duration is 4000 seconds",
+		[2] = "Base duration is 4 seconds",
 		[3] = "(25-34)% increased Attack Speed",
 		[4] = "(10-15)% increased Movement Speed",
 	},
@@ -3011,7 +3011,7 @@ skills["IceShot"] = {
 	},
 	effects = {
 		[1] = "60% of Physical Damage Converted to Cold Damage",
-		[2] = "Base duration is 1500 seconds",
+		[2] = "Base duration is 1.5 seconds",
 	},
 	parts = {
 		{
@@ -3465,7 +3465,7 @@ skills["VaalLightningStrike"] = {
 		["One Handed Mace"] = true,
 	},
 	effects = {
-		[1] = "Base duration is (5000-10800) seconds",
+		[1] = "Base duration is (5-10.8) seconds",
 		[2] = "50% of Physical Damage Converted to Lightning Damage",
 		[3] = "Beams deal 50% less Damage",
 		[4] = "Can't be Evaded",
@@ -3556,7 +3556,7 @@ skills["MirrorArrow"] = {
 	},
 	effects = {
 		[1] = "Minions deal 175% of Damage",
-		[2] = "Base duration is 3000 seconds",
+		[2] = "Base duration is 3 seconds",
 	},
 	minionList = {
 		"Clone",
@@ -3638,8 +3638,8 @@ skills["NewPhaseRun"] = {
 	description = "Gain a buff that makes you faster, harder to detect, and grants Phasing, letting you pass through enemies. Performing any skill replaces this buff with one that boosts melee damage of skills you use yourself (it will not apply to your melee skills used by totems). Consumes Frenzy Charges to increase duration.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [36] = true, [38] = true, },
 	effects = {
-		[1] = "Base duration is 1800 seconds",
-		[2] = "Base secondary duration is 200 seconds",
+		[1] = "Base duration is 1.8 seconds",
+		[2] = "Base secondary duration is 0.2 seconds",
 		[3] = "(30-44)% increased Movement Speed",
 		[4] = "(20-35)% more Melee Physical Damage",
 		[5] = "100% increased Skill Duration per Frenzy Charge",
@@ -3721,7 +3721,7 @@ skills["PoachersMark"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
 	effects = {
 		[1] = "+(0-15) to radius",
-		[2] = "Base duration is (6000-11800) seconds",
+		[2] = "Base duration is (6-11.8) seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -3802,7 +3802,7 @@ skills["ProjectileWeakness"] = {
 	effects = {
 		[1] = "(25-54)% increased Damage taken from Projectiles",
 		[2] = "+(0-15) to radius",
-		[3] = "Base duration is (9000-11900) seconds",
+		[3] = "Base duration is (9-11.9) seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -3887,7 +3887,7 @@ skills["Puncture"] = {
 		["Thrusting One Handed Sword"] = true,
 	},
 	effects = {
-		[1] = "Base duration is 8000 seconds",
+		[1] = "Base duration is 8 seconds",
 		[2] = "Causes Bleeding",
 	},
 	baseFlags = {
@@ -4122,7 +4122,7 @@ skills["VaalRainOfArrows"] = {
 	},
 	effects = {
 		[1] = "+(0-6) to radius",
-		[2] = "Base duration is (3400-4850) seconds",
+		[2] = "Base duration is (3.4-4.85) seconds",
 		[3] = "Can't be Evaded",
 	},
 	baseFlags = {
@@ -4660,7 +4660,7 @@ skills["SmokeMine"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [38] = true, [41] = true, },
 	effects = {
 		[1] = "Mine lasts 16 seconds",
-		[2] = "Base duration is (4000-6900) seconds",
+		[2] = "Base duration is (4-6.9) seconds",
 		[3] = "30% increased Movement Speed",
 	},
 	baseFlags = {
@@ -5062,7 +5062,7 @@ skills["TemporalChains"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
 	effects = {
 		[1] = "+(0-10) to radius",
-		[2] = "Base duration is (5000-6450) seconds",
+		[2] = "Base duration is (5-6.45) seconds",
 		[3] = "40% reduced Effect of Curse against Players",
 	},
 	baseFlags = {
@@ -5220,7 +5220,7 @@ skills["ViperStrike"] = {
 	},
 	effects = {
 		[1] = "25% of Physical Damage Converted to Chaos Damage",
-		[2] = "Base duration is 4000 seconds",
+		[2] = "Base duration is 4 seconds",
 		[3] = "60% chance to Poison on Hit",
 	},
 	baseFlags = {

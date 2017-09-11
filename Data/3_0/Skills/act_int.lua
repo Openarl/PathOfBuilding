@@ -178,7 +178,7 @@ skills["ArcticBreath"] = {
 	skillTypes = { [2] = true, [3] = true, [10] = true, [17] = true, [18] = true, [19] = true, [12] = true, [11] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
 	effects = {
 		[1] = "Deals (52-1716) to (78-2574) Cold Damage",
-		[2] = "Base duration is (880-2200) seconds",
+		[2] = "Base duration is (0.88-2.2) seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -257,7 +257,7 @@ skills["AssassinsMark"] = {
 		[1] = "You take 20% increased Extra Damage from Critical Strikes",
 		[2] = "(5-11)% additional Chance to receive a Critical Strike",
 		[3] = "+(0-15) to radius",
-		[4] = "Base duration is (6000-11800) seconds",
+		[4] = "Base duration is (6-11.8) seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -414,8 +414,8 @@ skills["Blight"] = {
 	effects = {
 		[1] = "+(0-6) to radius",
 		[2] = "Deals (1.7-590.8) Base Chaos Damage per second",
-		[3] = "Base duration is 2500 seconds",
-		[4] = "Base secondary duration is 800 seconds",
+		[3] = "Base duration is 2.5 seconds",
+		[4] = "Base secondary duration is 0.8 seconds",
 		[5] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
 		[6] = "80% reduced Movement Speed",
 		[7] = "Debuff can have up to 20 layers of Damage",
@@ -498,8 +498,8 @@ skills["BoneOffering"] = {
 		[1] = "Minions recover (11-1089) Life when they Block",
 		[2] = "(25-40)% Chance to Block",
 		[3] = "(25-39)% Chance to Block Spells",
-		[4] = "Base duration is 3000 seconds",
-		[5] = "Additional 500 seconds Base Duration per extra Corpse consumed",
+		[4] = "Base duration is 3 seconds",
+		[5] = "Additional 0.5 seconds Base Duration per extra Corpse consumed",
 	},
 	baseFlags = {
 		spell = true,
@@ -649,7 +649,7 @@ skills["VaalClarity"] = {
 	skillTypes = { [2] = true, [5] = true, [11] = true, [18] = true, [27] = true, [12] = true, [43] = true, [44] = true, },
 	effects = {
 		[1] = "+(0-29) to radius",
-		[2] = "Base duration is (8000-10900) seconds",
+		[2] = "Base duration is (8-10.9) seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -811,7 +811,7 @@ skills["VaalColdSnap"] = {
 	effects = {
 		[1] = "Deals (11-1466) to (17-2199) Cold Damage",
 		[2] = "+(0-7) to radius",
-		[3] = "Base duration is 10000 seconds",
+		[3] = "Base duration is 10 seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -892,7 +892,7 @@ skills["Conductivity"] = {
 		[1] = "-(54-25)% to Lightning Resistance",
 		[2] = "+(10-17)% chance to be Shocked",
 		[3] = "+(0-15) to radius",
-		[4] = "Base duration is (9000-11900) seconds",
+		[4] = "Base duration is (9-11.9) seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -971,7 +971,7 @@ skills["Contagion"] = {
 	effects = {
 		[1] = "+(0-6) to radius",
 		[2] = "Deals (3.5-622) Base Chaos Damage per second",
-		[3] = "Base duration is 5000 seconds",
+		[3] = "Base duration is 5 seconds",
 		[4] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
 	},
 	baseFlags = {
@@ -1048,7 +1048,7 @@ skills["ConversionTrap"] = {
 	skillTypes = { [2] = true, [12] = true, [19] = true, [37] = true, },
 	effects = {
 		[1] = "Trap lasts 16 seconds",
-		[2] = "Base duration is (5300-12500) seconds",
+		[2] = "Base duration is (5.3-12.5) seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -1121,7 +1121,7 @@ skills["Convocation"] = {
 	description = "Recalls all minions that are following you to your location, and grants them a temporary life regeneration effect.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [36] = true, [9] = true, [49] = true, },
 	effects = {
-		[1] = "Base duration is 2000 seconds",
+		[1] = "Base duration is 2 seconds",
 		[2] = "(19.3-321) Life regenerated per second",
 	},
 	baseFlags = {
@@ -1360,7 +1360,7 @@ skills["VaalDiscipline"] = {
 	effects = {
 		[1] = "Energy Shield Recharge not delayed by Damage",
 		[2] = "+(0-29) to radius",
-		[3] = "Base duration is 3000 seconds",
+		[3] = "Base duration is 3 seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -1436,7 +1436,7 @@ skills["ElementalWeakness"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
 	effects = {
 		[1] = "+(0-15) to radius",
-		[2] = "Base duration is (9000-11900) seconds",
+		[2] = "Base duration is (9-11.9) seconds",
 		[3] = "-(49-20)% to all Elemental Resistances",
 	},
 	baseFlags = {
@@ -1513,7 +1513,7 @@ skills["Enfeeble"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
 	effects = {
 		[1] = "+(0-10) to radius",
-		[2] = "Base duration is (9000-11900) seconds",
+		[2] = "Base duration is (9-11.9) seconds",
 		[3] = "(18-47)% reduced Accuracy Rating",
 		[4] = "25% reduced Critical Strike Chance",
 		[5] = "-(35-21)% to Critical Strike Multiplier",
@@ -1597,7 +1597,7 @@ skills["EssenceDrain"] = {
 	effects = {
 		[1] = "Deals (6-1058) to (9-1587) Chaos Damage",
 		[2] = "Deals (21.3-3674.1) Base Chaos Damage per second",
-		[3] = "Base duration is 3800 seconds",
+		[3] = "Base duration is 3.8 seconds",
 		[4] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
 		[5] = "Regenerate 0.5% of Debuff Damage as Life",
 	},
@@ -1943,8 +1943,8 @@ skills["Firestorm"] = {
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [33] = true, },
 	effects = {
 		[1] = "Deals (4-386) to (10-579) Fire Damage",
-		[2] = "Base duration is 2000 seconds",
-		[3] = "One impact every 100 seconds",
+		[2] = "Base duration is 2 seconds",
+		[3] = "One impact every 0.1 seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -2026,7 +2026,7 @@ skills["FlameDash"] = {
 	effects = {
 		[1] = "Deals (6-954) to (9-1432) Fire Damage",
 		[2] = "Deals (10.9-1789.6) Base Fire Damage per second",
-		[3] = "Base duration is 4000 seconds",
+		[3] = "Base duration is 4 seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -2352,7 +2352,7 @@ skills["Flammability"] = {
 		[1] = "-(54-25)% to Fire Resistance",
 		[2] = "+(10-17)% chance to be Ignited",
 		[3] = "+(0-15) to radius",
-		[4] = "Base duration is (9000-11900) seconds",
+		[4] = "Base duration is (9-11.9) seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -2428,8 +2428,8 @@ skills["FleshOffering"] = {
 	description = "Consumes a corpse, which temporarily empowers your minions with swiftness. The skill consumes other nearby corpses, increasing the duration for each corpse consumed.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [36] = true, [9] = true, [49] = true, [17] = true, [19] = true, [18] = true, },
 	effects = {
-		[1] = "Base duration is 3000 seconds",
-		[2] = "Additional 500 seconds Base Duration per extra Corpse consumed",
+		[1] = "Base duration is 3 seconds",
+		[2] = "Additional 0.5 seconds Base Duration per extra Corpse consumed",
 		[3] = "(20-35)% increased Attack Speed",
 		[4] = "(20-34)% increased Movement Speed",
 	},
@@ -2585,8 +2585,8 @@ skills["FrostBomb"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [34] = true, [10] = true, [26] = true, [18] = true, [17] = true, [19] = true, [36] = true, [60] = true, },
 	effects = {
 		[1] = "Deals (10-1284) to (14-1926) Cold Damage",
-		[2] = "Base duration is 3500 seconds",
-		[3] = "Base secondary duration is 2000 seconds",
+		[2] = "Base duration is 3.5 seconds",
+		[3] = "Base secondary duration is 2 seconds",
 		[4] = "75% reduced Life Regeneration rate",
 		[5] = "-20% to Cold Resistance",
 	},
@@ -2668,7 +2668,7 @@ skills["FrostWall"] = {
 	skillTypes = { [2] = true, [10] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
 	effects = {
 		[1] = "Deals (8-1127) to (12-1691) Cold Damage",
-		[2] = "Base duration is (3000-5900) seconds",
+		[2] = "Base duration is (3-5.9) seconds",
 		[3] = "0.15 seconds between appearance of Wall sections",
 		[4] = "Wall will be (28-77) units long",
 	},
@@ -2747,7 +2747,7 @@ skills["Frostbite"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, [34] = true, [60] = true, },
 	effects = {
 		[1] = "+(0-15) to radius",
-		[2] = "Base duration is (9000-11900) seconds",
+		[2] = "Base duration is (9-11.9) seconds",
 		[3] = "-(54-25)% to Cold Resistance",
 	},
 	baseFlags = {
@@ -2978,7 +2978,7 @@ skills["HeraldOfThunder"] = {
 	effects = {
 		[1] = "Deals (1-83) to (34-3692) Lightning Damage",
 		[2] = "Cannot apply Shock",
-		[3] = "Base duration is 6000 seconds",
+		[3] = "Base duration is 6 seconds",
 		[4] = "Adds (2-37) to (7-150) Lightning Damage to Spells",
 		[5] = "Adds (2-37) to (7-150) Lightning Damage to Attacks",
 	},
@@ -3643,7 +3643,7 @@ skills["VaalLightningTrap"] = {
 	effects = {
 		[1] = "Deals (3-106) to (62-2021) Lightning Damage",
 		[2] = "Trap lasts 16 seconds",
-		[3] = "Base duration is 4000 seconds",
+		[3] = "Base duration is 4 seconds",
 		[4] = "8 additional Projectiles",
 		[5] = "Projectiles leave Shocking Ground",
 		[6] = "Shocked Ground causes 15% increased Damage taken",
@@ -3972,7 +3972,7 @@ skills["OrbOfStorms"] = {
 	skillTypes = { [2] = true, [10] = true, [35] = true, [12] = true, [11] = true, [23] = true, },
 	effects = {
 		[1] = "Deals (1-155) to (3-466) Lightning Damage",
-		[2] = "Base duration is 6000 seconds",
+		[2] = "Base duration is 6 seconds",
 		[3] = "Projectiles Split into (2-5) on hit",
 	},
 	baseFlags = {
@@ -4675,7 +4675,7 @@ skills["FireBeam"] = {
 	skillTypes = { [2] = true, [18] = true, [40] = true, [33] = true, [29] = true, [12] = true, [58] = true, [59] = true, [52] = true, },
 	effects = {
 		[1] = "Deals (8.3-1171.4) Base Fire Damage per second",
-		[2] = "Base duration is 1500 seconds",
+		[2] = "Base duration is 1.5 seconds",
 		[3] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
 		[4] = "Burning Debuff can have a maximum of 8 stages",
 		[5] = "Additional Debuff stages add 60% of Damage",
@@ -4858,7 +4858,7 @@ skills["Spark"] = {
 	skillTypes = { [2] = true, [3] = true, [10] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [45] = true, [35] = true, },
 	effects = {
 		[1] = "Deals (1-91) to (20-1725) Lightning Damage",
-		[2] = "Base duration is 1500 seconds",
+		[2] = "Base duration is 1.5 seconds",
 		[3] = "(4-7) additional Projectiles",
 	},
 	baseFlags = {
@@ -4937,7 +4937,7 @@ skills["VaalSparkSpiralNova"] = {
 	skillTypes = { [2] = true, [3] = true, [10] = true, [12] = true, [17] = true, [18] = true, [19] = true, [43] = true, [35] = true, },
 	effects = {
 		[1] = "Deals (1-50) to (11-941) Lightning Damage",
-		[2] = "Base duration is 2000 seconds",
+		[2] = "Base duration is 2 seconds",
 		[3] = "Fires Projectiles at all nearby Enemies",
 	},
 	baseFlags = {
@@ -5015,8 +5015,8 @@ skills["SpiritOffering"] = {
 	description = "Consumes a corpse, granting energy shield, extra chaos damage and elemental resistances to your minions. The new energy shield is recovered as it's granted. The skill consumes other nearby corpses, increasing the duration and amount of energy shield granted for each corpse consumed.",
 	skillTypes = { [2] = true, [5] = true, [12] = true, [36] = true, [9] = true, [49] = true, [17] = true, [19] = true, [18] = true, },
 	effects = {
-		[1] = "Base duration is 3000 seconds",
-		[2] = "Additional 500 seconds Base Duration per extra Corpse consumed",
+		[1] = "Base duration is 3 seconds",
+		[2] = "Additional 0.5 seconds Base Duration per extra Corpse consumed",
 		[3] = "+(20-35)% to all Elemental Resistances",
 		[4] = "Gain (20-34)% of your Physical Damage as Extra Chaos Damage",
 	},
@@ -5095,7 +5095,7 @@ skills["StormCall"] = {
 	effects = {
 		[1] = "Deals (13-840) to (24-1560) Lightning Damage",
 		[2] = "+(0-10) to radius",
-		[3] = "Base duration is 1500 seconds",
+		[3] = "Base duration is 1.5 seconds",
 		[4] = "(10-39)% increased Effect of Shock",
 	},
 	baseFlags = {
@@ -5177,7 +5177,7 @@ skills["VaalStormCall"] = {
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [43] = true, [35] = true, },
 	effects = {
 		[1] = "Deals (13-704) to (25-1307) Lightning Damage",
-		[2] = "Base duration is 3000 seconds",
+		[2] = "Base duration is 3 seconds",
 	},
 	baseFlags = {
 		spell = true,
@@ -5423,7 +5423,7 @@ skills["SummonRagingSpirit"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
 	effects = {
 		[1] = "Can summon up to 20 Raging Spirits at a time",
-		[2] = "Base duration is 5000 seconds",
+		[2] = "Base duration is 5 seconds",
 	},
 	minionList = {
 		"SummonedRagingSpirit",
@@ -5499,7 +5499,7 @@ skills["SummonSkeletons"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [54] = true, [28] = true, },
 	effects = {
 		[1] = "Can summon up to 5 Skeletons at a time",
-		[2] = "Base duration is 20000 seconds",
+		[2] = "Base duration is 20 seconds",
 	},
 	minionList = {
 		"RaisedSkeleton",
@@ -5579,7 +5579,7 @@ skills["VaalSummonSkeletons"] = {
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [3] = true, [48] = true, [28] = true, [2] = true, [11] = true, },
 	effects = {
 		[1] = "Can summon up to (17-46) Skeletons at a time",
-		[2] = "Base duration is 20000 seconds",
+		[2] = "Base duration is 20 seconds",
 	},
 	minionList = {
 		"RaisedSkeleton",
@@ -5660,7 +5660,7 @@ skills["TempestShield"] = {
 	skillTypes = { [2] = true, [10] = true, [13] = true, [27] = true, [35] = true, [23] = true, [45] = true, [36] = true, [12] = true, },
 	effects = {
 		[1] = "Deals (24-583) to (36-874) Lightning Damage",
-		[2] = "Base duration is 12000 seconds",
+		[2] = "Base duration is 12 seconds",
 		[3] = "Chains +1 Times",
 		[4] = "Additional 3% Shield Block Chance",
 	},
@@ -5743,7 +5743,7 @@ skills["FrostBoltNova"] = {
 	effects = {
 		[1] = "Deals (50-1154) to (75-1731) Cold Damage",
 		[2] = "Deals (41.6-2124) Base Cold Damage per second",
-		[3] = "Base duration is 3000 seconds",
+		[3] = "Base duration is 3 seconds",
 		[4] = "Modifiers to Spell Damage apply to this Skill's Damage Over Time effect",
 		[5] = "40% more Damage when Cast on Frostbolt",
 	},
@@ -5824,7 +5824,7 @@ skills["Vulnerability"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [32] = true, [36] = true, },
 	effects = {
 		[1] = "+(0-15) to radius",
-		[2] = "Base duration is (9000-11900) seconds",
+		[2] = "Base duration is (9-11.9) seconds",
 		[3] = "(20-34)% more Physical Damage taken",
 		[4] = "33% increased Damage from Damage Over Time effects",
 	},
@@ -5903,8 +5903,8 @@ skills["Wither"] = {
 	description = "Casts a debilitating effect on enemies in an area, Hindering their movement and applying a stacking debuff that increases the Chaos Damage they take. This effect can stack up to 20 times.",
 	skillTypes = { [2] = true, [11] = true, [12] = true, [18] = true, [50] = true, [58] = true, },
 	effects = {
-		[1] = "Base duration is 500 seconds",
-		[2] = "Base secondary duration is 2000 seconds",
+		[1] = "Base duration is 0.5 seconds",
+		[2] = "Base secondary duration is 2 seconds",
 		[3] = "(30-39)% reduced Movement Speed",
 		[4] = "7% increased Chaos Damage taken",
 	},

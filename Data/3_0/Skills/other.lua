@@ -250,7 +250,7 @@ skills["TriggeredConsecrate"] = {
 	description = "Creates an area of Consecrated Ground, providing life regeneration for you and allies who stand in it.",
 	skillTypes = { [2] = true, [12] = true, [36] = true, [11] = true, [42] = true, [61] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "6% of maximum Life regenerated per second",
 		[3] = "You cannot Cast this Spell directly",
 		[4] = "Trigger this Spell when you Crit an Enemy",
@@ -285,7 +285,7 @@ skills["TriggeredSummonLesserShrine"] = {
 	description = "Creates a Lesser Shrine, which will grant a bonus when touched. The Lesser Shrine will disappear after a short duration, or when used. This skill starts on cooldown.",
 	skillTypes = { [2] = true, [36] = true, [42] = true, [61] = true, [12] = true, },
 	effects = {
-		[1] = "Base duration is 10000 seconds",
+		[1] = "Base duration is 10 seconds",
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "Trigger this Spell on Kill",
 	},
@@ -490,7 +490,7 @@ skills["VaalAuraElementalDamageHealing"] = {
 	skillTypes = { [2] = true, [5] = true, [11] = true, [12] = true, [18] = true, [43] = true, [44] = true, },
 	effects = {
 		[1] = "Taking Elemental Damage instead heals you",
-		[2] = "Base duration is 6000 seconds",
+		[2] = "Base duration is 6 seconds",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -522,10 +522,10 @@ skills["IcestormUniqueStaff12"] = {
 	description = "Icy bolts rain down over the targeted area. They explode when landing, dealing damage to nearby enemies and chilling them, as well as causing patches of chilled ground. Skill damage is based on Intelligence.",
 	skillTypes = { [2] = true, [10] = true, [11] = true, [12] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [34] = true, [60] = true, },
 	effects = {
-		[1] = "150 seconds additional Base Duration per 100 Intelligence",
-		[2] = "Base duration is 1500 seconds",
+		[1] = "0.15 seconds additional Base Duration per 100 Intelligence",
+		[2] = "Base duration is 1.5 seconds",
 		[3] = "Deals 1 to 3 base Cold Damage per 10 Intelligence",
-		[4] = "One impact every 100 seconds",
+		[4] = "One impact every 0.1 seconds",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -569,7 +569,7 @@ skills["MerveilWarp"] = {
 	description = "Teleport to a target destination. Chilled ground is spread in an area around both where the caster was and where they teleported to.",
 	skillTypes = { [2] = true, [38] = true, [12] = true, [34] = true, [11] = true, },
 	effects = {
-		[1] = "Base duration is 1500 seconds",
+		[1] = "Base duration is 1.5 seconds",
 	},
 	fromItem = true,
 	baseFlags = {
@@ -748,7 +748,7 @@ skills["TriggeredSummonSpider"] = {
 	skillTypes = { [2] = true, [9] = true, [36] = true, [49] = true, [42] = true, [61] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
 	effects = {
-		[1] = "Base duration is 8000 seconds",
+		[1] = "Base duration is 8 seconds",
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "20% chance to Trigger this Spell on Kill",
 		[4] = "Minions have the same Level as the Corpse",
@@ -789,7 +789,7 @@ skills["TriggeredShockedGround"] = {
 	description = "Creates a patch of Shocked Ground in a radius around you.",
 	skillTypes = { [2] = true, [11] = true, [36] = true, [12] = true, [42] = true, [45] = true, [61] = true, [35] = true, },
 	effects = {
-		[1] = "Base duration is 5000 seconds",
+		[1] = "Base duration is 5 seconds",
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "Trigger this Spell when you're Hit",
 	},
@@ -891,7 +891,7 @@ skills["SummonRigwaldsPack"] = {
 	skillTypes = { [2] = true, [9] = true, [12] = true, [21] = true, [17] = true, [18] = true, [19] = true, [26] = true, [36] = true, [49] = true, [42] = true, [61] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [28] = true, },
 	effects = {
-		[1] = "Base duration is 30000 seconds",
+		[1] = "Base duration is 30 seconds",
 		[2] = "You cannot Cast this Spell directly",
 		[3] = "10% chance to Trigger this Spell on Kill",
 	},

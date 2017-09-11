@@ -165,6 +165,21 @@ function describeStats(stats)
 				elseif spec.k == "multiplicative_damage_modifier" then
 					val[spec.v].min = 100 + val[spec.v].min
 					val[spec.v].max = 100 + val[spec.v].max
+				elseif spec.k == "milliseconds_to_seconds_2dp" then
+					val[spec.v].min = round(val[spec.v].min / 1000, 2)
+					val[spec.v].max = round(val[spec.v].max / 1000, 2)
+					val[spec.v].fmt = "g"
+				elseif spec.k == "divide_by_one_hundred_and_negate" then
+					val[spec.v].max, val[spec.v].min = 
+						-round(val[spec.v].min / 100, 1), 
+						-round(val[spec.v].max / 100, 1)
+					val[spec.v].fmt = "g"
+				elseif spec.k == "reminderstring" then
+					-- some translation with identifiers
+					-- e.g. ReminderTextFortify
+					-- don't know how to translate identifiers
+				else
+					assert(nil, 'no handle found for '..spec.k)
 				end
 			end
 			local statDesc = desc.text:gsub("%%(%d)%%", function(n) 
