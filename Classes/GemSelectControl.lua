@@ -348,6 +348,12 @@ function GemSelectClass:Draw(viewPort)
 						self.tooltip:AddLine(16, colorCodes.GEM..line)
 					end
 				end
+				
+				self.tooltip:AddSeparator(10)
+				for _, effectDescription in pairs(gem.grantedEffect.effects) do
+					self.tooltip:AddLine(16, colorCodes.MAGIC..effectDescription)
+				end
+
 				self.tooltip:Draw(x, y, width, height, viewPort)
 				SetDrawLayer(nil, 0)
 			end
