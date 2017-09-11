@@ -279,8 +279,8 @@ skills["TouchOfGod"] = {
 	name = "Doryani's Touch",
 	hidden = true,
 	color = 1,
-	description = "The character uses their fist to slam the ground in front of them, with less attack speed, but more damage. This attack deals Lightning Damage to enemies in a large area, with a chance to Shock them. Cannot be used while weilding a Weapon.",
-	skillTypes = { [1] = true, [11] = true, [35] = true, [24] = true, [28] = true, },
+	description = "The character uses their fist to slam the ground in front of them, with less attack speed, but more damage. This attack deals Lightning Damage to enemies in a large area, with a chance to Shock them. Cannot be used while wielding a Weapon. Cannot be supported by Multistrike.",
+	skillTypes = { [1] = true, [11] = true, [35] = true, [24] = true, },
 	weaponTypes = {
 		["None"] = true,
 	},
@@ -293,7 +293,7 @@ skills["TouchOfGod"] = {
 	baseMods = {
 		skill("castTime", 1), 
 		skill("damageEffectiveness", 2.5), 
-		mod("PhysicalDamageConvertToLightning", "BASE", 50, 0, 0, nil), --"base_physical_damage_%_to_convert_to_lightning" = 50
+		mod("SkillPhysicalDamageConvertToLightning", "BASE", 50), --"skill_physical_damage_%_to_convert_to_lightning" = 50
 		mod("Speed", "MORE", -30, ModFlag.Attack), --"active_skill_attack_speed_+%_final" = -30
 		mod("EnemyShockChance", "BASE", 20), --"base_chance_to_shock_%" = 20
 		--"is_area_damage" = ?
