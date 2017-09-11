@@ -43,14 +43,14 @@ function loadStatFile(fileName)
 				curDescriptor.lang[langName] = curLang
 			else
 				local statLimits, text, special = line:match('([%d%-#| ]+) "(.-)"%s*(.*)')
-				if statLimits then
+				if statLimits then	
 					local desc = { text = text, special = { }, limit = { } }
 					for statLimit in statLimits:gmatch("[%d%-#|]+") do
 						local limit = { }
 						if statLimit == "#" then
 							limit.min = "#"
 							limit.max = "#"
-						elseif statLimit:match("^%d+$") then
+						elseif statLimit:match("^[%%%-]?%d+$") then
 							limit.min = tonumber(statLimit)
 							limit.max = tonumber(statLimit)
 						else
@@ -58,6 +58,9 @@ function loadStatFile(fileName)
 							limit.min = tonumber(limit.min) or limit.min
 							limit.max = tonumber(limit.max) or limit.max
 						end
+						assert(limit.min, 'min is nil or false for ' ..statLimit)
+						assert(limit.max, 'max is nil or false for ' ..statLimit)
+
 						table.insert(desc.limit, limit)
 					end
 					for k, v in special:gmatch("([%w%%_]+) (%w+)") do
@@ -80,7 +83,7 @@ end
 
 for k, v in pairs(nk) do
 	--print("'"..k.."' = '"..v.."'")
-end
+end	
 
 local function matchLimit(lang, val) 
 	for _, desc in ipairs(lang) do
