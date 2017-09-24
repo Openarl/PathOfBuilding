@@ -887,7 +887,7 @@ local specialModList = {
 	["ignited enemies burn (%d+)%% faster"] = function(num) return { mod("IgniteBurnFaster", "INC", num) } end,
 	["ignited enemies burn (%d+)%% slower"] = function(num) return { mod("IgniteBurnSlower", "INC", num) } end,
 	["enemies ignited by an attack burn (%d+)%% faster"] = function(num) return { mod("IgniteBurnFaster", "INC", num, nil, ModFlag.Attack) } end,
-	["you can inflict an additional ignite on an enemy"] = { mod("EnemyIgniteStackLimit", "BASE", 1) },
+	["you can inflict an additional ignite on an enemy"] = { flag("IgniteCanStack"), mod("EnemyIgniteStackLimit", "BASE", 1) },
 	-- Bleed
 	["melee attacks cause bleeding"] = { mod("BleedChance", "BASE", 100, nil, ModFlag.Melee) },
 	["attacks cause bleeding when hitting cursed enemies"] = { mod("BleedChance", "BASE", 100, nil, ModFlag.Attack, { type = "EnemyCondition", var = "Cursed" }) },

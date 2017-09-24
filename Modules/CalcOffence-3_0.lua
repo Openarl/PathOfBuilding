@@ -1651,7 +1651,7 @@ function calcs.offence(env, actor)
 				local effectMod = calcLib.mod(modDB, dotCfg, "AilmentEffect")
 				local burnRateMod = calcLib.mod(modDB, cfg, "IgniteBurnFaster") / calcLib.mod(modDB, cfg, "IgniteBurnSlower")
 				local igniteMaxStack = modDB:Sum("BASE", skillcfg, "EnemyIgniteStackLimit")
-				output.IgniteDPS = baseVal * effectMod * burnRateMod * effMult * igniteMaxStack
+				output.IgniteDPS = baseVal * effectMod * burnRateMod * effMult
 				local incDur = modDB:Sum("INC", dotCfg, "EnemyIgniteDuration", "SkillAndDamagingAilmentDuration") + enemyDB:Sum("INC", nil, "SelfIgniteDuration")
 				local moreDur = enemyDB:Sum("MORE", nil, "SelfIgniteDuration")
 				globalOutput.IgniteDuration = 4 * (1 + incDur / 100) * moreDur / burnRateMod * debuffDurationMult
@@ -1660,7 +1660,12 @@ function calcs.offence(env, actor)
 					if skillData.showAverage then
 						output.TotalIgniteAverageDamage = output.HitChance / 100 * output.IgniteChance / 100 * output.IgniteDamage
 					else
-						output.TotalIgniteStacks = output.HitChance / 100 * output.IgniteChance / 100 * globalOutput.IgniteDuration * (globalOutput.HitSpeed or globalOutput.Speed) * (skillData.dpsMultiplier or 1)
+						local possibleIgniteStacks = output.HitChance / 100 * output.IgniteChance / 100 * globalOutput.IgniteDuration * (globalOutput.HitSpeed or globalOutput.Speed) * (skillData.dpsMultiplier or 1)
+						if possibleIgniteStacks > igniteMaxStack then
+							output.TotalIgniteStacks = igniteMaxStack
+						else
+							output.TotalIgniteStacks = possibleIgniteStacks
+						end
 						output.TotalIgniteDPS = output.IgniteDPS * output.TotalIgniteStacks
 					end
 				end
