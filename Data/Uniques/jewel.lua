@@ -512,8 +512,7 @@ Viridian Jewel
 Limited to: 1
 Radius: Medium
 (10–15)% increased Fire Damage 
-With at least 40 Dexterity in Radius, Burning
-Arrow can inflict an additional Ignite on an Enemy
+With at least 40 Dexterity in Radius, Burning Arrow can inflict an additional Ignite on an Enemy
 ]],[[
 To Dust
 Cobalt Jewel

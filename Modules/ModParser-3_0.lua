@@ -886,6 +886,7 @@ local specialModList = {
 	["ignited enemies burn (%d+)%% faster"] = function(num) return { mod("IgniteBurnFaster", "INC", num) } end,
 	["ignited enemies burn (%d+)%% slower"] = function(num) return { mod("IgniteBurnSlower", "INC", num) } end,
 	["enemies ignited by an attack burn (%d+)%% faster"] = function(num) return { mod("IgniteBurnFaster", "INC", num, nil, ModFlag.Attack) } end,
+	["you can inflict an additional ignite on an enemy"] = { flag("IgniteCanStack"), mod("EnemyIgniteStackLimit", "BASE", 1) },
 	-- Bleed
 	["melee attacks cause bleeding"] = { mod("BleedChance", "BASE", 100, nil, ModFlag.Melee) },
 	["attacks cause bleeding when hitting cursed enemies"] = { mod("BleedChance", "BASE", 100, nil, ModFlag.Attack, { type = "EnemyCondition", var = "Cursed" }) },
@@ -1319,6 +1320,13 @@ local jewelFuncs = {
 	["With at least 40 Intelligence in Radius, Spark fires 2 additional Projectiles"] = getThreshold("Int", "ProjectileCount", "BASE", 2, { type = "SkillName", skillName = "Spark" }),
 	["With at least 40 Intelligence in Radius, Blight has 50% increased Hinder Duration"] = getThreshold("Int", "SecondaryDuration", "INC", 50, { type = "SkillName", skillName = "Blight" }),
 	["With at least 40 Intelligence in Radius, Enemies Hindered by Blight take 25% increased Chaos Damage"] = getThreshold("Int", "ExtraSkillMod", "LIST", { mod = mod("ChaosDamageTaken", "INC", 25, { type = "GlobalEffect", effectType = "Debuff" }) }, { type = "SkillName", skillName = "Blight" }, { type = "EnemyCondition", var = "Hindered" }),
+	["With at least 40 Dexterity in Radius, Burning Arrow can inflict an additional Ignite on an Enemy"] = function(nodeMods, out, data, attributes)
+		if not nodeMods and attributes["Dex"] >= 40 then
+			local mod1 = mod("IgniteCanStack", "FLAG", "Tree:Jewel", { type = "SkillName", skillName = "Burning Arrow"})
+			out:AddMod(mod1)
+			out:NewMod("EnemyIgniteStackLimit", "BASE", 1, "Base")
+		end
+	end
 	--[""] = getThreshold("", "", "", , { type = "SkillName", skillName = "" }),
 }
 local jewelFuncList = { }
