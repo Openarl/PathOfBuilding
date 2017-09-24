@@ -305,7 +305,6 @@ local modNameList = {
 	["ignite duration"] = "EnemyIgniteDuration",
 	["duration of elemental ailments"] = { "EnemyShockDuration", "EnemyFreezeDuration", "EnemyChillDuration", "EnemyIgniteDuration" },
 	["duration of elemental status ailments"] = { "EnemyShockDuration", "EnemyFreezeDuration", "EnemyChillDuration", "EnemyIgniteDuration" },
-	["additional ignite"] = "EnemyIgniteStackLimit",
 	-- Other ailments
 	["to poison"] = "PoisonChance",
 	["to cause poison"] = "PoisonChance",
@@ -1321,7 +1320,13 @@ local jewelFuncs = {
 	["With at least 40 Intelligence in Radius, Spark fires 2 additional Projectiles"] = getThreshold("Int", "ProjectileCount", "BASE", 2, { type = "SkillName", skillName = "Spark" }),
 	["With at least 40 Intelligence in Radius, Blight has 50% increased Hinder Duration"] = getThreshold("Int", "SecondaryDuration", "INC", 50, { type = "SkillName", skillName = "Blight" }),
 	["With at least 40 Intelligence in Radius, Enemies Hindered by Blight take 25% increased Chaos Damage"] = getThreshold("Int", "ExtraSkillMod", "LIST", { mod = mod("ChaosDamageTaken", "INC", 25, { type = "GlobalEffect", effectType = "Debuff" }) }, { type = "SkillName", skillName = "Blight" }, { type = "EnemyCondition", var = "Hindered" }),
-	["With at least 40 Dexterity in Radius, Burning Arrow can inflict an additional Ignite on an Enemy"] = getThreshold("Dex", "EnemyIgniteStackLimit", "BASE", 1, ModFlag.Projectile, { type = "SkillName", skillName = "Burning Arrow" }),
+	["With at least 40 Dexterity in Radius, Burning Arrow can inflict an additional Ignite on an Enemy"] = function(nodeMods, out, data, attributes)
+		if not nodeMods and attributes["Dex"] >= 40 then
+			local mod1 = mod("IgniteCanStack", "FLAG", "Tree:Jewel", { type = "SkillName", skillName = "Burning Arrow"})
+			out:AddMod(mod1)
+			out:NewMod("EnemyIgniteStackLimit", "BASE", 1, "Base")
+		end
+	end
 	--[""] = getThreshold("", "", "", , { type = "SkillName", skillName = "" }),
 }
 local jewelFuncList = { }
