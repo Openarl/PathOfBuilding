@@ -523,6 +523,7 @@ function PassiveTreeViewClass:Zoom(level, viewPort)
 	self.zoomY = relY + (self.zoomY - relY) * factor
 end
 
+-- Splits the search string on "||" and searches for a match on any of the sub strings
 function PassiveTreeViewClass:DoesNodeMatchSearchExpr(node)
 	if node.type == "classStart" or node.type == "mastery" then
 		return
@@ -537,6 +538,7 @@ function PassiveTreeViewClass:DoesNodeMatchSearchExpr(node)
 	end
 end
 
+-- Old search string preserved in case it is needed
 function PassiveTreeViewClass:DoesNodeMatchSearchStr(node) 
 	if node.type == "classStart" or node.type == "mastery" then
 		return
@@ -545,6 +547,7 @@ function PassiveTreeViewClass:DoesNodeMatchSearchStr(node)
 	return self:DoesNodeMatchSearchStrInternal(node, self.searchStr)
 end
 
+-- Checks if a node name, description, or type matches a particular string
 function PassiveTreeViewClass:DoesNodeMatchSearchStrInternal(node, searchString)
 	
 	-- Check node name
