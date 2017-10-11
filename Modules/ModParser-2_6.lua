@@ -582,6 +582,7 @@ local modTagList = {
 	-- Enemy status conditions
 	["at close range"] = { tag = { type = "Condition", var = "AtCloseRange" }, flags = ModFlag.Hit },
 	["against rare and unique enemies"] = { tag = { type = "Condition", varList = { "EnemyRare", "EnemyUnique"} }, flags = ModFlag.Hit },
+	["against rare monsters"] = { tag = { type = "Condition", var = "EnemyRare" }, keywordFlags = KeywordFlag.Hit },
 	["against enemies on full life"] = { tag = { type = "EnemyCondition", var = "FullLife" }, flags = ModFlag.Hit },
 	["against enemies that are on full life"] = { tag = { type = "EnemyCondition", var = "FullLife" }, flags = ModFlag.Hit },
 	["against enemies on low life"] = { tag = { type = "EnemyCondition", var = "LowLife" }, flags = ModFlag.Hit },
