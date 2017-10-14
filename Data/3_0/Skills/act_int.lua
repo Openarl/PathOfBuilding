@@ -387,6 +387,42 @@ skills["Blight"] = {
 	color = 3,
 	description = "Apply a debuff to enemies in front of you which deals chaos damage over time. Enemies who aren't already debuffed by Blight are also hindered for a shorter secondary duration, slowing their movement. Continued channelling adds layers of damage to the debuff, each with their own duration.",
 	skillTypes = { [2] = true, [50] = true, [11] = true, [18] = true, [58] = true, [12] = true, [40] = true, [59] = true, [52] = true, },
+	-- Added layers with a step size of 2 up to the maximum 20 because using "cast per second * skill duration" gives the amount of layer that you can have and by default you can reach about 7-9
+	parts = {
+		{
+			name = "1 Layers",
+		},
+		{
+			name = "2 Layers",
+		},
+		{
+			name = "4 Layers",
+		},
+		{
+			name = "6 Layers",
+		},
+		{
+			name = "8 Layers",
+		},
+		{
+			name = "10 Layers",
+		},
+		{
+			name = "12 Layers",
+		},
+		{
+			name = "14 Layers",
+		},
+		{
+			name = "16 Layers",
+		},
+		{
+			name = "18 Layers",
+		},
+		{
+			name = "20 Layers",
+		},
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
@@ -400,6 +436,26 @@ skills["Blight"] = {
 		mod("MovementSpeed", "INC", -80, 0, 0, nil), --"base_movement_velocity_+%" = -80
 		--"display_max_blight_stacks" = 20
 		skill("dotIsSpell", true), --"spell_damage_modifiers_apply_to_skill_dot" = ?
+		skill("stackCount", 2, { type = "SkillPart", skillPart = 2 }), 
+		skill("stackCount", 4, { type = "SkillPart", skillPart = 3 }), 
+		skill("stackCount", 6, { type = "SkillPart", skillPart = 4}),
+		skill("stackCount", 8, { type = "SkillPart", skillPart = 5 }), 
+		skill("stackCount", 10, { type = "SkillPart", skillPart = 6 }), 
+		skill("stackCount", 12, { type = "SkillPart", skillPart = 7}),
+		skill("stackCount", 14, { type = "SkillPart", skillPart = 8 }), 
+		skill("stackCount", 16, { type = "SkillPart", skillPart = 9 }), 
+		skill("stackCount", 18, { type = "SkillPart", skillPart = 10}),
+		skill("stackCount", 20, { type = "SkillPart", skillPart = 11 }), 
+		mod("Damage", "MORE", 100, 0, 0, { type = "SkillPart", skillPart = 2 }), 
+		mod("Damage", "MORE", 300, 0, 0, { type = "SkillPart", skillPart = 3 }), 
+		mod("Damage", "MORE", 500, 0, 0, { type = "SkillPart", skillPart = 4 }), 
+		mod("Damage", "MORE", 700, 0, 0, { type = "SkillPart", skillPart = 5 }), 
+		mod("Damage", "MORE", 900, 0, 0, { type = "SkillPart", skillPart = 6 }), 
+		mod("Damage", "MORE", 1100, 0, 0, { type = "SkillPart", skillPart = 7 }), 
+		mod("Damage", "MORE", 1300, 0, 0, { type = "SkillPart", skillPart = 8 }), 
+		mod("Damage", "MORE", 1500, 0, 0, { type = "SkillPart", skillPart = 9 }), 
+		mod("Damage", "MORE", 1700, 0, 0, { type = "SkillPart", skillPart = 10 }), 
+		mod("Damage", "MORE", 1900, 0, 0, { type = "SkillPart", skillPart = 11 }), 
 		--"is_area_damage" = ?
 		skill("debuff", true), 
 		skill("debuffSecondary", true), 
