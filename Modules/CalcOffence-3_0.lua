@@ -1194,6 +1194,7 @@ function calcs.offence(env, actor)
 	end
 
 	skillFlags.bleed = false
+	skillFlags.bleedCanStack = modDB:Sum("FLAG", skillcfg, "BleedCanStack")
 	skillFlags.poison = false
 	skillFlags.ignite = false
 	skillFlags.igniteCanStack = modDB:Sum("FLAG", skillCfg, "IgniteCanStack")
@@ -1407,6 +1408,21 @@ function calcs.offence(env, actor)
 				end
 				local durationMod = calcLib.mod(modDB, dotCfg, "EnemyBleedDuration", "SkillAndDamagingAilmentDuration", skillData.bleedIsSkillEffect and "Duration" or nil) * calcLib.mod(enemyDB, nil, "SelfBleedDuration")
 				globalOutput.BleedDuration = durationBase * durationMod * debuffDurationMult
+				if skillFlags.bleedCanStack then
+					output.BleedDamage = output.BleedDPS * globalOutput.BleedDuration
+					if skillData.showAverage then
+						output.TotalBleedAverageDamage = output.HitChance / 100 * output.BleedChance / 100 * output.BleedDamage
+					else
+						output.TotalBleedStacks = output.HitChance / 100 * output.BleedChance / 100 * globalOutput.BleedDuration * (globalOutput.HitSpeed or globalOutput.Speed) * (skillData.dpsMultiplier or 1)
+						if output.TotalBleedStacks > 8 then
+							output.TotalBleedStacks = 8
+						end
+						if skillData.doubleHitsWhenDualWielding then --Workaround for Cleave and Dual Strike
+							output.TotalBleedStacks = output.TotalBleedStacks / 2
+						end
+						output.TotalBleedDPS = output.BleedDPS * output.TotalBleedStacks
+					end
+				end
 				if breakdown then
 					t_insert(breakdown.BleedDPS, s_format("x %.2f ^8(bleed deals %d%% per second)", basePercent/100, basePercent))
 					if effectMod ~= 1 then
@@ -1423,6 +1439,29 @@ function calcs.offence(env, actor)
 						{ "%.3f ^8(effective DPS modifier)", effMult },
 						total = s_format("= %.1f ^8per second", output.BleedDPS),
 					})
+					if skillFlags.bleedCanStack then
+						breakdown.BleedDamage = { }
+						if isAttack then
+							t_insert(breakdown.BleedDamage, pass.label..":")
+						end
+						t_insert(breakdown.BleedDamage, s_format("%.1f ^8(damage per second)", output.BleedDPS))
+						t_insert(breakdown.BleedDamage, s_format("x %.2fs ^8(bleed duration)", globalOutput.BleedDuration))
+						t_insert(breakdown.BleedDamage, s_format("= %.1f ^8damage per bleed stack", output.BleedDamage))
+						if not skillData.showAverage then
+							breakdown.TotalBleedStacks = { }
+							if isAttack then
+								t_insert(breakdown.TotalBleedStacks, pass.label..":")
+							end
+							breakdown.multiChain(breakdown.TotalBleedStacks, {
+								base = s_format("%.2fs ^8(bleed duration)", globalOutput.BleedDuration),
+								{ "%.2f ^8(bleed chance)", output.BleedChance / 100 },
+								{ "%.2f ^8(hit chance)", output.HitChance / 100 },
+								{ "%.2f ^8(hits per second)", globalOutput.HitSpeed or globalOutput.Speed },
+								{ "%g ^8(dps multiplier for this skill)", skillData.dpsMultiplier or 1 },
+								total = s_format("= %.1f", output.TotalBleedStacks),
+							})
+						end
+					end
 					if globalOutput.BleedDuration ~= durationBase then
 						globalBreakdown.BleedDuration = {
 							s_format("%.2fs ^8(base duration)", durationBase)
@@ -1847,6 +1886,15 @@ function calcs.offence(env, actor)
 	if isAttack then
 		combineStat("BleedChance", "AVERAGE")
 		combineStat("BleedDPS", "CHANCE", "BleedChance")
+		if skillFlags.bleedCanStack then
+			combineStat("BleedDamage", "CHANCE", "BleedChance")
+			if skillData.showAverage then
+				combineStat("TotalBleedAverageDamage", "DPS")
+			else
+				combineStat("TotalBleedStacks", "DPS")
+				combineStat("TotalBleedDPS", "DPS")
+			end
+		end
 		combineStat("PoisonChance", "AVERAGE")
 		combineStat("PoisonDPS", "CHANCE", "PoisonChance")
 		combineStat("PoisonDamage", "CHANCE", "PoisonChance")
@@ -1943,7 +1991,17 @@ function calcs.offence(env, actor)
 		end
 	end
 	if skillFlags.bleed then
-		output.CombinedDPS = output.CombinedDPS + output.BleedDPS
+		if skillFlags.bleedCanStack then
+			if skillData.showAverage then
+				output.CombinedDPS = output.CombinedDPS + output.TotalBleedAverageDamage
+				output.WithBleedAverageDamage = baseDPS + output.TotalBleedAverageDamage
+			else
+				output.CombinedDPS = output.CombinedDPS + output.TotalBleedDPS
+				output.WithBleedDPS = baseDPS + output.TotalBleedDPS
+			end
+		else
+			output.CombinedDPS = output.CombinedDPS + output.BleedDPS
+		end
 	end
 	if skillFlags.decay then
 		output.CombinedDPS = output.CombinedDPS + output.DecayDPS
