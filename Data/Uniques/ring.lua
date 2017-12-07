@@ -36,7 +36,7 @@ League: Domination, Nemesis
 Requires Level 20
 +(12-16)% to Fire and Cold Resistances
 {variant:1}(10-15)% increased Fire Damage
-{variant:1}(25-30)% increased Fire Damage
+{variant:2}(25-30)% increased Fire Damage
 {variant:1}Adds 1 to (10-30) Cold Damage to Attacks
 {variant:2}Adds (20-25) to (30-50) Cold Damage to Spells and Attacks
 +(30-40) to maximum Energy Shield
@@ -494,7 +494,7 @@ Requires Level 30
 {variant:1}5% chance to Freeze, Shock and Ignite
 {variant:2}10% chance to Freeze, Shock and Ignite
 {variant:1}10% increased Damage per Freeze, Shock and Ignite on Enemy
-{variant:2}20% increased Damage per Freeze, Shock and Ignite on Enemy
+{variant:2}20% increased Damage with Hits and Ailments per Freeze, Shock and Ignite on Enemy
 ]],[[
 Tasalio's Sign
 Sapphire Ring
