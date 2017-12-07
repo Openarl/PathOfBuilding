@@ -236,7 +236,7 @@ local modNameList = {
 	["number of zombies allowed"] = "ActiveZombieLimit",
 	["maximum number of spectres"] = "ActiveSpectreLimit",
 	["maximum number of golems"] = "ActiveGolemLimit",
-	["skeleton duration"] = { "Duration", tag = { type = "SkillName", skillName = "Summon Skeleton" } },
+	["skeleton duration"] = { "Duration", tag = { type = "SkillName", skillName = "Summon Skeletons" } },
 	-- Other skill modifiers
 	["radius"] = "AreaOfEffect",
 	["radius of area skills"] = "AreaOfEffect",
@@ -313,7 +313,6 @@ local modNameList = {
 	["to cause bleeding"] = "BleedChance",
 	["to cause bleeding on hit"] = "BleedChance",
 	["bleed duration"] = { "EnemyBleedDuration" },
-	["bleeding duration"] = { "EnemyBleedDuration" },
 	-- Misc modifiers
 	["movement speed"] = "MovementSpeed",
 	["attack, cast and movement speed"] = { "Speed", "MovementSpeed" },
@@ -327,7 +326,6 @@ local modNameList = {
 	-- Flask modifiers
 	["effect"] = "FlaskEffect",
 	["effect of flasks"] = "FlaskEffect",
-	["effect of flasks on you"] = "FlaskEffect",
 	["amount recovered"] = "FlaskRecovery",
 	["life recovered"] = "FlaskRecovery",
 	["mana recovered"] = "FlaskRecovery",
@@ -335,8 +333,6 @@ local modNameList = {
 	["mana recovery from flasks"] = "FlaskManaRecovery",
 	["flask effect duration"] = "FlaskDuration",
 	["recovery speed"] = "FlaskRecoveryRate",
-	["recovery rate"] = "FlaskRecoveryRate",
-	["flask recovery rate"] = "FlaskRecoveryRate",
 	["flask recovery speed"] = "FlaskRecoveryRate",
 	["flask life recovery rate"] = "FlaskLifeRecoveryRate",
 	["flask mana recovery rate"] = "FlaskManaRecoveryRate",
@@ -436,7 +432,7 @@ local preFlagList = {
 	["^golems [hd][ae][va][el] "] = { addToMinion = true, addToMinionTag = { type = "SkillType", skillType = SkillType.Golem } },
 	["^golem skills have "] = { tag = { type = "SkillType", skillType = SkillType.Golem } },
 	["^zombies [hd][ae][va][el] "] = { addToMinion = true, addToMinionTag = { type = "SkillName", skillName = "Raise Zombie" } },
-	["^skeletons [hd][ae][va][el] "] = { addToMinion = true, addToMinionTag = { type = "SkillName", skillName = "Summon Skeleton" } },
+	["^skeletons [hd][ae][va][el] "] = { addToMinion = true, addToMinionTag = { type = "SkillName", skillName = "Summon Skeletons" } },
 	["^raging spirits [hd][ae][va][el] "] = { addToMinion = true, addToMinionTag = { type = "SkillName", skillName = "Summon Raging Spirit" } },
 	["^spectres [hd][ae][va][el] "] = { addToMinion = true, addToMinionTag = { type = "SkillName", skillName = "Raise Spectre" } },
 	["^chaos golems [hd][ae][va][el] "] = { addToMinion = true, addToMinionTag = { type = "SkillName", skillName = "Summon Chaos Golem" } },
@@ -572,7 +568,6 @@ local modTagList = {
 	["while using a flask"] = { tag = { type = "Condition", var = "UsingFlask" } },
 	["during effect"] = { tag = { type = "Condition", var = "UsingFlask" } },
 	["during flask effect"] = { tag = { type = "Condition", var = "UsingFlask" } },
-	["during any flask effect"] = { tag = { type = "Condition", var = "UsingFlask" } },
 	["while on consecrated ground"] = { tag = { type = "Condition", var = "OnConsecratedGround" } },
 	["on burning ground"] = { tag = { type = "Condition", var = "OnBurningGround" } },
 	["on chilled ground"] = { tag = { type = "Condition", var = "OnChilledGround" } },
@@ -693,9 +688,7 @@ local specialModList = {
 	},
 	["maximum life becomes 1, immune to chaos damage"] = { flag("ChaosInoculation") },
 	["life regeneration is applied to energy shield instead"] = { flag("ZealotsOath") },
-	["life leeched per second is doubled%."] = { mod("LifeLeechRate", "MORE", 100) },
-	["maximum life leech rate is doubled%."] = { mod("MaxLifeLeechRate", "MORE", 100) },
-	["life regeneration has no effect%."] = { flag("NoLifeRegen") },
+	["gain life from leech instantly%. life regeneration has no effect%."] = { flag("InstantLifeLeech"), flag("NoLifeRegen") },
 	["deal no non%-fire damage"] = { flag("DealNoPhysical"), flag("DealNoLightning"), flag("DealNoCold"), flag("DealNoChaos") },
 	["(%d+)%% of physical, cold and lightning damage converted to fire damage"] = function(num) return {
 		mod("PhysicalDamageConvertToFire", "BASE", num), 
@@ -715,7 +708,7 @@ local specialModList = {
 			mod("EnemyModifier", "LIST", { mod = mod("LightningResist", "BASE", minus, { type = "Condition", var = "HitByLightningDamage", neg = true }, { type = "Condition", varList={"HitByFireDamage","HitByColdDamage"} }) }),
 		}
 	end,
-	["projectile attack hits deal up to 50%% more damage to targets at the start of their movement, dealing less damage to targets as the projectile travels farther"] = { flag("PointBlank") },
+	["projectile attacks deal up to 50%% more damage to targets at the start of their movement, dealing less damage to targets as the projectile travels farther"] = { flag("PointBlank") },
 	["life leech is applied to energy shield instead"] = { flag("GhostReaver") },
 	["minions explode when reduced to low life, dealing 33%% of their maximum life as fire damage to surrounding enemies"] = { flag("MinionInstability") },
 	["all bonuses from an equipped shield apply to your minions instead of you"] = { }, -- The node itself is detected by the code that handles it
