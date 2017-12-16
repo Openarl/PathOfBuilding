@@ -5803,7 +5803,7 @@ skills["Wither"] = {
 			name = "10 Stacks",
 		},
 		{
-			name = "20 Stacks",
+			name = "15 Stacks",
 		},
 	},
 	baseFlags = {
@@ -5820,7 +5820,7 @@ skills["Wither"] = {
 		skill("debuff", true), 
 		skill("stackCount", 5, { type = "SkillPart", skillPart = 2 }), 
 		skill("stackCount", 10, { type = "SkillPart", skillPart = 3 }), 
-		skill("stackCount", 20, { type = "SkillPart", skillPart = 4 }), 
+		skill("stackCount", 15, { type = "SkillPart", skillPart = 4 }), 
 	},
 	qualityMods = {
 		mod("Duration", "INC", 1), --"skill_effect_duration_+%" = 1
