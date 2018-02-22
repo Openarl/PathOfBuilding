@@ -15,6 +15,7 @@ Welcome to Path of Building, an offline build planner for Path of Exile!
   * Features alternate path tracing (mouse over a sequence of nodes while holding shift, then click to allocate them all)
   * Fully intergrated with the offence/defence calculations; see exactly how each node will affect your character!
   * Can import PathOfExile.com and PoEPlanner.com passive tree links; links shortened with PoEURL.com also work
+  * Can search for more than one skill at a time e.g. "bloody || berserk" will search for skills with either "bloody" OR "berserk"
 * Skill planner:
   * Add any number of main or supporting skills to your build
   * Supporting skills (auras, curses, buffs) can be toggled on and off

@@ -13,6 +13,7 @@ local t_remove = table.remove
 local m_min = math.min
 local m_max = math.max
 local m_floor = math.floor
+local StringUtils = require("all.string")
 
 local PassiveTreeViewClass = common.NewClass("PassiveTreeView", function(self)
 	self.ring = NewImageHandle()
@@ -338,7 +339,7 @@ function PassiveTreeViewClass:Draw(build, viewPort, inputEvents)
 	if self.searchStrCached ~= self.searchStr then
 		self.searchStrCached = self.searchStr
 		for nodeId, node in pairs(spec.nodes) do
-			self.searchStrResults[nodeId] = #self.searchStr > 0 and self:DoesNodeMatchSearchStr(node)
+			self.searchStrResults[nodeId] = #self.searchStr > 0 and self:DoesNodeMatchSearchExpr(node)
 		end
 	end
 
@@ -531,13 +532,35 @@ function PassiveTreeViewClass:Zoom(level, viewPort)
 	self.zoomY = relY + (self.zoomY - relY) * factor
 end
 
-function PassiveTreeViewClass:DoesNodeMatchSearchStr(node)
+-- Splits the search string on "||" and searches for a match on any of the sub strings
+function PassiveTreeViewClass:DoesNodeMatchSearchExpr(node)
 	if node.type == "classStart" or node.type == "mastery" then
 		return
 	end
 
+	-- Check for multiple strings using ||. e.g. berserk || bloody
+	for k, searchSubStr in next, StringUtils.psplit(self.searchStr, "||") do
+		searchSubStr = StringUtils.trim(searchSubStr)
+		if searchSubStr ~= "" and self:DoesNodeMatchSearchStrInternal(node, searchSubStr) then
+			return true
+		end
+	end
+end
+
+-- Old search string preserved in case it is needed
+function PassiveTreeViewClass:DoesNodeMatchSearchStr(node) 
+	if node.type == "classStart" or node.type == "mastery" then
+		return
+	end
+
+	return self:DoesNodeMatchSearchStrInternal(node, self.searchStr)
+end
+
+-- Checks if a node name, description, or type matches a particular string
+function PassiveTreeViewClass:DoesNodeMatchSearchStrInternal(node, searchString)
+	
 	-- Check node name
-	local errMsg, match = PCall(string.match, node.dn:lower(), self.searchStr:lower())
+	local errMsg, match = PCall(string.match, node.dn:lower(), searchString:lower())
 	if match then
 		return true
 	end
@@ -545,14 +568,14 @@ function PassiveTreeViewClass:DoesNodeMatchSearchStr(node)
 	-- Check node description
 	for index, line in ipairs(node.sd) do
 		-- Check display text first
-		errMsg, match = PCall(string.match, line:lower(), self.searchStr:lower())
+		errMsg, match = PCall(string.match, line:lower(), searchString:lower())
 		if match then
 			return true
 		end
 		if not match and node.mods[index].list then
 			-- Then check modifiers
 			for _, mod in ipairs(node.mods[index].list) do
-				errMsg, match = PCall(string.match, mod.name, self.searchStr)
+				errMsg, match = PCall(string.match, mod.name, searchString)
 				if match then
 					return true
 				end
@@ -561,7 +584,7 @@ function PassiveTreeViewClass:DoesNodeMatchSearchStr(node)
 	end
 
 	-- Check node type
-	local errMsg, match = PCall(string.match, node.type:lower(), self.searchStr:lower())
+	local errMsg, match = PCall(string.match, node.type:lower(), searchString:lower())
 	if match then
 		return true
 	end
