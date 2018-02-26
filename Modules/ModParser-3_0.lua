@@ -604,6 +604,7 @@ local modTagList = {
 	["with this weapon"] = { tag = { type = "Condition", var = "{Hand}Attack" } },
 	-- Equipment conditions
 	["while holding a shield"] = { tag = { type = "Condition", var = "UsingShield" } },
+	["while your off hand is empty"] = { tag = { type = "Condition", var = "NotUsingOffhand" } },
 	["with shields"] = { tag = { type = "Condition", var = "UsingShield" } },
 	["while dual wielding"] = { tag = { type = "Condition", var = "DualWielding" } },
 	["while dual wielding claws"] = { tag = { type = "Condition", var = "DualWieldingClaws" } },
