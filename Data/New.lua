@@ -681,16 +681,6 @@ Limited to: 1
 {variant:51}Gain (15-25)% of Physical Damage as Extra Lightning Damage while affected by Wrath
 {variant:52}(25-40)% of Physical Damage Converted to Lightning Damage while affected by Wrath
 ]],[[
-White Wind
-Imperial Skean
-Requires Level: 66
-30% increased Global Critical Strike Chance
-Adds (160–190) to (280–320) Cold Damage
-(10–15)% increased Attack Speed
-+(300–400) to Evasion Rating
-20% chance to Dodge Attacks while your Off Hand is empty
-100% increased Cold Damage while your Off Hand is empty
-]],[[
 Wraithlord
 Bone Circlet
 Requires Level: 34
