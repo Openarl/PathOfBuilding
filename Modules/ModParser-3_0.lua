@@ -566,7 +566,7 @@ local modTagList = {
 	["for each normal item you have equipped"] = { tag = { type = "Multiplier", var = "NormalItem" } },
 	["for equipped normal item"] = { tag = { type = "Multiplier", var = "NormalItem" } },
 	["for each magic item you have equipped"] = { tag = { type = "Multiplier", var = "MagicItem" } },
-	["for equipped magic item"] = { tag = { type = "Multiplier", var = "MagicItem" } },
+	["for each equipped magic item"] = { tag = { type = "Multiplier", var = "MagicItem" } },
 	["for each rare item you have equipped"] = { tag = { type = "Multiplier", var = "RareItem" } },
 	["for equipped rare item"] = { tag = { type = "Multiplier", var = "RareItem" } },
 	["for each unique item you have equipped"] = { tag = { type = "Multiplier", var = "UniqueItem" } },
