@@ -450,6 +450,9 @@ return {
 		modList:NewMod("CritChanceLucky", "FLAG", true, "Config", { type = "Condition", var = "Effective" })
 	end },
 	{ var = "projectileDistance", type = "number", label = "Projectile travel distance:", ifFlag = "projectile" },
+	{ var = "multiplierChain", type = "number", label = "# of remaining chains:", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:ChainCount", "BASE", val, "Config", { type = "Condition", var = "Effective" })
+	end },
 	{ var = "conditionEnemyMoving", type = "check", label = "Is the enemy Moving?", apply = function(val, modList, enemyModList)
 		enemyModList:NewMod("Condition:Moving", "FLAG", true, "Config", { type = "Condition", var = "Effective" })
 	end },

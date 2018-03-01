@@ -871,6 +871,8 @@ local specialModList = {
 	["projectiles pierce all nearby targets"] = { flag("PierceAllTargets") },
 	["gain %+(%d+) life when you hit a bleeding enemy"] = function(num) return { mod("LifeOnHit", "BASE", num, { type = "EnemyCondition", var = "Bleeding" }) } end,
 	["accuracy rating is doubled"] = { mod("Accuracy", "MORE", 100) },
+	["far shot"] = { flag("FarShot") },
+	["projectiles deal (%d+)%% more damage for each remaining chain"]  = function(num) return { mod("Damage", "MORE", num, nil, ModFlag.Projectile, { type = "Multiplier", var = "ChainCount" }) } end,
 	["(%d+)%% increased blink arrow and mirror arrow cooldown recovery speed"] = function(num) return {
 		mod("CooldownRecovery", "INC", num, { type = "SkillName", skillName = "Blink Arrow" }),
 		mod("CooldownRecovery", "INC", num, { type = "SkillName", skillName = "Mirror Arrow" }),
