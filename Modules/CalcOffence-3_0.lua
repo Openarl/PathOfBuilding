@@ -222,7 +222,10 @@ function calcs.offence(env, actor)
 			modDB:NewMod("Damage", "MORE", 50, "Point Blank", bor(ModFlag.Attack, ModFlag.Projectile), { type = "DistanceRamp", ramp = {{10,1},{35,0},{150,-1}} })
 		end
 		output.ProjectileCount = modDB:Sum("BASE", skillCfg, "ProjectileCount")
-		if modDB:Sum("FLAG", skillCfg, "PierceAllTargets") or enemyDB:Sum("FLAG", nil, "AlwaysPierceSelf") then
+		if modDB:Sum("FLAG", skillCfg, "CannotPierce") then
+			output.PierceCount = 0
+			output.PierceCountString = "Cannot Pierce"
+		elseif modDB:Sum("FLAG", skillCfg, "PierceAllTargets") or enemyDB:Sum("FLAG", nil, "AlwaysPierceSelf") then
 			output.PierceCount = 100
 			output.PierceCountString = "All targets"
 		else
