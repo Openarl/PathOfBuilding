@@ -2134,7 +2134,6 @@ skills["MoltenStrike"] = {
 		mod("SkillPhysicalDamageConvertToFire", "BASE", 60), --"skill_physical_damage_%_to_convert_to_fire" = 60
 		mod("ProjectileCount", "BASE", 2), --"number_of_additional_projectiles" = 2
 		mod("Damage", "MORE", -40, ModFlag.Projectile), --"active_skill_projectile_damage_+%_final" = -40
-		flag("CannotPierce", { type = "SkillPart", skillPart = 2 }), --MoltenStrike projectiles cannot pierce
 		mod("Damage", "MORE", -40, ModFlag.Dot, 0, { type = "SkillPart", skillPart = 2 }), --"active_skill_damage_over_time_from_projectile_hits_+%_final" = -40
 		--"show_number_of_projectiles" = ?
 	},
