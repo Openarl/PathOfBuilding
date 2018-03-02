@@ -2136,6 +2136,7 @@ skills["MoltenStrike"] = {
 		mod("Damage", "MORE", -40, ModFlag.Projectile), --"active_skill_projectile_damage_+%_final" = -40
 		mod("Damage", "MORE", -40, ModFlag.Dot, 0, { type = "SkillPart", skillPart = 2 }), --"active_skill_damage_over_time_from_projectile_hits_+%_final" = -40
 		--"show_number_of_projectiles" = ?
+		skill("cannotPierce", true), 
 	},
 	qualityMods = {
 		mod("FireDamage", "INC", 1), --"fire_damage_+%" = 1

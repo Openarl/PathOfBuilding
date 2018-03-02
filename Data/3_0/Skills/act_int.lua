@@ -3925,6 +3925,7 @@ skills["MagmaOrb"] = {
 		skill("CritChance", 5), 
 		--"is_area_damage" = ?
 		--"base_is_projectile" = ?
+		skill("cannotPierce", true), 
 	},
 	qualityMods = {
 		mod("Damage", "INC", 1, 0, 0, nil), --"damage_+%" = 1

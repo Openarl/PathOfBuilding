@@ -620,6 +620,7 @@ skills["BlastRain"] = {
 		--"is_area_damage" = ?
 		skill("radius", 24), 
 		skill("dpsMultiplier", 4, { type = "SkillPart", skillPart = 2 }), 
+		skill("cannotPierce", true), 
 	},
 	qualityMods = {
 		mod("AreaOfEffect", "INC", 0.5), --"base_skill_area_of_effect_+%" = 0.5
@@ -3993,6 +3994,7 @@ skills["RainOfArrows"] = {
 		--"base_is_projectile" = ?
 		--"is_area_damage" = ?
 		skill("radius", 24), 
+		skill("cannotPierce", true), 
 	},
 	qualityMods = {
 		mod("AreaOfEffect", "INC", 0.5), --"base_skill_area_of_effect_+%" = 0.5

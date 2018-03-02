@@ -180,6 +180,7 @@ local skills, mod, flag, skill = ...
 		},
 	},
 #setMod active_skill_damage_over_time_from_projectile_hits_+%_final==mod("Damage", "MORE", {val}, ModFlag.Dot, 0, { type = "SkillPart", skillPart = 2 })
+#baseMod skill("cannotPierce", true)
 #mods
 
 #skill Punishment

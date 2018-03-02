@@ -375,6 +375,7 @@ local skills, mod, flag, skill = ...
 
 #skill MagmaOrb
 #flags spell projectile area chaining fire
+#baseMod skill("cannotPierce", true)
 #mods
 
 #skill OrbOfStorms
