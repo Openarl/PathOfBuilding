@@ -149,15 +149,16 @@ skills["SupportArcaneSurge"] = {
 	baseMods = {
 		mod("ManaCost", "MORE", 10), 
 		--"support_arcane_surge_base_duration_ms" = 4000
+		flag("Condition:UsingArcaneSurgeSupport", { type = "Condition", var = "GainArcaneSurge" }, { type = "GlobalEffect", effectType = "Buff", effectName = "Arcane Surge" }), 
 	},
 	qualityMods = {
 		mod("Damage", "INC", 0.5, ModFlag.Spell, 0, nil), --"spell_damage_+%" = 0.5
 	},
 	levelMods = {
 		[1] = nil, 
-		[2] = mod("Damage", "MORE", nil, ModFlag.Spell, 0, { type = "GlobalEffect", effectType = "Buff", effectName = "Arcane Surge" }), --"support_arcane_surge_spell_damage_+%_final"
-		[3] = mod("Speed", "INC", nil, ModFlag.Cast, 0, { type = "GlobalEffect", effectType = "Buff", effectName = "Arcane Surge" }), --"support_arcane_surge_cast_speed_+%"
-		[4] = mod("ManaRegenPercent", "BASE", nil, 0, 0, { type = "GlobalEffect", effectType = "Buff", effectName = "Arcane Surge" }), --"support_arcane_surge_mana_regeneration_rate_per_minute_%"
+		[2] = mod("Damage", "MORE", nil, ModFlag.Spell, 0, { type = "Condition", var = "GainArcaneSurge" }, { type = "GlobalEffect", effectType = "Buff", effectName = "Arcane Surge" }), --"support_arcane_surge_spell_damage_+%_final"
+		[3] = mod("Speed", "INC", nil, ModFlag.Cast, 0, { type = "Condition", var = "GainArcaneSurge" }, { type = "GlobalEffect", effectType = "Buff", effectName = "Arcane Surge" }), --"support_arcane_surge_cast_speed_+%"
+		[4] = mod("ManaRegenPercent", "BASE", nil, 0, 0, { type = "Condition", var = "GainArcaneSurge" }, { type = "GlobalEffect", effectType = "Buff", effectName = "Arcane Surge" }), --"support_arcane_surge_mana_regeneration_rate_per_minute_%"
 		--[5] = "support_arcane_surge_gain_buff_on_mana_use_threshold"
 	},
 	levels = {
