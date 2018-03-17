@@ -366,9 +366,11 @@ function calcs.offence(env, actor)
 				total = s_format("= %.2f ^8per second", output.TotemPlacementSpeed),
 			})
 		end
-		output.ActiveTotemLimit = modDB:Sum("BASE", skillCfg, "ActiveTotemLimit")
+		output.ActiveTotemLimit = modDB:Sum("BASE", skillCfg, "ActiveTotemLimit") -- duplicate in CalcPerform
 		output.TotemLifeMod = calcLib.mod(modDB, skillCfg, "TotemLife")
 		output.TotemLife = round(m_floor(env.data.monsterAllyLifeTable[skillData.totemLevel] * env.data.totemLifeMult[mainSkill.skillTotemId]) * output.TotemLifeMod)
+		output.TotemLifeRegenPercent = modDB:Sum("BASE", skillCfg, "TotemLifeRegenPercent")
+		output.TotemLifeRegen = output.TotemLife * output.TotemLifeRegenPercent / 100
 		if breakdown then
 			breakdown.TotemLifeMod = breakdown.mod(skillCfg, "TotemLife")
 			breakdown.TotemLife = {
@@ -377,6 +379,13 @@ function calcs.offence(env, actor)
 				"x "..env.data.totemLifeMult[mainSkill.skillTotemId].." ^8(life multiplier for this totem type)",
 				"x "..output.TotemLifeMod.." ^8(totem life modifier)",
 				"= "..output.TotemLife,
+			}
+			breakdown.TotemLifeRegenMod = breakdown.mod(skillCfg, "TotemLifeRegenPercent")
+			breakdown.TotemLifeRegen = {
+				"Totem Life Regeneration: ",
+				output.TotemLife.." ^8(totem life)",
+				"x "..s_format("%.1f ^8(totem life regen percent)", output.TotemLifeRegenPercent),
+				s_format("= %.1f ^8per second", output.TotemLifeRegen),
 			}
 		end
 	end

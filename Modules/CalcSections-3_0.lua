@@ -469,6 +469,10 @@ return {
 		{ modName = "TotemLife", cfg = "skill" },
 	}, },
 	{ label = "Totem Life", flag = "totem", { format = "{0:output:TotemLife}", { breakdown = "TotemLife" }, }, },
+	{ label = "Totem Life Regen", flag = "totem", { format = "{1:output:TotemLifeRegen} ({1:output:TotemLifeRegenPercent}%)",
+		{ breakdown = "TotemLifeRegen" },
+		{ modName = "TotemLifeRegenPercent", cfg = "skill" },
+	}, },
 } },
 { 1, "Bleed", 1, "Bleed", colorCodes.OFFENCE, {
 	extra = "{0:output:BleedChance}% {1:output:BleedDPS} {2:output:BleedDuration}s",

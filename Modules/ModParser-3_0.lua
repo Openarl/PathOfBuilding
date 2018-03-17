@@ -948,6 +948,9 @@ local specialModList = {
 	["if you've attacked recently, you and nearby allies have (%d+)%% chance to block attacks"] = function(num) return { mod("ExtraAura", "LIST", { mod = mod("BlockChance", "BASE", num) }, { type = "Condition", var = "AttackedRecently" }) } end,
 	["if you've cast a spell recently, you and nearby allies have (%d+)%% chance to block spells"] = function(num) return { mod("ExtraAura", "LIST", { mod = mod("SpellBlockChance", "BASE", num) }, { type = "Condition", var = "CastSpellRecently" }) } end,
 	-- Hierophant
+	["(%d+)%% increased damage per enemy killed by you or your totems recently"] = function(num) return { flag("Condition:CanGainPursuitOfFaith"), mod("Damage", "INC", num, { type = "Multiplier", var = "PursuitOfFaith" }) } end,
+	["you regenerate ([%d%.]+)%% of mana per second per totem"] = function(num) return { mod("ManaRegenPercent", "BASE", num, { type = "Condition", var = "HaveTotem" }, { type = "PerStat", stat = "ActiveTotemLimit" }) } end,
+	["you and your totems regenerate (%d+)%% of life per second per totem"] = function(num) return { mod("LifeRegenPercent", "BASE", num, { type = "Condition", var = "HaveTotem"}, { type = "PerStat", stat = "ActiveTotemLimit" }), mod("TotemLifeRegenPercent", "BASE", num, { type = "Condition", var = "HaveTotem"}, { type = "PerStat", stat = "ActiveTotemLimit" }) } end,
 	-- Inquisitor
 	["critical strikes ignore enemy monster elemental resistances"] = { flag("IgnoreElementalResistances", { type = "Condition", var = "CriticalStrike" }) },
 	["non%-critical strikes penetrate (%d+)%% of enemy elemental resistances"] = function(num) return { mod("ElementalPenetration", "BASE", num, { type = "Condition", var = "CriticalStrike", neg = true }) } end,
