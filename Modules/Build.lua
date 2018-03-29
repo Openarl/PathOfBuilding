@@ -39,6 +39,26 @@ local fooBanditDropList = {
 	{ label = "Alira (Mana Regen, Crit Multiplier, Resists)", banditId = "Alira" },
 }
 
+local PantheonMajorGodDropList = {
+	{ label = "Nothing", id = "None" },
+	{ label = "Soul of the Brine King", id = "TheBrineKing" },
+	{ label = "Soul of Lunaris", id = "Lunaris" },
+	{ label = "Soul of Solaris", id = "Solaris" },
+	{ label = "Soul of Arakaali", id = "Arakaali" },
+}
+
+local PantheonMinorGodDropList = {
+	{ label = "Nothing", id = "None" },
+	{ label = "Soul of Gruthkul", id = "Gruthkul" },
+	{ label = "Soul of Yugul", id = "Yugul" },
+	{ label = "Soul of Abberath", id = "Abberath" },
+	{ label = "Soul of Tukohama", id = "Tukohama" },
+	{ label = "Soul of Garukhan", id = "Garukhan" },
+	{ label = "Soul of Ralakesh", id = "Ralakesh" },
+	{ label = "Soul of Ryslatha", id = "Ryslatha" },
+	{ label = "Soul of Shakari", id = "Shakari" },
+}
+
 local buildMode = common.New("ControlHost")
 
 function buildMode:Init(dbFileName, buildName, buildXML, targetVersion)
@@ -419,8 +439,46 @@ function buildMode:Init(dbFileName, buildName, buildXML, targetVersion)
 			self.buildFlag = true
 		end)
 		self.controls.banditLabel = common.New("LabelControl", {"BOTTOMLEFT",self.controls.bandit,"TOPLEFT"}, 0, 0, 0, 14, "^7Bandit:")
+		self.controls.pantheonMajorGod = common.New("DropDownControl", {"TOPLEFT",self.anchorSideBar,"TOPLEFT"}, 0, 110, 300, 16, PantheonMajorGodDropList, function(index, value)
+			self.pantheonMajorGod = value.id
+			self.modFlag = true
+			self.buildFlag = true
+		end)
+		local function applyPantheonDescription(tooltip, god)
+			for i, soul in ipairs(god.souls) do
+				local name = soul.name
+				tooltip:AddLine(20, '^8'..name)
+				local lines = { }
+				for j, mod in ipairs(soul.mods) do
+					t_insert(lines, mod.line)
+				end
+				tooltip:AddLine(14, '^6'..table.concat(lines, '\n'))
+				tooltip:AddSeparator(10)
+			end
+		end
+		function self.controls.pantheonMajorGod.tooltipFunc(tooltip, mode, index, value)
+			tooltip:Clear()
+			if mode == "BODY" and self.pantheonMajorGod ~= "None" then
+				local god = data[self.targetVersion].pantheons[self.pantheonMajorGod]
+				applyPantheonDescription(tooltip, god)
+			end
+		end
+		self.controls.pantheonMinorGod = common.New("DropDownControl", {"TOPLEFT",self.anchorSideBar,"TOPLEFT"}, 0, 130, 300, 16, PantheonMinorGodDropList, function(index, value)
+			self.pantheonMinorGod = value.id
+			self.modFlag = true
+			self.buildFlag = true
+		end)
+		function self.controls.pantheonMinorGod.tooltipFunc(tooltip, mode, index, value)
+			tooltip:Clear()
+			if mode == "BODY" and self.pantheonMinorGod ~= "None" then
+				local god = data[self.targetVersion].pantheons[self.pantheonMinorGod]
+				applyPantheonDescription(tooltip, god)
+			end
+		end
+		self.controls.pantheonLabel = common.New("LabelControl", {"BOTTOMLEFT",self.controls.pantheonMajorGod,"TOPLEFT"}, 0, 0, 0, 14, "^7The Pantheon:")
 	end	
-	self.controls.mainSkillLabel = common.New("LabelControl", {"TOPLEFT",self.anchorSideBar,"TOPLEFT"}, 0, 95, 300, 16, "^7Main Skill:")
+	local mainSkillPosY = (self.targetVersion == "2_6") and 95 or 155 -- The Pantheon's DropDown space
+	self.controls.mainSkillLabel = common.New("LabelControl", {"TOPLEFT",self.anchorSideBar,"TOPLEFT"}, 0, mainSkillPosY, 300, 16, "^7Main Skill:")
 	self.controls.mainSocketGroup = common.New("DropDownControl", {"TOPLEFT",self.controls.mainSkillLabel,"BOTTOMLEFT"}, 0, 2, 300, 16, nil, function(index, value)
 		self.mainSocketGroup = index
 		self.modFlag = true
@@ -617,7 +675,7 @@ function buildMode:Load(xml, fileName)
 	end
 	self.characterLevel = tonumber(xml.attrib.level) or 1
 	self.controls.characterLevel:SetText(tostring(self.characterLevel))
-	for _, diff in pairs({"bandit","banditNormal","banditCruel","banditMerciless"}) do
+	for _, diff in pairs({"bandit","banditNormal","banditCruel","banditMerciless","pantheonMajorGod","pantheonMinorGod"}) do
 		self[diff] = xml.attrib[diff] or "None"
 	end
 	self.mainSocketGroup = tonumber(xml.attrib.mainSkillIndex) or tonumber(xml.attrib.mainSocketGroup) or 1
@@ -642,6 +700,8 @@ function buildMode:Save(xml)
 		banditNormal = self.banditNormal,
 		banditCruel = self.banditCruel,
 		banditMerciless = self.banditMerciless,
+		pantheonMajorGod = self.pantheonMajorGod,
+		pantheonMinorGod = self.pantheonMinorGod,
 		mainSocketGroup = tostring(self.mainSocketGroup),
 	}
 	for _, id in ipairs(self.spectreList) do
@@ -734,6 +794,11 @@ function buildMode:OnFrame(inputEvents)
 	for _, diff in pairs({"bandit","banditNormal","banditCruel","banditMerciless"}) do
 		if self.controls[diff] then
 			self.controls[diff]:SelByValue(self[diff], "banditId")
+		end
+	end
+	for _, diff in pairs({"pantheonMajorGod","pantheonMinorGod"}) do
+		if self.controls[diff] then
+			self.controls[diff]:SelByValue(self[diff], "id")
 		end
 	end
 

@@ -33,6 +33,7 @@ loadDat("PassiveSkills")
 loadDat("Ascendancy")
 loadDat("Characters")
 loadDat("ClientStrings")
+loadDat("PantheonPanelLayout")
 
 while true do
 	print("Enter export script name:")
