@@ -382,6 +382,7 @@ function calcs.defence(env, actor)
 				takenMore = takenMore * modDB:Sum("MORE", nil, "ElementalDamageTakenOverTime")
 			end
 			local resist = output[damageType.."Resist"]
+			-- Fix #942 - don't let resists over 100 give degen
 			output[damageType.."TakenDotMult"] = (1 - m_min(resist, 100) / 100) * (1 + takenInc / 100) * takenMore
 			if breakdown then
 				breakdown[damageType.."TakenDotMult"] = { }
