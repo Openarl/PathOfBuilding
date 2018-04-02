@@ -218,6 +218,15 @@ function calcs.initEnv(build, mode, override)
 	else
 		modDB:NewMod("Damage", "MORE", 200, "Base", 0, KeywordFlag.Bleed, { type = "ActorCondition", actor = "enemy", var = "Moving" }, { type = "Condition", var = "NoExtraBleedDamageToMovingEnemy", neg = true })
 	end
+	-- Totem default modifier
+	-- `Totems have a standard 40% elemental resistance and 20% chaos resistance`
+	-- see also: https://pathofexile.gamepedia.com/Totem#Totem_stats
+	modDB:NewMod("TotemElementalResist", "BASE", 40, "Base")
+	modDB:NewMod("TotemChaosResist", "BASE", 20, "Base")
+	modDB:NewMod("TotemFireResistMax", "BASE", 75, "Base")
+	modDB:NewMod("TotemColdResistMax", "BASE", 75, "Base")
+	modDB:NewMod("TotemLightningResistMax", "BASE", 75, "Base")
+	modDB:NewMod("TotemChaosResistMax", "BASE", 75, "Base")
 
 	-- Add bandit mods
 	if build.targetVersion == "2_6" then
