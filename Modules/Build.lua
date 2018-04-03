@@ -439,42 +439,39 @@ function buildMode:Init(dbFileName, buildName, buildXML, targetVersion)
 			self.buildFlag = true
 		end)
 		self.controls.banditLabel = common.New("LabelControl", {"BOTTOMLEFT",self.controls.bandit,"TOPLEFT"}, 0, 0, 0, 14, "^7Bandit:")
+		-- The Pantheon
+		local function applyPantheonDescription(tooltip, mode, index, value)
+			tooltip:Clear()
+			if value.id == "None" then
+				return
+			end
+			local applyModes = { BODY = true, HOVER = true }
+			if applyModes[mode] then
+				local god = self.data.pantheons[value.id]
+				for i, soul in ipairs(god.souls) do
+					local name = soul.name
+					tooltip:AddLine(20, '^8'..name)
+					local lines = { }
+					for j, mod in ipairs(soul.mods) do
+						t_insert(lines, mod.line)
+					end
+					tooltip:AddLine(14, '^6'..table.concat(lines, '\n'))
+					tooltip:AddSeparator(10)
+				end
+			end
+		end
 		self.controls.pantheonMajorGod = common.New("DropDownControl", {"TOPLEFT",self.anchorSideBar,"TOPLEFT"}, 0, 110, 300, 16, PantheonMajorGodDropList, function(index, value)
 			self.pantheonMajorGod = value.id
 			self.modFlag = true
 			self.buildFlag = true
 		end)
-		local function applyPantheonDescription(tooltip, god)
-			for i, soul in ipairs(god.souls) do
-				local name = soul.name
-				tooltip:AddLine(20, '^8'..name)
-				local lines = { }
-				for j, mod in ipairs(soul.mods) do
-					t_insert(lines, mod.line)
-				end
-				tooltip:AddLine(14, '^6'..table.concat(lines, '\n'))
-				tooltip:AddSeparator(10)
-			end
-		end
-		function self.controls.pantheonMajorGod.tooltipFunc(tooltip, mode, index, value)
-			tooltip:Clear()
-			if mode == "BODY" and self.pantheonMajorGod ~= "None" then
-				local god = data[self.targetVersion].pantheons[self.pantheonMajorGod]
-				applyPantheonDescription(tooltip, god)
-			end
-		end
+		self.controls.pantheonMajorGod.tooltipFunc = applyPantheonDescription
 		self.controls.pantheonMinorGod = common.New("DropDownControl", {"TOPLEFT",self.anchorSideBar,"TOPLEFT"}, 0, 130, 300, 16, PantheonMinorGodDropList, function(index, value)
 			self.pantheonMinorGod = value.id
 			self.modFlag = true
 			self.buildFlag = true
 		end)
-		function self.controls.pantheonMinorGod.tooltipFunc(tooltip, mode, index, value)
-			tooltip:Clear()
-			if mode == "BODY" and self.pantheonMinorGod ~= "None" then
-				local god = data[self.targetVersion].pantheons[self.pantheonMinorGod]
-				applyPantheonDescription(tooltip, god)
-			end
-		end
+		self.controls.pantheonMinorGod.tooltipFunc = applyPantheonDescription
 		self.controls.pantheonLabel = common.New("LabelControl", {"BOTTOMLEFT",self.controls.pantheonMajorGod,"TOPLEFT"}, 0, 0, 0, 14, "^7The Pantheon:")
 	end	
 	local mainSkillPosY = (self.targetVersion == "2_6") and 95 or 155 -- The Pantheon's DropDown space

@@ -267,7 +267,7 @@ function calcs.initEnv(build, mode, override)
 	end
 
 	-- Add Pantheon mods
-	if build.targetVersion == "3_0" then
+	if build.targetVersion ~= "2_6" then
 		local function parsePantheonMods(parser, god)
 			local db = common.New("ModDB")
 			local name = god.souls[1].name
@@ -282,7 +282,7 @@ function calcs.initEnv(build, mode, override)
 			end
 			return db
 		end
-		local pantheons = data[build.targetVersion].pantheons
+		local pantheons = env.data.pantheons
 		local parser = modLib.parseMod[build.targetVersion]
 		-- Major Gods
 		if build.pantheonMajorGod ~= "None" then
