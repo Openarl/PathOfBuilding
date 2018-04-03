@@ -658,6 +658,8 @@ local modTagList = {
 	["if no worn items are corrupted"] = { tag = { type = "MultiplierThreshold", var = "CorruptedItem", threshold = 0, upper = true } },
 	["if all worn items are corrupted"] = { tag = { type = "MultiplierThreshold", var = "NonCorruptedItem", threshold = 0, upper = true } },
 	-- Player status conditions
+	["while you have avatar of fire"] = { tag = { type = "Condition", var = "HaveAvatarOfFire" } },
+	["while you do not have avatar of fire"] = { tag = { type = "Condition", var = "HaveAvatarOfFire", neg = true } },
 	["wh[ie][ln]e? on low life"] = { tag = { type = "Condition", var = "LowLife" } },
 	["wh[ie][ln]e? not on low life"] = { tag = { type = "Condition", var = "LowLife", neg = true } },
 	["wh[ie][ln]e? on full life"] = { tag = { type = "Condition", var = "FullLife" } },
@@ -1059,6 +1061,7 @@ local specialModList = {
 	["modifiers to claw critical strike chance also apply to unarmed attack critical strike chance"] = { flag("ClawCritChanceAppliesToUnarmed") },
 	["gain (%d+)%% of bow physical damage as extra damage of each element"] = function(num) return { mod("PhysicalDamageGainAsLightning", "BASE", num, nil, ModFlag.Bow), mod("PhysicalDamageGainAsCold", "BASE", num, nil, ModFlag.Bow), mod("PhysicalDamageGainAsFire", "BASE", num, nil, ModFlag.Bow) } end,
 	["gain (%d+)%% of weapon physical damage as extra damage of each element"] = function(num) return { mod("PhysicalDamageGainAsLightning", "BASE", num, nil, ModFlag.Weapon), mod("PhysicalDamageGainAsCold", "BASE", num, nil, ModFlag.Weapon), mod("PhysicalDamageGainAsFire", "BASE", num, nil, ModFlag.Weapon) } end,
+	["(%d+)%% of physical damage converted to fire while you have avatar of fire"] = function(num) return { mod("PhysicalDamageConvertToFire", "BASE", num, { type = "Condition", var = "HaveAvatarOfFire" } ) } end,
 	-- Crit
 	["your critical strike chance is lucky"] = { flag("CritChanceLucky") },
 	["your critical strikes do not deal extra damage"] = { flag("NoCritMultiplier") },
