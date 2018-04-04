@@ -267,7 +267,7 @@ local function doActorMisc(env, actor)
 	modDB.multipliers["CrabBarrier"] = output.CrabBarriers
 
 	-- for CalcDefence(life regen)
-	output.ActiveTotemLimit = modDB:Sum("BASE", skillCfg, "ActiveTotemLimit")
+	output.ActiveTotemLimit = modDB:Sum("BASE", nil, "ActiveTotemLimit")
 
 	-- Process enemy modifiers 
 	for _, value in ipairs(modDB:Sum("LIST", nil, "EnemyModifier")) do
