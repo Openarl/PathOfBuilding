@@ -352,6 +352,8 @@ function buildMode:Init(dbFileName, buildName, buildXML, targetVersion)
 	self.banditNormal = "None"
 	self.banditCruel = "None"
 	self.banditMerciless = "None"
+	self.pantheonMajorGod = "None"
+	self.pantheonMinorGod = "None"
 	self.spectreList = { }
 
 	-- Load build file
