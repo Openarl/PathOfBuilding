@@ -273,10 +273,12 @@ function calcs.initEnv(build, mode, override)
 			local name = god.souls[1].name
 			for _, soul in pairs(god.souls) do
 				for _, soulMod in pairs(soul.mods) do
-					local modList, _ = parser(soulMod.line)
-					for _, mod in pairs(modList or { }) do
-						mod.source = "Pantheon:"..name
-						db:AddList(modList)
+					local modList, extra = parser(soulMod.line)
+					if modList and not extra then
+						for _, mod in pairs(modList or { }) do
+							mod.source = "Pantheon:"..name
+							db:AddList(modList)
+						end
 					end
 				end
 			end
