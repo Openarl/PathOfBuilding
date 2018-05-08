@@ -136,6 +136,7 @@ local modNameList = {
 	["physical damage from hits taken"] = "PhysicalDamageTaken",
 	["physical damage taken when hit"] = "PhysicalDamageTakenWhenHit",
 	["physical damage taken over time"] = "PhysicalDamageTakenOverTime",
+	["physical damage over time damage taken"] = "PhysicalDamageTakenOverTime",
 	["lightning damage taken"] = "LightningDamageTaken",
 	["lightning damage from hits taken"] = "LightningDamageTaken",
 	["lightning damage taken when hit"] = "LightningDamageTakenWhenHit",
@@ -152,9 +153,11 @@ local modNameList = {
 	["chaos damage from hits taken"] = "ChaosDamageTaken",
 	["chaos damage taken when hit"] = "ChaosDamageTakenWhenHit",
 	["chaos damage taken over time"] = "ChaosDamageTakenOverTime",
+	["chaos damage over time taken"] = "ChaosDamageTakenOverTime",
 	["elemental damage taken"] = "ElementalDamageTaken",
 	["elemental damage taken when hit"] = "ElementalDamageTakenWhenHit",
 	["elemental damage taken over time"] = "ElementalDamageTakenOverTime",
+	["reflected damage taken"] = "ReflectedDamageTaken", -- not implement
 	-- Other defences
 	["to dodge attacks"] = "AttackDodgeChance",
 	["to dodge spells"] = "SpellDodgeChance",
@@ -179,6 +182,7 @@ local modNameList = {
 	["to avoid elemental ailments"] = { "AvoidShock", "AvoidFrozen", "AvoidChilled", "AvoidIgnite" },
 	["to avoid elemental status ailments"] = { "AvoidShock", "AvoidFrozen", "AvoidChilled", "AvoidIgnite" },
 	["to avoid bleeding"] = "AvoidBleed",
+	["to avoid projectiles"] = "AvoidProjectile", -- Avoidance not implement (melee/projectile/elemental/etc...)
 	["damage is taken from mana before life"] = "DamageTakenFromManaBeforeLife",
 	["damage taken from mana before life"] = "DamageTakenFromManaBeforeLife",
 	["effect of curses on you"] = "CurseEffectOnSelf",
@@ -348,13 +352,16 @@ local modNameList = {
 	["ignite chance"] = "EnemyIgniteChance",
 	["to freeze, shock and ignite"] = { "EnemyFreezeChance", "EnemyShockChance", "EnemyIgniteChance" },
 	["effect of shock"] = "EnemyShockEffect",
+	["effect of shock on you"] = "SelfShockEffect", -- not implement
 	["effect of chill"] = "EnemyChillEffect",
 	["effect of chill on you"] = "SelfChillEffect",
 	["effect of non-damaging ailments"] = { "EnemyShockEffect", "EnemyChillEffect", "EnemyFreezeEffech" },
 	["shock duration"] = "EnemyShockDuration",
+	["shock duration on you"] = "SelfShockDuration", -- not implement
 	["freeze duration"] = "EnemyFreezeDuration",
 	["chill duration"] = "EnemyChillDuration",
 	["ignite duration"] = "EnemyIgniteDuration",
+	["ignite duration on you"] = "SelfIgniteDuration", -- not implement
 	["duration of elemental ailments"] = { "EnemyShockDuration", "EnemyFreezeDuration", "EnemyChillDuration", "EnemyIgniteDuration" },
 	["duration of elemental status ailments"] = { "EnemyShockDuration", "EnemyFreezeDuration", "EnemyChillDuration", "EnemyIgniteDuration" },
 	["duration of ailments"] = { "EnemyShockDuration", "EnemyFreezeDuration", "EnemyChillDuration", "EnemyIgniteDuration", "EnemyPoisonDuration", "EnemyBleedDuration" },
@@ -389,6 +396,7 @@ local modNameList = {
 	["life recovered"] = "FlaskRecovery",
 	["mana recovered"] = "FlaskRecovery",
 	["life recovery from flasks"] = "FlaskLifeRecovery",
+	["life recovery from flasks used"] = "FlaskLifeRecovery",
 	["mana recovery from flasks"] = "FlaskManaRecovery",
 	["flask effect duration"] = "FlaskDuration",
 	["recovery speed"] = "FlaskRecoveryRate",
@@ -698,8 +706,10 @@ local modTagList = {
 	["during any flask effect"] = { tag = { type = "Condition", var = "UsingFlask" } },
 	["while on consecrated ground"] = { tag = { type = "Condition", var = "OnConsecratedGround" } },
 	["on burning ground"] = { tag = { type = "Condition", var = "OnBurningGround" } },
+	["while on burning ground"] = { tag = { type = "Condition", var = "OnBurningGround" } },
 	["on chilled ground"] = { tag = { type = "Condition", var = "OnChilledGround" } },
 	["on shocked ground"] = { tag = { type = "Condition", var = "OnShockedGround" } },
+	["while in a caustic cloud"] = { tag = { type = "Condition", var = "OnCausticCloud" } },
 	["while ignited"] = { tag = { type = "Condition", var = "Ignited" } },
 	["while frozen"] = { tag = { type = "Condition", var = "Frozen" } },
 	["while shocked"] = { tag = { type = "Condition", var = "Shocked" } },
@@ -708,6 +718,7 @@ local modTagList = {
 	["while poisoned"] = { tag = { type = "Condition", var = "Poisoned" } },
 	["while cursed"] = { tag = { type = "Condition", var = "Cursed" } },
 	["while not cursed"] = { tag = { type = "Condition", var = "Cursed", neg = true } },
+	["against damage over time"] = { tag = { type = "Condition", varList = { "AgainstDamageOverTime" } } },
 	["while there is only one nearby enemy"] = { tag = { type = "Condition", var = "OnlyOneNearbyEnemy" } },
 	["if you[' ]h?a?ve hit recently"] = { tag = { type = "Condition", var = "HitRecently" } },
 	["if you[' ]h?a?ve crit recently"] = { tag = { type = "Condition", var = "CritRecently" } },
@@ -760,6 +771,8 @@ local modTagList = {
 	["if you[' ]h?a?ve used a movement skill recently"] = { tag = { type = "Condition", var = "UsedMovementSkillRecently" } },
 	["if you detonated mines recently"] = { tag = { type = "Condition", var = "DetonatedMinesRecently" } },
 	["if energy shield recharge has started recently"] = { tag = { type = "Condition", var = "EnergyShieldRechargeRecently" } },
+	["for each hit you've taken recently up to a maximum of (%d+)%%"] = function(num) return { tag = { type = "Multiplier", var = "BeenHitRecently", limit = num, limitTotal = true } } end,
+	["for each nearby enemy, up to (%d+)%%"] = function(num) return { tag = { type = "Multiplier", var = "NearbyEnemies", limit = num, limitTotal = true } } end,
 	-- Enemy status conditions
 	["at close range"] = { tag = { type = "Condition", var = "AtCloseRange" }, flags = ModFlag.Hit },
 	["against rare and unique enemies"] = { tag = { type = "Condition", var = "EnemyRareOrUnique" }, keywordFlags = KeywordFlag.Hit },
@@ -1237,6 +1250,7 @@ local specialModList = {
 	["cannot be ignited if strength is higher than dexterity"] = { mod("AvoidIgnite", "BASE", 100, { type = "Condition", var = "StrHigherThanDex" }) },
 	["cannot be inflicted with bleeding"] = { mod("AvoidBleed", "BASE", 100) },
 	["you are immune to bleeding"] = { mod("AvoidBleed", "BASE", 100) },
+	["immune to poison"] = { mod("AvoidPoison", "BASE", 100) },
 	["immunity to shock during flask effect"] = { mod("AvoidShock", "BASE", 100, { type = "Condition", var = "UsingFlask" }) },
 	["immunity to freeze and chill during flask effect"] = { 
 		mod("AvoidFreeze", "BASE", 100, { type = "Condition", var = "UsingFlask" }), 
@@ -1254,6 +1268,7 @@ local specialModList = {
 	},
 	["unaffected by curses"] = { mod("CurseEffectOnSelf", "MORE", -100) },
 	["the effect of chill on you is reversed"] = { flag("SelfChillEffectIsReversed") },
+	["(%d+)%% reduced effect of burning ground on you"] = function(num) return { mod("BurningGroundDamageTaken", "INC", -num) } end, -- not implement
 	-- Knockback
 	["cannot knock enemies back"] = { flag("CannotKnockback") },
 	["knocks back enemies if you get a critical strike with a staff"] = { mod("EnemyKnockbackChance", "BASE", 100, nil, ModFlag.Staff, { type = "Condition", var = "CriticalStrike" }) },

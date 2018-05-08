@@ -266,6 +266,36 @@ function calcs.initEnv(build, mode, override)
 		end
 	end
 
+	-- Add Pantheon mods
+	if build.targetVersion ~= "2_6" then
+		local function parsePantheonMods(parser, god)
+			local db = common.New("ModDB")
+			local name = god.souls[1].name
+			for _, soul in pairs(god.souls) do
+				for _, soulMod in pairs(soul.mods) do
+					local modList, extra = parser(soulMod.line)
+					if modList and not extra then
+						for _, mod in pairs(modList or { }) do
+							mod.source = "Pantheon:"..name
+							db:AddList(modList)
+						end
+					end
+				end
+			end
+			return db
+		end
+		local pantheons = env.data.pantheons
+		local parser = modLib.parseMod[build.targetVersion]
+		-- Major Gods
+		if build.pantheonMajorGod ~= "None" then
+			modDB:AddDB(parsePantheonMods(parser, pantheons[build.pantheonMajorGod]))
+		end
+		-- Minor Gods
+		if build.pantheonMinorGod ~= "None" then
+			modDB:AddDB(parsePantheonMods(parser, pantheons[build.pantheonMinorGod]))
+		end
+	end
+
 	-- Initialise enemy modifier database
 	local enemyDB = common.New("ModDB")
 	env.enemyDB = enemyDB
