@@ -367,9 +367,10 @@ function calcs.offence(env, actor)
 				total = s_format("= %.2f ^8per second", output.TotemPlacementSpeed),
 			})
 		end
-		output.ActiveTotemLimit = modDB:Sum("BASE", skillCfg, "ActiveTotemLimit")
 		output.TotemLifeMod = calcLib.mod(modDB, skillCfg, "TotemLife")
 		output.TotemLife = round(m_floor(env.data.monsterAllyLifeTable[skillData.totemLevel] * env.data.totemLifeMult[mainSkill.skillTotemId]) * output.TotemLifeMod)
+		output.TotemLifeRegenPercent = modDB:Sum("BASE", skillCfg, "TotemLifeRegenPercent")
+		output.TotemLifeRegen = output.TotemLife * output.TotemLifeRegenPercent / 100
 		if breakdown then
 			breakdown.TotemLifeMod = breakdown.mod(skillCfg, "TotemLife")
 			breakdown.TotemLife = {
@@ -379,6 +380,30 @@ function calcs.offence(env, actor)
 				"x "..output.TotemLifeMod.." ^8(totem life modifier)",
 				"= "..output.TotemLife,
 			}
+			breakdown.TotemLifeRegenMod = breakdown.mod(skillCfg, "TotemLifeRegenPercent")
+			breakdown.TotemLifeRegen = {
+				"Totem Life Regeneration: ",
+				output.TotemLife.." ^8(totem life)",
+				"x "..s_format("%.1f ^8(totem life regen percent)", output.TotemLifeRegenPercent),
+				s_format("= %.1f ^8per second", output.TotemLifeRegen),
+			}
+		end
+		-- Resistances
+		output.TotemPhysicalDamageReduction = m_min(90, modDB:Sum("BASE", nil, "TotemPhysicalDamageReduction"))
+		local resistTypeList = { "Fire", "Cold", "Lightning", "Chaos" }
+		for _, elem in ipairs(resistTypeList) do
+			local max, total
+			max = modDB:Sum("OVERRIDE", nil, "Totem"..elem.."ResistMax") or modDB:Sum("BASE", nil, "Totem"..elem.."ResistMax")
+			total = modDB:Sum("OVERRIDE", nil, "Totem"..elem.."Resist") or modDB:Sum("BASE", nil, "Totem"..elem.."Resist", isElemental[elem] and "TotemElementalResist")
+			output["Totem"..elem.."ResistMax"] = max
+			output["Totem"..elem.."Resist"] = m_min(total, max)
+			output["Totem"..elem.."ResistOverCap"] = m_max(0, total - max)
+			if breakdown then
+				breakdown["Totem"..elem.."Resist"] = {
+					"Max: "..max.."%",
+					"Total: "..total.."%",
+				}
+			end
 		end
 	end
 

@@ -950,6 +950,9 @@ local specialModList = {
 	["if you've attacked recently, you and nearby allies have (%d+)%% chance to block attacks"] = function(num) return { mod("ExtraAura", "LIST", { mod = mod("BlockChance", "BASE", num) }, { type = "Condition", var = "AttackedRecently" }) } end,
 	["if you've cast a spell recently, you and nearby allies have (%d+)%% chance to block spells"] = function(num) return { mod("ExtraAura", "LIST", { mod = mod("SpellBlockChance", "BASE", num) }, { type = "Condition", var = "CastSpellRecently" }) } end,
 	-- Hierophant
+	["(%d+)%% increased damage per enemy killed by you or your totems recently"] = function(num) return { flag("Condition:CanGainPursuitOfFaith"), mod("Damage", "INC", num, { type = "Multiplier", var = "PursuitOfFaith" }) } end,
+	["you regenerate ([%d%.]+)%% of mana per second per totem"] = function(num) return { mod("ManaRegenPercent", "BASE", num, { type = "Condition", var = "HaveTotem" }, { type = "PerStat", stat = "ActiveTotemLimit" }) } end,
+	["you and your totems regenerate (%d+)%% of life per second per totem"] = function(num) return { mod("LifeRegenPercent", "BASE", num, { type = "Condition", var = "HaveTotem"}, { type = "PerStat", stat = "ActiveTotemLimit" }), mod("TotemLifeRegenPercent", "BASE", num, { type = "Condition", var = "HaveTotem"}, { type = "PerStat", stat = "ActiveTotemLimit" }) } end,
 	-- Inquisitor
 	["critical strikes ignore enemy monster elemental resistances"] = { flag("IgnoreElementalResistances", { type = "Condition", var = "CriticalStrike" }) },
 	["non%-critical strikes penetrate (%d+)%% of enemy elemental resistances"] = function(num) return { mod("ElementalPenetration", "BASE", num, { type = "Condition", var = "CriticalStrike", neg = true }) } end,
@@ -1138,6 +1141,8 @@ local specialModList = {
 	["attack skills can have (%d+) additional totems? summoned at a time"] = function(num) return { mod("ActiveTotemLimit", "BASE", num, nil, 0, KeywordFlag.Attack) } end,
 	["can [hs][au][vm][em]o?n? 1 additional siege ballista totem per (%d+) dexterity"] = function(num) return { mod("ActiveTotemLimit", "BASE", 1, { type = "SkillName", skillName = "Siege Ballista" }, { type = "PerStat", stat = "Dex", div = num }) } end,
 	["totems fire (%d+) additional projectiles"] = function(num) return { mod("ProjectileCount", "BASE", num, nil, 0, KeywordFlag.Totem) } end,
+	["totems have (%d+)%% additional physical damage reduction"] = function(num) return { mod("TotemPhysicalDamageReduction", "BASE", num) } end,
+	["totems gain %+(%d+)%% to all elemental resistances"] = function(num) return { mod("TotemElementalResist", "BASE", num) } end,
 	["([%d%.]+)%% of damage dealt by y?o?u?r? ?totems is leeched to you as life"] = function(num) return { mod("DamageLifeLeechToPlayer", "BASE", num, nil, 0, KeywordFlag.Totem) } end,
 	-- Minions
 	["your strength is added to your minions"] = { flag("HalfStrengthAddedToMinions") },

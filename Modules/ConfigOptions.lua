@@ -288,6 +288,9 @@ return {
 	{ var = "multiplierRage", type = "count", label = "Rage:", ifCond = "CanGainRage", apply = function(val, modList, enemyModList)
 		modList:NewMod("Multiplier:Rage", "BASE", val, "Config", { type = "IgnoreCond" }, { type = "Condition", var = "Combat" }, { type = "Condition", var = "CanGainRage" })
 	end },
+	{ var = "multiplierPursuitOfFaith", type = "count", label = "Pursuit of Faith:", ifNode = 1105, tooltip = "Increased damage for each enemy you and your totems have recently killed", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:PursuitOfFaith", "BASE", val, "Config", { type = "Condition", var = "Combat" }, { type = "Condition", var = "CanGainPursuitOfFaith" })
+	end },
 	{ var = "conditionLeeching", type = "check", label = "Are you Leeching?", ifCond = "Leeching", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:Leeching", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
