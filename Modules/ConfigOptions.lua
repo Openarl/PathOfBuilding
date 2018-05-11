@@ -41,6 +41,10 @@ return {
 
 	-- Section: Skill-specific options
 	{ section = "Skill Options", col = 2 },
+	{ label = "Arcane Surge:", ifCond = "GainArcaneSurge" },
+	{ var = "gainArcaneSurge", type = "check", label = "Do you have Arcane Surge?", ifCond = "GainArcaneSurge", apply = function(val, modList, enemyModList)
+			modList:NewMod("Condition:GainArcaneSurge", "FLAG", val, "Config", { type = "Condition", var = "Buffed" })
+	end },
 	{ label = "Aspect of the Avian:", ifSkill = "Aspect of the Avian" },
 	{ var = "aspectOfTheAvianAviansMight", type = "check", label = "Is Avian's Might active?", ifSkill = "Aspect of the Avian", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:AviansMightActive", "FLAG", true, "Config")

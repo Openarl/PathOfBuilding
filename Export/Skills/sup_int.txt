@@ -12,6 +12,7 @@ local skills, mod, flag, skill = ...
 #mods
 
 #skill SupportArcaneSurge
+#baseMod flag("Condition:UsingArcaneSurgeSupport", { type = "Condition", var = "GainArcaneSurge" }, { type = "GlobalEffect", effectType = "Buff", effectName = "Arcane Surge" })
 #mods
 
 #skill SupportBlasphemy
