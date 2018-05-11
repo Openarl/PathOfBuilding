@@ -460,7 +460,7 @@ function calcs.defence(env, actor)
 				rowList = { },
 				colList = {
 					{ label = "Type", key = "type" },
-					{ label = "Migitation", key = "resist" },
+					{ label = "Mitigation", key = "resist" },
 					{ label = "Taken", key = "taken" },
 					{ label = "Final", key = "final" },
 				},
