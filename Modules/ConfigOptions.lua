@@ -94,6 +94,35 @@ return {
 	{ var = "summonLightningGolemEnableWrath", type = "check", label = "Enable Wrath Aura:", ifSkill = "Summon Lightning Golem", apply = function(val, modList, enemyModList)
 		modList:NewMod("SkillData", "LIST", { key = "enable", value = true }, "Config", { type = "SkillId", skillId = "LightningGolemWrath" })
 	end },
+	{ var = "summonLightningGolemCount", type = "count", label = "# of Lightning Golems:", ifSkill = "Summon Lightning Golem", apply = function(val, modList, enemyModList)
+	    if val >= 0 then
+			modList:NewMod("Multiplier:SummonedGolem", "BASE", val, "Config, # of Lightning Golems")
+		end
+	end },
+	{ var = "summonFlameGolemCount", type = "count", label = "# of Flame Golems:", ifSkill = "Summon Flame Golem", apply = function(val, modList, enemyModList)
+		if val >= 0 then
+			modList:NewMod("Multiplier:SummonedGolem", "BASE", val, "Config, # of Flame Golems")
+		end
+	end },
+	{ var = "summonIceGolemCount", type = "count", label = "# of Ice Golems:", ifSkill = "Summon Ice Golem", apply = function(val, modList, enemyModList)
+		if val >= 0 then
+			modList:NewMod("Multiplier:SummonedGolem", "BASE", val, "Config, # of Ice Golems")
+		end
+	end },
+	{ var = "summonStoneGolemCount", type = "count", label = "# of Stone Golems:", ifSkill = "Summon Stone Golem", apply = function(val, modList, enemyModList)
+		if val >= 0 then
+			modList:NewMod("Multiplier:SummonedGolem", "BASE", val, "Config, # of Stone Golems")
+		end
+	end },
+	{ var = "summonChaosGolemCount", type = "count", label = "# of Chaos Folems:", ifSkill = "Summon Chaos Golem", apply = function(val, modList, enemyModList)
+		if val >= 0 then
+			modList:NewMod("Multiplier:SummonedGolem", "BASE", val, "Config, # of Chaos Golems")
+		end
+	end },
+	{ label = "Aspect of the Crab:", ifSkill = "Aspect of the Crab" },
+	{ var = "overrideCrabBarriers", type = "count", label = "# of Crab Barriers (if not maximum):", ifSkill = "Aspect of the Crab", apply = function(val, modList, enemyModList)
+		modList:NewMod("CrabBarriers", "OVERRIDE", val, "Config", { type = "Condition", var = "Combat" })
+	end },
 	{ label = "Vortex:", ifSkill = "Vortex" },
 	{ var = "vortexCastOnFrostbolt", type = "check", label = "Cast on Frostbolt?", ifSkill = "Vortex", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:CastOnFrostbolt", "FLAG", true, "Config", { type = "SkillName", skillName = "Vortex" })

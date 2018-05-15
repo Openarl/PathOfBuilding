@@ -616,5 +616,6 @@ function calcs.defence(env, actor)
 		if breakdown then
 			breakdown.LightRadiusMod = breakdown.mod(nil, "LightRadius")
 		end
+		output.SummonedGolem = modDB:Sum("BASE", nil, "Multiplier:SummonedGolem")
 	end
 end

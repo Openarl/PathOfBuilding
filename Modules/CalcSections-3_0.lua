@@ -946,5 +946,6 @@ return {
 		{ modName = { "StunRecovery", "BlockRecovery" }, }, 
 	}, },
 	{ label = "Light Radius Mod", { format = "x {2:output:LightRadiusMod}", { breakdown = "LightRadiusMod" }, { modName = "LightRadius" }, }, },
+	{ label = "Summoned Golems", { format = "x {1:output:SummonedGolem}", { modName = "Multiplier:SummonedGolem" }, }, },
 } },
 }
