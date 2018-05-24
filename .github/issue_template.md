@@ -4,7 +4,7 @@ Before submitting your issue, please do a quick search on the Issues page to see
 
 Please also prepend your title with a tag describing what it is. Try to keep these uniform with what others have already done. For example:
 
-- [Bug] Damage calclulation for Elemental Hit is off when it's exactly 12:04 PM NZT and Venus is in line with Jupiter.
+- [Bug] Damage calculation for Elemental Hit is off when it's exactly 12:04 PM NZST and Venus is in line with Jupiter.
 - [Feature Request] POB doesn't make my breakfast for me. Pls fix.
 
 For bug reports, please provide a Pastebin of a build that has been set up to easily re-create or showcase the issue.
