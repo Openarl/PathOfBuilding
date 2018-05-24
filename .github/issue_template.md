@@ -9,6 +9,6 @@ Please also prepend your title with a tag describing what it is. Try to keep the
 
 For bug reports, please provide a Pastebin of a build that has been set up to easily re-create or showcase the issue.
 
-Finally, please make sure that your issue is directly related to the _software_ of PoB. If it's not directly related to the software (e.g. "Pls fix my build"), check out places like the [official forums](https://www.pathofexile.com/forum) and [r/PathOfExile](www.reddit.com/r/pathofexile/).
+Finally, please make sure that your issue is directly related to the _software_ of PoB. If it's not directly related to the software (e.g. "Pls fix my build"), check out places like the [official forums](https://www.pathofexile.com/forum) and [r/PathOfExile](www.reddit.com/r/pathofexile).
 
 Once you've read this, feel free to delete the text and describe the issue with as much detail as possible. 
