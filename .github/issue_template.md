@@ -7,4 +7,8 @@ Please also prepend your title with a tag describing what it is. Try to keep the
 - [Bug] Damage calclulation for Elemental Hit is off when it's exactly 12:04 PM NZT and Venus is in line with Jupiter.
 - [Feature Request] POB doesn't make my breakfast for me. Pls fix.
 
-Finally, please make sure that your issue is directly related to the _software_ of PoB. If it's not directly related to the software (e.g. "Pls fix my build" issues), check out places like the [official forums](https://www.pathofexile.com/forum) and [r/PathOfExile](www.reddit.com/r/pathofexile/).
+For bug reports, please provide a Pastebin of a build that has been set up to easily re-create or showcase the issue.
+
+Finally, please make sure that your issue is directly related to the _software_ of PoB. If it's not directly related to the software (e.g. "Pls fix my build"), check out places like the [official forums](https://www.pathofexile.com/forum) and [r/PathOfExile](www.reddit.com/r/pathofexile/).
+
+Once you've read this, feel free to delete the text and describe the issue with as much detail as possible. 
