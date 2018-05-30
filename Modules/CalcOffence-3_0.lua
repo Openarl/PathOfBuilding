@@ -1078,10 +1078,30 @@ function calcs.offence(env, actor)
 		output.EnergyShieldOnHitRate = output.EnergyShieldOnHit * hitRate
 		output.ManaOnHitRate = output.ManaOnHit * hitRate
 
+		if skillFlags.durationDelaysDamage and output.Duration then
+			output.DelayedDamageMod = 1 / output.Duration
+			output.CastsUntilDamage = 1 + (output.Duration / output.Time)
+			if breakdown then
+				breakdown.DelayedDamageMod = {
+					"1",
+					s_format("/ %.2fs ^8(Skill Duration)", output.Duration),
+					s_format("= %.2f ^8(Delayed damage mod)", output.DelayedDamageMod),
+				}
+
+				breakdown.CastsUntilDamage = {
+					s_format("%.2fs ^8(Skill Duration) ", output.Duration),
+					s_format("/ %.2fs ^8(Cast time) ", output.Time),
+					s_format("= %.2fs ^8(Casts in duration)", output.Duration / output.Time),
+					"+ 1 ^8(Initial cast)",
+					s_format("= %.2f ^8(Casts until damage)", output.CastsUntilDamage),
+				}
+			end
+		end
+
 		-- Calculate average damage and final DPS
 		output.AverageHit = (totalHitMin + totalHitMax) / 2 * (1 - output.CritChance / 100) + (totalCritMin + totalCritMax) / 2 * output.CritChance / 100
 		output.AverageDamage = output.AverageHit * output.HitChance / 100
-		output.TotalDPS = output.AverageDamage * (globalOutput.HitSpeed or globalOutput.Speed) * (skillData.dpsMultiplier or 1)
+		output.TotalDPS = output.AverageDamage * (globalOutput.HitSpeed or (not skillFlags.durationDelaysDamage and globalOutput.Speed or skillFlags.durationDelaysDamage and ((output.CastsUntilDamage) * output.DelayedDamageMod))) * (skillData.dpsMultiplier or 1)
 		if breakdown then
 			if output.CritEffect ~= 1 then
 				breakdown.AverageHit = {
@@ -1150,8 +1170,18 @@ function calcs.offence(env, actor)
 		else
 			breakdown.TotalDPS = {
 				s_format("%.1f ^8(average hit)", output.AverageDamage),
-				output.HitSpeed and s_format("x %.2f ^8(hit rate)", output.HitSpeed) or s_format("x %.2f ^8(cast rate)", output.Speed),
 			}
+
+			if output.HitSpeed then
+				t_insert(breakdown.TotalDPS, s_format("x %.2f ^8(hit rate)", output.HitSpeed))
+			else
+				if not skillFlags.durationDelaysDamage then
+					t_insert(breakdown.TotalDPS, s_format("x %.2f ^8(cast rate)", output.Speed))
+				else
+					t_insert(breakdown.TotalDPS, s_format("x %.2f ^8(casts until damage)", output.CastsUntilDamage))
+					t_insert(breakdown.TotalDPS, s_format("x %.2f ^8(delayed damage mod)", output.DelayedDamageMod))
+				end
+			end
 		end
 		if skillData.dpsMultiplier then
 			t_insert(breakdown.TotalDPS, s_format("x %g ^8(DPS multiplier for this skill)", skillData.dpsMultiplier))

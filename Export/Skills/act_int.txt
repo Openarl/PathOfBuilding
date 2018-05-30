@@ -500,6 +500,8 @@ local skills, mod, flag, skill = ...
 
 #skill StormCall
 #flags spell area duration lightning
+#setMod base_skill_show_average_damage_instead_of_dps==nil
+#baseMod flag("durationDelaysDamage", true)
 #baseMod skill("radius", 20)
 #mods
 
