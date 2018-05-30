@@ -512,6 +512,9 @@ return {
 	{ var = "conditionBlockedHitFromUniqueEnemyInPast10Sec", type = "check", ifVer = "3_0", label = "Blocked hit from a Unique in the past 10s?", ifNode = 63490, apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:BlockedHitFromUniqueEnemyInPast10Sec", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
+	{ var = "multiplierManaUsedRecently", type = "count", label = "# Mana Used Recently:", ifMult = "ManaUsedRecently", tooltip = "This option is specific to Indigon.", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:ManaUsedRecently", "BASE", val, "Config", { type = "Condition", var = "Combat" })
+	end },
 
 	-- Section: Effective DPS options
 	{ section = "For Effective DPS", col = 1 },
