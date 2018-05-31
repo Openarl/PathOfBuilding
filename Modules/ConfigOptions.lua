@@ -512,8 +512,9 @@ return {
 	{ var = "conditionBlockedHitFromUniqueEnemyInPast10Sec", type = "check", ifVer = "3_0", label = "Blocked hit from a Unique in the past 10s?", ifNode = 63490, apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:BlockedHitFromUniqueEnemyInPast10Sec", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
-	{ var = "multiplierManaUsedRecently", type = "count", label = "# Mana Used Recently:", ifMult = "ManaUsedRecently", tooltip = "This option is specific to Indigon.", apply = function(val, modList, enemyModList)
-		modList:NewMod("Multiplier:ManaUsedRecently", "BASE", val, "Config", { type = "Condition", var = "Combat" })
+	{ var = "multiplierManaSpentRecently", type = "count", label = "# Mana Spent Recently:", ifMult = "ManaSpentRecently", implyCond = "UsedSkillRecently", tooltip = "This option is specific to Indigon.\nThis also implies that you have used a Skill Recently.", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:ManaSpentRecently", "BASE", val, "Config", { type = "Condition", var = "Combat" })
+		modList:NewMod("Condition:UsedSkillRecently", "FLAG", val >= 1, "Config", { type = "Condition", var = "Combat" })
 	end },
 
 	-- Section: Effective DPS options
