@@ -1,3 +1,28 @@
+### 1.4.90 - 2018/05/31
+ * Added the following announced uniques for 3.3:
+    * Zeel's Amplifier
+	* Soul Catcher
+	* Soul Ripper
+ * Added the following very old uniques:
+    * Eyes of the Greatwolf
+ * The Character Import process has been improved:
+    * The last account and character imported to the current build are now remembered
+	* The character list can now be filtered by league
+ * Ctrl+F now focuses the search fields in the Tree and Items tabs
+ * Added options to the Configuration tab for:
+    * # of Enemies Killed Recently
+	* # of Enemies Killed by Totems Recently
+	* # of Enemies Killed by Minions Recently
+ * Enabling the Elemental Equilibrium Map Modifier option now correctly shows the EE-related options
+ 
+### 1.4.89 - 2018/05/31
+ * 3.2 Shadow passive trees will now migrate to 3.3 without a full reset
+
+### 1.4.88 - 2018/05/30
+ * Sorting unique flasks by DPS now works correctly
+ * Fixed issue where Slavedriver's Hand was granting Blood Magic to all skills
+ * Fixed a rare issue in which nodes in Ascendant could be unallocated without properly removing dependant nodes
+
 ### 1.4.87 - 2018/05/30
  * Passive tree updated to 3.3
  * The unique items list can now be sorted by DPS
