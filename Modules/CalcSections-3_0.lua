@@ -722,6 +722,7 @@ return {
 	{ label = "Shock Duration", flag = "shock", { format = "{2:output:ShockDurationMod}s",
 		{ breakdown = "ShockDurationMod" },
 		{ label = "Player modifiers", modName = "EnemyShockDuration", cfg = "skill" }, 
+		{ label = "Enemy modifiers", modName = "SelfShockDuration", enemy = true },
 	}, },
 	{ label = "Shock Effect Mod", flag = "shock", { format = "x {2:output:ShockEffectMod}",
 		{ breakdown = "MainHand.ShockDPS" },
