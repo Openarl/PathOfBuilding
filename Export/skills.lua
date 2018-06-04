@@ -142,6 +142,8 @@ local weaponClassMap = {
 	[36] = "None",
 }
 
+local gems = { }
+
 local directiveTable = { }
 
 -- #noGem
@@ -151,7 +153,7 @@ directiveTable.noGem = function(state, args, out)
 end
 
 -- #skill <GrantedEffectId> [<Display name>]
--- Initialises the gem data and emits the skill header
+-- Initialises the skill data and emits the skill header
 directiveTable.skill = function(state, args, out)
 	local grantedId, displayName = args:match("(%w+) (.+)")
 	if not grantedId then
@@ -165,26 +167,19 @@ directiveTable.skill = function(state, args, out)
 		print('Unknown GE: "'..grantedId..'"')
 	end
 	local skillGemKey = SkillGems.GrantedEffectsKey(grantedKey)[1]
-	local gem = { }
-	state.gem = gem
+	local skill = { }
+	state.skill = skill
 	if skillGemKey and not state.noGem then
-		local skillGem = SkillGems[skillGemKey]
-		out:write('\tname = "', BaseItemTypes[skillGem.BaseItemTypesKey].Name:gsub(" Support",""), '",\n')
-		local tagNames = { }
-		out:write('\tgemTags = {\n')
-		for i, tagKey in ipairs(skillGem.GemTagsKeys) do
-			out:write('\t\t', GemTags[tagKey].Id, ' = true,\n')
-			if #GemTags[tagKey].Tag > 0 then
-				table.insert(tagNames, GemTags[tagKey].Tag)
+		gems[skillGemKey] = true
+		if granted.IsSupport then
+			local skillGem = SkillGems[skillGemKey]
+			local baseItemType = BaseItemTypes[skillGem.BaseItemTypesKey]
+			out:write('\tname = "', baseItemType.Name:gsub(" Support",""), '",\n')
+			if #skillGem.Description > 0 then
+				out:write('\tdescription = "', skillGem.Description, '",\n')
 			end
-		end
-		out:write('\t},\n')
-		out:write('\tgemTagString = "', table.concat(tagNames, ", "), '",\n')
-		out:write('\tgemStr = ', skillGem.Str, ',\n')
-		out:write('\tgemDex = ', skillGem.Dex, ',\n')
-		out:write('\tgemInt = ', skillGem.Int, ',\n')
-		if #skillGem.Description > 0 then
-			out:write('\tdescription = "', skillGem.Description, '",\n')
+		else
+			out:write('\tname = "', ActiveSkills[granted.ActiveSkillsKey].DisplayedName, '",\n')
 		end
 	else
 		if displayName == args and not granted.IsSupport then
@@ -194,15 +189,15 @@ directiveTable.skill = function(state, args, out)
 		out:write('\thidden = true,\n')
 	end
 	state.noGem = false
-	gem.baseFlags = { }
-	gem.mods = { }
+	skill.baseFlags = { }
+	skill.mods = { }
 	local modMap = { }
-	gem.levels = { }
-	gem.global = "nil"
-	gem.curse = "nil"
+	skill.levels = { }
+	skill.global = "nil"
+	skill.curse = "nil"
 	out:write('\tcolor = ', granted.Unknown0, ',\n')
 	if granted.IsSupport then
-		gem.isSupport = true
+		skill.isSupport = true
 		out:write('\tsupport = true,\n')
 		out:write('\trequireSkillTypes = { ')
 		for _, type in ipairs(granted.Data0) do
@@ -252,7 +247,7 @@ directiveTable.skill = function(state, args, out)
 			end
 			out:write('\t},\n')
 		end
-		if activeSkill.SkillTotemId ~= 16 then
+		if activeSkill.SkillTotemId ~= 17 then
 			out:write('\tskillTotemId = ', activeSkill.SkillTotemId, ',\n')
 		end
 		local typeFlag = { }
@@ -260,30 +255,30 @@ directiveTable.skill = function(state, args, out)
 			typeFlag[mapAST(type)] = true
 		end
 		if typeFlag[32] then
-			gem.global = '{ type = "GlobalEffect", effectType = "Curse" }'
-			gem.curse = gem.global
+			skill.global = '{ type = "GlobalEffect", effectType = "Curse" }'
+			skill.curse = skill.global
 		elseif typeFlag[44] then
-			gem.global = '{ type = "GlobalEffect", effectType = "Aura" }'
+			skill.global = '{ type = "GlobalEffect", effectType = "Aura" }'
 		elseif typeFlag[5] or typeFlag[31] then
-			gem.global = '{ type = "GlobalEffect", effectType = "Buff" }'
+			skill.global = '{ type = "GlobalEffect", effectType = "Buff" }'
 		end
-		addMod(gem.mods, 'skill("castTime", {val})', granted.CastTime / 1000)
+		addMod(skill.mods, 'skill("castTime", {val})', granted.CastTime / 1000)
 	end
 	for _, key in ipairs(GrantedEffectsPerLevel.GrantedEffectsKey(grantedKey)) do
 		local level = { }
 		local levelRow = GrantedEffectsPerLevel[key]
 		level.level = levelRow.Level
-		table.insert(gem.levels, level)
+		table.insert(skill.levels, level)
 		local function addLevelMod(statKey, value, forcePerLevel)
-			local mod = gem.mods[modMap[statKey]]
+			local mod = skill.mods[modMap[statKey]]
 			if mod then
 				if value ~= mod.val then
 					mod.perLevel = true
 				end
 			else
-				modMap[statKey] = #gem.mods + 1
-				addMod(gem.mods, statKey)
-				mod = gem.mods[modMap[statKey]]
+				modMap[statKey] = #skill.mods + 1
+				addMod(skill.mods, statKey)
+				mod = skill.mods[modMap[statKey]]
 				mod.val = value
 			end
 			if forcePerLevel then
@@ -323,10 +318,10 @@ directiveTable.skill = function(state, args, out)
 		for i, statKey in ipairs(levelRow.StatsKeys2) do
 			addLevelMod(statKey)
 		end
-		if not gem.qualityMods then
-			gem.qualityMods = { }
+		if not skill.qualityMods then
+			skill.qualityMods = { }
 			for i, statKey in ipairs(levelRow.Quality_StatsKeys) do
-				addMod(gem.qualityMods, statKey, levelRow.Quality_Values[i] / 1000)
+				addMod(skill.qualityMods, statKey, levelRow.Quality_Values[i] / 1000)
 			end
 		end
 	end
@@ -335,35 +330,35 @@ end
 -- #global <Buff|Aura|Debuff|Curse>
 -- Sets the global effect tag for this skill
 directiveTable.global = function(state, args, out)
-	local gem = state.gem
-	gem.global = '{ type = "GlobalEffect", effectType = "'..args..'" }'
+	local skill = state.skill
+	skill.global = '{ type = "GlobalEffect", effectType = "'..args..'" }'
 end
 
 -- #flags <flag>[ <flag>[...]]
 -- Sets the base flags for this active skill
 directiveTable.flags = function(state, args, out)
-	local gem = state.gem
+	local skill = state.skill
 	for flag in args:gmatch("%a+") do
-		table.insert(gem.baseFlags, flag)
+		table.insert(skill.baseFlags, flag)
 	end
 end
 
 -- #baseMod <mod definition>
 -- Adds a base modifier to the skill
 directiveTable.baseMod = function(state, args, out)
-	local gem = state.gem
-	addMod(gem.mods, args)
+	local skill = state.skill
+	addMod(skill.mods, args)
 end
 
 -- #levelMod <mod definition>==<val>[ <val>[...]]
 -- Adds a per-level modifier to the skill
 directiveTable.levelMod = function(state, args, out)
-	local gem = state.gem
+	local skill = state.skill
 	local def, vals = args:match("(.*)==(.*)")
-	local mod = addMod(gem.mods, def)
+	local mod = addMod(skill.mods, def)
 	mod.perLevel = true
 	local i = 1
-	for _, level in ipairs(gem.levels) do
+	for _, level in ipairs(skill.levels) do
 		local s, e, val = vals:find("([%+%-]?[%d%.]+)", i)
 		mod.levels[level.level] = tonumber(val)
 		i = e + 1
@@ -373,15 +368,15 @@ end
 -- #setLevelVals <index>==<val>[ <val>[...]]
 -- Overrides the values of the given level modifier
 directiveTable.setLevelVals = function(state, args, out)
-	local gem = state.gem
+	local skill = state.skill
 	local index, vals = args:match("(.*)==(.*)")
 	index = tonumber(index)
-	for _, mod in ipairs(gem.mods) do
+	for _, mod in ipairs(skill.mods) do
 		if mod.perLevel then
 			index = index - 1
 			if index == 0 then
 				local i = 1
-				for _, level in ipairs(gem.levels) do
+				for _, level in ipairs(skill.levels) do
 					local s, e, val = vals:find("([%+%-]?[%d%.]+)", i)
 					mod.levels[level.level] = tonumber(val)
 					i = e + 1
@@ -395,9 +390,9 @@ end
 -- #setMod <StatId>==<mod definition[;<mult|div>=<val>]
 -- Sets or overrides the mapping of the given stat
 directiveTable.setMod = function(state, args, out)
-	local gem = state.gem
+	local skill = state.skill
 	local id, def = args:match("(.*)==(.*)")
-	for _, list in ipairs({gem.mods,gem.qualityMods}) do
+	for _, list in ipairs({skill.mods,skill.qualityMods}) do
 		for _, mod in ipairs(list) do
 			if mod.id == id then
 				local name, mult = def:match("(.*);mult=(.*)")
@@ -421,20 +416,20 @@ end
 -- #mods
 -- Emits the skill modifiers
 directiveTable.mods = function(state, args, out)
-	local gem = state.gem
-	if not gem.isSupport then
+	local skill = state.skill
+	if not skill.isSupport then
 		out:write('\tbaseFlags = {\n')
-		for _, flag in ipairs(gem.baseFlags) do
+		for _, flag in ipairs(skill.baseFlags) do
 			out:write('\t\t', flag, ' = true,\n')
 		end		
 		out:write('\t},\n')
 	end
 	out:write('\tbaseMods = {\n')
-	for _, mod in ipairs(gem.mods) do
+	for _, mod in ipairs(skill.mods) do
 		if not mod.perLevel then
 			out:write('\t\t')
 			if mod.def and mod.def ~= "nil" then
-				out:write(mod.def:gsub("{val}",(mod.val or 0)*mod.mult):gsub("{global}",gem.global):gsub("{curse}",gem.curse), ', ')
+				out:write(mod.def:gsub("{val}",(mod.val or 0)*mod.mult):gsub("{global}",skill.global):gsub("{curse}",skill.curse), ', ')
 			end
 			if mod.id then
 				out:write('--"', mod.id, '" = ', (mod.val or "?"))
@@ -444,10 +439,10 @@ directiveTable.mods = function(state, args, out)
 	end
 	out:write('\t},\n')
 	out:write('\tqualityMods = {\n')
-	for _, mod in ipairs(gem.qualityMods) do
+	for _, mod in ipairs(skill.qualityMods) do
 		out:write('\t\t')
 		if mod.def then
-			out:write(mod.def:gsub("{val}",mod.levels[1]*mod.mult):gsub("{global}",gem.global):gsub("{curse}",gem.curse), ', ')
+			out:write(mod.def:gsub("{val}",mod.levels[1]*mod.mult):gsub("{global}",skill.global):gsub("{curse}",skill.curse), ', ')
 		end
 		if mod.id then
 			out:write('--"', mod.id, '" = ', mod.levels[1])
@@ -457,11 +452,11 @@ directiveTable.mods = function(state, args, out)
 	out:write('\t},\n')
 	out:write('\tlevelMods = {\n')
 	local lcol = 1
-	for _, mod in ipairs(gem.mods) do
+	for _, mod in ipairs(skill.mods) do
 		if mod.perLevel then
 			out:write('\t\t')
 			if mod.def then
-				out:write('[', lcol, '] = ', mod.def:gsub("{val}","nil"):gsub("{global}",gem.global):gsub("{curse}",gem.curse), ', ')
+				out:write('[', lcol, '] = ', mod.def:gsub("{val}","nil"):gsub("{global}",skill.global):gsub("{curse}",skill.curse), ', ')
 				if mod.id then
 					out:write('--"', mod.id, '"')
 				end
@@ -475,9 +470,9 @@ directiveTable.mods = function(state, args, out)
 	end
 	out:write('\t},\n')
 	out:write('\tlevels = {\n')
-	for _, level in ipairs(gem.levels) do
+	for _, level in ipairs(skill.levels) do
 		out:write('\t\t[', level.level, '] = { ')
-		for _, mod in ipairs(gem.mods) do
+		for _, mod in ipairs(skill.mods) do
 			if mod.perLevel then
 				if mod.levels[level.level] then
 					out:write(tostring(mod.levels[level.level] * mod.mult), ', ')
@@ -490,12 +485,43 @@ directiveTable.mods = function(state, args, out)
 	end
 	out:write('\t},\n')
 	out:write('}')
-	state.gem = nil
+	state.skill = nil
 end
 
 for _, name in pairs({"act_str","act_dex","act_int","other","glove","minion","spectre","sup_str","sup_dex","sup_int"}) do
 	processTemplateFile("Skills/"..name, directiveTable)
 end
+
+local out = io.open("../Data/3_0/Gems.lua", "w")
+out:write('-- This file is automatically generated, do not edit!\n')
+out:write('-- Gem data (c) Grinding Gear Games\n\nreturn {\n')
+for skillGemKey = 0, SkillGems.maxRow do
+	if gems[skillGemKey] then
+		local skillGem = SkillGems[skillGemKey]
+		local baseItemType = BaseItemTypes[skillGem.BaseItemTypesKey]
+		out:write('\t["', baseItemType.Id, '"] = {\n')
+		out:write('\t\tname = "', baseItemType.Name:gsub(" Support",""), '",\n')
+		out:write('\t\tgrantedEffectId = "', GrantedEffects[skillGem.GrantedEffectsKey].Id, '",\n')
+		if skillGem.Key0 then
+			out:write('\t\tsecondaryGrantedEffectId = "', GrantedEffects[skillGem.Key0].Id, '",\n')
+		end
+		local tagNames = { }
+		out:write('\t\ttags = {\n')
+		for i, tagKey in ipairs(skillGem.GemTagsKeys) do
+			out:write('\t\t\t', GemTags[tagKey].Id, ' = true,\n')
+			if #GemTags[tagKey].Tag > 0 then
+				table.insert(tagNames, GemTags[tagKey].Tag)
+			end
+		end
+		out:write('\t\t},\n')
+		out:write('\t\ttagString = "', table.concat(tagNames, ", "), '",\n')
+		out:write('\t\treqStr = ', skillGem.Str, ',\n')
+		out:write('\t\treqDex = ', skillGem.Dex, ',\n')
+		out:write('\t\treqInt = ', skillGem.Int, ',\n')
+		out:write('\t},\n')
+	end
+end
+out:write('}')
 
 os.execute("xcopy Skills\\act_*.lua ..\\Data\\3_0\\Skills\\ /Y /Q")
 os.execute("xcopy Skills\\sup_*.lua ..\\Data\\3_0\\Skills\\ /Y /Q")

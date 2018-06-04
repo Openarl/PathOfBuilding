@@ -670,6 +670,16 @@ function ItemsTabClass:Draw(viewPort, inputEvents)
 			elseif event.key == "y" and IsKeyDown("CTRL") then
 				self:Redo()
 				self.build.buildFlag = true
+			elseif event.key == "f" and IsKeyDown("CTRL") then
+				local selUnique = self.selControl == self.controls.uniqueDB.controls.search
+				local selRare = self.selControl == self.controls.rareDB.controls.search
+				if selUnique or (self.controls.selectDB:IsShown() and not selRare and self.controls.selectDB.selIndex == 2) then
+					self:SelectControl(self.controls.rareDB.controls.search)
+					self.controls.selectDB.selIndex = 2
+				else
+					self:SelectControl(self.controls.uniqueDB.controls.search)
+					self.controls.selectDB.selIndex = 1
+				end
 			end
 		end
 	end
@@ -1350,9 +1360,9 @@ function ItemsTabClass:EnchantDisplayItem()
 	local skillsUsed = { }
 	if haveSkills then
 		for _, socketGroup in ipairs(self.build.skillsTab.socketGroupList) do
-			for _, gem in ipairs(socketGroup.gemList) do
-				if gem.grantedEffect and not gem.grantedEffect.support and enchantments[gem.grantedEffect.name] then
-					skillsUsed[gem.grantedEffect.name] = true
+			for _, gemInstance in ipairs(socketGroup.gemList) do
+				if gemInstance.gemData and not gemInstance.gemData.grantedEffect.support and enchantments[gemInstance.nameSpec] then
+					skillsUsed[gemInstance.nameSpec] = true
 				end
 			end
 		end
@@ -1445,8 +1455,8 @@ end
 function ItemsTabClass:CorruptDisplayItem()
 	local controls = { } 
 	local implicitList = { }
-	for modId, mod in pairs(self.build.data.corruptedMods) do
-		if self.displayItem:GetModSpawnWeight(mod) > 0 then
+	for modId, mod in pairs(self.displayItem.affixes) do
+		if mod.type == "Corrupted" and self.displayItem:GetModSpawnWeight(mod) > 0 then
 			t_insert(implicitList, mod)
 		end
 	end

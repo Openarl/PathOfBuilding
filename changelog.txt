@@ -1,3 +1,49 @@
+VERSION[1.4.94][2018/06/03]
+ * Fixed several issues with sorting gems by DPS
+ * Updated the game version selector
+ * Trap Support no longer incorrectly has a cooldown
+ * Flamethrower Trap is now correctly affected by Area Damage modifiers
+ * Fixed issue preventing certain item-granted skills from working correctly
+ * Fixed error that could occur when adding item-granted skills (such as Aspects)
+VERSION[1.4.93][2018/06/02]
+ * Applied the 3.3 changes to:
+    * Item bases and modifiers, including corrupted implicits
+    * Skill enchantments
+    * Unique items
+ * Fire, Ice, and Lightning Traps no longer incorrectly show a cooldown
+ * Removed non-functional option for Charged Dash
+VERSION[1.4.92][2018/06/02]
+ * Added/updated all skill gems for 3.3
+ * Aura/buff/curse skills can now be enabled/disabled in the Skills tab independantly of the skill gem itself
+ * Fixed the "Onslaught on Low Mana" modifier on Dance of the Offered and Omeyocan (thanks ExaltedShard)
+ * Quartz Infusion now correctly enables Phasing when you have Onslaught
+ * The "Used a Movement Skill Recently" option now correctly enables for all Movement skills
+VERSION[1.4.91][2018/06/01]
+ * Added the missing limit to Pure Talent
+ * Slavedriver's hand no longer incorrectly converts Attack Speed modifiers to Trap Throwing Speed for Attack traps
+ * Fixed error when hovering over "Total Increased" in the Calcs tab on certain builds
+VERSION[1.4.90][2018/05/31]
+ * Added the following announced uniques for 3.3:
+    * Zeel's Amplifier
+	* Soul Catcher
+	* Soul Ripper
+ * Added the following very old uniques:
+    * Eyes of the Greatwolf
+ * The Character Import process has been improved:
+    * The last account and character imported to the current build are now remembered
+	* The character list can now be filtered by league
+ * Ctrl+F now focuses the search fields in the Tree and Items tabs
+ * Added options to the Configuration tab for:
+    * # of Enemies Killed Recently
+	* # of Enemies Killed by Totems Recently
+	* # of Enemies Killed by Minions Recently
+ * Enabling the Elemental Equilibrium Map Modifier option now correctly shows the EE-related options
+VERSION[1.4.89][2018/05/31]
+ * 3.2 Shadow passive trees will now migrate to 3.3 without a full reset
+VERSION[1.4.88][2018/05/30]
+ * Sorting unique flasks by DPS now works correctly
+ * Fixed issue where Slavedriver's Hand was granting Blood Magic to all skills
+ * Fixed a rare issue in which nodes in Ascendant could be unallocated without properly removing dependant nodes
 VERSION[1.4.87][2018/05/30]
  * Passive tree updated to 3.3
  * The unique items list can now be sorted by DPS

@@ -33,15 +33,6 @@ skills["Melee"] = {
 }
 skills["GemDetonateMines"] = {
 	name = "Detonate Mines",
-	gemTags = {
-		low_max_level = true,
-		active_skill = true,
-		spell = true,
-	},
-	gemTagString = "Spell",
-	gemStr = 33,
-	gemDex = 33,
-	gemInt = 34,
 	color = 4,
 	description = "Detonates all the Remote Mines you have placed.",
 	skillTypes = { [2] = true, [17] = true, [18] = true, [36] = true, },
@@ -73,15 +64,6 @@ skills["GemDetonateMines"] = {
 }
 skills["Portal"] = {
 	name = "Portal",
-	gemTags = {
-		low_max_level = true,
-		active_skill = true,
-		spell = true,
-	},
-	gemTagString = "Spell",
-	gemStr = 33,
-	gemDex = 33,
-	gemInt = 34,
 	color = 4,
 	description = "Creates a portal to the current area's town.",
 	skillTypes = { [2] = true, [17] = true, [18] = true, [19] = true, [36] = true, [27] = true, },
@@ -113,16 +95,6 @@ skills["Portal"] = {
 }
 skills["VaalBreach"] = {
 	name = "Vaal Breach",
-	gemTags = {
-		low_max_level = true,
-		active_skill = true,
-		vaal = true,
-		spell = true,
-	},
-	gemTagString = "Vaal, Spell",
-	gemStr = 33,
-	gemDex = 33,
-	gemInt = 34,
 	color = 4,
 	description = "Creates a breach, making you vulnerable to its powerful inhabitants.",
 	skillTypes = { [2] = true, [17] = true, [18] = true, [19] = true, [27] = true, [43] = true, },
@@ -281,7 +253,7 @@ skills["CatAspect"] = {
 		--"avoid_damage_%" = 15
 		--"enemy_aggro_radius_+%" = -50
 		mod("Speed", "INC", 10, ModFlag.Attack, 0, { type = "GlobalEffect", effectType = "Buff", effectName = "Cat's Agility", effectCond = "CatsAgilityActive" }), --"attack_speed_+%" = 10
-		mod("Speed", "INC", 10, ModFlag.Cast, 0, { type = "GlobalEffect", effectType = "Buff", effectName = "Cat's Agility", effectCond = "CatsAgilityActive" }), --"base_cast_speed_+%" = 10
+		mod("Speed", "INC", 10, ModFlag.Cast, 0, { type = "GlobalEffect", effectType = "Buff", effectName = "Cat's Agility", effectCond = "CatsAgilityActive" }), --"cast_speed_+%_granted_from_skill" = 10
 		skill("duration", 4), --"base_skill_effect_duration" = 4000
 		skill("durationSecondary", 6), --"base_secondary_skill_effect_duration" = 6000
 	},
@@ -562,8 +534,8 @@ skills["TouchOfGod"] = {
 	name = "Doryani's Touch",
 	hidden = true,
 	color = 1,
-	description = "The character uses their fist to slam the ground in front of them, with less attack speed, but more damage. This attack deals Lightning Damage to enemies in a large area, with a chance to Shock them. Cannot be used while wielding a Weapon. Cannot be supported by Multistrike.",
-	skillTypes = { [1] = true, [11] = true, [35] = true, [24] = true, },
+	description = "The character uses their fist to slam the ground in front of them, with less attack speed, but more damage. This attack deals Lightning Damage to enemies in a large area, with a chance to Shock them. Cannot be used while wielding a Weapon.",
+	skillTypes = { [1] = true, [11] = true, [35] = true, [24] = true, [28] = true, },
 	weaponTypes = {
 		["None"] = true,
 	},
@@ -619,6 +591,16 @@ skills["TouchOfGod"] = {
 		[28] = { 86, 31, },
 		[29] = { 88, 31, },
 		[30] = { 90, 31, },
+		[31] = { 91, 32, },
+		[32] = { 92, 32, },
+		[33] = { 93, 32, },
+		[34] = { 94, 33, },
+		[35] = { 95, 33, },
+		[36] = { 96, 33, },
+		[37] = { 97, 34, },
+		[38] = { 98, 34, },
+		[39] = { 99, 34, },
+		[40] = { 100, 35, },
 	},
 }
 skills["ElementalAegis"] = {
@@ -788,7 +770,6 @@ skills["FireBurstOnHit"] = {
 	baseFlags = {
 		spell = true,
 		area = true,
-		fire = true,
 	},
 	baseMods = {
 		skill("castTime", 1), 
@@ -828,7 +809,7 @@ skills["FireBurstOnHit"] = {
 		[19] = { 67, 605, 908, },
 		[20] = { 70, 703, 1055, },
 		[21] = { 72, 777, 1165, },
-		[22] = { 74, 858, 1286, },
+		[22] = { 74, 857, 1286, },
 		[23] = { 76, 946, 1419, },
 		[24] = { 78, 1043, 1564, },
 		[25] = { 80, 1149, 1724, },
@@ -851,11 +832,10 @@ skills["VaalAuraElementalDamageHealing"] = {
 		aura = true,
 		area = true,
 		duration = true,
-		vaal = true,
 	},
 	baseMods = {
-		skill("castTime", 1), 
-		skill("duration", 6), --"base_skill_effect_duration" = 6000
+		skill("castTime", 0.5), 
+		skill("duration", 5), --"base_skill_effect_duration" = 5000
 		--"base_elemental_damage_heals" = ?
 		skill("radius", 36), 
 	},
@@ -879,7 +859,6 @@ skills["IcestormUniqueStaff12"] = {
 		spell = true,
 		area = true,
 		duration = true,
-		cold = true,
 	},
 	baseMods = {
 		skill("castTime", 1), 
@@ -953,8 +932,6 @@ skills["MerveilWarp"] = {
 		spell = true,
 		area = true,
 		duration = true,
-		movement = true,
-		cold = true,
 	},
 	baseMods = {
 		skill("castTime", 0.6), 
@@ -981,7 +958,6 @@ skills["LightningSpell"] = {
 	baseFlags = {
 		spell = true,
 		area = true,
-		lightning = true,
 	},
 	baseMods = {
 		skill("castTime", 1), 
@@ -1035,8 +1011,8 @@ skills["UniqueAnimateWeapon"] = {
 	name = "Manifest Dancing Dervish",
 	hidden = true,
 	color = 4,
-	description = "Releases Dancing Dervish to fight by your side. While Dancing Dervish is manifested, you have Onslaught and cannot use Weapons.",
-	skillTypes = { [2] = true, [9] = true, [21] = true, [36] = true, [61] = true, },
+	description = "Manifests Dancing Dervish to fight by your side. While Dancing Dervish is manifested, you have Onslaught and cannot use Weapons. Cannot be supported by supports that would create other minions.",
+	skillTypes = { [2] = true, [9] = true, [21] = true, [36] = true, [61] = true, [72] = true, },
 	minionSkillTypes = { [1] = true, [24] = true, [25] = true, [11] = true, [38] = true, [28] = true, },
 	fromItem = true,
 	minionList = {
@@ -1082,7 +1058,6 @@ skills["TriggeredMoltenStrike"] = {
 		attack = true,
 		projectile = true,
 		area = true,
-		fire = true,
 	},
 	baseMods = {
 		skill("castTime", 1), 
@@ -1178,7 +1153,6 @@ skills["TriggeredShockedGround"] = {
 		spell = true,
 		area = true,
 		duration = true,
-		lightning = true,
 	},
 	baseMods = {
 		skill("castTime", 1), 
@@ -1670,7 +1644,7 @@ skills["SummonVoidSphere"] = {
 		--"chilled_ground_base_magnitude_override" = 10
 		skill("ColdMin", 895), --"spell_minimum_base_cold_damage" = 895
 		skill("ColdMax", 1342), --"spell_maximum_base_cold_damage" = 1342
-		skill("ColdDot", 1553.2666666667), --"base_cold_damage_to_deal_per_minute" = 93196
+		skill("ColdDot", 1553.25), --"base_cold_damage_to_deal_per_minute" = 93195
 		--"is_area_damage" = ?
 		skill("showAverage", true), --"base_skill_show_average_damage_instead_of_dps" = ?
 		skill("dotIsSpell", true), --"spell_damage_modifiers_apply_to_skill_dot" = ?
