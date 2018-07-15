@@ -1,3 +1,50 @@
+VERSION[1.4.96][2018/06/11]
+ * Fixed an issue preventing certain skill-specific modifiers from applying; particularly for skills used by Minions
+    * Notably, this fixes the Zombie Slam modifiers from Flesh Binder and Violent Dead
+ * The "+ to Level of Socketed AoE Gems" modifier now applies correctly
+ * Corrected the level requirement on Stormwall
+ * Cold Snap's DoT is now correctly affected by Area Damage modifiers
+ In other news, Path of Building has now been downloaded over 1,000,000 times!
+VERSION[1.4.95][2018/06/08]
+ * Added the following new uniques:
+	* Sinvicta's Mettle
+	* Unyielding Flame
+    * Architect's Hand
+	* Transcendent Flesh
+	* Tempered Mind
+	* Transcendent Mind
+	* Tempered Spirit
+	* Transcendent Spirit
+ * Updated the rolls on many new uniques
+ * Updated the passive tree; in particular, this corrects the positioning of the Overcharged cluster
+ * You can now apply 2 corrupted implicits to an item
+ * Uniques in the unique database now show their source (if drop-limited) and upgrades (e.g Prophecy/Blessing/Vial)
+ * Aura/buff/curse skills are now correctly enabled by default when importing
+ * Slavedriver's Hand now correctly converts Attack and Cast Speed modifiers to Trap Throwing Speed
+VERSION[1.4.94][2018/06/03]
+ * Fixed several issues with sorting gems by DPS
+ * Updated the game version selector
+ * Trap Support no longer incorrectly has a cooldown
+ * Flamethrower Trap is now correctly affected by Area Damage modifiers
+ * Fixed issue preventing certain item-granted skills from working correctly
+ * Fixed error that could occur when adding item-granted skills (such as Aspects)
+VERSION[1.4.93][2018/06/02]
+ * Applied the 3.3 changes to:
+    * Item bases and modifiers, including corrupted implicits
+    * Skill enchantments
+    * Unique items
+ * Fire, Ice, and Lightning Traps no longer incorrectly show a cooldown
+ * Removed non-functional option for Charged Dash
+VERSION[1.4.92][2018/06/02]
+ * Added/updated all skill gems for 3.3
+ * Aura/buff/curse skills can now be enabled/disabled in the Skills tab independantly of the skill gem itself
+ * Fixed the "Onslaught on Low Mana" modifier on Dance of the Offered and Omeyocan (thanks ExaltedShard)
+ * Quartz Infusion now correctly enables Phasing when you have Onslaught
+ * The "Used a Movement Skill Recently" option now correctly enables for all Movement skills
+VERSION[1.4.91][2018/06/01]
+ * Added the missing limit to Pure Talent
+ * Slavedriver's hand no longer incorrectly converts Attack Speed modifiers to Trap Throwing Speed for Attack traps
+ * Fixed error when hovering over "Total Increased" in the Calcs tab on certain builds
 VERSION[1.4.90][2018/05/31]
  * Added the following announced uniques for 3.3:
     * Zeel's Amplifier
