@@ -106,7 +106,7 @@ local function doActorAttribsPoolsConditions(env, actor)
 			condList["UsingTwoHandedWeapon"] = true
 		end
 	end
-	if actor.weaponData1.type and actor.weaponData2.type then
+	if actor.weaponData1.type and actor.weaponData2.type and actor.weaponData1.type ~= "None" then
 		condList["DualWielding"] = true
 		if actor.weaponData1.type == "Claw" and actor.weaponData2.type == "Claw" then
 			condList["DualWieldingClaws"] = true
