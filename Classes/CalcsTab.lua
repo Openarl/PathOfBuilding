@@ -28,6 +28,33 @@ local buffModeDropList = {
 	{ label = "Effective DPS", buffMode = "EFFECTIVE" } 
 }
 
+local powerStatDropList = {
+	{ stat=nil, title="Offence/Defence"},
+	{ stat="Life", title="Life" },
+	{ stat="LifeRegen", title="Life regen" },
+	{ stat="LifeLeechRate", title="Life leech" },
+	{ stat="EnergyShield", title="Energy Shield" },
+	{ stat="EnergyShieldRegen", title="Energy Shield regen" },
+	{ stat="EnergyShieldLeechRate", title="Energy Shield leech" },
+	{ stat="Mana", title="Mana" },
+	{ stat="ManaRegen", title="Mana regen" },
+	{ stat="ManaLeechRate", title="Mana leech" },
+	{ stat="MeleeAvoidChance", title="Melee avoid chance" },
+	{ stat="SpellAvoidChance", title="Spell avoid chance" },
+	{ stat="ProjectileAvoidChance", title="Projectile avoid chance" },
+	{ stat="PhysicalTakenHitMult", title="Taken Phys dmg", oneminus=true },
+	{ stat="FireTakenDotMult", title="Taken Fire dmg", oneminus=true },
+	{ stat="ColdTakenDotMult", title="Taken Cold dmg", oneminus=true },
+	{ stat="LightningTakenDotMult", title="Taken Lightning dmg", oneminus=true },
+	{ stat="ChaosTakenHitMult", title="Taken Chaos dmg", oneminus=true },
+	{ stat="CritChance", title="Crit Chance" },
+	{ stat="BleedChance", title="Bleed Chance" },
+	{ stat="FreezeChance", title="Freeze Chance" },
+	{ stat="IgniteChance", title="Ignite Chance" },
+	{ stat="ShockChance", title="Shock Chance" },
+	{ stat="EffectiveMovementSpeedMod", title="Move speed" },
+}
+
 local CalcsTabClass = common.NewClass("CalcsTab", "UndoHandler", "ControlHost", "Control", function(self, build)
 	self.UndoHandler()
 	self.ControlHost()
@@ -36,6 +63,8 @@ local CalcsTabClass = common.NewClass("CalcsTab", "UndoHandler", "ControlHost", 
 	self.build = build
 
 	self.calcs = calcs[build.targetVersion]
+
+	self.powerStatList = powerStatDropList
 
 	self.input = { }
 	self.input.skill_number = 1
@@ -438,6 +467,7 @@ function CalcsTabClass:PowerBuilder()
 	local calcFunc, calcBase = self:GetNodeCalculator()
 	local cache = { }
 	local newPowerMax = { 
+		singleStat = 0,
 		offence = 0, 
 		defence = 0
 	}
@@ -455,20 +485,28 @@ function CalcsTabClass:PowerBuilder()
 				cache[node.modKey] = calcFunc({node})
 			end
 			local output = cache[node.modKey]
-			if calcBase.Minion then
-				node.power.offence = (output.Minion.CombinedDPS - calcBase.Minion.CombinedDPS) / calcBase.Minion.CombinedDPS
+
+			if self.powerStat and self.powerStat.stat then
+				node.power.singleStat = self:CalculatePowerStat(self.powerStat, output, calcBase)
+				if node.path then
+					newPowerMax.singleStat = m_max(newPowerMax.singleStat, node.power.singleStat)
+				end
 			else
-				node.power.offence = (output.CombinedDPS - calcBase.CombinedDPS) / calcBase.CombinedDPS
-			end
-			node.power.defence = (output.LifeUnreserved - calcBase.LifeUnreserved) / m_max(3000, calcBase.Life) + 
-							 (output.Armour - calcBase.Armour) / m_max(10000, calcBase.Armour) + 
-							 (output.EnergyShield - calcBase.EnergyShield) / m_max(3000, calcBase.EnergyShield) + 
-							 (output.Evasion - calcBase.Evasion) / m_max(10000, calcBase.Evasion) +
-							 (output.LifeRegen - calcBase.LifeRegen) / 500 +
-							 (output.EnergyShieldRegen - calcBase.EnergyShieldRegen) / 1000
-			if node.path then
-				newPowerMax.offence = m_max(newPowerMax.offence, node.power.offence)
-				newPowerMax.defence = m_max(newPowerMax.defence, node.power.defence)
+				if calcBase.Minion then
+					node.power.offence = (output.Minion.CombinedDPS - calcBase.Minion.CombinedDPS) / calcBase.Minion.CombinedDPS
+				else
+					node.power.offence = (output.CombinedDPS - calcBase.CombinedDPS) / calcBase.CombinedDPS
+				end
+				node.power.defence = (output.LifeUnreserved - calcBase.LifeUnreserved) / m_max(3000, calcBase.Life) +
+								(output.Armour - calcBase.Armour) / m_max(10000, calcBase.Armour) +
+								(output.EnergyShield - calcBase.EnergyShield) / m_max(3000, calcBase.EnergyShield) +
+								(output.Evasion - calcBase.Evasion) / m_max(10000, calcBase.Evasion) +
+								(output.LifeRegen - calcBase.LifeRegen) / 500 +
+								(output.EnergyShieldRegen - calcBase.EnergyShieldRegen) / 1000
+				if node.path then
+					newPowerMax.offence = m_max(newPowerMax.offence, node.power.offence)
+					newPowerMax.defence = m_max(newPowerMax.defence, node.power.defence)
+				end
 			end
 		end
 		if coroutine.running() and GetTime() - start > 100 then
@@ -477,6 +515,20 @@ function CalcsTabClass:PowerBuilder()
 		end
 	end	
 	self.powerMax = newPowerMax
+end
+
+function CalcsTabClass:CalculatePowerStat(selection, original, modified)
+	originalValue = original[selection.stat] or 0
+	modifiedValue = modified[selection.stat] or 0
+	if selection.oneminus then
+		originalValue = 1 - originalValue
+		modifiedValue = 1 - modifiedValue
+	end
+	if selection.divideby then
+		originalValue = originalValue / (original[selection.divideby] or 1)
+		modifiedValue = modifiedValue / (modified[selection.divideby] or 1)
+	end
+	return originalValue - modifiedValue
 end
 
 function CalcsTabClass:GetNodeCalculator()
