@@ -1868,9 +1868,30 @@ function calcs.offence(env, actor)
 			local baseVal = calcAilmentDamage("Shock", sourceHitDmg, sourceCritDmg)
 			if baseVal > 0 then
 				skillFlags.shock = true
-				output.ShockDurationMod = 1 + modDB:Sum("INC", cfg, "EnemyShockDuration") / 100 + enemyDB:Sum("INC", nil, "SelfShockDuration") / 100
+
+		        local baseShockDur = 2
+		        local incDur = 1 + modDB:Sum("INC", cfg, "EnemyShockDuration") / 100 + enemyDB:Sum("INC", nil, "SelfShockDuration") / 100
+		        output.ShockDurationMod = baseShockDur * incDur 
+		        if breakdown then
+			        if output.ShockDurationMod ~= baseShockDur then
+				        globalBreakdown.ShockDurationMod = {
+					        s_format("2.00s ^8(base duration)", baseShockDur),
+				        }
+				        if incDur ~= 0 then
+					        t_insert(globalBreakdown.ShockDurationMod, s_format("x %.2f ^8(increased/reduced shock duration)", incDur))
+				        end
+				        t_insert(globalBreakdown.ShockDurationMod, s_format("= %.2fs", output.ShockDurationMod))
+			        end
+		        end
+				output.ShockEffectMod = 1 + modDB:Sum("INC", cfg, "EnemyShockEffect") / 100
 				if breakdown then
-					t_insert(breakdown.ShockDPS, s_format("For shock to apply, target must have no more than %d life.", baseVal * 20 * output.ShockDurationMod))
+					--t_insert(breakdown.ShockDPS, s_format("For shock to apply, target must have no more than %d life.", baseVal * 20 * output.ShockDurationMod))
+                    t_insert(breakdown.ShockDPS, s_format("For 1%% (min) shock to apply, target must have no more than %d life.", baseVal * 500 * output.ShockEffectMod))
+                    t_insert(breakdown.ShockDPS, s_format("For 10%% shock to apply, target must have no more than %d life.", baseVal * 50 * output.ShockEffectMod))
+                    t_insert(breakdown.ShockDPS, s_format("For 20%% shock to apply, target must have no more than %d life.", baseVal * 25 * output.ShockEffectMod))
+                    t_insert(breakdown.ShockDPS, s_format("For 30%% shock to apply, target must have no more than %d life.", baseVal * 16.66 * output.ShockEffectMod))
+                    t_insert(breakdown.ShockDPS, s_format("For 40%% shock to apply, target must have no more than %d life.", baseVal * 12.5 * output.ShockEffectMod))
+                    t_insert(breakdown.ShockDPS, s_format("For 50%% (max) shock to apply, target must have no more than %d life.", baseVal * 10 * output.ShockEffectMod))
 				end
  			end
 		end
@@ -1959,6 +1980,7 @@ function calcs.offence(env, actor)
 		end
 		combineStat("ShockChance", "AVERAGE")
 		combineStat("ShockDurationMod", "AVERAGE")
+		combineStat("ShockEffectMod", "AVERAGE")
 		combineStat("FreezeChance", "AVERAGE")
 		combineStat("FreezeDurationMod", "AVERAGE")
 	end
