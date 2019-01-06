@@ -1,3 +1,15 @@
+VERSION[1.4.127][2019/01/06]
+ * Fixed error when showing tooltip for Abyssal Cry
+ * Fixed error when Gruthkul's Pelt is used in builds that contain spells
+ * Fixed error when opening builds containing certain Spectres
+VERSION[1.4.126][2019/01/04]
+ * Fixed mana cost multipliers on support gems not applying
+VERSION[1.4.125][2019/01/04]
+ * Fixed Blasphemy mana reservation
+ * Fixed error that sometimes occurred when adding gems
+VERSION[1.4.124][2019/01/03]
+ * Hovering over a gem in the Skills tab will now show the gem's full tooltip, including stats
+ * Fixed new issue causing Configuration tab options to not appear
 VERSION[1.4.123][2019/01/02]
  * Fixed issue causing Configuration tab options to sometimes fail to appear when appropriate
  * Fixed error when adding crafted modifiers to items
