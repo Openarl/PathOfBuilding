@@ -207,6 +207,7 @@ the "Releases" section of the GitHub page.]])
 
 	self.buildSortMode = "NAME"
 	self.nodePowerTheme = "RED/BLUE"
+	self.thumbButtonDisabled = false
 
 	self:SetMode("BUILD", false, "Unnamed build")
 
@@ -460,6 +461,7 @@ function main:LoadSettings()
 				end
 				self.showThousandsSidebar = node.attrib.showThousandsSidebar == "true"
 				self.showThousandsCalcs = node.attrib.showThousandsCalcs == "true"
+				self.thumbButtonDisabled = node.attrib.thumbButtonDisabled == "true"
 			end
 		end
 	end
@@ -497,13 +499,14 @@ function main:SaveSettings()
 		t_insert(sharedItemList, set)
 	end
 	t_insert(setXML, sharedItemList)
-	t_insert(setXML, { elem = "Misc", attrib = { 
-		buildSortMode = self.buildSortMode, 
-		proxyURL = launch.proxyURL, 
+	t_insert(setXML, { elem = "Misc", attrib = {
+		buildSortMode = self.buildSortMode,
+		proxyURL = launch.proxyURL,
 		buildPath = (self.buildPath ~= self.defaultBuildPath and self.buildPath or nil),
 		nodePowerTheme = self.nodePowerTheme,
 		showThousandsSidebar = tostring(self.showThousandsSidebar),
 		showThousandsCalcs = tostring(self.showThousandsCalcs),
+		thumbButtonDisabled = tostring(self.thumbButtonDisabled)
 	} })
 	local res, errMsg = common.xml.SaveXMLFile(setXML, self.userPath.."Settings.xml")
 	if not res then
@@ -553,7 +556,15 @@ function main:OpenOptionsPopup()
 	local initialNodePowerTheme = self.nodePowerTheme
 	local initialThousandsSidebar = self.showThousandsSidebar
 	local initialThousandsCalcs = self.showThousandsCalcs
-	controls.save = new("ButtonControl", nil, -45, 120, 80, 20, "Save", function()
+	controls.thumbButtonDisableLabel = new("LabelControl", {"TOPRIGHT",nil,"TOPLEFT"}, 200, 115, 0, 16, "^7Disable mouse thumb button:")
+	controls.thumbButtonDisableLabel.tooltipText = "Disables the 'back' functionality of mouse thumb button."
+	controls.thumbButtonDisableCheckBox = new("CheckBoxControl", {"TOPLEFT",nil,"TOPLEFT"}, 210, 113, 20, nil, function(state)
+		self.thumbButtonDisabled = state
+	end)
+	controls.thumbButtonDisableCheckBox.state = self.thumbButtonDisabled
+	local initialThumbButtonDisabled = self.thumbButtonDisabled
+
+	controls.save = new("ButtonControl", nil, -45, 140, 80, 20, "Save", function()
 		if controls.proxyURL.buf:match("%w") then
 			launch.proxyURL = controls.proxyType.list[controls.proxyType.selIndex].scheme .. "://" .. controls.proxyURL.buf
 		else
@@ -572,13 +583,14 @@ function main:OpenOptionsPopup()
 		end
 		main:ClosePopup()
 	end)
-	controls.cancel = new("ButtonControl", nil, 45, 120, 80, 20, "Cancel", function()
+	controls.cancel = new("ButtonControl", nil, 45, 140, 80, 20, "Cancel", function()
 		self.nodePowerTheme = initialNodePowerTheme
 		self.showThousandsSidebar = initialThousandsSidebar
 		self.showThousandsCalcs = initialThousandsCalcs
+		self.thumbButtonDisabled = initialThumbButtonDisabled
 		main:ClosePopup()
 	end)
-	self:OpenPopup(450, 150, "Options", controls, "save", nil, "cancel")
+	self:OpenPopup(450, 172, "Options", controls, "save", nil, "cancel")
 end
 
 function main:OpenUpdatePopup()
