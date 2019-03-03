@@ -8,11 +8,11 @@ function pantheon.applySoulMod(db, modParser, god)
 		for _, soulMod in pairs(soul.mods) do
 			local modList, extra = modParser(soulMod.line)
 			if modList and not extra then
-				for _, mod in pairs(modList or { }) do
+				for _, mod in pairs(modList) do
 					local godName = god.souls[1].name
 					mod.source = "Pantheon:"..godName
-					db:AddList(modList)
 				end
+				db:AddList(modList)
 			end
 		end
 	end
