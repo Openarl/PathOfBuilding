@@ -1046,6 +1046,7 @@ local specialModList = {
 		flag("ColdCanIgnite", { type = "Condition", var = "IgnitingConflux" }),
 		flag("ChaosCanIgnite", { type = "Condition", var = "IgnitingConflux" }),
 	},
+	["shocks from your hits always increase damage taken by at least (%d+)%%"] = function(num) return { mod("EnemyShockEffect", "BASE", num) } end,
 	["gain chilling, shocking and igniting conflux for %d seconds"] = { },
 	-- Gladiator
 	["enemies maimed by you take (%d+)%% increased physical damage"] = function(num) return { mod("EnemyModifier", "LIST", { mod = mod("PhysicalDamageTaken", "INC", num, { type = "Condition", var = "Maimed" }) }) } end,

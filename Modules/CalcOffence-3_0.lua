@@ -234,6 +234,23 @@ function calcs.offence(env, actor, activeSkill)
 		end
 	end
 
+	if enemyDB:Flag(nil, "Shock") then
+		local effect = skillModList:Override(nil, "EnemyShockEffect") or calcLib.val(skillModList, "EnemyShockEffect")
+		cappedEffect = m_min(effect, 50)
+		output.ShockEffect = cappedEffect
+		enemyDB:NewMod("DamageTaken", "INC", cappedEffect, "Shock")
+		if breakdown then
+			breakdown.ShockEffect = { 
+				"Increased damage taken by enemy:",
+				s_format("%.0f%%", effect),
+			}
+			if (cappedEffect < effect) then
+				breakdown.ShockEffect[2] = s_format("50%% (%.0f%%)", effect)
+			end
+		end
+	end
+		
+
 	local isAttack = skillFlags.attack
 
 	-- Calculate skill type stats
