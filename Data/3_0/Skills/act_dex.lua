@@ -5034,7 +5034,7 @@ skills["ScourgeArrow"] = {
 	},
 	baseMods = {
 		mod("Multiplier:ScourgeArrowStage", "BASE", 5, 0, 0, { type = "SkillPart", skillPartList = { 2, 3 } }),
-		skill("dpsMultiplier", 0.2, { type = "SkillPart", skillPart = 2 }),
+		skill("dpsMultiplier", 0.2, { type = "SkillPart", skillPartList = { 2, 3 } }),
 	},
 	qualityStats = {
 		{ "base_projectile_speed_+%", 1 },
