@@ -112,7 +112,7 @@ local function doActorAttribsPoolsConditions(env, actor)
 			condList["DualWieldingClaws"] = true
 		end
 	end
-	if string.find(string.lower(actor.mainSkill.skillCfg.skillGem.tagString), "channelling") then
+	if actor.mainSkill.skillTypes[SkillType.Channelled] then
 		condList["Channelling"] = true
 	end
 	if env.mode_combat then		
