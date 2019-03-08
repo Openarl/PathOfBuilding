@@ -410,7 +410,9 @@ function EditClass:OnKeyDown(key, doubleClick)
 	elseif key == "RETURN" then
 		if self.lineHeight then
 			self:Insert("\n")
-		else
+		else if self.submitFunc then
+			self.submitFunc()
+		end
 			return
 		end
 	elseif key == "a" and ctrl then
