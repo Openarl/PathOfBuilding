@@ -112,6 +112,9 @@ local function doActorAttribsPoolsConditions(env, actor)
 			condList["DualWieldingClaws"] = true
 		end
 	end
+	if string.find(string.lower(actor.mainSkill.skillCfg.skillGem.tagString), "channelling") then
+		condList["Channelling"] = true
+	end
 	if env.mode_combat then		
 		if not modDB:Flag(nil, "NeverCrit") then
 			condList["CritInPast8Sec"] = true
