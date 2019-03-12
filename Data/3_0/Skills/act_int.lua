@@ -4420,7 +4420,7 @@ skills["VaalLightningTrap"] = {
 	},
 	statMap = {
 		["shocked_ground_base_magnitude_override"] = {
-			mod("EnemyShockEffect", "MIN", nil, 0, 0, { type = "GlobalEffect", effectType = "Buff", effectName = "LightningTrap" }),
+			mod("SelfShockEffect", "BASE", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "LightningTrapShock" }),
 		},
 	},
 	stats = {

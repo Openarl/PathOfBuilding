@@ -235,30 +235,32 @@ function calcs.offence(env, actor, activeSkill)
 	end
 
 	if enemyDB:Flag(nil, "Shock") then
-		local effect = skillModList:Override(nil, "EnemyShockEffect") 
-		if effect == nil then
-			local baseEffect = 0.1
-			for i, mod in ipairs(skillModList:Tabulate("MIN", {}, "EnemyShockEffect")) do
-				local modvalue = mod.mod.value
-				if (baseEffect < modvalue) then
-					baseEffect = modvalue
-				end
-			end
-			
-			local increase = calcLib.mod(skillModList, nil, "EnemyShockEffect")
-			effect = increase * baseEffect
+		local overrideEffect = skillModList:Override(nil, "EnemyShockEffect") 
+		local baseEffect = 0.1
+		for i, mod in ipairs(skillModList:Tabulate("BASE", {}, "EnemyShockEffect")) do
+			baseEffect = m_max(baseEffect, mod.mod.value)
 		end
+		local increase = calcLib.mod(skillModList, nil, "EnemyShockEffect")
+		local hitEffect = increase * baseEffect
 
-		cappedEffect = m_min(effect, 50)
+		local enemyBaseEffect = 0
+		for i, mod in ipairs(enemyDB:Tabulate("BASE", {}, "SelfShockEffect")) do
+			enemyBaseEffect = m_max(enemyBaseEffect, mod.mod.value)
+		end
+		hitEffect = m_max(enemyBaseEffect, hitEffect)
+
+		local cappedEffect = overrideEffect or m_min(50, hitEffect)
 		output.ShockEffect = cappedEffect
 		enemyDB:NewMod("DamageTaken", "INC", cappedEffect, "Shock")
 		if breakdown then
 			breakdown.ShockEffect = { 
 				"Increased damage taken by enemy:",
-				s_format("%.0f%%", effect),
 			}
-			if (effect > 50) then
-				breakdown.ShockEffect[2] = s_format("50%% (%.0f%%)", effect)
+			if overrideEffect ~= nil or hitEffect < 50 then
+				t_insert(breakdown.ShockEffect, s_format("%d%%", cappedEffect))
+			else
+				t_insert(breakdown.ShockEffect, s_format("50%% (%d%%)", hitEffect))
+				
 			end
 		end
 	end

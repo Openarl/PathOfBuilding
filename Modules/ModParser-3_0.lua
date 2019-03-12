@@ -1046,7 +1046,7 @@ local specialModList = {
 		flag("ColdCanIgnite", { type = "Condition", var = "IgnitingConflux" }),
 		flag("ChaosCanIgnite", { type = "Condition", var = "IgnitingConflux" }),
 	},
-	["shocks from your hits always increase damage taken by at least (%d+)%%"] = function(num) return { mod("EnemyShockEffect", "MIN", num) } end,
+	["shocks from your hits always increase damage taken by at least (%d+)%%"] = function(num) return { mod("EnemyShockEffect", "BASE", num) } end,
 	["gain chilling, shocking and igniting conflux for %d seconds"] = { },
 	-- Gladiator
 	["enemies maimed by you take (%d+)%% increased physical damage"] = function(num) return { mod("EnemyModifier", "LIST", { mod = mod("PhysicalDamageTaken", "INC", num, { type = "Condition", var = "Maimed" }) }) } end,
@@ -1466,7 +1466,7 @@ local specialModList = {
 	["your critical strikes do not deal extra damage during flask effect"] = { flag("NoCritMultiplier", { type = "Condition", var = "UsingFlask" }) },
 	["grants perfect agony during flask effect"] = { mod("Keystone", "LIST", "Perfect Agony", { type = "Condition", var = "UsingFlask" }) },
 	["enemies on consecrated ground you create during effect take (%d+)%% increased damage"] = function(num) return { mod("EnemyModifier", "LIST", { mod = mod("DamageTaken", "INC", num, { type = "Condition", var = "OnConsecratedGround" }) }, { type = "Condition", var = "UsingFlask" }) } end,
-	["shocks nearby enemies during flask effect, causing (%d+)%% increased damage taken"] = function(num) return { mod("EnemyShockEffect", "MIN", num, { type = "Condition", var = "UsingFlask" }) } end,
+	["shocks nearby enemies during flask effect, causing (%d+)%% increased damage taken"] = function(num) return { mod("EnemyModifier", "LIST", { mod = mod("SelfShockEffect", "BASE", num)} , { type = "Condition", var = "UsingFlask" }) } end,
 	-- Jewels
 	["passives in radius can be allocated without being connected to your tree"] = { mod("JewelData", "LIST", { key = "intuitiveLeap", value = true }) },
 	["(%d+)%% increased elemental damage per grand spectrum"] = function(num) return { 
