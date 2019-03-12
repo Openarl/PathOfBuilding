@@ -364,7 +364,6 @@ Variant: Two Abyssal Sockets
 Requires Level: 36
 {variant:1}Has 1 Abyssal Socket
 {variant:2}Has 2 Abyssal Sockets
-(6-10)% increased Attack Speed
 (4-6)% increased maximum Life
 With a Murderous Eye Jewel Socketed, Intimidate Enemies for 4 seconds on Hit with Attacks
 With a Searching Eye Jewel Socketed, Maim Enemies for 4 seconds on Hit with Attacks
