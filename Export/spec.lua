@@ -3215,7 +3215,7 @@ return {
 			width=60,
 			list=false,
 			type="Bool",
-			name="IsEnabled",
+			name="IsDisabled",
 			refTo=""
 		},
 		[8]={

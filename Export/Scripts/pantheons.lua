@@ -21,7 +21,7 @@ out:write('-- The Pantheon data (c) Grinding Gear Games\n\n')
 out:write('return {\n')
 
 for p in dat"PantheonPanelLayout":Rows() do
-	if not p.IsEnabled then
+	if not p.IsDisabled then
 		out:write('\t["', p.Name, '"] = {\n')
 		out:write('\t\tisMajorGod = ', tostring(p.IsMajorGod), ',\n')
 		out:write('\t\tsouls = {\n')
