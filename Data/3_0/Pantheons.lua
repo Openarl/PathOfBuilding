@@ -7,22 +7,26 @@ return {
 		souls = {
 			[1] = { name = "Soul of the Brine King",
 				mods = {
-					[1] = { line = "You cannot be Stunned if you've been Stunned or Blocked a Stunning Hit in the past 2 seconds", statOrderKey = 6493, statOrder = { 6493 }, statId = "cannot_be_stunned_if_have_been_stunned_or_blocked_stunning_hit_in_past_2_seconds", value = { 1 }, },
+					-- cannot_be_stunned_if_have_been_stunned_or_blocked_stunning_hit_in_past_2_seconds
+					[1] = { line = "You cannot be Stunned if you've been Stunned or Blocked a Stunning Hit in the past 2 seconds", value = { 1 }, },
 				},
 			},
 			[2] = { name = "Glace",
 				mods = {
-					[1] = { line = "30% increased Stun and Block Recovery", statOrderKey = 222, statOrder = { 222 }, statId = "base_stun_recovery_+%", value = { 30 }, },
+					-- base_stun_recovery_+%
+					[1] = { line = "30% increased Stun and Block Recovery", value = { 30 }, },
 				},
 			},
 			[3] = { name = "Belcer, the Pirate Lord",
 				mods = {
-					[1] = { line = "You cannot be Frozen if you've been Frozen Recently", statOrderKey = 5884, statOrder = { 5884 }, statId = "cannot_be_frozen_if_you_have_been_frozen_recently", value = { 100 }, },
+					-- cannot_be_frozen_if_you_have_been_frozen_recently
+					[1] = { line = "You cannot be Frozen if you've been Frozen Recently", value = { 100 }, },
 				},
 			},
 			[4] = { name = "Nassar, Lion of the Seas",
 				mods = {
-					[1] = { line = "50% reduced Effect of Chill on you", statOrderKey = 2622, statOrder = { 2622 }, statId = "chill_effectiveness_on_self_+%", value = { -50 }, },
+					-- chill_effectiveness_on_self_+%
+					[1] = { line = "50% reduced Effect of Chill on you", value = { -50 }, },
 				},
 			},
 		},
@@ -32,24 +36,30 @@ return {
 		souls = {
 			[1] = { name = "Soul of Arakaali",
 				mods = {
-					[1] = { line = "5% reduced Damage taken from Damage Over Time", statOrderKey = 544, statOrder = { 544 }, statId = "degen_effect_+%", value = { -5 }, },
-					[2] = { line = "10% chance to Avoid Lightning Damage when Hit", statOrderKey = 3674, statOrder = { 3674 }, statId = "avoid_lightning_damage_%", value = { 10 }, },
+					-- degen_effect_+%
+					[1] = { line = "5% reduced Damage taken from Damage Over Time", value = { -5 }, },
+					-- avoid_lightning_damage_%
+					[2] = { line = "10% chance to Avoid Lightning Damage when Hit", value = { 10 }, },
 				},
 			},
 			[2] = { name = "Queen of the Great Tangle",
 				mods = {
-					[1] = { line = "50% increased Recovery rate of Life and Energy Shield if you've stopped taking Damage Over Time Recently", statOrderKey = 5887, statOrder = { 5887 }, statId = "life_and_energy_shield_recovery_rate_+%_if_stopped_taking_damage_over_time_recently", value = { 50 }, },
+					-- life_and_energy_shield_recovery_rate_+%_if_stopped_taking_damage_over_time_recently
+					[1] = { line = "50% increased Recovery rate of Life and Energy Shield if you've stopped taking Damage Over Time Recently", value = { 50 }, },
 				},
 			},
 			[3] = { name = "Spinner of False Hope",
 				mods = {
-					[1] = { line = "30% reduced Effect of Shock on you", statOrderKey = 3623, statOrder = { 3623 }, statId = "shocked_effect_on_self_+%", value = { -30 }, },
-					[2] = { line = "30% reduced Shock Duration on you", statOrderKey = 206, statOrder = { 206 }, statId = "base_self_shock_duration_-%", value = { 30 }, },
+					-- shocked_effect_on_self_+%
+					[1] = { line = "30% reduced Effect of Shock on you", value = { -30 }, },
+					-- base_self_shock_duration_-%
+					[2] = { line = "30% reduced Shock Duration on you", value = { 30 }, },
 				},
 			},
 			[4] = { name = "Armala, the Widow",
 				mods = {
-					[1] = { line = "+25% Chaos Resistance against Damage Over Time", statOrderKey = 6148, statOrder = { 6148 }, statId = "additional_chaos_resistance_against_damage_over_time_%", value = { 25 }, },
+					-- additional_chaos_resistance_against_damage_over_time_%
+					[1] = { line = "+25% Chaos Resistance against Damage Over Time", value = { 25 }, },
 				},
 			},
 		},
@@ -59,23 +69,28 @@ return {
 		souls = {
 			[1] = { name = "Soul of Solaris",
 				mods = {
-					[1] = { line = "6% additional Physical Damage Reduction while there is only one nearby Enemy", statOrderKey = 6217, statOrder = { 6217 }, statId = "physical_damage_reduction_%_if_only_one_enemy_nearby", value = { 6 }, },
-					[2] = { line = "20% chance to take 50% less Area Damage from Hits", statOrderKey = 6218, statOrder = { 6218 }, statId = "take_half_area_damage_from_hit_%_chance", value = { 20 }, },
+					-- physical_damage_reduction_%_if_only_one_enemy_nearby
+					[1] = { line = "6% additional Physical Damage Reduction while there is only one nearby Enemy", value = { 6 }, },
+					-- take_half_area_damage_from_hit_%_chance
+					[2] = { line = "20% chance to take 50% less Area Damage from Hits", value = { 20 }, },
 				},
 			},
 			[2] = { name = "The Gorgon",
 				mods = {
-					[1] = { line = "8% reduced Elemental Damage taken if you haven't been Hit Recently", statOrderKey = 6219, statOrder = { 6219 }, statId = "elemental_damage_taken_+%_if_not_hit_recently", value = { -8 }, },
+					-- elemental_damage_taken_+%_if_not_hit_recently
+					[1] = { line = "8% reduced Elemental Damage taken if you haven't been Hit Recently", value = { -8 }, },
 				},
 			},
 			[3] = { name = "Jorus, Sky's Edge",
 				mods = {
-					[1] = { line = "Take no Extra Damage from Critical Strikes if you have taken a Critical Strike Recently", statOrderKey = 6220, statOrder = { 6220 }, statId = "self_take_no_extra_damage_from_critical_strikes_if_have_been_crit_recently", value = { 1 }, },
+					-- self_take_no_extra_damage_from_critical_strikes_if_have_been_crit_recently
+					[1] = { line = "Take no Extra Damage from Critical Strikes if you have taken a Critical Strike Recently", value = { 1 }, },
 				},
 			},
 			[4] = { name = "The Infernal King",
 				mods = {
-					[1] = { line = "50% chance to avoid Ailments from Critical Strikes", statOrderKey = 6223, statOrder = { 6223 }, statId = "avoid_ailments_%_from_crit", value = { 50 }, },
+					-- avoid_ailments_%_from_crit
+					[1] = { line = "50% chance to avoid Ailments from Critical Strikes", value = { 50 }, },
 				},
 			},
 		},
@@ -85,23 +100,28 @@ return {
 		souls = {
 			[1] = { name = "Soul of Lunaris",
 				mods = {
-					[1] = { line = "1% additional Physical Damage Reduction for each nearby Enemy, up to 8%", statOrderKey = 6224, statOrder = { 6224 }, statId = "physical_damage_reduction_%_per_nearby_enemy", value = { 1 }, },
-					[2] = { line = "1% increased Movement Speed for each nearby Enemy, up to 8%", statOrderKey = 6225, statOrder = { 6225 }, statId = "movement_speed_+%_per_nearby_enemy", value = { 1 }, },
+					-- physical_damage_reduction_%_per_nearby_enemy
+					[1] = { line = "1% additional Physical Damage Reduction for each nearby Enemy, up to 8%", value = { 1 }, },
+					-- movement_speed_+%_per_nearby_enemy
+					[2] = { line = "1% increased Movement Speed for each nearby Enemy, up to 8%", value = { 1 }, },
 				},
 			},
-			[2] = { name = "Stone of the Currents",
+			[2] = { name = "Merveil, the Returned",
 				mods = {
-					[1] = { line = "10% chance to avoid Projectiles", statOrderKey = 6226, statOrder = { 6226 }, statId = "base_avoid_projectiles_%_chance", value = { 10 }, },
+					-- base_avoid_projectiles_%_chance
+					[1] = { line = "10% chance to avoid Projectiles", value = { 10 }, },
 				},
 			},
 			[3] = { name = "Sebbert, Crescent's Point",
 				mods = {
-					[1] = { line = "5% chance to Dodge Attack and Spell Hits if you've been Hit Recently", statOrderKey = 6227, statOrder = { 6227 }, statId = "dodge_attacks_and_spells_%_chance_if_have_been_hit_recently", value = { 5 }, },
+					-- dodge_attacks_and_spells_%_chance_if_have_been_hit_recently
+					[1] = { line = "5% chance to Dodge Attack and Spell Hits if you've been Hit Recently", value = { 5 }, },
 				},
 			},
 			[4] = { name = "Ambrius, Legion Slayer",
 				mods = {
-					[1] = { line = "Avoid Projectiles that have Chained", statOrderKey = 6229, statOrder = { 6229 }, statId = "avoid_chained_projectile_%_chance", value = { 100 }, },
+					-- avoid_chained_projectile_%_chance
+					[1] = { line = "Avoid Projectiles that have Chained", value = { 100 }, },
 				},
 			},
 		},
@@ -111,14 +131,18 @@ return {
 		souls = {
 			[1] = { name = "Soul of Abberath",
 				mods = {
-					[1] = { line = "5% reduced Fire Damage taken while moving", statOrderKey = 5892, statOrder = { 5892 }, statId = "fire_damage_taken_+%_while_moving", value = { -5 }, },
-					[2] = { line = "100% reduced Effect of Burning Ground on you", statOrderKey = 3231, statOrder = { 3231 }, statId = "burning_ground_effect_on_self_+%", value = { -100 }, },
+					-- fire_damage_taken_+%_while_moving
+					[1] = { line = "5% reduced Fire Damage taken while moving", value = { -5 }, },
+					-- unaffected_by_burning_ground
+					[2] = { line = "Unaffected by Burning Ground", value = { 1 }, },
 				},
 			},
 			[2] = { name = "Mephod, the Earth Scorcher",
 				mods = {
-					[1] = { line = "50% reduced Ignite Duration on you", statOrderKey = 208, statOrder = { 208 }, statId = "base_self_ignite_duration_-%", value = { 50 }, },
-					[2] = { line = "10% increased Movement Speed while on Burning Ground", statOrderKey = 5888, statOrder = { 5888 }, statId = "movement_speed_+%_while_on_burning_ground", value = { 10 }, },
+					-- base_self_ignite_duration_-%
+					[1] = { line = "50% reduced Ignite Duration on you", value = { 50 }, },
+					-- movement_speed_+%_while_on_burning_ground
+					[2] = { line = "10% increased Movement Speed while on Burning Ground", value = { 10 }, },
 				},
 			},
 		},
@@ -128,12 +152,14 @@ return {
 		souls = {
 			[1] = { name = "Soul of Gruthkul",
 				mods = {
-					[1] = { line = "1% additional Physical Damage Reduction for each Hit you've taken Recently up to a maximum of 5%", statOrderKey = 5898, statOrder = { 5898 }, statId = "physical_damage_reduction_%_per_hit_you_have_taken_recently", value = { 1 }, },
+					-- physical_damage_reduction_%_per_hit_you_have_taken_recently
+					[1] = { line = "1% additional Physical Damage Reduction for each Hit you've taken Recently up to a maximum of 5%", value = { 1 }, },
 				},
 			},
 			[2] = { name = "Erebix, Light's Bane",
 				mods = {
-					[1] = { line = "Enemies that have Hit you with an Attack Recently have 8% reduced Attack Speed", statOrderKey = 6209, statOrder = { 6209 }, statId = "enemies_that_hit_you_with_attack_recently_attack_speed_+%", value = { -8 }, },
+					-- enemies_that_hit_you_with_attack_recently_attack_speed_+%
+					[1] = { line = "Enemies that have Hit you with an Attack Recently have 8% reduced Attack Speed", value = { -8 }, },
 				},
 			},
 		},
@@ -143,13 +169,16 @@ return {
 		souls = {
 			[1] = { name = "Soul of Yugul",
 				mods = {
-					[1] = { line = "25% reduced Reflected Damage taken", statOrderKey = 4862, statOrder = { 4862 }, statId = "reflect_damage_taken_+%", value = { -25 }, },
-					[2] = { line = "50% chance to Reflect Enemy Chills and Freezes", statOrderKey = 6231, statOrder = { 6231 }, statId = "reflect_chill_and_freeze_%_chance", value = { 50 }, },
+					-- reflect_damage_taken_+%
+					[1] = { line = "25% reduced Reflected Damage taken", value = { -25 }, },
+					-- reflect_chill_and_freeze_%_chance
+					[2] = { line = "50% chance to Reflect Enemy Chills and Freezes", value = { 50 }, },
 				},
 			},
 			[2] = { name = "Varhesh, Shimmering Aberration",
 				mods = {
-					[1] = { line = "5% reduced Cold Damage taken if you've been Hit Recently", statOrderKey = 6230, statOrder = { 6230 }, statId = "cold_damage_taken_+%_if_have_been_hit_recently", value = { -5 }, },
+					-- cold_damage_taken_+%_if_have_been_hit_recently
+					[1] = { line = "5% reduced Cold Damage taken if you've been Hit Recently", value = { -5 }, },
 				},
 			},
 		},
@@ -159,13 +188,16 @@ return {
 		souls = {
 			[1] = { name = "Soul of Shakari",
 				mods = {
-					[1] = { line = "5% reduced Chaos Damage taken", statOrderKey = 3457, statOrder = { 3457 }, statId = "chaos_damage_taken_+%", value = { -5 }, },
-					[2] = { line = "25% reduced Chaos Damage over Time taken while on Caustic Ground", statOrderKey = 6582, statOrder = { 6582 }, statId = "chaos_damage_taken_over_time_+%_while_in_caustic_cloud", value = { -25 }, },
+					-- chaos_damage_taken_+%
+					[1] = { line = "5% reduced Chaos Damage taken", value = { -5 }, },
+					-- chaos_damage_taken_over_time_+%_while_in_caustic_cloud
+					[2] = { line = "25% reduced Chaos Damage over Time taken while on Caustic Ground", value = { -25 }, },
 				},
 			},
 			[2] = { name = "Terror of the Infinite Drifts",
 				mods = {
-					[1] = { line = "Immune to Poison", statOrderKey = 3989, statOrder = { 3989 }, statId = "immune_to_poison", value = { 1 }, },
+					-- immune_to_poison
+					[1] = { line = "Immune to Poison", value = { 1 }, },
 				},
 			},
 		},
@@ -175,12 +207,14 @@ return {
 		souls = {
 			[1] = { name = "Soul of Tukohama",
 				mods = {
-					[1] = { line = "While stationary, gain 2% additional Physical Damage Reduction every second, up to a maximum of 8%", statOrderKey = 5890, statOrder = { 5890 }, statId = "while_stationary_gain_additional_physical_damage_reduction_%", value = { 2 }, },
+					-- while_stationary_gain_additional_physical_damage_reduction_%
+					[1] = { line = "While stationary, gain 2% additional Physical Damage Reduction every second, up to a maximum of 8%", value = { 2 }, },
 				},
 			},
 			[2] = { name = "Tahsin, Warmaker",
 				mods = {
-					[1] = { line = "While stationary, gain 0.5% of Life Regenerated per second every second, up to a maximum of 2%", statOrderKey = 5891, statOrder = { 5891 }, statId = "while_stationary_gain_life_regeneration_rate_per_minute_%", value = { 30 }, },
+					-- while_stationary_gain_life_regeneration_rate_per_minute_%
+					[1] = { line = "While stationary, gain 0.5% of Life Regenerated per second every second, up to a maximum of 2%", value = { 30 }, },
 				},
 			},
 		},
@@ -190,14 +224,18 @@ return {
 		souls = {
 			[1] = { name = "Soul of Ralakesh",
 				mods = {
-					[1] = { line = "25% reduced Physical Damage over Time Damage taken while moving", statOrderKey = 6216, statOrder = { 6216 }, statId = "physical_damage_over_time_taken_+%_while_moving", value = { -25 }, },
-					[2] = { line = "25% chance to avoid Bleeding", statOrderKey = 4474, statOrder = { 4474 }, statId = "base_avoid_bleed_%", value = { 25 }, },
+					-- physical_damage_over_time_taken_+%_while_moving
+					[1] = { line = "25% reduced Physical Damage over Time Damage taken while moving", value = { -25 }, },
+					-- base_avoid_bleed_%
+					[2] = { line = "25% chance to avoid Bleeding", value = { 25 }, },
 				},
 			},
 			[2] = { name = "Drek, Apex Hunter",
 				mods = {
-					[1] = { line = "Cannot be Blinded", statOrderKey = 2430, statOrder = { 2430 }, statId = "cannot_be_blinded", value = { 1 }, },
-					[2] = { line = "You cannot be Maimed", statOrderKey = 5902, statOrder = { 5902 }, statId = "avoid_maim_%_chance", value = { 100 }, },
+					-- cannot_be_blinded
+					[1] = { line = "Cannot be Blinded", value = { 1 }, },
+					-- avoid_maim_%_chance
+					[2] = { line = "You cannot be Maimed", value = { 100 }, },
 				},
 			},
 		},
@@ -207,12 +245,14 @@ return {
 		souls = {
 			[1] = { name = "Soul of Garukhan",
 				mods = {
-					[1] = { line = "+5% chance to Evade Attacks if you've taken a Savage Hit Recently", statOrderKey = 5897, statOrder = { 5897 }, statId = "additional_%_chance_to_evade_attacks_if_you_have_taken_a_savage_hit_recently", value = { 5 }, },
+					-- additional_%_chance_to_evade_attacks_if_you_have_taken_a_savage_hit_recently
+					[1] = { line = "+5% chance to Evade Attacks if you've taken a Savage Hit Recently", value = { 5 }, },
 				},
 			},
 			[2] = { name = "Stalker of the Endless Dunes",
 				mods = {
-					[1] = { line = "6% increased Movement Speed if you haven't been Hit Recently", statOrderKey = 3383, statOrder = { 3383 }, statId = "enchantment_boots_movement_speed_+%_when_not_hit_for_4_seconds", value = { 6 }, },
+					-- enchantment_boots_movement_speed_+%_when_not_hit_for_4_seconds
+					[1] = { line = "6% increased Movement Speed if you haven't been Hit Recently", value = { 6 }, },
 				},
 			},
 		},
@@ -222,12 +262,14 @@ return {
 		souls = {
 			[1] = { name = "Soul of Ryslatha",
 				mods = {
-					[1] = { line = "Life Flasks gain 3 Charges every 3 seconds if you haven't used a Life Flask Recently", statOrderKey = 5894, statOrder = { 5894 }, statId = "life_flasks_gain_X_charges_every_3_seconds_if_you_have_not_used_a_life_flask_recently", value = { 3 }, },
+					-- life_flasks_gain_X_charges_every_3_seconds_if_you_have_not_used_a_life_flask_recently
+					[1] = { line = "Life Flasks gain 3 Charges every 3 seconds if you haven't used a Life Flask Recently", value = { 3 }, },
 				},
 			},
 			[2] = { name = "Gorulis, Will-Thief",
 				mods = {
-					[1] = { line = "60% increased Life Recovery from Flasks used when on Low Life", statOrderKey = 5895, statOrder = { 5895 }, statId = "life_recovery_+%_from_flasks_while_on_low_life", value = { 60 }, },
+					-- life_recovery_+%_from_flasks_while_on_low_life
+					[1] = { line = "60% increased Life Recovery from Flasks used when on Low Life", value = { 60 }, },
 				},
 			},
 		},
