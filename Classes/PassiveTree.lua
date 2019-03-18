@@ -22,6 +22,7 @@ local function getFile(URL)
 	local page = ""
 	local easy = common.curl.easy()
 	easy:setopt_url(URL)
+	easy:setopt_followlocation(true)
 	easy:setopt_writefunction(function(data)
 		page = page..data
 		return true
