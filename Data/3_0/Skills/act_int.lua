@@ -7340,20 +7340,6 @@ skills["Wither"] = {
 	skillTypes = { [2] = true, [11] = true, [12] = true, [18] = true, [50] = true, [58] = true, [83] = true, },
 	statDescriptionScope = "debuff_skill_stat_descriptions",
 	castTime = 0.28,
-	parts = {
-		{
-			name = "1 Stack",
-		},
-		{
-			name = "5 Stacks",
-		},
-		{
-			name = "10 Stacks",
-		},
-		{
-			name = "15 Stacks",
-		},
-	},
 	statMap = {
 		["base_skill_effect_duration"] = {
 		},
@@ -7362,10 +7348,10 @@ skills["Wither"] = {
 			div = 1000,
 		},
 		["chaos_damage_taken_+%"] = {
-			mod("ChaosDamageTaken", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered" }),
+			mod("ChaosDamageTaken", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherStackCount", effectStackLimit = 15 }),
 		},
 		["base_movement_velocity_+%"] = {
-			mod("MovementSpeed", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered" }),
+			mod("MovementSpeed", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherStackCount", effectStackLimit = 15 }),
 		},
 	},
 	baseFlags = {
@@ -7377,10 +7363,6 @@ skills["Wither"] = {
 	baseMods = {
 		skill("debuff", true),
 		skill("radius", 18),
-		skill("stackCount", 1, { type = "SkillPart", skillPart = 1 }),
-		skill("stackCount", 5, { type = "SkillPart", skillPart = 2 }),
-		skill("stackCount", 10, { type = "SkillPart", skillPart = 3 }),
-		skill("stackCount", 15, { type = "SkillPart", skillPart = 4 }),
 	},
 	qualityStats = {
 		{ "skill_effect_duration_+%", 1 },
