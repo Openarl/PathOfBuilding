@@ -662,6 +662,7 @@ skills["Blight"] = {
 		skill("debuff", true),
 		skill("debuffSecondary", true),
 		skill("radius", 26),
+		mod("ChaosDamageTaken", "INC", 6, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "BlightWitheredStackCount", effectStackLimit = 15 }),
 	},
 	qualityStats = {
 		{ "base_skill_area_of_effect_+%", 0.5 },
@@ -7348,10 +7349,10 @@ skills["Wither"] = {
 			div = 1000,
 		},
 		["chaos_damage_taken_+%"] = {
-			mod("ChaosDamageTaken", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherStackCount", effectStackLimit = 15 }),
+			mod("ChaosDamageTaken", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherWitheredStackCount", effectStackLimit = 15 }),
 		},
 		["base_movement_velocity_+%"] = {
-			mod("MovementSpeed", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherStackCount", effectStackLimit = 15 }),
+			mod("MovementSpeed", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherWitheredStackCount", effectStackLimit = 15 }),
 		},
 	},
 	baseFlags = {

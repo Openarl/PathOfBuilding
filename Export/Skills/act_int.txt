@@ -110,6 +110,7 @@ local skills, mod, flag, skill = ...
 #baseMod skill("debuff", true)
 #baseMod skill("debuffSecondary", true)
 #baseMod skill("radius", 26)
+#baseMod mod("ChaosDamageTaken", "INC", 6, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "BlightWitheredStackCount", effectStackLimit = 15 }),
 #mods
 
 #skill VaalBlight
@@ -1145,10 +1146,10 @@ local skills, mod, flag, skill = ...
 			div = 1000,
 		},
 		["chaos_damage_taken_+%"] = {
-			mod("ChaosDamageTaken", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherStackCount", effectStackLimit = 15 }),
+			mod("ChaosDamageTaken", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherWitheredStackCount", effectStackLimit = 15 }),
 		},
 		["base_movement_velocity_+%"] = {
-			mod("MovementSpeed", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherStackCount", effectStackLimit = 15 }),
+			mod("MovementSpeed", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitherWitheredStackCount", effectStackLimit = 15 }),
 		},
 	},
 #baseMod skill("debuff", true)
