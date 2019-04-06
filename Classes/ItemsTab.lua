@@ -1612,7 +1612,7 @@ function ItemsTabClass:AddCustomModifierToDisplayItem()
 			end)
 		end
 	end
-	if self.build.targetVersion ~= "2_6" or (self.displayItem.type ~= "Jewel" and self.displayItem.type ~= "Flask") then
+	if (self.build.targetVersion ~= "2_6" and self.displayItem.base.subType ~= "Abyss") or (self.displayItem.type ~= "Jewel" and self.displayItem.type ~= "Flask") then
 		t_insert(sourceList, { label = "Crafting Bench", sourceId = "MASTER" })
 	end
 	if self.displayItem.type ~= "Jewel" and self.displayItem.type ~= "Flask" then
@@ -1654,7 +1654,7 @@ function ItemsTabClass:AddCustomModifierToDisplayItem()
 	end
 	controls.modSelect.tooltipFunc = function(tooltip, mode, index, value)
 		tooltip:Clear()
-		if mode ~= "OUT" then
+		if mode ~= "OUT" and value then
 			for _, line in ipairs(value.mod) do
 				tooltip:AddLine(16, "^7"..line)
 			end
@@ -1712,6 +1712,12 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode)
 	end
 	if item.elder then
 		tooltip:AddLine(16, colorCodes.ELDER.."Elder Item")
+	end
+	if item.fractured then
+		tooltip:AddLine(16, colorCodes.FRACTURED.."Fractured Item")
+	end
+	if item.synthesised then
+		tooltip:AddLine(16, colorCodes.CRAFTED.."Synthesised Item")
 	end
 	tooltip:AddSeparator(10)
 

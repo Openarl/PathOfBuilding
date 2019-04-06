@@ -1,3 +1,81 @@
+### 1.4.135 - 2019/03/14
+ * Fixed crafted mods on imported items not being recognised
+ * Storm Call now correctly shows DPS instead of just average damage
+
+### 1.4.134 - 2019/03/12
+ * Fixed various issues with importing fractured and synthesised items
+ * Fixed issues with stat comparisons in weapon tooltips
+
+### 1.4.133 - 2019/03/12
+ * The debuff durations of Bane and Soulrend are now correctly affected by Temporal Chains
+ * Bane is now correctly affected by modifiers to Curse Skills
+ * Synthesised items can now be imported
+
+### 1.4.132 - 2019/03/10
+ * Added the following new gems:
+    * Bane
+	* Divine Ire
+	* Purifying Flame
+	* Malevolence
+	* Soulrend
+	* Wave of Conviction (the type of Exposure being applied can be set in the Configuration tab)
+	* Zealotry
+	* Energy Leech
+	* Intensify (Intensity stacks can be set in the Configuration tab)
+	* Unleash (does not currently affect DPS)
+ * Applied the reworks for the following gems:
+    * Holy Flame Totem
+	* Storm Burst (DPS calculation isn't currently accurate)
+	* Infused Channelling (Infusion can be enabled in the Configuration tab)
+ * Added the following skills and supports from uniques:
+    * Lightning Aegis
+	* Precision
+	* Blessing (the aura and reservation durations for supported skills can be found in the Calcs tab)
+ * Applied all skill balance changes for 3.6
+ * Added the following 3.6 uniques: (thanks PJacek)
+    * Circle of Regret
+    * The Eternity Shroud
+	* Garb of the Ephemeral (Divinity can be enabled in the Configuration tab)
+	* Maloney's Mechanism
+	* Offering of the Serpent
+    * Vixen's Entrapment
+ * Updated the passive tree
+ * Updated item bases and mods for 3.6
+ * Winter Orb's hit rate is now correctly affected by modifiers to Cast Speed
+
+### 1.4.131 - 2019/03/08
+ * Updated boss curse effect penalty
+ * Removed min/max Crit Chance limits
+ * Fixed the passive tree node location popup showing the wrong locations
+
+### 1.4.130 - 2019/03/07
+ * Passive tree updated to 3.6
+ * Added the following 3.6 uniques: (thanks PJacek)
+    * Bottled Faith
+    * Circle of Nostalgia
+    * Hyrri's Truth (except the Precision skill)
+    * March of the Legion (except the Blessing support)
+	* Mask of the Tribunal
+	* Nebulis
+    * Perepiteia (except the Lightning Aegis skill)
+	* Storm's Gift
+ * Added most 3.5 uniques (thanks Patchumz and PJacek)
+ * Added support for Energy Shield Leech
+ * The stat comparisons in tooltips for non-equipped two handed weapons now show the changes from replacing both
+   weapons if you are dual wielding, rather than your main hand weapon only
+ * Added base radius values for Dark Pact (24), Vaal Blight (20), and Wither (18)
+ * Fixed issue preventing local life on hit modifiers from working correctly
+ * Storm Call now shows DPS as well as average damage
+ * Decay DPS is now only shown if the skill can deal Chaos Damage
+ * Fixed error when trying to add a custom modifier to Abyss Jewels
+
+### 1.4.129 - 2019/01/13
+ * "while Focussed" modifiers are now correctly recognised
+ * "+X to minimum Endurance Charges" now works correctly
+
+### 1.4.128 - 2019/01/11
+ * Fixed issue preventing Empower and Enhance supports from working
+
 ### 1.4.127 - 2019/01/06
  * Fixed error when showing tooltip for Abyssal Cry
  * Fixed error when Gruthkul's Pelt is used in builds that contain spells

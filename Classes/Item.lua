@@ -85,11 +85,12 @@ function ItemClass:ParseRaw(raw)
 		if self.rawLines[l] == "Two-Toned Boots" then
 			self.rawLines[l] = "Two-Toned Boots (Armour/Energy Shield)"
 		end
-		if verData.itemBases[self.rawLines[l]] then
-			self.baseName = self.rawLines[l]
+		local baseName = self.rawLines[l]:gsub("Synthesised ","")
+		if verData.itemBases[baseName] then
+			self.baseName = baseName
 			self.title = self.name
-			self.name = self.title .. ", " .. self.baseName:gsub(" %(.+%)","")
-			self.type = verData.itemBases[self.baseName].type
+			self.name = self.title .. ", " .. baseName:gsub(" %(.+%)","")
+			self.type = verData.itemBases[baseName].type
 			l = l + 1
 		end
 	end
@@ -149,6 +150,10 @@ function ItemClass:ParseRaw(raw)
 			self.shaper = true
 		elseif line == "Elder Item" then
 			self.elder = true
+		elseif line == "Fractured Item" then
+			self.fractured = true
+		elseif line == "Synthesised Item" then
+			self.synthesised = true
 		else
 			local specName, specVal = line:match("^([%a ]+): (%x+)$")
 			if not specName then
@@ -267,10 +272,11 @@ function ItemClass:ParseRaw(raw)
 						variantList[tonumber(varId)] = true
 					end
 				end
+				local fractured = line:match("{fractured}") or line:match(" %(fractured%)")
 				local rangeSpec = line:match("{range:([%d.]+)}")
-				local crafted = line:match("{crafted}")
+				local crafted = line:match("{crafted}") or line:match(" %(crafted%)")
 				local custom = line:match("{custom}")
-				line = line:gsub("%b{}", "")
+				line = line:gsub("%b{}", ""):gsub(" %(fractured%)",""):gsub(" %(crafted%)","")
 				local rangedLine
 				if line:match("%(%d+%-%d+ to %d+%-%d+%)") or line:match("%(%-?[%d%.]+ to %-?[%d%.]+%)") or line:match("%(%-?[%d%.]+%-[%d%.]+%)") then
 					rangedLine = itemLib.applyRange(line, 1)
@@ -291,7 +297,7 @@ function ItemClass:ParseRaw(raw)
 					end
 				end
 				if modList then
-					t_insert(self.modLines, { line = line, extra = extra, modList = modList, variantList = variantList, crafted = crafted, custom = custom, range = rangedLine and (tonumber(rangeSpec) or 0.5) })
+					t_insert(self.modLines, { line = line, extra = extra, modList = modList, variantList = variantList, crafted = crafted, custom = custom, fractured = fractured, range = rangedLine and (tonumber(rangeSpec) or 0.5) })
 					if mode == "GAME" then
 						if gameModeStage == "FINDIMPLICIT" then
 							gameModeStage = "IMPLICIT"
@@ -306,12 +312,12 @@ function ItemClass:ParseRaw(raw)
 					end
 				elseif mode == "GAME" then
 					if gameModeStage == "IMPLICIT" or gameModeStage == "EXPLICIT" then
-						t_insert(self.modLines, { line = line, extra = line, modList = { }, variantList = variantList, crafted = crafted, custom = custom })
+						t_insert(self.modLines, { line = line, extra = line, modList = { }, variantList = variantList, crafted = crafted, custom = custom, fractured = fractured })
 					elseif gameModeStage == "FINDEXPLICIT" then
 						gameModeStage = "DONE"
 					end
 				elseif foundExplicit then
-					t_insert(self.modLines, { line = line, extra = line, modList = { }, variantList = variantList, crafted = crafted, custom = custom })
+					t_insert(self.modLines, { line = line, extra = line, modList = { }, variantList = variantList, crafted = crafted, custom = custom, fractured = fractured })
 				end
 			end
 		end
@@ -487,6 +493,9 @@ function ItemClass:BuildRaw()
 			end
 			if modLine.custom then
 				line = "{custom}" .. line
+			end
+			if modLine.fractured then
+				line = "{fractured}" .. line
 			end
 			if modLine.variantList then
 				local varSpec

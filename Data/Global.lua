@@ -40,6 +40,7 @@ colorCodes = {
 	OFFHANDBG = "^x070719",
 	SHAPER = "^x55BBFF",
 	ELDER = "^xAA77CC",
+	FRACTURED = "^xA29160",
 }
 colorCodes.STRENGTH = colorCodes.MARAUDER
 colorCodes.DEXTERITY = colorCodes.RANGER
@@ -189,4 +190,11 @@ SkillType = {
 	DestroysCorpse = 77, -- Consumes corpses on use
 	NonHitChill = 78,
 	ChillingArea = 79,
+	AppliesCurse = 80,
+	CanRapidFire = 81,
+	AuraDuration = 82,
+	AreaSpell = 83,
+	OR = 84,
+	AND = 85,
+	NOT = 86,
 }
