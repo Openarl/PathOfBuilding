@@ -6163,6 +6163,7 @@ skills["BoneLance"] = {
 	baseFlags = {
 		spell = true,
 		projectile = true,
+		area = true,
 	},
 	baseMods = {
 	},
