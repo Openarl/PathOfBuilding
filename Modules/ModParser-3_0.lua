@@ -120,6 +120,7 @@ local modNameList = {
 	["lightning resistance"] = "LightningResist",
 	["maximum lightning resistance"] = "LightningResistMax",
 	["chaos resistance"] = "ChaosResist",
+	["maximum chaos resistance"] = "ChaosResistMax",
 	["fire and cold resistances"] = { "FireResist", "ColdResist" },
 	["fire and lightning resistances"] = { "FireResist", "LightningResist" },
 	["cold and lightning resistances"] = { "ColdResist", "LightningResist" },
