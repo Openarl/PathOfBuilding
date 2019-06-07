@@ -636,6 +636,12 @@ return {
 	{ var = "conditionBlockedHitFromUniqueEnemyInPast10Sec", type = "check", ifVer = "3_0", label = "Blocked hit from a Unique in the past 10s?", ifNode = 63490, apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:BlockedHitFromUniqueEnemyInPast10Sec", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
+	{ var = "conditionImpaledRecently", type = "check", ifVer="3_0", label = "Impaled an Enemy recently?", apply = function(val, modList, enemyModLIst)
+		modList:NewMod("Condition:ImpaledRecently", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "multiplierImaplesOnEnemy", type = "count", label = "# of Impales on Enemy (if not maximum):", apply = function(val, modList, enemyModList)
+		enemyModList:NewMod("Multiplier:ImpaleStack", "BASE", val, "Config")
+	end },
 
 	-- Section: Effective DPS options
 	{ section = "For Effective DPS", col = 1 },
