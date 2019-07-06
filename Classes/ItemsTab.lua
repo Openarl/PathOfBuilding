@@ -1568,6 +1568,23 @@ function ItemsTabClass:AddCustomModifierToDisplayItem()
 					})
 				end
 			end
+
+            -- Sorts modifiers by label
+            -- Ignores the initial magnitude part
+            -- Ex: "+10% ham" comes after "Gummybears"
+            table.sort(modList, function comparator(l, r)
+                local l_first_letter_index = string.find(l.label, "[%u%l]")
+                local r_first_letter_index = string.find(r.label, "[%u%l]")
+
+                local lthunk = string.lower(string.sub(l.label, l_first_letter_index))
+                local rthunk = string.lower(string.sub(r.label, r_first_letter_index))
+
+                if lthunk < rthunk then
+                    return true
+                else
+                    return false
+                end
+            end)
 		elseif sourceId == "ESSENCE" then
 			for _, essence in pairs(self.build.data.essences) do
 				local modId = essence.mods[self.displayItem.type]
