@@ -1348,6 +1348,7 @@ function calcs.offence(env, actor, activeSkill)
 	skillFlags.igniteCanStack = skillModList:Flag(skillCfg, "IgniteCanStack")
 	skillFlags.shock = false
 	skillFlags.freeze = false
+    skillFlags.impale = false
 	for _, pass in ipairs(passList) do
 		local globalOutput, globalBreakdown = output, breakdown
 		local source, output, cfg, breakdown = pass.source, pass.output, pass.cfg, pass.breakdown
@@ -1420,6 +1421,11 @@ function calcs.offence(env, actor, activeSkill)
 		else
 			output.KnockbackChanceOnHit = skillModList:Sum("BASE", cfg, "EnemyKnockbackChance")
 		end
+        if not skillFlags.attack then
+            output.ImpaleChance = 0
+        else
+            output.ImpaleChance = m_min(100, skillModList:Sum("BASE", cfg, "ImpaleChance"))
+        end
 		if env.mode_effective then
 			local bleedMult = (1 - enemyDB:Sum("BASE", nil, "AvoidBleed") / 100)
 			output.BleedChanceOnHit = output.BleedChanceOnHit * bleedMult
@@ -1438,7 +1444,7 @@ function calcs.offence(env, actor, activeSkill)
 			output.FreezeChanceOnHit = output.FreezeChanceOnHit * freezeMult
 			output.FreezeChanceOnCrit = output.FreezeChanceOnCrit * freezeMult
 		end
-	
+
 		local function calcAilmentDamage(type, sourceHitDmg, sourceCritDmg)
 			-- Calculate the inflict chance and base damage of a secondary effect (bleed/poison/ignite/shock/freeze)
 			local chanceOnHit, chanceOnCrit = output[type.."ChanceOnHit"], output[type.."ChanceOnCrit"]
@@ -2010,6 +2016,42 @@ function calcs.offence(env, actor, activeSkill)
 				t_insert(breakdown.EnemyStunDuration, s_format("= %.2fs", output.EnemyStunDuration))
 			end
 		end
+
+        -- Calculate impale chance and modifiers
+		if canDeal.Physical and output.ImpaleChance > 0 then
+            skillFlags.impale = true
+            local impaleChance = m_min(output.ImpaleChance/100, 1)
+            local maxStacks = 5 + skillModList:Sum("BASE", cfg, "ImpaleStacksMax") -- magic number: base stacks duration
+            local configStacks = enemyDB:Sum("BASE", nil, "Multiplier:ImpaleStack")
+            local impaleStacks = configStacks > 0 and m_min(configStacks, maxStacks) or  maxStacks
+
+            local baseStoredDamage = 0.1 -- magic number: base impale stored damage
+            local storedDamageInc = skillModList:Sum("INC", cfg, "ImpaleEffect")/100
+            local storedDamageMore = round(skillModList:More(cfg, "ImpaleEffect"), 2)
+            local storedDamageModifier = (1 + storedDamageInc) * storedDamageMore
+            local impaleStoredDamage = baseStoredDamage * storedDamageModifier
+
+			local impaleDMGModifier = impaleStoredDamage * impaleStacks * impaleChance
+
+            globalOutput.ImpaleStacksMax = maxStacks
+			globalOutput.ImpaleStacks = impaleStacks
+			output.ImpaleStoredDamage = impaleStoredDamage * 100
+			output.ImpaleModifier = 1 + impaleDMGModifier
+
+			if breakdown then
+				breakdown.ImpaleStoredDamage = {}
+				t_insert(breakdown.ImpaleStoredDamage, "10% ^8(base value)")
+				t_insert(breakdown.ImpaleStoredDamage, s_format("x %.2f ^8(increased effectiveness)", storedDamageModifier))
+				t_insert(breakdown.ImpaleStoredDamage, s_format("= %.1f%%", output.ImpaleStoredDamage))
+
+				breakdown.ImpaleModifier = {}
+				t_insert(breakdown.ImpaleModifier, s_format("%d ^8(numer of stacks, can be overridden in the Configuration tab)", impaleStacks))
+				t_insert(breakdown.ImpaleModifier, s_format("x %.3f ^8(stored damage)", impaleStoredDamage))
+				t_insert(breakdown.ImpaleModifier, s_format("x %.2f ^8(impale chance)", impaleChance))
+				t_insert(breakdown.ImpaleModifier, s_format("= %.3f", impaleDMGModifier))
+
+			end
+		end
 	end
 
 	-- Combine secondary effect stats
@@ -2040,6 +2082,9 @@ function calcs.offence(env, actor, activeSkill)
 		combineStat("ShockDurationMod", "AVERAGE")
 		combineStat("FreezeChance", "AVERAGE")
 		combineStat("FreezeDurationMod", "AVERAGE")
+        combineStat("ImpaleChance", "AVERAGE")
+		combineStat("ImpaleStoredDamage", "AVERAGE")
+		combineStat("ImpaleModifier", "CHANCE", "ImpaleChance")
 	end
 
 	if skillFlags.hit and skillData.decay and canDeal.Chaos then

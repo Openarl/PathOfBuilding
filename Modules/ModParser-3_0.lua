@@ -23,6 +23,7 @@ local formList = {
 	["^([%+%-]?[%d%.]+)%%? of"] = "BASE",
 	["^([%+%-][%d%.]+)%%? base"] = "BASE",
 	["^([%+%-]?[%d%.]+)%%? additional"] = "BASE",
+    ["(%d+) additional hits"] = "BASE",
 	["^you gain ([%d%.]+)"] = "BASE",
 	["^gains? ([%d%.]+)%% of"] = "BASE",
 	["^([%+%-]?%d+)%% chance"] = "CHANCE",
@@ -282,6 +283,8 @@ local modNameList = {
 	["maximum total recovery per second from life leech"] = "MaxLifeLeechRate",
 	["maximum total recovery per second from energy shield leech"] = "MaxEnergyShieldLeechRate",
 	["maximum total recovery per second from mana leech"] = "MaxManaLeechRate",
+    ["to impale enemies on hit"] = "ImpaleChance",
+    ["impale effect"] = "ImpaleEffect",
 	-- Projectile modifiers
 	["projectile"] = "ProjectileCount",
 	["projectiles"] = "ProjectileCount",
@@ -457,6 +460,7 @@ local modNameList = {
 	["flask charges used"] = "FlaskChargesUsed",
 	["flask charges gained"] = "FlaskChargesGained",
 	["charge recovery"] = "FlaskChargeRecovery",
+    ["impales you inflict last"] = "ImpaleStacksMax",
 }
 
 -- List of modifier flags
@@ -702,6 +706,7 @@ local modTagList = {
 	["per green socket"] = { tag = { type = "Multiplier", var = "GreenSocketIn{SlotName}" } },
 	["per blue socket"] = { tag = { type = "Multiplier", var = "BlueSocketIn{SlotName}" } },
 	["per white socket"] = { tag = { type = "Multiplier", var = "WhiteSocketIn{SlotName}" } },
+    ["for each impale on enemy"] = { tag = { type = "Multiplier", var = "ImpaleStack", actor = "enemy" }},
 	-- Per stat
 	["per (%d+) strength"] = function(num) return { tag = { type = "PerStat", stat = "Str", div = num } } end,
 	["per (%d+) dexterity"] = function(num) return { tag = { type = "PerStat", stat = "Dex", div = num } } end,
@@ -892,6 +897,7 @@ local modTagList = {
 	["if you[' ]h?a?ve used a minion skill recently"] = { tag = { type = "Condition", var = "UsedMinionSkillRecently" } },
 	["if you[' ]h?a?ve used a movement skill recently"] = { tag = { type = "Condition", var = "UsedMovementSkillRecently" } },
 	["if you[' ]h?a?ve used a vaal skill recently"] = { tag = { type = "Condition", var = "UsedVaalSkillRecently" } },
+	["if you've impaled an enemy recently"] = { tag = { type = "Condition", var = "ImpaledRecently" } },
 	["during soul gain prevention"] = { tag = { type = "Condition", var = "SoulGainPrevention" } },
 	["if you detonated mines recently"] = { tag = { type = "Condition", var = "DetonatedMinesRecently" } },
 	["if you detonated a mine recently"] = { tag = { type = "Condition", var = "DetonatedMinesRecently" } },
@@ -1043,6 +1049,7 @@ local specialModList = {
 	["cannot be stunned while you have fortify"] = { mod("AvoidStun", "BASE", 100, { type = "Condition", var = "Fortify" }) },
 	["enemies taunted by you take (%d+)%% increased damage"] = function(num) return { mod("EnemyModifier", "LIST", { mod = mod("DamageTaken", "INC", num, { type = "Condition", var = "Taunted" }) }) } end,
 	["enemies taunted by you cannot evade attacks"] = { mod("EnemyModifier", "LIST", { mod = flag("CannotEvade", { type = "Condition", var = "Taunted" }) }) },
+	["if you've impaled an enemy recently, you and nearby allies have %+(%d+) to armour"] = function (num) return { mod("ExtraAura", "LIST", { mod = mod("Armour", "BASE", num) }, { type = "Condition", var = "ImpaledRecently" }) } end,
 	-- Chieftain
 	["enemies near your totems take (%d+)%% increased physical and fire damage"] = function(num) return {
 		mod("EnemyModifier", "LIST", { mod = mod("PhysicalDamageTaken", "INC", num) }), 
@@ -1728,6 +1735,7 @@ for gemId, gemData in pairs(data["3_0"].gems) do
 		end
 		if gemData.tags.aura or gemData.tags.herald then
 			skillNameList["while affected by "..skillName:lower()] = { tag = { type = "Condition", var = "AffectedBy"..skillName:gsub(" ","") } }
+            skillNameList["while using "..skillName:lower()] = { tag = { type = "Condition", var = "AffectedBy"..skillName:gsub(" ","") } }
 		end
 		if gemData.tags.chaining then
 			specialModList["^"..skillName:lower().." chains an additional time"] = { mod("ExtraSkillMod", "LIST", { mod = mod("ChainCountMax", "BASE", 1) }, { type = "SkillName", skillName = skillName }) }

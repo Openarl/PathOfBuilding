@@ -530,6 +530,11 @@ Variant: Wrath: Light Leech
 Variant: Wrath: Light Pen
 Variant: Wrath: Phys Add Light
 Variant: Wrath: Phys Convert Light
+Variant: Pride: Double Damage
+Variant: Pride: Intimidate Enemies
+Variant: Pride: Attack Physical Damage
+Variant: Pride: Impale Chance
+Variant: Pride: Impale Hits Duration
 Limited to: 1
 (4–6)% increased maximum Energy Shield
 (4–6)% increased maximum Life 
@@ -586,6 +591,11 @@ Limited to: 1
 {variant:50}Damage Penetrates (10-15)% Lightning Resistance while affected by Wrath
 {variant:51}Gain (15-25)% of Physical Damage as Extra Lightning Damage while affected by Wrath
 {variant:52}(25-40)% of Physical Damage Converted to Lightning Damage while affected by Wrath
+{variant:53}(8-12)% chance to deal Double Damage while using Pride
+{variant:54}Your Hits Intimidate Enemies for 4 seconds while you are using Pride
+{variant:55}(40–60)% increased Attack Physical Damage while using Pride
+{variant:56}25% chance to Impale Enemies on Hit with Attacks while using Pride
+{variant:57}Impales you inflict last 2 additional Hits while using Pride
 ]],
 -- Jewel: Threshold
 [[
