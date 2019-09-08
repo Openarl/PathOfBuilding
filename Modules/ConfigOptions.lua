@@ -718,6 +718,10 @@ return {
 	{ var = "conditionEnemyShocked", type = "check", label = "Is the enemy Shocked?", tooltip = "In addition to allowing any 'against Shocked Enemies' modifiers to apply,\nthis will apply Shock's Damage Taken modifier to the enemy.", apply = function(val, modList, enemyModList)
 		enemyModList:NewMod("Condition:Shocked", "FLAG", true, "Config", { type = "Condition", var = "Effective" })
 	end },
+	{ var = "baseShockEffect", type = "integer", label = "Shocked Damage Taken modifier", tooltip = "Initial increased damage taken of shock", ifOption = "conditionEnemyShocked",
+		apply = function(val, modList, enemyModList) 
+			modList:NewMod("EnemyShockEffect", "OVERRIDE", val, "Config") 
+	end },
 	{ var = "multiplierFreezeShockIgniteOnEnemy", type = "count", label = "# of Freeze/Shock/Ignite on Enemy:", ifMult = "FreezeShockIgniteOnEnemy", apply = function(val, modList, enemyModList)
 		modList:NewMod("Multiplier:FreezeShockIgniteOnEnemy", "BASE", val, "Config", { type = "Condition", var = "Effective" })
 	end },

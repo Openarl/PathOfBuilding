@@ -243,6 +243,38 @@ function calcs.offence(env, actor, activeSkill)
 		end
 	end
 
+	if enemyDB:Flag(nil, "Shock") then
+		local overrideEffect = skillModList:Override(nil, "EnemyShockEffect") 
+		local baseEffect = 0.1
+		for i, mod in ipairs(skillModList:Tabulate("BASE", {}, "EnemyShockEffect")) do
+			baseEffect = m_max(baseEffect, mod.mod.value)
+		end
+		local increase = calcLib.mod(skillModList, nil, "EnemyShockEffect")
+		local hitEffect = increase * baseEffect
+
+		local enemyBaseEffect = 0
+		for i, mod in ipairs(enemyDB:Tabulate("BASE", {}, "SelfShockEffect")) do
+			enemyBaseEffect = m_max(enemyBaseEffect, mod.mod.value)
+		end
+		hitEffect = m_max(enemyBaseEffect, hitEffect)
+
+		local cappedEffect = overrideEffect or m_min(50, hitEffect)
+		output.ShockEffect = cappedEffect
+		enemyDB:NewMod("DamageTaken", "INC", cappedEffect, "Shock")
+		if breakdown then
+			breakdown.ShockEffect = { 
+				"Increased damage taken by enemy:",
+			}
+			if overrideEffect ~= nil or hitEffect < 50 then
+				t_insert(breakdown.ShockEffect, s_format("%d%%", cappedEffect))
+			else
+				t_insert(breakdown.ShockEffect, s_format("50%% (%d%%)", hitEffect))
+				
+			end
+		end
+	end
+		
+
 	local isAttack = skillFlags.attack
 
 	runSkillFunc("preSkillTypeFunc")

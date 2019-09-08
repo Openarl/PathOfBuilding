@@ -4467,6 +4467,11 @@ skills["VaalLightningTrap"] = {
 	qualityStats = {
 		{ "shocked_ground_base_magnitude_override", 0.25 },
 	},
+	statMap = {
+		["shocked_ground_base_magnitude_override"] = {
+			mod("SelfShockEffect", "BASE", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "LightningTrapShock" }),
+		},
+	},
 	stats = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
