@@ -1152,6 +1152,7 @@ local specialModList = {
 	["you have onslaught while at maximum endurance charges"] = { flag("Condition:Onslaught", { type = "StatThreshold", stat = "EnduranceCharges", thresholdStat = "EnduranceChargesMax" }) },
 	-- Sabotuer
 	-- Slayer
+	["deal up to 15%% more melee damage to enemies, based on proximity"] = function(num) return { mod("Damage", "MORE", num, nil, ModFlag.Melee, { type = "Condition", var = "AtCloseRange" }) } end,
 	-- Trickster
 	["(%d+)%% chance to gain (%d+)%% of non%-chaos damage with hits as extra chaos damage"] = function(num, _, perc) return { mod("NonChaosDamageGainAsChaos", "BASE", num / 100 * tonumber(perc)) } end,
 	["movement skills cost no mana"] = { mod("ManaCost", "MORE", -100, nil, 0, KeywordFlag.Movement) },
