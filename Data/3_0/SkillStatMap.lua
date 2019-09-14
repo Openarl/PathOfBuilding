@@ -309,6 +309,12 @@ return {
 ["damage_+%_while_es_leeching"] = {
 	mod("Damage", "INC", nil, 0, 0, { type = "Condition", var = "LeechingEnergyShield" }),
 },
+["cannot_be_stunned_while_leeching"] = {
+	mod("AvoidStun", "BASE", 100, { type = "Condition", var = "Leeching"}),
+},
+["life_leech_does_not_stop_at_full_life"] = {
+	flag("CanLeechLifeOnFullLife"),
+},
 ["aura_effect_+%"] = {
 	mod("AuraEffect", "INC", nil),
 },
