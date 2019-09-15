@@ -982,8 +982,8 @@ function calcs.offence(env, actor, activeSkill)
 		end
 
 		-- Calculate hit damage for each damage type
-		local totalHitMin, totalHitMax = 0, 0
-		local totalCritMin, totalCritMax = 0, 0
+		local totalHitMin, totalHitMax, totalHitAvg = 0, 0, 0
+		local totalCritMin, totalCritMax, totalCritAvg = 0, 0, 0
 		local ghostReaver = skillModList:Flag(nil, "GhostReaver")
 		output.LifeLeech = 0
 		output.LifeLeechInstant = 0
@@ -1001,13 +1001,13 @@ function calcs.offence(env, actor, activeSkill)
 			local noEnergyShieldLeech = skillModList:Flag(cfg, "CannotLeechEnergyShield") or enemyDB:Flag(nil, "CannotLeechEnergyShieldFromSelf")
 			local noManaLeech = skillModList:Flag(cfg, "CannotLeechMana") or enemyDB:Flag(nil, "CannotLeechManaFromSelf")
 			for _, damageType in ipairs(dmgTypeList) do
-				local min, max
+				local damageTypeHitMin, damageTypeHitMax, damageTypeHitAvg
 				if skillFlags.hit and canDeal[damageType] then
-					min, max = calcDamage(activeSkill, output, cfg, pass == 2 and breakdown and breakdown[damageType], damageType, 0)
+					damageTypeHitMin, damageTypeHitMax = calcDamage(activeSkill, output, cfg, pass == 2 and breakdown and breakdown[damageType], damageType, 0)
 					local convMult = activeSkill.conversionTable[damageType].mult
 					if pass == 2 and breakdown then
 						t_insert(breakdown[damageType], "Hit damage:")
-						t_insert(breakdown[damageType], s_format("%d to %d ^8(total damage)", min, max))
+						t_insert(breakdown[damageType], s_format("%d to %d ^8(total damage)", damageTypeHitMin, damageTypeHitMax))
 						if convMult ~= 1 then
 							t_insert(breakdown[damageType], s_format("x %g ^8(%g%% converted to other damage types)", convMult, (1-convMult)*100))
 						end
@@ -1023,9 +1023,9 @@ function calcs.offence(env, actor, activeSkill)
 						-- Apply crit multiplier
 						allMult = allMult * output.CritMultiplier
 					end				
-					min = min * allMult
-					max = max * allMult
-					if (min ~= 0 or max ~= 0) and env.mode_effective then
+					damageTypeHitMin = damageTypeHitMin * damageTypeHitMax
+					damageTypeHitMax = damageTypeHitMax * allMult
+					if (damageTypeHitMin ~= 0 or damageTypeHitMax ~= 0) and env.mode_effective then
 						-- Apply enemy resistances and damage taken modifiers
 						local resist = 0
 						local pen = 0
@@ -1054,8 +1054,8 @@ function calcs.offence(env, actor, activeSkill)
 						if not skillModList:Flag(cfg, "Ignore"..damageType.."Resistance", isElemental[damageType] and "IgnoreElementalResistances" or nil) and not enemyDB:Flag(nil, "SelfIgnore"..damageType.."Resistance") then
 							effMult = effMult * (1 - (resist - pen) / 100)
 						end
-						min = min * effMult
-						max = max * effMult
+						damageTypeHitMin = damageTypeHitMin * effMult
+						damageTypeHitMax = damageTypeHitMax * effMult
 						if env.mode == "CALCS" then
 							output[damageType.."EffMult"] = effMult
 						end
@@ -1064,14 +1064,24 @@ function calcs.offence(env, actor, activeSkill)
 							breakdown[damageType.."EffMult"] = breakdown.effMult(damageType, resist, pen, takenInc, effMult, takenMore)
 						end
 					end
+
 					if pass == 2 and breakdown then
-						t_insert(breakdown[damageType], s_format("= %d to %d", min, max))
+						t_insert(breakdown[damageType], s_format("= %d to %d", damageTypeHitMin, damageTypeHitMax))
 					end
+					
+					if skillModList:Flag(skillCfg, "LuckyHits") then 
+						damageTypeHitAvg = (damageTypeHitMin / 3 + 2 * damageTypeHitMax / 3)
+					else
+						damageTypeHitAvg = (damageTypeHitMin / 2 + damageTypeHitMax / 2)
+					end
+
+
+					--Beginning of Leech Calculation for this DamageType
 					if skillFlags.mine or skillFlags.trap or skillFlags.totem then
 						if not noLifeLeech then
 							local lifeLeech = skillModList:Sum("BASE", cfg, "DamageLifeLeechToPlayer")
 							if lifeLeech > 0 then
-								lifeLeechTotal = lifeLeechTotal + (min + max) / 2 * lifeLeech / 100
+								lifeLeechTotal = lifeLeechTotal + damageTypeHitAvg * lifeLeech / 100
 							end
 						end
 					else
@@ -1087,24 +1097,24 @@ function calcs.offence(env, actor, activeSkill)
 								lifeLeech = skillModList:Sum("BASE", cfg, "DamageLeech", "DamageLifeLeech", damageType.."DamageLifeLeech", isElemental[damageType] and "ElementalDamageLifeLeech" or nil) + enemyDB:Sum("BASE", cfg, "SelfDamageLifeLeech") / 100
 							end
 							if lifeLeech > 0 then
-								lifeLeechTotal = lifeLeechTotal + (min + max) / 2 * lifeLeech / 100
+								lifeLeechTotal = lifeLeechTotal + damageTypeHitAvg * lifeLeech / 100
 							end
 						end
 						if not noEnergyShieldLeech then
 							local energyShieldLeech = skillModList:Sum("BASE", cfg, "DamageEnergyShieldLeech", damageType.."DamageEnergyShieldLeech", isElemental[damageType] and "ElementalDamageEnergyShieldLeech" or nil) + enemyDB:Sum("BASE", cfg, "SelfDamageEnergyShieldLeech") / 100
 							if energyShieldLeech > 0 then
-								energyShieldLeechTotal = energyShieldLeechTotal + (min + max) / 2 * energyShieldLeech / 100
+								energyShieldLeechTotal = energyShieldLeechTotal + damageTypeHitAvg * energyShieldLeech / 100
 							end
 						end
 						if not noManaLeech then
 							local manaLeech = skillModList:Sum("BASE", cfg, "DamageLeech", "DamageManaLeech", damageType.."DamageManaLeech", isElemental[damageType] and "ElementalDamageManaLeech" or nil) + enemyDB:Sum("BASE", cfg, "SelfDamageManaLeech") / 100
 							if manaLeech > 0 then
-								manaLeechTotal = manaLeechTotal + (min + max) / 2 * manaLeech / 100
+								manaLeechTotal = manaLeechTotal + damageTypeHitAvg * manaLeech / 100
 							end
 						end
 					end
 				else
-					min, max = 0, 0
+					damageTypeHitMin, damageTypeHitMax = 0, 0
 					if breakdown then
 						breakdown[damageType] = {
 							"You can't deal "..damageType.." damage"
@@ -1112,17 +1122,19 @@ function calcs.offence(env, actor, activeSkill)
 					end
 				end
 				if pass == 1 then
-					output[damageType.."CritAverage"] = (min + max) / 2
-					totalCritMin = totalCritMin + min
-					totalCritMax = totalCritMax + max
+					output[damageType.."CritAverage"] = damageTypeHitAvg
+					totalCritAvg = totalCritAvg + damageTypeHitAvg
+					totalCritMin = totalCritMin + damageTypeHitMin
+					totalCritMax = totalCritMax + damageTypeHitMax
 				else
 					if env.mode == "CALCS" then
-						output[damageType.."Min"] = min
-						output[damageType.."Max"] = max
+						output[damageType.."Min"] = damageTypeHitMin
+						output[damageType.."Max"] = damageTypeHitMax
 					end
-					output[damageType.."HitAverage"] = (min + max) / 2
-					totalHitMin = totalHitMin + min
-					totalHitMax = totalHitMax + max
+					output[damageType.."HitAverage"] = damageTypeHitAvg
+					totalHitAvg = totalHitAvg + damageTypeHitAvg
+					totalHitMin = totalHitMin + damageTypeHitMin
+					totalHitMax = totalHitMax + damageTypeHitMax
 				end
 			end
 			if skillData.lifeLeechPerUse then
@@ -1207,16 +1219,8 @@ function calcs.offence(env, actor, activeSkill)
 		output.EnergyShieldOnHitRate = output.EnergyShieldOnHit * hitRate
 		output.ManaOnHitRate = output.ManaOnHit * hitRate
 
-		-- Calculate average damage and final DPS
-		if skillModList:Flag(skillCfg, "LuckyHits") then 
-			AverageNonCritHit = (totalHitMin / 3 + 2 * totalHitMax / 3)
-			AverageCritHit = (totalCritMin / 3 + 2 * totalCritMax / 3)
-		else
-			AverageNonCritHit = (totalHitMin / 2 + totalHitMax / 2)
-			AverageCritHit = (totalCritMin / 2 + totalCritMax / 2)
-		end
 		
-		output.AverageHit = AverageNonCritHit * (1 - output.CritChance / 100) + AverageCritHit * output.CritChance / 100
+		output.AverageHit = totalHitAvg * (1 - output.CritChance / 100) + totalCritAvg * output.CritChance / 100
 	
 
 		output.AverageDamage = output.AverageHit * output.HitChance / 100
@@ -1224,8 +1228,8 @@ function calcs.offence(env, actor, activeSkill)
 		if breakdown then
 			if output.CritEffect ~= 1 then
 				breakdown.AverageHit = {
-					s_format("%.1f x (1 - %.4f) ^8(damage from non-crits)", AverageNonCritHit, output.CritChance / 100),
-					s_format("+ %.1f x %.4f ^8(damage from crits)", AverageCritHit, output.CritChance / 100),
+					s_format("%.1f x (1 - %.4f) ^8(damage from non-crits)", totalHitAvg, output.CritChance / 100),
+					s_format("+ %.1f x %.4f ^8(damage from crits)", totalCritAvg, output.CritChance / 100),
 					s_format("= %.1f", output.AverageHit),
 				}
 			end
