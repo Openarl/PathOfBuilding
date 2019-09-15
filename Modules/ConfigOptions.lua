@@ -388,7 +388,7 @@ return {
 		modList:NewMod("Condition:Tailwind", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
 	{ var = "buffLuckyHits", type = "check", label = "Damage with Hits is Lucky", tooltip = "Damage is rolled twice, maximum roll is used", apply = function(val, modList, enemyModList)
-		modList:NewMod("Condition:LuckyHits", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+		modList:NewMod("LuckyHits", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
 	{ var = "buffAdrenaline", type = "check", label = "Do you have Adrenaline?", tooltip = "This will enable the Adrenaline buff:\n100% increased Damage\n25% increased Attack, Cast and Movement Speed\n10% additional Physical Damage Reduction", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:Adrenaline", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
