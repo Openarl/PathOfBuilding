@@ -1001,7 +1001,7 @@ function calcs.offence(env, actor, activeSkill)
 			local noEnergyShieldLeech = skillModList:Flag(cfg, "CannotLeechEnergyShield") or enemyDB:Flag(nil, "CannotLeechEnergyShieldFromSelf")
 			local noManaLeech = skillModList:Flag(cfg, "CannotLeechMana") or enemyDB:Flag(nil, "CannotLeechManaFromSelf")
 			for _, damageType in ipairs(dmgTypeList) do
-				local damageTypeHitMin, damageTypeHitMax, damageTypeHitAvg
+				local damageTypeHitMin, damageTypeHitMax, damageTypeHitAvg = 0, 0, 0
 				if skillFlags.hit and canDeal[damageType] then
 					damageTypeHitMin, damageTypeHitMax = calcDamage(activeSkill, output, cfg, pass == 2 and breakdown and breakdown[damageType], damageType, 0)
 					local convMult = activeSkill.conversionTable[damageType].mult
@@ -1023,7 +1023,7 @@ function calcs.offence(env, actor, activeSkill)
 						-- Apply crit multiplier
 						allMult = allMult * output.CritMultiplier
 					end				
-					damageTypeHitMin = damageTypeHitMin * damageTypeHitMax
+					damageTypeHitMin = damageTypeHitMin * allMult
 					damageTypeHitMax = damageTypeHitMax * allMult
 					if (damageTypeHitMin ~= 0 or damageTypeHitMax ~= 0) and env.mode_effective then
 						-- Apply enemy resistances and damage taken modifiers
@@ -1114,7 +1114,6 @@ function calcs.offence(env, actor, activeSkill)
 						end
 					end
 				else
-					damageTypeHitMin, damageTypeHitMax = 0, 0
 					if breakdown then
 						breakdown[damageType] = {
 							"You can't deal "..damageType.." damage"
@@ -1227,7 +1226,19 @@ function calcs.offence(env, actor, activeSkill)
 		output.TotalDPS = output.AverageDamage * (globalOutput.HitSpeed or globalOutput.Speed) * (skillData.dpsMultiplier or 1)
 		if breakdown then
 			if output.CritEffect ~= 1 then
+				local hitAverageString, critAverageString
+				if skillModList:Flag(skillCfg, "LuckyHits") then 
+					hitAverageString = s_format("(1/3) x %d + (2/3) x %d = %.1f ^8(average from non-crits)", totalHitMin, totalHitMax, totalHitAvg)
+					critAverageString = s_format("(1/3) x %d + (2/3) x %d = %.1f ^8(average from crits)", totalCritMin, totalCritMax, totalCritAvg)
+				else
+					hitAverageString = s_format("(1/2) x %d + (1/2) x %d = %.1f ^8(average from non-crits)", totalHitMin, totalHitMax, totalHitAvg)
+					critAverageString = s_format("(1/2) x %d + (1/2) x %d = %.1f ^8(average from crits)", totalCritMin, totalCritMax, totalCritAvg)
+				end
+				
 				breakdown.AverageHit = {
+					hitAverageString,
+					critAverageString,
+					"",
 					s_format("%.1f x (1 - %.4f) ^8(damage from non-crits)", totalHitAvg, output.CritChance / 100),
 					s_format("+ %.1f x %.4f ^8(damage from crits)", totalCritAvg, output.CritChance / 100),
 					s_format("= %.1f", output.AverageHit),
