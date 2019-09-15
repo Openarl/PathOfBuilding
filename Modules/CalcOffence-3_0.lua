@@ -1208,7 +1208,11 @@ function calcs.offence(env, actor, activeSkill)
 		output.ManaOnHitRate = output.ManaOnHit * hitRate
 
 		-- Calculate average damage and final DPS
-		output.AverageHit = (totalHitMin + totalHitMax) / 2 * (1 - output.CritChance / 100) + (totalCritMin + totalCritMax) / 2 * output.CritChance / 100
+		if skillModList:Flag(skillCfg, "LuckyHits") then 
+			output.AverageHit = (totalHitMin / 3 + 2 * totalHitMax/ 3) * (1 - output.CritChance / 100) + (totalCritMin / 3 + 2 * totalCritMax / 3) * output.CritChance / 100
+		else
+			output.AverageHit = (totalHitMin + totalHitMax) / 2 * (1 - output.CritChance / 100) + (totalCritMin + totalCritMax) / 2 * output.CritChance / 100
+		
 		output.AverageDamage = output.AverageHit * output.HitChance / 100
 		output.TotalDPS = output.AverageDamage * (globalOutput.HitSpeed or globalOutput.Speed) * (skillData.dpsMultiplier or 1)
 		if breakdown then
