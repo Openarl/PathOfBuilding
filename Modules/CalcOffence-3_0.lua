@@ -1209,17 +1209,23 @@ function calcs.offence(env, actor, activeSkill)
 
 		-- Calculate average damage and final DPS
 		if skillModList:Flag(skillCfg, "LuckyHits") then 
-			output.AverageHit = (totalHitMin / 3 + 2 * totalHitMax/ 3) * (1 - output.CritChance / 100) + (totalCritMin / 3 + 2 * totalCritMax / 3) * output.CritChance / 100
+			AverageNonCritHit = (totalHitMin / 3 + 2 * totalHitMax / 3)
+			AverageCritHit = (totalCritMin / 3 + 2 * totalCritMax / 3)
 		else
-			output.AverageHit = (totalHitMin + totalHitMax) / 2 * (1 - output.CritChance / 100) + (totalCritMin + totalCritMax) / 2 * output.CritChance / 100
+			AverageNonCritHit = (totalHitMin / 2 + totalHitMax / 2)
+			AverageCritHit = (totalCritMin / 2 + totalCritMax / 2)
+		end
 		
+		output.AverageHit = AverageNonCritHit * (1 - output.CritChance / 100) + AverageCritHit * output.CritChance / 100
+	
+
 		output.AverageDamage = output.AverageHit * output.HitChance / 100
 		output.TotalDPS = output.AverageDamage * (globalOutput.HitSpeed or globalOutput.Speed) * (skillData.dpsMultiplier or 1)
 		if breakdown then
 			if output.CritEffect ~= 1 then
 				breakdown.AverageHit = {
-					s_format("%.1f x (1 - %.4f) ^8(damage from non-crits)", (totalHitMin + totalHitMax) / 2, output.CritChance / 100),
-					s_format("+ %.1f x %.4f ^8(damage from crits)", (totalCritMin + totalCritMax) / 2, output.CritChance / 100),
+					s_format("%.1f x (1 - %.4f) ^8(damage from non-crits)", AverageNonCritHit, output.CritChance / 100),
+					s_format("+ %.1f x %.4f ^8(damage from crits)", AverageCritHit, output.CritChance / 100),
 					s_format("= %.1f", output.AverageHit),
 				}
 			end
