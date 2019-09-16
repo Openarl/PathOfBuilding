@@ -995,9 +995,7 @@ local specialModList = {
 		mod("BlockChance", "MORE", -30),
 		mod("SpellBlockChance", "MORE", -30) 
 	},
-	["maximum life becomes 1, immune to chaos damage"] = { 
-		flag("ChaosInoculation")	
-	},
+	["maximum life becomes 1, immune to chaos damage"] = {flag("ChaosInoculation") },
 	["life regeneration is applied to energy shield instead"] = { flag("ZealotsOath") },
 	["life leeched per second is doubled"] = { mod("LifeLeechRate", "MORE", 100) },
 	["maximum total recovery per second from life leech is doubled"] = { mod("MaxLifeLeechRate", "MORE", 100) },
