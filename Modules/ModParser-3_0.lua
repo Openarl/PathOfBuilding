@@ -795,8 +795,6 @@ local modTagList = {
 	-- Player status conditions
 	["wh[ie][ln]e? on low life"] = { tag = { type = "Condition", var = "LowLife" } },
 	["wh[ie][ln]e? not on low life"] = { tag = { type = "Condition", var = "LowLife", neg = true } },
-	["wh[ie][ln]e? on full life"] = { tag = { type = "Condition", var = "FullLife" } },
-	["wh[ie][ln]e? not on full life"] = { tag = { type = "Condition", var = "FullLife", neg = true } },
 	["wh[ie][ln]e? no life is reserved"] = { tag = { type = "StatThreshold", stat = "LifeReserved", threshold = 0, upper = true } },
 	["wh[ie][ln]e? no mana is reserved"] = { tag = { type = "StatThreshold", stat = "ManaReserved", threshold = 0, upper = true } },
 	["wh[ie][ln]e? on full energy shield"] = { tag = { type = "Condition", var = "FullEnergyShield" } },
@@ -997,7 +995,9 @@ local specialModList = {
 		mod("BlockChance", "MORE", -30),
 		mod("SpellBlockChance", "MORE", -30) 
 	},
-	["maximum life becomes 1, immune to chaos damage"] = { flag("ChaosInoculation") },
+	["maximum life becomes 1, immune to chaos damage"] = { 
+		flag("ChaosInoculation")	
+	},
 	["life regeneration is applied to energy shield instead"] = { flag("ZealotsOath") },
 	["life leeched per second is doubled"] = { mod("LifeLeechRate", "MORE", 100) },
 	["maximum total recovery per second from life leech is doubled"] = { mod("MaxLifeLeechRate", "MORE", 100) },
@@ -1610,6 +1610,14 @@ local specialModList = {
 	["transfiguration of body"] = { flag("TransfigurationOfBody") },
 	["transfiguration of mind"] = { flag("TransfigurationOfMind") },
 	["transfiguration of soul"] = { flag("TransfigurationOfSoul") },
+	["wh[ie][ln]e? on full life"] = {
+		flag("Condition:CheckFullLife"),
+		mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "CheckFullLife" })
+	},
+	["wh[ie][ln]e? not on full life"] = {
+		flag("Condition:CheckFullLife"),
+		mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "CheckFullLife" })
+	},
 	-- Skill-specific enchantment modifiers
 	["(%d+)%% increased decoy totem life"] = function(num) return { mod("TotemLife", "INC", num, { type = "SkillName", skillName = "Decoy Totem" }) } end,
 	["(%d+)%% increased ice spear critical strike chance in second form"] = function(num) return { mod("CritChance", "INC", num, { type = "SkillName", skillName = "Ice Spear" }, { type = "SkillPart", skillPart = 2 }) } end,
