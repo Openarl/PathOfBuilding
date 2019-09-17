@@ -368,6 +368,11 @@ local function doActorMisc(env, actor)
 			local effect = m_max(m_floor(70 * calcLib.mod(modDB, nil, "SelfChillEffect")), 0)
 			modDB:NewMod("ActionSpeed", "INC", -effect, "Freeze")
 		end
+		if modDB:Flag(nil, "CanLeechLifeOnFullLife") then
+			condList["Leeching"] = true
+			condList["LeechingLife"] = true
+			env.configInput.conditionLeeching = true
+		end
 	end	
 end
 
