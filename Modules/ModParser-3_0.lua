@@ -995,7 +995,7 @@ local specialModList = {
 		mod("BlockChance", "MORE", -30),
 		mod("SpellBlockChance", "MORE", -30) 
 	},
-	["maximum life becomes 1, immune to chaos damage"] = {flag("ChaosInoculation") },
+	["maximum life becomes 1, immune to chaos damage"] = { flag("ChaosInoculation") },
 	["life regeneration is applied to energy shield instead"] = { flag("ZealotsOath") },
 	["life leeched per second is doubled"] = { mod("LifeLeechRate", "MORE", 100) },
 	["maximum total recovery per second from life leech is doubled"] = { mod("MaxLifeLeechRate", "MORE", 100) },
@@ -1384,6 +1384,7 @@ local specialModList = {
 	["can [hs][au][vm][em]o?n? 1 additional siege ballista totem per (%d+) dexterity"] = function(num) return { mod("ActiveTotemLimit", "BASE", 1, { type = "SkillName", skillName = "Siege Ballista" }, { type = "PerStat", stat = "Dex", div = num }) } end,
 	["totems fire (%d+) additional projectiles"] = function(num) return { mod("ProjectileCount", "BASE", num, nil, 0, KeywordFlag.Totem) } end,
 	["([%d%.]+)%% of damage dealt by y?o?u?r? ?totems is leeched to you as life"] = function(num) return { mod("DamageLifeLeechToPlayer", "BASE", num, nil, 0, KeywordFlag.Totem) } end,
+	["if you've consumed a corpse recently, you and your minions have (%d+)%% increased area of effect"] = function(num) return { mod("AreaOfEffect", "INC", num, { type = "Condition", var = "ConsumedCorpseRecently" }), mod("MinionModifier", "LIST", { mod = mod("AreaOfEffect", "INC", num) }, { type = "Condition", var = "ConsumedCorpseRecently" }) } end,
 	-- Minions
 	["your strength is added to your minions"] = { flag("HalfStrengthAddedToMinions") },
 	["half of your strength is added to your minions"] = { flag("HalfStrengthAddedToMinions") },
