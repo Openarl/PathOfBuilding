@@ -366,7 +366,6 @@ local function doActorMisc(env, actor)
 			modDB:NewMod("AttackDodgeChance", "BASE", m_floor(20 * effectMod), "Elusive")
 			modDB:NewMod("SpellDodgeChance", "BASE", m_floor(20 * effectMod), "Elusive")
 			modDB:NewMod("MovementSpeed", "INC", m_floor(40 * effectMod), "Elusive")
---modDB:NewMod("CritMultiplier", "INC", m_floor(nil * effectMod), "Nightblade")
 		end
 		if modDB:Flag(nil, "Chill") then
 			local effect = m_max(m_floor(30 * calcLib.mod(modDB, nil, "SelfChillEffect")), 0)
