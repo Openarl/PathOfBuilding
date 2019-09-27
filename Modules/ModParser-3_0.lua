@@ -350,6 +350,8 @@ local modNameList = {
 	["fortify duration"] = "FortifyDuration",
 	["effect of fortify on you"] = "FortifyEffectOnSelf",
 	["effect of tailwind on you"] = "TailwindEffectOnSelf",
+	["elusive effect"] = "ElusiveEffect",
+	["effect of elusive on you"] = "ElusiveEffect",
 	-- Basic damage types
 	["damage"] = "Damage",
 	["physical damage"] = "PhysicalDamage",
@@ -831,6 +833,8 @@ local modTagList = {
 	["while you have onslaught"] = { tag = { type = "Condition", var = "Onslaught" } },
 	["while phasing"] = { tag = { type = "Condition", var = "Phasing" } },
 	["while you have tailwind"] = { tag = { type = "Condition", var = "Tailwind" } },
+	["while elusive"] = { tag = { type = "Condition", var = "Elusive" } },
+	["gain elusive"] = { tag = { type = "Condition", var = "Elusive" } },
 	["while you have arcane surge"] = { tag = { type = "Condition", var = "AffectedByArcaneSurge" } },
 	["while you have cat's stealth"] = { tag = { type = "Condition", var = "AffectedByCat'sStealth" } },
 	["while you have avian's might"] = { tag = { type = "Condition", var = "AffectedByAvian'sMight" } },
