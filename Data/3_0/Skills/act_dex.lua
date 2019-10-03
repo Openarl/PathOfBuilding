@@ -7046,22 +7046,19 @@ skills["Slither"] = {
 	statDescriptionScope = "buff_skill_stat_descriptions",
 	castTime = 0,
 	statMap = {
-		["elusive_effect_+%"] = {
-			mod("ElusiveEffect", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Buff" }),
-		},
 		["slither_wither_stacks"] = {
 			flag("Condition:CanWither"),
 			mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "CanWither" }),
 		},
-	},	
+	},
 	baseFlags = {
 		spell = true,
 		duration = true,
 	},
 	baseMods = {
 		mod("ChaosDamageTaken", "INC", 6, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitheredStackCount", effectStackLimit = 15 }),
-		flag("Condition:Elusive"),
-		mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "Elusive" }),
+		flag("Condition:CanBeElusive"),
+		mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "CanBeElusive" }),
 	},
 	qualityStats = {
 		{ "elusive_effect_+%", 0.5 },

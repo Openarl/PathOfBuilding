@@ -1805,15 +1805,12 @@ skills["SupportPuncturingWeapon"] = {
 	ignoreMinionTypes = true,
 	statDescriptionScope = "gem_stat_descriptions",
 	baseMods = {
-		flag("Condition:Elusive"),
-		mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "Elusive" }),
+		flag("Condition:CanBeElusive"),
+		mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "CanBeElusive" }),
 	},
 	statMap = {
 		["elusive_effect_+%"] = {
-			mod("ElusiveEffect", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Buff" }),
-		},
-		["nightblade_elusive_grants_critical_strike_multiplier_+_to_supported_skills"] = {
-			mod("CritMultiplier", "BASE", nil, 0, 0, { type = "Condition", var = "Elusive" }),
+			mod("ElusiveEffect", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Buff", effectName = "Nightblade" }, { type = "Condition", varList = { "UsingClaw", "UsingDagger" } } ),
 		},
 	},	
 	qualityStats = {
