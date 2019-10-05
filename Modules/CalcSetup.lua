@@ -25,6 +25,7 @@ function calcs.initModDB(env, modDB)
 	modDB:NewMod("PowerChargesMax", "BASE", 3, "Base")
 	modDB:NewMod("FrenzyChargesMax", "BASE", 3, "Base")
 	modDB:NewMod("EnduranceChargesMax", "BASE", 3, "Base")
+	modDB:NewMod("InspirationChargesMax", "BASE", 5, "Base")
 	modDB:NewMod("MaxLifeLeechRate", "BASE", 20, "Base")
 	modDB:NewMod("MaxManaLeechRate", "BASE", 20, "Base")
 	if env.build.targetVersion ~= "2_6" then
@@ -33,11 +34,12 @@ function calcs.initModDB(env, modDB)
 		modDB:NewMod("MaxManaLeechInstance", "BASE", 10, "Base")
 		modDB:NewMod("MaxEnergyShieldLeechInstance", "BASE", 10, "Base")
 	end
-	modDB:NewMod("MineLayingTime", "BASE", 0.5, "Base")
 	if env.build.targetVersion == "2_6" then
 		modDB:NewMod("TrapThrowingTime", "BASE", 0.5, "Base")
+		modDB:NewMod("MineLayingTime", "BASE", 0.5, "Base")
 	else
 		modDB:NewMod("TrapThrowingTime", "BASE", 0.6, "Base")
+		modDB:NewMod("MineLayingTime", "BASE", 0.25, "Base")
 	end
 	modDB:NewMod("TotemPlacementTime", "BASE", 0.6, "Base")
 	modDB:NewMod("ActiveTotemLimit", "BASE", 1, "Base")
@@ -198,7 +200,7 @@ function calcs.initEnv(build, mode, override)
 	modDB:NewMod("Evasion", "BASE", 3, "Base", { type = "Multiplier", var = "Level", base = 53 })
 	modDB:NewMod("Accuracy", "BASE", 2, "Base", { type = "Multiplier", var = "Level", base = -2 })
 	modDB:NewMod("CritMultiplier", "BASE", 50, "Base")
-	modDB:NewMod("CritDegenMultiplier", "BASE", 50, "Base")
+	modDB:NewMod("DotMultiplier", "BASE", 50, "Base", { type = "Condition", var = "CriticalStrike" })
 	modDB:NewMod("FireResist", "BASE", env.configInput.resistancePenalty or -60, "Base")
 	modDB:NewMod("ColdResist", "BASE", env.configInput.resistancePenalty or -60, "Base")
 	modDB:NewMod("LightningResist", "BASE", env.configInput.resistancePenalty or -60, "Base")
@@ -218,10 +220,11 @@ function calcs.initEnv(build, mode, override)
 	modDB:NewMod("MovementSpeed", "INC", 1, "Base", { type = "Multiplier", var = "Rage", limit = 10, div = 5 }, { type = "Multiplier", var = "RageEffect" })
 	if build.targetVersion == "2_6" then
 		modDB:NewMod("ActiveTrapLimit", "BASE", 3, "Base")
+		modDB:NewMod("ActiveMineLimit", "BASE", 5, "Base")
 	else
 		modDB:NewMod("ActiveTrapLimit", "BASE", 15, "Base")
+		modDB:NewMod("ActiveMineLimit", "BASE", 15, "Base")
 	end
-	modDB:NewMod("ActiveMineLimit", "BASE", 5, "Base")
 	modDB:NewMod("EnemyCurseLimit", "BASE", 1, "Base")
 	modDB:NewMod("ProjectileCount", "BASE", 1, "Base")
 	modDB:NewMod("Speed", "MORE", 10, "Base", ModFlag.Attack, { type = "Condition", var = "DualWielding" })
@@ -322,7 +325,7 @@ function calcs.initEnv(build, mode, override)
 			end
 		end
 	else
-		nodes = env.spec.allocNodes
+		nodes = copyTable(env.spec.allocNodes, true)
 	end
 	env.allocNodes = nodes
 
@@ -597,6 +600,16 @@ function calcs.initEnv(build, mode, override)
 		env.player.weaponData2 = env.player.itemList["Weapon 2"] and env.player.itemList["Weapon 2"].weaponData and env.player.itemList["Weapon 2"].weaponData[2] or { }
 	end
 
+	-- Add granted passives
+	env.grantedPassives = { }
+	for _, passive in pairs(env.modDB:List(nil, "GrantedPassive")) do
+		local node = env.spec.tree.notableMap[passive]
+		if node then
+			nodes[node.id] = node
+			env.grantedPassives[node.id] = true
+		end
+	end
+
 	-- Merge modifiers for allocated passives
 	env.modDB:AddList(calcs.buildModListForNodeList(env, nodes, true))
 
@@ -711,7 +724,19 @@ function calcs.initEnv(build, mode, override)
 							}
 							if gemInstance.gemData then
 								for _, value in ipairs(propertyModList) do
-									if calcLib.gemIsType(activeEffect.gemData, value.keyword) then
+									local match = false
+									if value.keywordList then
+										match = true
+										for _, keyword in ipairs(value.keywordList) do
+											if not calcLib.gemIsType(activeEffect.gemData, keyword) then
+												match = false
+												break
+											end
+										end
+									else
+										match = calcLib.gemIsType(activeEffect.gemData, value.keyword)
+									end
+									if match then
 										activeEffect[value.key] = (activeEffect[value.key] or 0) + value.value
 									end
 								end

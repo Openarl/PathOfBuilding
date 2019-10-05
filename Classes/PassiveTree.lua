@@ -64,7 +64,7 @@ local PassiveTreeClass = newClass("PassiveTree", function(self, treeVersion)
 		self[k] = v
 	end
 
-	local cdnRoot = treeVersion == "2_6" and "" or ""--https://web.poecdn.com"
+	local cdnRoot = treeVersion == "2_6" and "" or "https://web.poecdn.com/image"
 
 	self.size = m_min(self.max_x - self.min_x, self.max_y - self.min_y) * 1.1
 
@@ -167,6 +167,7 @@ local PassiveTreeClass = newClass("PassiveTree", function(self, treeVersion)
 
 	ConPrintf("Processing tree...")
 	self.keystoneMap = { }
+	self.notableMap = { }
 	local nodeMap = { }
 	local sockets = { }
 	local orbitMult = { [0] = 0, m_pi / 3, m_pi / 6, m_pi / 6, m_pi / 20 }
@@ -196,6 +197,7 @@ local PassiveTreeClass = newClass("PassiveTree", function(self, treeVersion)
 			self.keystoneMap[node.dn] = node
 		elseif node["not"] then
 			node.type = "Notable"
+			self.notableMap[node.dn:lower()] = node
 		else
 			node.type = "Normal"
 		end
