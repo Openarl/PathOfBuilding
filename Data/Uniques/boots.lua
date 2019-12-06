@@ -284,7 +284,7 @@ Requires Level 22, 42 Int
 +20 to maximum Mana
 (40-60)% increased Energy Shield
 (5-15)% increased Movement Speed
-+1 to Maximum number of Zombies
++1 to Maximum number of Raised Zombies
 +1 to Maximum number of Spectres
 ]],[[
 Doryani's Delusion
@@ -539,15 +539,12 @@ Grants Level 20 Aspect of the Avian Skill
 [[
 Alberon's Warpath
 Soldier Boots
-Variant: {2_6}Pre 3.0.0
-Variant: Current
 Requires Level 49, 47 Str, 47 Int
 Adds 1 to 80 Chaos Damage to Attacks
 +(180-220) to Armour
 +(9-12)% to Chaos Resistance
 20% increased Movement Speed
-{variant:1}+2 to Maximum number of Skeletons
-{variant:2}+1 to Maximum number of Skeletons
++1 to Maximum number of Skeletons
 (15-18)% increased Strength
 ]],[[
 Death's Door
