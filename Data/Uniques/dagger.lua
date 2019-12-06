@@ -54,8 +54,7 @@ Variant: Current
 Requires Level 53, 58 Dex, 123 Int
 40% increased Global Critical Strike Chance
 +1 to Level of Socketed Fire Gems
-{variant:1,2}(40-60)% increased Spell Damage
-{variant:3}(40-60)% increased Fire Damage
+(40-60)% increased Fire Damage
 +(20-40) to Intelligence
 {variant:1}45% of Fire Damage Converted to Chaos Damage
 {variant:2,3}30% of Fire Damage Converted to Chaos Damage
