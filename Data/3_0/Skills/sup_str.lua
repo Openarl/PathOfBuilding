@@ -736,6 +736,10 @@ skills["SupportMeleeDamageOnFullLife"] = {
 		["support_damage_while_on_full_life_+%_final"] = {
 			mod("Damage", "MORE", nil, 0, 0, { type = "Condition", var = "FullLife" }),
 		},
+		["support_damage_check_for_full_life"] = {
+			flag("Condition:CheckFullLife"),
+			mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "CheckFullLife" }),
+		},
 	},
 	baseMods = {
 	},
@@ -744,6 +748,7 @@ skills["SupportMeleeDamageOnFullLife"] = {
 	},
 	stats = {
 		"support_damage_while_on_full_life_+%_final",
+		"support_damage_check_for_full_life",
 	},
 	levels = {
 		[1] = { 30, manaMultiplier = 30, levelRequirement = 18, statInterpolation = { 1, }, },
