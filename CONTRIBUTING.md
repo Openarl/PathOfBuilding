@@ -59,3 +59,4 @@ Use this process to export data from a GGPK file:
 2. Run the shortcut, and the GGPK data viewer UI will appear. If you get an error, be sure you're using the latest release of Path of Building.
 3. Paste the path to `Content.ggpk` into the text box in the top left, and hit enter to read the GGPK. If successful, you will see a list of the data tables in the GGPK file. Note: This will not work on the GGPK from the torrent file released before league launches, as it contains no `Data` section.
 4. Click `Scripts >>` to show the list of available export scripts. Double-clicking a script will run it, and the box to the right will show any output from the script.
+5. If you run into any errors, update the Export code as necessary and try again.
