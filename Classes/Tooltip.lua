@@ -11,16 +11,19 @@ local s_gmatch = string.gmatch
 
 local TooltipClass = newClass("Tooltip", function(self)
 	self.lines = { }
+	self.blocks = { }
 	self:Clear()
 end)
 
 function TooltipClass:Clear()
 	wipeTable(self.lines)
+	wipeTable(self.blocks)
 	if self.updateParams then
 		wipeTable(self.updateParams)
 	end
 	self.center = false
 	self.color = { 0.5, 0.3, 0 }
+	t_insert(self.blocks, { height = 0 })
 end
 
 function TooltipClass:CheckForUpdate(...)
@@ -46,12 +49,17 @@ end
 function TooltipClass:AddLine(size, text)
 	if text then
 		for line in s_gmatch(text .. "\n", "([^\n]*)\n") do	
+			if line:match("^.*(Equipping)") == "Equipping" or line:match("^.*(Removing)") == "Removing" then
+				t_insert(self.blocks, { height = size + 2})
+			else
+				self.blocks[#self.blocks].height = self.blocks[#self.blocks].height + size + 2
+			end
 			if self.maxWidth then
 				for _, line in ipairs(main:WrapString(line, size, self.maxWidth - 12)) do
-					t_insert(self.lines, { size = size, text = line })
+					t_insert(self.lines, { size = size, text = line, block = #self.blocks })
 				end
 			else
-				t_insert(self.lines, { size = size, text = line })
+				t_insert(self.lines, { size = size, text = line, block = #self.blocks })
 			end
 		end
 	end
@@ -95,36 +103,63 @@ function TooltipClass:Draw(x, y, w, h, viewPort)
 	elseif self.center then
 		ttX = m_floor(x - ttW/2)
 	end
+	
+	SetDrawColor(1, 1, 1)
+	local y = ttY + 6
+	local x = ttX
+	local columns = 1 -- reset to count columns by block heights
+	local currentBlock = 1
+	local maxColumnHeight = 0
+	local drawStack = {}
+	for i, data in ipairs(self.lines) do
+		if data.text then
+			if currentBlock ~= data.block and self.blocks[data.block].height + y > ttY + math.min(ttH, viewPort.height) then
+				y = ttY + 6
+				x = ttX + ttW * columns
+				columns = columns + 1
+			end
+			currentBlock = data.block
+			if self.center then
+				t_insert(drawStack, {x + ttW/2, y, "CENTER_X", data.size, "VAR", data.text})
+			else
+				t_insert(drawStack, {x + 6, y, "LEFT", data.size, "VAR", data.text})
+			end
+			y = y + data.size + 2
+		elseif self.lines[i + 1] and self.lines[i - 1] and self.lines[i + 1].text then
+			t_insert(drawStack, {nil, x, y - 1 + data.size / 2, ttW - 3, 2})
+			y = y + data.size + 2
+		end
+		maxColumnHeight = m_max(y - ttY + 6, maxColumnHeight)
+	end
+
+	-- background shading currently must be drawn before text lines.  API change will allow something like the commented lines below
+	SetDrawColor(0, 0, 0, .85)
+	--SetDrawLayer(nil, GetDrawLayer() - 5)
+	DrawImage(nil, ttX, ttY + 3, ttW * columns - 3, maxColumnHeight - 6)
+	--SetDrawLayer(nil, GetDrawLayer())
+	SetDrawColor(1, 1, 1)
+	for i, lines in ipairs(drawStack) do 
+		if #lines < 6 then
+			if(type(self.color) == "string") then
+				SetDrawColor(self.color) 
+			else
+				SetDrawColor(unpack(self.color))
+			end
+			DrawImage(unpack(lines))
+		else
+			DrawString(unpack(lines))
+		end
+	end
 	if type(self.color) == "string" then
 		SetDrawColor(self.color) 
 	else
 		SetDrawColor(unpack(self.color))
 	end
-	DrawImage(nil, ttX, ttY, ttW, 3)
-	DrawImage(nil, ttX, ttY, 3, ttH)
-	DrawImage(nil, ttX, ttY + ttH - 3, ttW, 3)
-	DrawImage(nil, ttX + ttW - 3, ttY, 3, ttH)
-	SetDrawColor(0, 0, 0, 0.75)
-	DrawImage(nil, ttX + 3, ttY + 3, ttW - 6, ttH - 6)
-	SetDrawColor(1, 1, 1)
-	local y = ttY + 6
-	for i, data in ipairs(self.lines) do
-		if data.text then
-			if self.center then
-				DrawString(ttX + ttW/2, y, "CENTER_X", data.size, "VAR", data.text)
-			else
-				DrawString(ttX + 6, y, "LEFT", data.size, "VAR", data.text)
-			end
-			y = y + data.size + 2
-		elseif self.lines[i + 1] and self.lines[i - 1] and self.lines[i + 1].text then
-			if type(self.color) == "string" then
-				SetDrawColor(self.color) 
-			else
-				SetDrawColor(unpack(self.color))
-			end
-			DrawImage(nil, ttX + 3, y - 1 + data.size / 2, ttW - 6, 2)
-			y = y + data.size + 2
-		end
+	for i=0,columns do
+		DrawImage(nil, ttX + ttW * i - 3 * math.ceil(i^2 / (i^2 + 1)), ttY, 3, maxColumnHeight) -- borders
 	end
+	DrawImage(nil, ttX, ttY, ttW * columns, 3) -- top border
+	DrawImage(nil, ttX, ttY + maxColumnHeight - 3, ttW * columns, 3) -- bottom border
+
 	return ttW, ttH
 end
