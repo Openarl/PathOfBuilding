@@ -186,6 +186,7 @@ for _, targetVersion in ipairs(targetVersionList) do
 		Gloves = dataModule("EnchantmentGloves"),
 	}
 	verData.essences = dataModule("Essence")
+	verData.pantheons = targetVersion ~= "2_6" and dataModule("Pantheons") or { }
 
 	-- Load skills
 	verData.skills = { }
