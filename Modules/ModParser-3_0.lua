@@ -653,6 +653,7 @@ local preFlagList = {
 	["^nearby allies [hgd][ae][via][enl] "] = { newAura = true, newAuraOnlyAllies = true },
 	["^you and allies affected by auras from your skills [hgd][ae][via][enl] "] = { affectedByAura = true },
 	["^take "] = { modSuffix = "Taken" },
+	["^fortify buffs you create instead grant "] = { changeFortifyEffect = true },
 	["^marauder: melee skills have "] = { flags = ModFlag.Melee, tag = { type = "Condition", var = "ConnectedToMarauderStart" } },
 	["^duelist: "] = { tag = { type = "Condition", var = "ConnectedToDuelistStart" } },
 	["^ranger: "] = { tag = { type = "Condition", var = "ConnectedToRangerStart" } },
@@ -2277,6 +2278,10 @@ local function parseMod(line, order)
 			-- Skill enchants or socketed gem modifiers that add additional effects
 			for i, effectMod in ipairs(modList) do
 				modList[i] = mod("ExtraSkillMod", "LIST", { mod = effectMod }, misc.addToSkill)
+			end
+		elseif misc.changeFortifyEffect then
+			for i, effectMod in ipairs(modList) do
+				modList[i] = mod("ChangeFortifyMod", "LIST", { mod = effectMod })
 			end
 		end
 	end

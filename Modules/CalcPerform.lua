@@ -326,11 +326,24 @@ local function doActorMisc(env, actor)
 	-- Add misc buffs/debuffs
 	if env.mode_combat then
 		if modDB:Flag(nil, "Fortify") then
-			local effect = m_floor(20 * (1 + modDB:Sum("INC", nil, "FortifyEffectOnSelf", "BuffEffectOnSelf") / 100))
-			if env.build.targetVersion == "2_6" then
-				modDB:NewMod("DamageTakenWhenHit", "INC", -effect, "Fortify")
+			local effectScale = 1 + modDB:Sum("INC", nil, "FortifyEffectOnSelf", "BuffEffectOnSelf") / 100
+			local modList = modDB:List(nil, "ChangeFortifyMod")
+			local changeMod = modList[#modList]
+			if changeMod then
+				local mod = changeMod.mod
+				if not mod.originValue then
+					mod.originValue = mod.value
+				end
+				mod.value = m_floor(mod.originValue * effectScale)
+				mod.source = "Fortify"
+				modDB:AddMod(mod)
 			else
-				modDB:NewMod("DamageTakenWhenHit", "MORE", -effect, "Fortify")
+				local effect = m_floor(20 * effectScale)
+				if env.build.targetVersion == "2_6" then
+					modDB:NewMod("DamageTakenWhenHit", "INC", -effect, "Fortify")
+				else
+					modDB:NewMod("DamageTakenWhenHit", "MORE", -effect, "Fortify")
+				end
 			end
 			modDB.multipliers["BuffOnSelf"] = (modDB.multipliers["BuffOnSelf"] or 0) + 1
 		end

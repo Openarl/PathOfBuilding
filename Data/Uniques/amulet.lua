@@ -859,7 +859,7 @@ Implicits: 1
 +(20-30) to Dexterity
 10% reduced Strength
 15% increased Dexterity
-(-30-20)% to Fire Resistance
+-(30-20)% to Fire Resistance
 +(30-40)% to Cold Resistance
 Fortify Buffs you create instead grant 30% more Evasion Rating
 (15-25)% increased Attack and Cast Speed while you have Fortify
