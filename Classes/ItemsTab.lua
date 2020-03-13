@@ -1613,7 +1613,7 @@ function ItemsTabClass:AddCustomModifierToDisplayItem()
 			end)
 		end
 	end
-	if (self.build.targetVersion ~= "2_6" and self.displayItem.base.subType ~= "Abyss") or (self.displayItem.type ~= "Jewel" and self.displayItem.type ~= "Flask") then
+	if (self.build.targetVersion ~= "2_6" and self.displayItem.type ~= "Jewel") or (self.displayItem.type ~= "Jewel" and self.displayItem.type ~= "Flask") then
 		t_insert(sourceList, { label = "Crafting Bench", sourceId = "MASTER" })
 	end
 	if self.displayItem.type ~= "Jewel" and self.displayItem.type ~= "Flask" then
@@ -1635,8 +1635,10 @@ function ItemsTabClass:AddCustomModifierToDisplayItem()
 			end
 		else
 			local listMod = modList[controls.modSelect.selIndex]
-			for _, line in ipairs(listMod.mod) do
-				t_insert(item.modLines, { line = line, [listMod.type] = true })
+			if listMod then
+				for _, line in ipairs(listMod.mod) do
+					t_insert(item.modLines, { line = line, [listMod.type] = true })
+				end
 			end
 		end
 		item:BuildAndParseRaw()
