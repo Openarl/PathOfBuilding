@@ -21,8 +21,8 @@ local skills, mod, flag, skill = ...
 		["active_skill_damage_+%_final"] = {
 			mod("MinionModifier", "LIST", { mod = mod("Damage", "MORE", nil) }),
 		},
-		["attack_speed_+%"] = {
-			mod("MinionModifier", "LIST", { mod = mod("Speed", "INC", nil, ModFlag.Attack) }),
+		["active_skill_attack_speed_+%_final"] = {
+			mod("MinionModifier", "LIST", { mod = mod("Speed", "MORE", nil, ModFlag.Attack) }),
 		},
 		["attack_minimum_added_physical_damage"] = {
 			mod("MinionModifier", "LIST", { mod = mod("PhysicalMin", "BASE", nil, 0, KeywordFlag.Attack) }),
