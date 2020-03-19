@@ -142,7 +142,8 @@ Requires Level 56, 179 Int
 Implicits: 2
 {variant:1}(15-18)% increased Spell Damage
 {variant:2}(31-35)% increased Spell Damage
-Adds (24-30) to (80-92) Physical Damage
+{variant:1}Adds (24-30) to (80-92) Physical Damage
+{variant:2}Adds (25-50) to (85-125) Physical Damage
 (26-32)% increased Critical Strike Chance
 Gain (13-15)% of Physical Damage as Extra Chaos Damage
 Enemies you Kill have a 20% chance to Explode, dealing a quarter
