@@ -81,6 +81,21 @@ local TreeTabClass = newClass("TreeTab", "ControlHost", function(self, build)
 	self.controls.treeSearch = new("EditControl", {"LEFT",self.controls.export,"RIGHT"}, 8, 0, 300, 20, "", "Search", "%c%(%)", 100, function(buf)
 		self.viewer.searchStr = buf
 	end)
+	self.controls.treeSearch.tooltipText = function()
+		return [[Case insensitive.
+The search pattern also supports basic regular expression.
+Use character classes to match a set of characters. For example,
+	. (dot)	match any character
+	%a		match letters
+	%d		match digits
+	%s		match space characters
+Some characters have special meaning. For example,
+	? 	quesiton mark, 0 or 1 repetition
+	* 	star, 0 or more repetitions (match longest)
+	- 	minus, 0 or more repetitions (match shortest)
+	+ 	plus, 1 or more repetitions (match longest)
+See Lua string.match for more infomation.]]
+	end
 	self.controls.treeHeatMap = new("CheckBoxControl", {"LEFT",self.controls.treeSearch,"RIGHT"}, 130, 0, 20, "Show Node Power:", function(state)	
 		self.viewer.showHeatMap = state
 	end)
