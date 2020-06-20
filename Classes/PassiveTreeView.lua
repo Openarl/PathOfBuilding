@@ -4,6 +4,9 @@
 -- Passive skill tree viewer.
 -- Draws the passive skill tree, and also maintains the current view settings (zoom level, position, etc)
 --
+
+local bit = require("bit")
+
 local pairs = pairs
 local ipairs = ipairs
 local t_insert = table.insert
@@ -30,6 +33,20 @@ local PassiveTreeViewClass = newClass("PassiveTreeView", function(self)
 	self.searchStr = ""
 	self.searchStrCached = ""
 	self.searchStrResults = {}
+	self.searchResultColormap = {
+		-- Color list generated from Google's FOSS colormap, 'Turbo':
+		{r = 0.941, g = 0.356, b = 0.070},
+		{r = 0.996, g = 0.643, b = 0.192},
+		{r = 0.883, g = 0.866, b = 0.217},
+		{r = 0.644, g = 0.990, b = 0.234},
+		{r = 0.276, g = 0.971, b = 0.517},
+		{r = 0.098, g = 0.837, b = 0.803},
+		{r = 0.244, g = 0.609, b = 0.997},
+		{r = 0.270, g = 0.349, b = 0.796},
+	}
+	self.searchTermsLimit = #self.searchResultColormap
+	self.searchTermSentinal = "|"
+
 	self.showStatDifferences = true
 end)
 
@@ -362,12 +379,10 @@ function PassiveTreeViewClass:Draw(build, viewPort, inputEvents)
 		build.calcsTab:BuildPower()
 	end
 
-	-- Update cached node data
+	-- Update cached node search data
 	if self.searchStrCached ~= self.searchStr then
+		self:UpdateSearchCache(spec.nodes)
 		self.searchStrCached = self.searchStr
-		for nodeId, node in pairs(spec.nodes) do
-			self.searchStrResults[nodeId] = #self.searchStr > 0 and self:DoesNodeMatchSearchStr(node)
-		end
 	end
 
 	-- Draw the nodes
@@ -492,13 +507,24 @@ function PassiveTreeViewClass:Draw(build, viewPort, inputEvents)
 			self:DrawAsset(tree.assets[overlay], scrX, scrY, scale)
 			SetDrawColor(1, 1, 1)
 		end
-		if self.searchStrResults[nodeId] then
-			-- Node matches the search string, show the highlight circle
-			SetDrawLayer(nil, 30)
-			SetDrawColor(1, 0, 0)
-			local size = 175 * scale / self.zoom ^ 0.4
-			DrawImage(self.highlightRing, scrX - size, scrY - size, size * 2, size * 2)
+		if self.searchStrResults[nodeId] and self.searchStrResults[nodeId] ~= 0 then
+			local searchResultsCounter = 0
+			for searchIndex=1,self.searchTermsLimit do
+				-- minus one to convert from one-based counting to zero-based
+				if bit.band(self.searchStrResults[nodeId], (2 ^ (searchIndex - 1))) ~= 0 then
+					SetDrawLayer(nil, 35 - searchResultsCounter)
+					SetDrawColor(
+						self.searchResultColormap[searchIndex].r,
+						self.searchResultColormap[searchIndex].g,
+						self.searchResultColormap[searchIndex].b
+					)
+					local size = (175 + 25 * (searchResultsCounter)) * scale / self.zoom ^ 0.4
+					DrawImage(self.highlightRing, scrX - size, scrY - size, size * 2, size * 2)
+					searchResultsCounter = searchResultsCounter + 1
+				end
+			end
 		end
+
 		if node == hoverNode and (node.type ~= "Socket" or not IsKeyDown("SHIFT")) and not main.popups[1] then
 			-- Draw tooltip
 			SetDrawLayer(nil, 100)
@@ -575,13 +601,37 @@ function PassiveTreeViewClass:Zoom(level, viewPort)
 	self.zoomY = relY + (self.zoomY - relY) * factor
 end
 
-function PassiveTreeViewClass:DoesNodeMatchSearchStr(node)
+-- Parse searchStr and update searchStrResults cache
+function PassiveTreeViewClass:UpdateSearchCache(nodes)
+	local searchTerms = {}
+	-- split searchStr on searchTermSentinal
+	local i = 1
+	for term in string.gmatch(self.searchStr, "[^"..self.searchTermSentinal.."]+") do
+		searchTerms[i] = term
+		i = i + 1
+	end
+
+	for nodeId, node in pairs(nodes) do
+		local resultBitmap = 0
+
+		for termIndex=1,self.searchTermsLimit do
+			if searchTerms[termIndex] and self:DoesNodeMatchSearchStr(searchTerms[termIndex], node) then
+				-- minus one to convert from one-based counting to zero-based
+				resultBitmap = bit.bor(resultBitmap, (2 ^ (termIndex - 1)))
+			end
+		end
+
+		self.searchStrResults[nodeId] = resultBitmap
+	end
+end
+
+function PassiveTreeViewClass:DoesNodeMatchSearchStr(searchTerm, node)
 	if node.type == "ClassStart" or node.type == "Mastery" then
 		return
 	end
 
 	-- Check node name
-	local errMsg, match = PCall(string.match, node.dn:lower(), self.searchStr:lower())
+	local errMsg, match = PCall(string.match, node.dn:lower(), searchTerm:lower())
 	if match then
 		return true
 	end
@@ -589,14 +639,14 @@ function PassiveTreeViewClass:DoesNodeMatchSearchStr(node)
 	-- Check node description
 	for index, line in ipairs(node.sd) do
 		-- Check display text first
-		errMsg, match = PCall(string.match, line:lower(), self.searchStr:lower())
+		errMsg, match = PCall(string.match, line:lower(), searchTerm:lower())
 		if match then
 			return true
 		end
 		if not match and node.mods[index].list then
 			-- Then check modifiers
 			for _, mod in ipairs(node.mods[index].list) do
-				errMsg, match = PCall(string.match, mod.name, self.searchStr)
+				errMsg, match = PCall(string.match, mod.name:lower(), searchTerm:lower())
 				if match then
 					return true
 				end
@@ -605,7 +655,7 @@ function PassiveTreeViewClass:DoesNodeMatchSearchStr(node)
 	end
 
 	-- Check node type
-	local errMsg, match = PCall(string.match, node.type:lower(), self.searchStr:lower())
+	local errMsg, match = PCall(string.match, node.type:lower(), searchTerm:lower())
 	if match then
 		return true
 	end
