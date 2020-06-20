@@ -49,6 +49,14 @@ Extra Gore
 {variant:1}10% chance to cause Bleeding on Hit
 {variant:2}30% chance to cause Bleeding on Hit
 ]],[[
+Cold Iron Point
+Ezomyte Dagger
+Requires Level 62, 95 Dex, 131 Int
+Implicits: 1
+30% increased Global Critical Strike Chance
++3 to Level of all Physical Spell Skill Gems
+Deal no Elemental Damage
+]],[[
 The Consuming Dark
 Fiend Dagger
 Variant: Pre 2.2.0
