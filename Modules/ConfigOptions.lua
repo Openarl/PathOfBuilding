@@ -182,7 +182,14 @@ return {
 	{ var = "witheringTouchWitheredStackCount", type = "count", label = "# of Withered Stacks:", ifSkill = "Withering Touch", apply = function(val, modList, enemyModList)
 		modList:NewMod("Multiplier:WitheringTouchWitheredStackCount", "BASE", val, "Config")
 	end },
-
+	{ label = "Wither:", ifSkill = "Wither" },
+	{ var = "witherWitheredStackCount", type = "count", label = "# of Withered Stacks:", ifSkill = "Wither", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:WitherWitheredStackCount", "BASE", val, "Config")
+	end },
+	{ label = "Blight Withered Stacks (Spreading Rot):", ifSkill = "Blight" },
+	{ var = "blightWitheredStackCount", type = "count", label = "# of Withered Stacks:", ifSkill = "Blight", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:BlightWitheredStackCount", "BASE", val, "Config")
+	end },
 	-- Section: Map modifiers/curses
 	{ section = "Map Modifiers and Player Debuffs", col = 2 },
 	{ label = "Map Prefix Modifiers:" },
