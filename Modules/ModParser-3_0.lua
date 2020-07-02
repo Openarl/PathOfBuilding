@@ -759,6 +759,7 @@ local modTagList = {
 	["per green socket"] = { tag = { type = "Multiplier", var = "GreenSocketIn{SlotName}" } },
 	["per blue socket"] = { tag = { type = "Multiplier", var = "BlueSocketIn{SlotName}" } },
 	["per white socket"] = { tag = { type = "Multiplier", var = "WhiteSocketIn{SlotName}" } },
+	["for each summoned golem"] = { tag = { type = "Multiplier", var = "SummonedGolem" } },
 	-- Per stat
 	["per (%d+) strength"] = function(num) return { tag = { type = "PerStat", stat = "Str", div = num } } end,
 	["per (%d+) dexterity"] = function(num) return { tag = { type = "PerStat", stat = "Dex", div = num } } end,
@@ -1141,6 +1142,9 @@ local specialModList = {
 		mod("ColdDamageTaken", "INC", -num, { type = "Condition", var = "HitByColdDamageRecently" }), 
 		mod("LightningDamageTaken", "INC", -num, { type = "Condition", var = "HitByLightningDamageRecently" })
 	} end,
+	--["(%d+)%% increased damage for each summoned golem"] = function(num) return {
+	--	mod("Damage", "INC", num, { type = "Multiplier", var = "SummonedGolem" })
+	--} end,
 	["every %d+ seconds:"] = { },
 	["gain chilling conflux for %d seconds"] = { 
 		flag("PhysicalCanChill", { type = "Condition", var = "ChillingConflux" }),
