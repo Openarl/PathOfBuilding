@@ -698,7 +698,7 @@ function buildMode:OnFrame(inputEvents)
 
 	for id, event in ipairs(inputEvents) do
 		if event.type == "KeyDown" then
-			if event.key == "MOUSE4" then
+			if event.key == "MOUSE4" and main.thumbButtonDisabled == false then
 				if self.unsaved then
 					self:OpenSavePopup("LIST")
 				else
