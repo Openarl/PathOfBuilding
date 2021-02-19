@@ -1032,7 +1032,7 @@ local skills, mod, flag, skill = ...
 #mods
 
 #skill BoneLance
-#flags spell projectile
+#flags spell projectile area
 #mods
 
 #skill SnappingAdder
