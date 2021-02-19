@@ -190,6 +190,22 @@ local ConfigTabClass = newClass("ConfigTab", "UndoHandler", "ControlHost", "Cont
 					end
 				end
 				control.tooltipText = varData.tooltip
+			elseif varData.ifEquipped then
+				-- Capture name for tooltip
+				local itemName = ""
+				control.shown = function()
+					-- Iterate over each slot and see if any item name matches what we want
+					for _,slot in pairs(self.build.itemsTab.slots) do
+						if self.build.itemsTab.items[slot.selItemId] and self.build.itemsTab.items[slot.selItemId].name:match(varData.ifEquipped) then
+							itemName = self.build.itemsTab.items[slot.selItemId].name
+							return true
+						end
+					end
+					return false
+				end
+				control.tooltipText = function()
+					return "This option is specific to "..itemName
+				end
 			else
 				control.tooltipText = varData.tooltip
 			end

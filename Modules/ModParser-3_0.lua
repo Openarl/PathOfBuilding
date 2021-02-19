@@ -845,6 +845,8 @@ local modTagList = {
 	["if equipped shield has at least (%d+)%% chance to block"] = function(num) return { tag = { type = "StatThreshold", stat = "ShieldBlockChance", threshold = num } } end,
 	["if you have (%d+) primordial items socketed or equipped"] = function(num) return { tag = { type = "MultiplierThreshold", var = "PrimordialItem", threshold = num } } end,
 	-- Player status conditions
+	["while you have avatar of fire"] = { tag = { type = "Condition", var = "HaveAvatarOfFire" } },
+	["while you do not have avatar of fire"] = { tag = { type = "Condition", var = "HaveAvatarOfFire", neg = true } },
 	["wh[ie][ln]e? on low life"] = { tag = { type = "Condition", var = "LowLife" } },
 	["wh[ie][ln]e? not on low life"] = { tag = { type = "Condition", var = "LowLife", neg = true } },
 	["wh[ie][ln]e? on full life"] = { tag = { type = "Condition", var = "FullLife" } },
@@ -1776,6 +1778,7 @@ local suffixTypes = {
 	["converted to lightning"] = "ConvertToLightning",
 	["converted to lightning damage"] = "ConvertToLightning",
 	["converted to cold damage"] = "ConvertToCold",
+	["converted to fire"] = "ConvertToFire",
 	["converted to fire damage"] = "ConvertToFire",
 	["converted to chaos damage"] = "ConvertToChaos",
 	["added as energy shield"] = "GainAsEnergyShield",

@@ -572,6 +572,10 @@ return {
 			modList:NewMod("Condition:PendulumOfDestructionElementalDamage", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 		end
 	end },
+	{ var = "buffAvatarOfFire", type = "check", label = "Is Avatar of Fire active?", ifEquipped = "Vulconus", apply = function(val, modList, enemyModList)
+		modList:NewMod("Keystone", "LIST", "Avatar of Fire", "Config", { type = "Condition", var = "Combat" })
+		modList:NewMod("Condition:HaveAvatarOfFire", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
 	{ var = "buffConflux", type = "list", label = "Conflux Buff:", ifNode = 51391, list = {{val=0,label="None"},{val="CHILLING",label="Chilling"},{val="SHOCKING",label="Shocking"},{val="IGNITING",label="Igniting"},{val="ALL",label="Chill + Shock + Ignite"}}, apply = function(val, modList, enemyModList)
 		if val == "CHILLING" or val == "ALL" then
 			modList:NewMod("Condition:ChillingConflux", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
